@@ -1,3 +1,4 @@
+workspace = { members = ["emply-for-learning"] }
 [package]
 name = "council"
 version = "0.0.1"
