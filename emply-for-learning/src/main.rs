@@ -4,8 +4,8 @@ use dotenv::dotenv;
 use listenfd::ListenFd;
 use std::env;
 
-// mod db;
-// mod employees;
+mod db;
+mod employees;
 mod error_handlers;
 
 #[actix_rt::main]
