@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Council — a game played with words, not dice</title>
+<meta name="description" content="Council: a roleplaying game of knowing, choosing, and consequence — played with words, not dice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:#0e1a24;color:#eee3c9;font-family:'IM Fell English',Georgia,serif}
+  @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+  @keyframes shimmer{0%,100%{opacity:.35;transform:scaleX(1)}50%{opacity:.6;transform:scaleX(1.08)}}
+  .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#f3ead1;animation:twinkle 4s ease-in-out infinite}
+  .mono{font-family:'Courier Prime',monospace}
+</style>
+</head>
+<body>
+  <main style="position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 24px;overflow:hidden;background:radial-gradient(120% 90% at 50% 12%,#1c3648 0%,#12232f 45%,#0b1620 100%)">
+
+    <div class="star" style="top:12%;left:18%"></div>
+    <div class="star" style="top:20%;left:70%;animation-delay:1.2s"></div>
+    <div class="star" style="top:9%;left:52%;animation-delay:.6s"></div>
+    <div class="star" style="top:26%;left:33%;animation-delay:2.1s"></div>
+    <div class="star" style="top:16%;left:84%;animation-delay:1.7s"></div>
+    <div class="star" style="top:31%;left:60%;animation-delay:.3s"></div>
+    <div class="star" style="top:7%;left:8%;animation-delay:2.6s"></div>
+
+    <div style="position:absolute;top:7%;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#f6ecc9,#e4cf98 60%,#c9ad6d);box-shadow:0 0 70px rgba(233,217,168,.35),inset -12px -12px 26px rgba(120,96,52,.35)"></div>
+    <div style="position:absolute;top:calc(7% + 132px);width:108px;height:200px;background:linear-gradient(#e9d9a8,transparent);opacity:.4;filter:blur(6px);animation:shimmer 5s ease-in-out infinite"></div>
+
+    <div style="position:relative;margin-top:64px">
+      <div class="mono" style="font-size:12px;letter-spacing:7px;color:#9ab7c9;margin-bottom:16px">A ROLEPLAYING GAME · PLAYED WITH WORDS, NOT DICE</div>
+      <h1 style="font-family:'Alfa Slab One',serif;font-size:clamp(60px,13vw,128px);line-height:.9;margin:0;color:#f3ead1;text-shadow:0 4px 40px rgba(0,0,0,.5)">COUNCIL</h1>
+      <div style="font-size:clamp(18px,2.8vw,24px);font-style:italic;color:#c9bda0;margin-top:14px">strive and pay, or be given — but keep hope, whatever the weather</div>
+    </div>
+
+    <p style="position:relative;max-width:640px;margin:40px 0 0;font-size:clamp(17px,2.2vw,20px);line-height:1.85;color:#cddbe2">
+      Council is a game of knowing, choosing, and consequence. When a table sets down the dice, it loses the old gift they gave — a way to learn what no one thought to ask. Council hands that gift back. Every answer comes one of two ways: <span style="color:#e9d9a8">seized at a price</span>, or <span style="color:#e9d9a8">given as grace</span>. Behind every locked door wait three clues, so no soul is ever truly stuck. It is built to reward <span style="color:#e9d9a8">hope</span> — it can wound you, and grieve you, but it breaks only the one who stops hoping.
+    </p>
+
+    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · THE HANDBOOK IS BEING BOUND</div>
+  </main>
+</body>
+</html>

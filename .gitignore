@@ -1,1 +1,6 @@
-/target
+# Nix build outputs
+result
+result-*
+
+# Local Pages artifact staging (produced by the deploy workflow)
+/public
