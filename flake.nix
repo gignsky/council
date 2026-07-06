@@ -61,17 +61,15 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             nodejs_22
-            nodePackages.live-server
             python3
             git
             html-tidy
           ];
           shellHook = ''
-            echo "  Council dev shell — serve with:  live-server site"
-            echo "  or build the deployable tree with:  nix build .#site"
+            echo "  Council dev shell"
+            echo "  live preview:   npx live-server site   (or: nix run)"
+            echo "  build output:   nix build .#site"
           '';
         };
-
-        formatter = pkgs.nixpkgs-fmt;
       });
 }
