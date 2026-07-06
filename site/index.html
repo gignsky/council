@@ -16,6 +16,10 @@
   @keyframes shimmer{0%,100%{opacity:.35;transform:scaleX(1)}50%{opacity:.6;transform:scaleX(1.08)}}
   .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#f3ead1;animation:twinkle 4s ease-in-out infinite}
   .mono{font-family:'Courier Prime',monospace}
+  summary{cursor:pointer;list-style:none;outline:none}
+  summary::-webkit-details-marker{display:none}
+  .chev{display:inline-block;transition:transform .2s ease}
+  details[open] .chev{transform:rotate(180deg)}
 </style>
 </head>
 <body>
@@ -41,6 +45,17 @@
     <p style="position:relative;max-width:640px;margin:40px 0 0;font-size:clamp(17px,2.2vw,20px);line-height:1.85;color:#cddbe2">
       Council is a game of knowing, choosing, and consequence. When a table sets down the dice, it loses the old gift they gave — a way to learn what no one thought to ask. Council hands that gift back. Every answer comes one of two ways: <span style="color:#e9d9a8">seized at a price</span>, or <span style="color:#e9d9a8">given as grace</span>. Behind every locked door wait three clues, so no soul is ever truly stuck. It is built to reward <span style="color:#e9d9a8">hope</span> — it can wound you, and grieve you, but it breaks only the one who stops hoping.
     </p>
+
+    <details style="position:relative;max-width:660px;margin:40px auto 0;text-align:left">
+      <summary style="text-align:center;font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:3px;color:#e9d9a8;padding:12px 0">A WORD FOR CINCO <span class="chev">▾</span></summary>
+      <div style="margin-top:18px;background:#efe6cf;color:#23201a;border:1px solid #b9ab86;border-top:4px solid #a8823f;padding:28px 30px;font-family:'IM Fell English',Georgia,serif;font-size:16px;line-height:1.85">
+        <p style="margin:0 0 14px">Cinco — you want the Genii. Not their friendship; their hand on the wheel. I have watched you regard Dina's people the way a sailor regards a current he means to ride rather than fight. It can be done. I will not tell you it cannot. But hear how the water charges for such a thing.</p>
+        <p style="margin:0 0 14px">A people is not taken in a scene. A people is <b>Standing</b> — a stake in the Ledger — and Standing is won or wounded a watch at a time, through <b>Works</b> declared in the open, with hands you can spare and power you can pledge. To bend the Genii toward a confederation is not to declare a Work; it is to set a <b>Divine Work</b> turning — the kind with no counted end and several storms sealed inside it, each breaking in its season. Some will rewrite the very aim you began with, for that is the nature of trying to hold a whole people in your fist: they push back, and the card changes under your hand.</p>
+        <p style="margin:0 0 14px">The Hoffans, too, perhaps — braver and more brittle than the Genii, and keepers of a cure that is also a grave. Fold them in and you gain a shield against the dark; you also gain the ache of what that shield costs. I do not say no. I say only: read the letterhead when the report comes, and mark whose name signs it.</p>
+        <p style="margin:0 0 14px">And a confederation — a table of worlds seated as one Council — is the grandest Work a crew of yours has ever set turning. It will demand you choose the wide table or the narrow. It will want its dissent <b>minuted</b>, so that when one world is spent for the others, the objection is already written down. And it will not come by <b>price</b> alone; some of it you will simply have to be <b>given</b>.</p>
+        <div style="font-style:italic;color:#3a3428">Keep hope, Cinco — the confederation bends kinder to the one who believes it can be built than to the one who only means to rule it. Nothing is ruled out. Everything is priced. Come find water when you are ready to pay — or to be surprised by what you are given.<br>— Landis</div>
+      </div>
+    </details>
 
     <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · THE HANDBOOK IS BEING BOUND</div>
   </main>
