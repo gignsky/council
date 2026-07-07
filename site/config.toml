@@ -1,0 +1,7 @@
+base_url = "https://fuckinphilosophers.com"
+title = "Council"
+description = "Council: a roleplaying game of knowing, choosing, and consequence — played with words, not dice."
+
+compile_sass = false
+build_search_index = false
+generate_feeds = false

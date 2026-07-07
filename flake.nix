@@ -1,5 +1,5 @@
 {
-  description = "Council — the fuckinphilosophers.com static landing site";
+  description = "Council — the fuckinphilosophers.com static site (Zola)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,35 +11,42 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        # The whole deployable site. Building this derivation "outputs" the
-        # landing page (index.html + CNAME, and whatever gets added under
-        # site/ later — e.g. the handbook books) into a single $out tree that
-        # is ready to be served or handed to GitHub Pages verbatim.
+        # The whole deployable site: Zola renders site/ (main landing at /,
+        # Council of Un at /un/) into a $out tree ready to hand to GitHub
+        # Pages verbatim. static/ files — including CNAME — land at the root.
         council-site = pkgs.stdenvNoCC.mkDerivation {
           pname = "council-site";
-          version = "0.1.0";
+          version = "0.2.0";
 
           src = ./site;
 
-          nativeBuildInputs = [ pkgs.html-tidy ];
+          nativeBuildInputs = [ pkgs.zola pkgs.html-tidy ];
 
-          # Lint the markup, but never let a cosmetic warning fail the deploy.
           buildPhase = ''
             runHook preBuild
-            echo "Checking index.html markup..."
-            tidy -q -e index.html || echo "tidy reported warnings (non-fatal)"
+            zola build --output-dir $out
             runHook postBuild
           '';
 
+          # Hard guarantees the deploy depends on; a cosmetic tidy warning
+          # stays non-fatal, a missing CNAME or section does not.
           installPhase = ''
             runHook preInstall
-            mkdir -p $out
-            cp -r ./. $out/
+            test -f $out/CNAME
+            test -f $out/index.html
+            test -f $out/un/index.html
+            test -f $out/css/main.css
+            test -f $out/css/un.css
+            test -f $out/js/council-config.js
+            grep -q COUNCIL $out/index.html
+            echo "Linting generated HTML..."
+            tidy -q -e $out/index.html || echo "tidy reported warnings (non-fatal)"
+            tidy -q -e $out/un/index.html || echo "tidy reported warnings (non-fatal)"
             runHook postInstall
           '';
 
           meta = {
-            description = "Council landing page for fuckinphilosophers.com";
+            description = "Council site for fuckinphilosophers.com";
             homepage = "https://fuckinphilosophers.com";
           };
         };
@@ -47,6 +54,10 @@
       {
         packages.default = council-site;
         packages.site = council-site;
+
+        # `nix flake check` (run by CI on every PR) builds the site and its
+        # assertions.
+        checks.site = council-site;
 
         # `nix run` spins up a throwaway local preview of the built site.
         apps.default = {
@@ -57,18 +68,18 @@
           ''}";
         };
 
-        # Dev shell, ready for the handbook work to come.
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            nodejs_22
+            zola
             python3
             git
             html-tidy
           ];
           shellHook = ''
             echo "  Council dev shell"
-            echo "  live preview:   npx live-server site   (or: nix run)"
+            echo "  live preview:   zola serve --root site"
             echo "  build output:   nix build .#site"
+            echo "  serve output:   nix run"
           '';
         };
       });

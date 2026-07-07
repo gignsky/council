@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Council of Un{% endblock title %}
+
+{% block head_extra %}
+<meta name="description" content="Council of Un — a campaign of Council, played at one particular table.">
+<link rel="stylesheet" href="{{ get_url(path='css/un.css') }}">
+{% endblock head_extra %}
+
+{% block body %}
+  <div class="un-wrap">
+    <div class="un-kicker">A campaign of Council</div>
+    <h1 class="un-title">COUNCIL OF UN</h1>
+    <hr class="un-rule">
+    <p class="un-blurb">
+      This is the table's own corner of the site — the running record of one
+      particular crew, their <em>Works</em>, their <em>Standing</em>, and the
+      storms still sealed. The tools of the table will live here: ledgers,
+      minutes, and the things a Council writes down so no one can pretend it
+      was never said.
+    </p>
+    <div class="un-widget" data-widget="hello">table status: …</div>
+    <a class="un-back" href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a>
+  </div>
+  <script type="module" src="{{ get_url(path='js/un/hello-widget.js') }}"></script>
+{% endblock body %}

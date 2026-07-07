@@ -1,0 +1,50 @@
+/* Council of Un — distinct identity: ink, bone, ember. */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:#131118;
+  color:#ddd6c8;
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.7;
+}
+.un-wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:72px 24px 96px;
+}
+.un-kicker{
+  font-family:'Courier New',monospace;
+  font-size:12px;
+  letter-spacing:6px;
+  color:#8a8496;
+  text-transform:uppercase;
+}
+h1.un-title{
+  margin:14px 0 6px;
+  font-size:clamp(44px,9vw,84px);
+  line-height:1;
+  color:#efe9db;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.un-rule{
+  width:64px;height:3px;border:0;margin:26px 0;
+  background:#c2452d;
+}
+.un-blurb{font-size:18px;color:#c8c1b2;max-width:60ch}
+.un-blurb em{color:#e2a08f}
+a.un-back{
+  display:inline-block;margin-top:40px;
+  font-family:'Courier New',monospace;font-size:13px;letter-spacing:3px;
+  color:#c2452d;text-decoration:none;border-bottom:1px solid #c2452d;
+  padding-bottom:2px;
+}
+a.un-back:hover{color:#e2a08f;border-color:#e2a08f}
+.un-widget{
+  margin-top:56px;padding:20px 22px;
+  border:1px solid #2c2836;background:#1a1722;
+  font-family:'Courier New',monospace;font-size:13px;letter-spacing:1px;
+  color:#8a8496;
+}
+.un-widget strong{color:#c2452d}
