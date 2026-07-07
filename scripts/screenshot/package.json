@@ -1,0 +1,8 @@
+{
+  "name": "council-screenshots",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
