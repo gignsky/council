@@ -13,9 +13,9 @@
 
         # The whole deployable site: Zola renders site/ (landing + work timeline
         # at /, the Handbook at /rules/, the development Archive at /archive/,
-        # Council of Un at /un/) into a $out tree ready to hand to GitHub Pages
-        # verbatim. static/ files — including CNAME and the archived documents —
-        # land at the root.
+        # Council of Un at /un/) into a $out tree ready to hand to Cloudflare
+        # verbatim. static/ files — including the archived documents — land at
+        # the root.
         council-site = pkgs.stdenvNoCC.mkDerivation {
           pname = "council-site";
           version = "0.3.0";
@@ -31,10 +31,9 @@
           '';
 
           # Hard guarantees the deploy depends on; a cosmetic tidy warning
-          # stays non-fatal, a missing CNAME or section does not.
+          # stays non-fatal, a missing section does not.
           installPhase = ''
             runHook preInstall
-            test -f $out/CNAME
             test -f $out/index.html
             test -f $out/un/index.html
             test -f $out/rules/index.html
