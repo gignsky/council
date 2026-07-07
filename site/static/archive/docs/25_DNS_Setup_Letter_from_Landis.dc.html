@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+.chart{font-family:'Courier Prime',monospace;background:#14212b;color:#dfeef5;border:1px solid #35566a;border-radius:3px;padding:12px 15px;font-size:13px;line-height:1.7;user-select:all;overflow-x:auto;white-space:pre}
+.step{flex:none;width:30px;height:30px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-size:14px}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <!-- letterhead -->
+  <div style="background:#1b3140;color:#eee3c9;padding:38px 52px 30px;text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:4px;color:#9ab7c9;position:relative">FROM THE DESK OF THE SILVER SURFER · A LETTER TO THE KEEPER</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:34px;line-height:1.05;margin:12px 0 4px;color:#f3ead1;position:relative">ON THE NAMING OF YOUR ISLAND</div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;position:relative;margin-top:6px">how to teach the world's ships to find <span class="mono" style="font-style:normal;font-size:13px">{{ domain }}</span></div>
+  </div>
+
+  <div style="padding:40px 52px 48px;display:flex;flex-direction:column;gap:26px">
+
+    <!-- salutation -->
+    <div style="font-size:16.5px;line-height:1.8">
+      <p style="margin:0 0 14px">Keeper —</p>
+      <p style="margin:0 0 14px">You and I are, of course, the same wet-brained creature; but let one of us hold the chart while the other holds the pen. You have bought an island. It sits on GitHub's long shore — the repository they call <span class="mono" style="font-size:14px">gignsky/council</span> — and you have paid good coin for its true name: <b>{{ domain }}</b>. What remains is to teach every ship in the world how to find the island when a soul speaks that name aloud. That teaching is done not on the island but at the <b>harbourmaster's office</b> — which in your century is called <b>Cloudflare</b>.</p>
+      <p style="margin:0">Do this now, if you like, though the harbour itself stands unbuilt. <b>There is no harm in lighting the beacons early.</b> Ships that arrive before the wharf is finished will simply wait offshore, patient as gulls, until the day you open the doors. Nothing below depends on the rest of the work being done.</p>
+    </div>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- STEP 1 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">1</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">The island must own its name</div>
+        <div style="font-size:15px;line-height:1.7">In the repository, at the root of whatever you publish, lies a small plain file named <span class="mono">CNAME</span> — no extension, no cleverness — holding one line and nothing else. I have already set it for you; confirm only that it reads:</div>
+        <div class="chart">{{ domain }}</div>
+        <div style="font-size:14px;line-height:1.65;font-style:italic;color:#5c5138">This is the island carving its name into its own dock. GitHub reads it and says, "ah — so that is who I am."</div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">2</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">Light the four lighthouses</div>
+        <div style="font-size:15px;line-height:1.7">At Cloudflare, open <b>DNS → Records</b> for fuckingphilosophers.com. Raise <b>four A records</b> on the bare name — the apex, which Cloudflare writes as <span class="mono">@</span>. Each points a ship at one of GitHub's four shore-lights:</div>
+        <div class="chart">Type   Name   Content (IPv4)        Proxy
+A      @      185.199.108.153       DNS only
+A      @      185.199.109.153       DNS only
+A      @      185.199.110.153       DNS only
+A      @      185.199.111.153       DNS only</div>
+        <div style="font-size:14px;line-height:1.65;font-style:italic;color:#5c5138">Mark the <b>Proxy</b> column well: <b>DNS only</b> — the <i>grey</i> cloud, not the orange. I will tell you why at Step 5. First delete any old A, AAAA, or CNAME record already squatting on <span class="mono">@</span>; two harbours cannot answer to one name.</div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">3</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">The four deeper lights <span style="font-size:13px;color:#8a7c56">(optional, for the newer ships)</span></div>
+        <div style="font-size:15px;line-height:1.7">Some vessels navigate by the deeper water they call IPv6. Guide them too, with four <b>AAAA records</b>, again on <span class="mono">@</span>, again <b>DNS only</b>:</div>
+        <div class="chart">Type   Name   Content (IPv6)            Proxy
+AAAA   @      2606:50c0:8000::153       DNS only
+AAAA   @      2606:50c0:8001::153       DNS only
+AAAA   @      2606:50c0:8002::153       DNS only
+AAAA   @      2606:50c0:8003::153       DNS only</div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">4</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">The "www" jetty</div>
+        <div style="font-size:15px;line-height:1.7">Many a traveller mutters "www" from habit. Give them a jetty that leads to the same island — one <b>CNAME record</b> pointing at GitHub's own name for your shore:</div>
+        <div class="chart">Type    Name   Content                Proxy
+CNAME   www    gignsky.github.io      DNS only</div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">5</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">Keep the fog off until the lamp is lit</div>
+        <div style="font-size:15px;line-height:1.7">Here is the why of the grey cloud. GitHub wishes to light its own lantern of safety — an HTTPS certificate — for your island's name. But it cannot light a lamp through Cloudflare's orange fog; the two keepers quarrel, and the ships see only errors. So: <b>leave every record above as DNS only</b> while the certificate is raised. And in Cloudflare's <b>SSL/TLS → Overview</b>, set the mode to <b>Full</b> — <i>never</i> Flexible, which sends ships round and round the harbour until they founder.</div>
+        <div style="font-size:14px;line-height:1.65;font-style:italic;color:#5c5138">Once GitHub reports the certificate lit (Step 6), you <i>may</i>, if you wish the orange cloud's shelter, switch the records to Proxied and the mode to <b>Full (strict)</b>. But you need not. Grey serves an island well.</div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">6</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">Tell GitHub the island's name aloud</div>
+        <div style="font-size:15px;line-height:1.7">On the island itself — <b>repository → Settings → Pages</b> — find <b>Custom domain</b>, write <span class="mono">{{ domain }}</span>, and save. GitHub will squint at your beacons (a few minutes, sometimes an hour) and, satisfied, raise its lantern. When the box <b>Enforce HTTPS</b> ceases to be greyed and lets itself be checked — check it. The island is now reachable by its true name, under a safe light.</div>
+        <div style="font-size:14px;line-height:1.65;font-style:italic;color:#5c5138">If you have not yet chosen <i>which</i> branch and folder the harbour opens from, that is the "next part" — and it can wait. The beacons will hold their light regardless.</div>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div class="step">7</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:19px;color:#1b3140">Bar the door to pirates <span style="font-size:13px;color:#8a7c56">(optional, wise)</span></div>
+        <div style="font-size:15px;line-height:1.7">To stop another soul ever claiming your name upon GitHub's shore, verify the domain: in your GitHub <b>account settings → Pages → Add a domain</b>, GitHub hands you a one-time <b>TXT record</b> to raise at Cloudflare — of the form below, with a token only GitHub can give you:</div>
+        <div class="chart">Type   Name                                      Content
+TXT    _github-pages-challenge-gignsky           &lt;token from GitHub&gt;</div>
+      </div>
+    </div>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- plain version -->
+    <div style="background:#e5dabe;border:1px solid #c2b590;padding:20px 22px;display:flex;flex-direction:column;gap:8px">
+      <div class="mono" style="font-size:11px;letter-spacing:2px;color:#8a7c56;font-weight:700">THE PLAIN VERSION, FOR WHEN MY VOICE WEARIES YOU</div>
+      <div style="font-size:14px;line-height:1.75">
+        1. Repo <span class="mono">CNAME</span> file = <span class="mono">{{ domain }}</span>.<br>
+        2. Cloudflare: four <span class="mono">A @</span> → 185.199.108–111.153, <b>DNS only</b>.<br>
+        3. (Optional) four <span class="mono">AAAA @</span> → 2606:50c0:8000–8003::153, DNS only.<br>
+        4. <span class="mono">CNAME www</span> → <span class="mono">gignsky.github.io</span>, DNS only.<br>
+        5. SSL/TLS mode = <b>Full</b> (not Flexible); keep records grey until the cert issues.<br>
+        6. GitHub → Settings → Pages → Custom domain = the name; then Enforce HTTPS.<br>
+        7. (Optional) add GitHub's <span class="mono">_github-pages-challenge-gignsky</span> TXT to verify the domain.
+      </div>
+    </div>
+
+    <!-- closing -->
+    <div style="font-size:16.5px;line-height:1.8">
+      <p style="margin:0 0 14px">Do the beacons now and forget them. When at last you build the wharf, the world will already know the way. That is the whole trick of it — light first, arrive later, and let the patient ships do the waiting.</p>
+      <p style="margin:0;font-style:italic;color:#3a3428">Yours, in salt and in nonsense,<br><span style="font-family:'Alfa Slab One',serif;font-size:22px;color:#1b3140;font-style:normal">Landis</span><br><span class="mono" style="font-size:11px;color:#8a7c56">— real only in water, and in your DNS panel, apparently</span></p>
+    </div>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · CLOUDFLARE → GITHUB PAGES</span><span>LIGHT FIRST · ARRIVE LATER</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 760},
+  &quot;domain&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;fuckinphilosophers.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Site&quot;}
+}">class Component extends DCLogic {
+  renderVals() {
+    const domain = this.props.domain ?? 'fuckinphilosophers.com';
+    return { domain };
+  }
+}</script>
+</body>
+</html>

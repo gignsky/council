@@ -45,6 +45,38 @@
       </div>
     </details>
 
-    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK IS BEING BOUND</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
+    <a href="#timeline" class="tl-cue mono" aria-label="See the work so far">THE WORK SO FAR <span class="tl-cue-chev">▾</span></a>
+
+    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK IS BEING BOUND</a> · <a href="{{ get_url(path='archive/') }}" style="color:#5c7686">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
   </main>
+
+  {% set timeline = load_data(path="data/timeline.toml") %}
+  <section id="timeline" class="tl-section">
+    <div class="tl-head">
+      <div class="tl-kicker">THE LOG · WHAT HAS BEEN BUILT</div>
+      <h2 class="tl-title">The work so far</h2>
+      <p class="tl-lede">Council was made a piece at a time. Here is the log — where the game has been, where it stands now, and what comes next. The finished rules gather in <a href="{{ get_url(path='@/rules/_index.md') }}">The Handbook</a>; the whole workshop behind them lives in <a href="{{ get_url(path='archive/') }}">The Archive</a>.</p>
+    </div>
+    <ol class="tl-track">
+      {% for m in timeline.milestone %}
+      <li class="tl-item tl-item--{{ m.status }}">
+        <span class="tl-dot"></span>
+        <div class="tl-when mono">{{ m.when }}</div>
+        <div class="tl-card">
+          <div class="tl-card-top">
+            <h3 class="tl-card-title">{{ m.title }}</h3>
+            <span class="tl-badge tl-badge--{{ m.status }}">{{ m.status | upper }}</span>
+          </div>
+          <p class="tl-summary">{{ m.summary }}</p>
+          {% if m.link %}
+          <div class="tl-links">
+            {% for link in m.link %}<a class="tl-link" href="{{ get_url(path=link.url) }}">{{ link.label }} →</a>{% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="tl-foot mono">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}">COUNCIL OF UN</a></div>
+  </section>
 {% endblock body %}

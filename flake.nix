@@ -11,12 +11,14 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        # The whole deployable site: Zola renders site/ (main landing at /,
-        # Council of Un at /un/) into a $out tree ready to hand to GitHub
-        # Pages verbatim. static/ files — including CNAME — land at the root.
+        # The whole deployable site: Zola renders site/ (landing + work timeline
+        # at /, the Handbook at /rules/, the development Archive at /archive/,
+        # Council of Un at /un/) into a $out tree ready to hand to GitHub Pages
+        # verbatim. static/ files — including CNAME and the archived documents —
+        # land at the root.
         council-site = pkgs.stdenvNoCC.mkDerivation {
           pname = "council-site";
-          version = "0.2.0";
+          version = "0.3.0";
 
           src = ./site;
 
@@ -36,6 +38,10 @@
             test -f $out/index.html
             test -f $out/un/index.html
             test -f $out/rules/index.html
+            test -f $out/archive/index.html
+            test -f $out/archive/docs/support.js
+            test -f $out/archive/docs/15_Foundations_FINAL.dc.html
+            test -f $out/archive/pdf/15_Foundations_FINAL.pdf
             test -f $out/css/main.css
             test -f $out/css/un.css
             test -f $out/js/council-config.js

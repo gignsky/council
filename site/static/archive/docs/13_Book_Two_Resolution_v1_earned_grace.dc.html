@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <!-- masthead -->
+  <div style="background:#1b3140;color:#eee3c9;padding:40px 56px 34px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">COUNCIL · A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:12px 0 6px;color:#f3ead1;position:relative">THE RESOLUTION CORE</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE SECOND</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:14px;position:relative">how the game decides a thing when there is no die to throw</div>
+  </div>
+
+  <div style="padding:44px 56px 52px;display:flex;flex-direction:column;gap:38px">
+
+    <div style="font-size:16.5px;line-height:1.8;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:18px">A die answered a question the table could not: <i>did it work, and what do you learn?</i> Council answers the same question, but the coin it spends is not chance. It is grace — effort, honesty, and a willingness to pay. This book is the whole of that exchange.</div>
+
+    <!-- 1.1 GRACE BUYS CLARITY -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 1.1 &nbsp;GRACE BUYS CLARITY</div>
+      <div style="font-size:16.5px;line-height:1.8">The single stance that stands where the roll once stood: <b>a thing is learned in proportion to the grace with which it is sought.</b> Grace is not politeness. Grace is the sum of three plain things —</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px"><div style="font-size:17px">Effort tried</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:4px">You attempted it yourself first, and can say what you tried.</div></div>
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px"><div style="font-size:17px">Truth risked</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:4px">You are willing to spend something of your own for the answer.</div></div>
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px"><div style="font-size:17px">Fiction honoured</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:4px">The asking fits the wake — it makes sense that this could be known here, now.</div></div>
+      </div>
+      <div style="font-size:16.5px;line-height:1.8">Ask with much grace and the answer is <b>plain</b>. Ask with little — barging, empty-handed, out of the wake — and the answer is a <b>riddle, true but veiled</b>. The keeper never refuses an answer for lack of grace; the keeper only lowers its clarity. <b>The table weighs grace together</b>, not the keeper alone, so that no one soul is judge of another's effort.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:16px;font-style:italic;color:#3a3428;line-height:1.6">The question is never "do you succeed?" It is "what did you bring, and how plainly may I answer?"</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.2 THE ROADS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 1.2 &nbsp;THE ROADS TO AN ANSWER</div>
+      <div style="font-size:16.5px;line-height:1.8">Insight is not bought at one counter. Four roads lead to the same sealed clue; each sets its own <b>price</b> and its own <b>speed</b>, never the answer's contents.</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">The Water</div><div style="flex:1;font-size:14px;line-height:1.55">Seek Landis and pay his price (§1.4). Fast, dear, and always true. The road of last resort and first temptation.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">Honest search</div><div style="flex:1;font-size:14px;line-height:1.55">Look in the fiction — dig, read, question, pry. Grace paid in effort and scene-time; the cheapest road, if the wake affords it.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">A Work</div><div style="flex:1;font-size:14px;line-height:1.55">Declare research as a Work and let the Tide carry it (Book the Third). The slow road — free of truth and trouble, priced only in watches.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">A letter</div><div style="flex:1;font-size:14px;line-height:1.55">Ask one who is absent but would know. Plain and free — but slow as the post, and read by whoever carries it.</div></div>
+      </div>
+      <div style="font-size:15px;line-height:1.7;background:#14212b;color:#eee3c9;padding:14px 18px"><b style="color:#9ab7c9">The rule that binds them:</b> whatever the road, it opens <b>the next Seal in order</b> — never a later one, never two at once. A road decides how dearly and how fast you pay; the Seals decide what you get.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.3 THE SEALS -->
+    <section style="display:flex;flex-direction:column;gap:16px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 1.3 &nbsp;THE SEALS — THE HEART OF THE GAME</div>
+      <div style="font-size:16.5px;line-height:1.8">Here is Council's answer to its own founding question. <b>Before play, for any obstacle worth being stuck on, the keeper writes three clues and seals them.</b> They are set upon the table face-down, visible, in order. The players see that help exists and costs something — and that alone is half the machine already turning. No clue is ever improvised under pressure; no obstacle is ever truly unwinnable.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">SEAL THE FIRST</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Nudge</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">A single honest word or image. Enough to turn a head the right way, no more.</div></div></div>
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">SEAL THE SECOND</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Bearing</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">What to do next — never why it works. A heading to steer by, not the chart.</div></div></div>
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">SEAL THE THIRD</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Answer</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">The solution, stated plain as porridge. The last card, and the one no one should need.</div></div></div>
+      </div>
+      <div style="font-size:15.5px;line-height:1.75">Each road of §1.2 opens the next seal along. A player barging to the Water for the Answer pays the Answer's price; a crew that reads the room and digs may earn the Nudge for nothing but a scene. The clue is fixed either way — only the toll changes.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.4 THE PRICE -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 1.4 &nbsp;THE PRICE AT THE WATER</div>
+      <div style="font-size:16.5px;line-height:1.8">The Water is the dearest road because its coin is the self. Landis's prices climb with each answer of a single visit and reset when you leave the water. Every answer he gives is true — water carries no lie.</div>
+      <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:96px;font-size:11px;font-weight:700;color:#a8823f">FIRST</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A truth.</b> Reveal a secret, or commit a new fact about yourself, aloud. It is canon the moment it is said.</div></div>
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:96px;font-size:11px;font-weight:700;color:#a8823f">SECOND</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A complication.</b> The answer is true and arrives lashed to a fresh trouble of the keeper's making.</div></div>
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:96px;font-size:11px;font-weight:700;color:#a8823f">THIRD</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>The madness bleeds.</b> You glimpse a thing the keeper knows that you should not. You must act upon it, and cannot say why.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:96px;font-size:11px;font-weight:700;color:#8a7c56">ALWAYS</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A scene.</b> To sit with Landis costs time; the wake moves on while you do. This toll is paid on every visit, atop the rest.</div></div>
+      </div>
+      <div style="font-size:14.5px;line-height:1.7;font-style:italic;color:#3a3428">The player-facing forms of this exchange — the Grace Book and the Bill of Fare — are Landis's own two handouts, and are bound at the back of this handbook for the table to keep.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.5 SAFETY RAILS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 1.5 &nbsp;THE TWO RAILS</div>
+      <div style="font-size:16.5px;line-height:1.8">Two rules keep the game safe to hand to strangers — one that rewards the clever, one that saves the stuck.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#14212b;color:#eee3c9;padding:18px 20px;border-top:3px solid #a8823f"><div class="mono" style="font-size:11px;letter-spacing:2px;color:#9ab7c9;margin-bottom:7px">BANKED GRACE</div><div style="font-size:14.5px;line-height:1.65">Solve an obstacle while seals still lie closed, and each unopened seal becomes a <b>grace</b> — one free, graceful asking, kept for a later day. Cleverness is never wasted; it is saved.</div></div>
+        <div style="background:#14212b;color:#eee3c9;padding:18px 20px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:11px;letter-spacing:2px;color:#9ab7c9;margin-bottom:7px">THE MERCY CLAUSE</div><div style="font-size:14.5px;line-height:1.65">If every seal lies open and the table is still aground, the Answer is simply true and the story sails on. <b>Nothing in Council may sink the ship.</b></div></div>
+      </div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:16px;font-style:italic;color:#3a3428;line-height:1.6">The Seals are not a cage for the story. They are a promise that no one drowns in a riddle.</div>
+    </section>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE SECOND</span><span>NEXT — BOOK THE THIRD: WORKS &amp; THE TIDE</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

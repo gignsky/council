@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} — Council{% endblock title %}
+
+{% block head_extra %}
+{% if section.description %}<meta name="description" content="{{ section.description }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
+{% endblock head_extra %}
+
+{% block body %}
+  {% set archive = load_data(path="data/archive.toml") %}
+  <div class="book-wrap">
+    <div class="book-kicker"><a href="{{ get_url(path='@/_index.md') }}">COUNCIL</a> · THE ARCHIVE</div>
+    <h1 class="book-title">{{ section.title }}</h1>
+    <hr class="book-rule">
+    <div class="book-body">
+      {{ section.content | safe }}
+    </div>
+
+    {% for era in archive.era %}
+    <section class="arc-era">
+      <div class="arc-era-head"><span class="arc-era-num">{{ era.key }}</span> {{ era.name }}</div>
+      <p class="arc-era-blurb">{{ era.blurb }}</p>
+      <ul class="arc-list">
+        {% for doc in era.doc %}
+        <li class="arc-item">
+          <div class="arc-item-main">
+            <div class="arc-item-title">
+              {{ doc.title }}
+              {% if doc.tag %}<span class="arc-tag">{{ doc.tag }}</span>{% endif %}
+            </div>
+            <div class="arc-item-desc">{{ doc.desc }}</div>
+          </div>
+          <div class="arc-links">
+            <a class="arc-link" href="{{ get_url(path='archive/docs/' ~ doc.html) }}">READ</a>
+            {% if doc.pdf %}<a class="arc-link arc-link-alt" href="{{ get_url(path='archive/pdf/' ~ doc.pdf) }}">PDF</a>{% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+
+    <div class="book-note">THE COUNCIL OF UN CAMPAIGN IS KEPT SEPARATE — IT IS NOT HELD IN THIS ARCHIVE</div>
+    <div class="book-foot"><a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a></div>
+  </div>
+{% endblock body %}
