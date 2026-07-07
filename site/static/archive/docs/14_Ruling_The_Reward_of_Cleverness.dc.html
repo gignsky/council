@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',Georgia,serif;color:#eee3c9}
+a{color:#7fb0c8;text-decoration:none}a:hover{color:#a8823f}
+.mono{font-family:'Courier Prime',monospace}
+.oid{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;padding:3px 8px;background:rgba(168,130,63,.18);color:#e0b45c;border:1px solid #6b5a30;border-radius:4px}
+.opt:target .oid{background:#a8823f;color:#16242e}
+.diamond{flex:none;width:8px;height:8px;background:#a8823f;transform:rotate(45deg)}
+</style>
+</helmet>
+
+<div style="padding:44px 40px 72px;display:flex;flex-direction:column;gap:28px">
+
+  <!-- heading -->
+  <div style="display:flex;flex-direction:column;gap:12px;max-width:1180px">
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <span class="oid">RULING</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK TWO &middot; \u00a7 2.6 &middot; DECIDE FOR ME NOT ALONE</span>
+    </div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:38px;line-height:1.02;color:#f3ead1">The Reward of Cleverness</div>
+    <div style="font-size:17px;line-height:1.7;font-style:italic;color:#c9bda0;max-width:840px">When a crew solves an obstacle wholly on its own &mdash; seals unbroken, no price paid, no grace needed &mdash; what, if anything, does the game give back? Three roads below. Each shows the exact prose it would set into \u00a7 2.6. Tell me which by its tag (say &ldquo;go with <b style="color:#e0b45c">1b</b>&rdquo;), or ask me to blend them.</div>
+  </div>
+
+  <!-- three options -->
+  <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start">
+
+    <!-- 1a -->
+    <div class="opt" id="1a" style="flex:1;min-width:340px;max-width:380px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:20px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="oid" href="#1a">1a</a>
+        <span style="font-size:14px;color:#c9bda0">Inclines grace &mdash; <b style="color:#e0b45c">current text</b></span>
+      </div>
+      <div style="background:#efe6cf;color:#23201a;border:1px solid #b9ab86;box-shadow:0 4px 18px rgba(0,0,0,.35);display:flex;flex-direction:column">
+        <div style="background:#1b3140;color:#eee3c9;padding:12px 18px" class="mono">
+          <div style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">\u00a7 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+        </div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;line-height:1.72">Sometimes a crew solves a thing wholly on its own &mdash; seals unbroken, no price paid, no grace needed. This is never wasted, but neither is it a coin to be hoarded. A crew that strives and succeeds by its own wit is simply <b>remembered</b>: the maker, having watched them try, is the readier to give in the days ahead. Cleverness does not fill a purse. It <b>inclines grace</b> &mdash; banked, if anywhere, in the keeper's regard: untallied, unspendable, and worth more than any token for exactly that reason.</div>
+          <div style="border-left:3px solid #2f6d8a;padding:4px 0 4px 16px;font-size:14.5px;font-style:italic;color:#3a3428;line-height:1.5">The clever are not owed. They are favoured &mdash; which lasts longer.</div>
+        </div>
+      </div>
+      <div style="background:#14212b;border:1px solid #2a3d49;padding:13px 16px;display:flex;flex-direction:column;gap:6px">
+        <div class="mono" style="font-size:10px;letter-spacing:2px;color:#7fb0c8">WHAT IT DOES</div>
+        <div style="font-size:13px;line-height:1.6;color:#c9bda0">No token, no tally. Purest to the ethos &mdash; grace stays free and uncompelled. Cost: the reward is invisible, so players may not feel it landing.</div>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="opt" id="1b" style="flex:1;min-width:340px;max-width:380px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:20px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="oid" href="#1b">1b</a>
+        <span style="font-size:14px;color:#c9bda0">The Boon &mdash; a counted token</span>
+      </div>
+      <div style="background:#efe6cf;color:#23201a;border:1px solid #b9ab86;box-shadow:0 4px 18px rgba(0,0,0,.35);display:flex;flex-direction:column">
+        <div style="background:#1b3140;color:#eee3c9;padding:12px 18px" class="mono">
+          <div style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">\u00a7 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+        </div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;line-height:1.72">Sometimes a crew solves a thing wholly on its own &mdash; seals unbroken, no price paid, no grace needed. Such wit earns a <b>Boon</b>: one free asking, set aside and held. A Boon opens the next Seal of any obstacle at no price and no wait, spent whenever the crew declares it. It is <b>counted openly</b>, like a watch &mdash; a crew always knows how many it holds &mdash; and a crew may hold no more than three at once, lest the purse grow fat and the game go slack.</div>
+          <div style="border-left:3px solid #2f6d8a;padding:4px 0 4px 16px;font-size:14.5px;font-style:italic;color:#3a3428;line-height:1.5">What you earned by wit, you may spend at will. Grace you still may not.</div>
+        </div>
+      </div>
+      <div style="background:#14212b;border:1px solid #2a3d49;padding:13px 16px;display:flex;flex-direction:column;gap:6px">
+        <div class="mono" style="font-size:10px;letter-spacing:2px;color:#7fb0c8">WHAT IT DOES</div>
+        <div style="font-size:13px;line-height:1.6;color:#c9bda0">A real, spendable currency &mdash; tangible, motivating, playable. Cost: adds bookkeeping and draws a hard line between earned "boons" and free grace, which slightly hardens the soft heart of the system.</div>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="opt" id="1c" style="flex:1;min-width:340px;max-width:380px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:20px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="oid" href="#1c">1c</a>
+        <span style="font-size:14px;color:#c9bda0">Cut it &mdash; virtue is its own reward</span>
+      </div>
+      <div style="background:#efe6cf;color:#23201a;border:1px solid #b9ab86;box-shadow:0 4px 18px rgba(0,0,0,.35);display:flex;flex-direction:column">
+        <div style="background:#1b3140;color:#eee3c9;padding:12px 18px" class="mono">
+          <div style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">\u00a7 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+        </div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;line-height:1.72">Sometimes a crew solves a thing wholly on its own &mdash; seals unbroken, no price paid, no grace needed. The game keeps <b>no further account of it</b>, and means to. The reward of cleverness is the thing itself: a truth won clean, a self unspent, a Seal left sealed for a darker hour. A crew that needed no clue has already been paid &mdash; in the pride of it, and in the coin they did <i>not</i> have to give. Council adds nothing on top, because there is nothing it could add that would be worth as much.</div>
+          <div style="border-left:3px solid #2f6d8a;padding:4px 0 4px 16px;font-size:14.5px;font-style:italic;color:#3a3428;line-height:1.5">The clever kept their price in their pocket. That was the prize.</div>
+        </div>
+      </div>
+      <div style="background:#14212b;border:1px solid #2a3d49;padding:13px 16px;display:flex;flex-direction:column;gap:6px">
+        <div class="mono" style="font-size:10px;letter-spacing:2px;color:#7fb0c8">WHAT IT DOES</div>
+        <div style="font-size:13px;line-height:1.6;color:#c9bda0">Simplest &mdash; no mechanic at all, one fewer thing to teach. Cost: some players want a felt reward for a clean solve; this gives none beyond the fiction.</div>
+      </div>
+    </div>
+
+    <!-- 1d -->
+    <div class="opt" id="1d" style="flex:1;min-width:340px;max-width:380px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:20px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="oid" href="#1d">1d</a>
+        <span style="font-size:14px;color:#c9bda0">A Due from the Water &mdash; <b style="color:#e0b45c">your old mission-clear rule, revived</b></span>
+      </div>
+      <div style="background:#efe6cf;color:#23201a;border:1px solid #b9ab86;box-shadow:0 4px 18px rgba(0,0,0,.35);display:flex;flex-direction:column">
+        <div style="background:#1b3140;color:#eee3c9;padding:12px 18px" class="mono">
+          <div style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">\u00a7 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+        </div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;line-height:1.72">Sometimes a crew closes out a whole labour &mdash; a Work, a mission, an obstacle worth being stuck on &mdash; with its Seals never broken: no price paid, no grace needed. Each Seal left closed is banked not as a free asking anywhere, but as a <b>due at the Water</b>: the next time the crew comes to Landis, that many of his usual prices are simply <b>waived</b>, and he throws in something past the ordinary menu besides &mdash; a thing he judges cool enough for the doing, never named in advance. It is spent only there, only with him, and it does not linger forever unspent.</div>
+          <div style="border-left:3px solid #2f6d8a;padding:4px 0 4px 16px;font-size:14.5px;font-style:italic;color:#3a3428;line-height:1.5">Solve it yourself, and the madman remembers you the next time you're wet.</div>
+        </div>
+      </div>
+      <div style="background:#14212b;border:1px solid #2a3d49;padding:13px 16px;display:flex;flex-direction:column;gap:6px">
+        <div class="mono" style="font-size:10px;letter-spacing:2px;color:#7fb0c8">WHAT IT DOES</div>
+        <div style="font-size:13px;line-height:1.6;color:#c9bda0">Keeps the reward concrete and felt (a real perk at the Water) without becoming a generic spendable currency everywhere else. Ties cleverness back to the game's one fixed character, which 1b's "Boon" didn't. Needs a real name besides "a due" &mdash; open question.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;max-width:1180px;margin-top:4px">
+    <span class="diamond"></span>
+    <div style="font-size:13.5px;line-height:1.6;color:#9ab7c9;font-style:italic">My lean, updated: <b style="color:#e0b45c">1d</b> is the closest to what you actually ran before and remembered fondly &mdash; concrete, Landis-flavored, and still untallied everywhere else. It just wants a name. Candidates: <b style="color:#e0b45c">a Due</b>, <b style="color:#e0b45c">a Debt</b>, <b style="color:#e0b45c">Owed Water</b>, <b style="color:#e0b45c">Slack</b> (as in cut him some) &mdash; or your own word.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

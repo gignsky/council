@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <!-- masthead -->
+  <div style="background:#1b3140;color:#eee3c9;padding:40px 56px 34px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">COUNCIL · A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:12px 0 6px;color:#f3ead1;position:relative">THE RESOLUTION CORE</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE SECOND</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:14px;position:relative">how the game answers, when there is no die to throw</div>
+  </div>
+
+  <div style="padding:44px 56px 52px;display:flex;flex-direction:column;gap:36px">
+
+    <div style="font-size:16.5px;line-height:1.8;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:18px">A die answered a question the table could not: <i>what is true, and what do you learn?</i> Council keeps the question and throws away the die. In its place stand two hands — one that takes, and one that gives. Learn these two and you have learned the game.</div>
+
+    <!-- 1.1 THE TWO ANSWERS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.1 &nbsp;THE TWO ANSWERS</div>
+      <div style="font-size:16.5px;line-height:1.8">When a scene raises a need the table cannot simply declare true, the world answers in one of two ways, and only two. An answer is either <b>seized</b> — bought with something of your own — or it is <b>given</b>, freely, by the hand that made this world. The first is <b>price</b>. The second is <b>grace</b>. Everything else in this book is these two, and the clues they both reach for.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#14212b;color:#eee3c9;padding:18px 20px;border-top:4px solid #a8823f"><div style="font-size:22px;color:#f3ead1;margin-bottom:6px">Price</div><div style="font-size:14px;line-height:1.6">You pay, and you may demand. It costs the self and is always true.</div></div>
+        <div style="background:#1b3140;color:#eee3c9;padding:18px 20px;border-top:4px solid #2f6d8a"><div style="font-size:22px;color:#f3ead1;margin-bottom:6px">Grace</div><div style="font-size:14px;line-height:1.6">You are given, and may not demand. It costs you nothing and cannot be earned.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.2 GRACE -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.2 &nbsp;GRACE — THE GIVEN ANSWER</div>
+      <div style="font-size:16.5px;line-height:1.8">The keeper is the god of this small creation — not a tyrant, but a maker, who set its laws and largely lets them run. <b>Grace is the maker's one free hand:</b> the single thing in the game not bound by the world's own rules. An answer given as grace is unearned and unpriced — a truth set gently in a player's lap because they are stuck, and trying, and the story loves them.</div>
+      <div style="font-size:16.5px;line-height:1.8">Grace <b>cannot be bought, banked, or demanded.</b> A good-faith struggle <i>invites</i> it, and hope draws it near — but nothing compels it, for a grace that could be compelled would be only a wage. It may fall on the crew who tried hardest; it may fall, just as well, on the one who tried least and needed it most. It falls where it will.</div>
+      <div style="font-size:16.5px;line-height:1.8">Grace is <b>not counted.</b> There is no pool, no token, no tally at the table's edge. It is a posture of the keeper, not a currency of the players — and it has exactly one law that binds it: <b>mercy</b>. If a crew is truly aground, grace comes, because the maker will not let the story drown. Everything else about grace is free; only its mercy is a promise.</div>
+      <div style="font-size:16.5px;line-height:1.8">And grace comes <b>quietly</b>. It is a nudge slid across the table, unremarked — a detail noticed, a stranger who volunteers a word, a door found already ajar. The keeper need not announce it, and mostly should not. The crew will feel they were lucky. Let them.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:17px;font-style:italic;color:#3a3428;line-height:1.6">Grace is not the keeper being kind against the rules. It is the one rule that kindness was allowed to keep.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.3 PRICE -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.3 &nbsp;PRICE — THE SEIZED ANSWER</div>
+      <div style="font-size:16.5px;line-height:1.8">Where grace is given, price is <b>taken</b> — by you, from you. When you will not wait on grace, when you must know a thing now and are willing to bleed for it, you may seize the answer and pay in the only coin the game accepts: something of your own self. Price is the player's to demand, and the keeper may never refuse it — only name its cost.</div>
+      <div style="font-size:16.5px;line-height:1.8">The dearest altar of price is <b>the Water</b> — Landis, real only in water, who trades true answers for pieces of the one who asks. But mark this well: <b>the Water is a rare road, not a daily one.</b> A crew may sail whole seasons without seeking it, and should. It is the coin you spend when every cheaper road is shut and grace has not come. When you do go down to the water, the price climbs with each answer of a single visit:</div>
+      <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:88px;font-size:11px;font-weight:700;color:#a8823f">FIRST</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A truth.</b> Confess a secret, or commit a new fact about yourself, aloud. It is canon the moment it is spoken.</div></div>
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:88px;font-size:11px;font-weight:700;color:#a8823f">SECOND</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A trouble.</b> The answer is true, and arrives lashed to a fresh complication of the keeper's making.</div></div>
+        <div style="display:flex;gap:14px;background:#efe6cf;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:88px;font-size:11px;font-weight:700;color:#a8823f">THIRD</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>The madness bleeds.</b> You glimpse a thing the keeper knows and you should not. You must act on it, and cannot say why.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;padding:12px 16px;align-items:baseline"><div class="mono" style="flex:none;width:88px;font-size:11px;font-weight:700;color:#8a7c56">ALWAYS</div><div style="flex:1;font-size:14.5px;line-height:1.55"><b>A scene.</b> To sit with Landis costs time; the weave moves on while you do. Paid on every visit, atop the rest.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.4 THE SEALS -->
+    <section style="display:flex;flex-direction:column;gap:16px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.4 &nbsp;THE SEALS — WHAT BOTH HANDS REACH FOR</div>
+      <div style="font-size:16.5px;line-height:1.8">Price and grace do not invent their answers on the spot. They reach for the same thing: a clue the keeper wrote before play and sealed. <b>Behind any obstacle worth being stuck on lie three clues,</b> set face-down on the table, in order — so the crew can see that help exists and costs something, which is half the machine already turning.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">THE FIRST</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Nudge</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">A single honest word or image. Enough to turn a head the right way, no more.</div></div></div>
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">THE SECOND</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Bearing</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">What to do next — never why it works. A heading to steer by, not the chart.</div></div></div>
+        <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:10px;letter-spacing:2px;padding:6px 12px">THE THIRD</div><div style="padding:14px 16px"><div style="font-size:19px;color:#1b3140">The Answer</div><div style="font-size:13.5px;line-height:1.55;color:#3a3428;margin-top:5px">The solution, plain as porridge. The last card, and the one no one should need.</div></div></div>
+      </div>
+      <div style="font-size:15.5px;line-height:1.75">They open <b>in order</b>, one at a time. Price opens the next by paying for it. Grace opens the next by giving it — most often the Nudge, slid over for nothing. Either way the clue is fixed; only the manner of its coming changes.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 1.5 THE ROADS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.5 &nbsp;THE ROADS TO A CLUE</div>
+      <div style="font-size:16.5px;line-height:1.8">A crew that means to pay has more than one road to the next seal — and the Water, being dearest, is the one they should walk least. In rough order of cheapness:</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">Honest search</div><div style="flex:1;font-size:14px;line-height:1.55">Look in the world — dig, read, question, pry. Paid in effort and a scene's time. The first road to try, and the one grace loves best to reward.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">A Work</div><div style="flex:1;font-size:14px;line-height:1.55">Set the question as a labour and let the Tide carry it (Book the Third). Slow, but free of truth and trouble — priced only in watches.</div></div>
+        <div style="display:flex;gap:14px;background:#e5dabe;border:1px solid #c2b590;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#1b3140">A letter</div><div style="flex:1;font-size:14px;line-height:1.55">Ask one who is absent but would know. Plain and free — but slow as the post, and read by whoever carries it.</div></div>
+        <div style="display:flex;gap:14px;background:#efe0c8;border:1px solid #c2a878;padding:13px 16px"><div style="flex:none;width:120px;font-size:16px;color:#7a3a1a">The Water</div><div style="flex:1;font-size:14px;line-height:1.55">Landis, and his climbing price (§2.3). Fast, dear, and always true — the road of last resort and first temptation. Walk it least.</div></div>
+      </div>
+      <div style="font-size:15px;line-height:1.7;background:#14212b;color:#eee3c9;padding:14px 18px"><b style="color:#9ab7c9">The rule that binds every road:</b> whichever you walk, it opens <b>the next Seal in order</b> — never a later one, never two at once. A road sets only how dearly and how fast you pay. And grace may still, at any hour, give freely what no road would sell.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 2.6 THE REWARD OF CLEVERNESS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+      <div style="font-size:16.5px;line-height:1.8">Sometimes a crew closes out a whole labour — a Work, a mission, an obstacle worth being stuck on — with its Seals never broken: no price paid, no grace needed. Each Seal left closed is banked as <b>Slack</b>: a due at the Water. The next time the crew comes to Landis, that much of his usual price is simply <b>waived</b> — one price forgiven for every Seal they earned — and he throws in something past the ordinary menu besides, a thing he judges cool enough for the doing, never named in advance. Slack is spent only there, only with him, and does not linger forever unspent.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:16px;font-style:italic;color:#3a3428;line-height:1.6">Solve it yourself, and the madman remembers you the next time you're wet.</div>
+    </section>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE SECOND</span><span>NEXT — BOOK THE THIRD: WORKS &amp; THE TIDE</span>
+    </div>
+
+  </div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

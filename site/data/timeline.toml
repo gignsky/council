@@ -1,0 +1,84 @@
+# The work timeline shown on the landing page. This file IS what the site
+# renders (via load_data in templates/index.html). It is the committed mirror of
+# the GitHub Issues tracker: issues labelled `timeline` are the source; this file
+# is regenerated from them (ask Claude to "sync the timeline", or run the sync).
+#
+# status: "done" | "active" | "planned"
+# `when` is a free display label (a month, a date, "Now", "Next", "Later").
+# `link.url` is a site-relative path passed through get_url (e.g. "archive/").
+# Order top-to-bottom is oldest-to-newest; keep it chronological.
+
+[[milestone]]
+when = "Jun 2026"
+title = "The insight engine"
+status = "done"
+summary = "The first question — what a table loses when it sets down the dice — is answered in the Silver Surfer papers: every answer comes seized at a price, or given as grace."
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
+when = "Jul 2026"
+title = "Council becomes a system"
+status = "done"
+summary = "The design plan turns a table's habit into a portable game. Early 'earned-grace' drafts are tried and set aside; the reward of cleverness is settled as 'Slack.'"
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
+when = "Jul 2026"
+title = "The five Books settled"
+status = "done"
+summary = "Foundations and Books Two through Five, plus the Quick Guide, reach their current form. The default table is set narrow; the fiction is named 'the weave.'"
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
+when = "Jul 2026"
+title = "The Handbook, bound"
+status = "done"
+summary = "The five Books are packaged for reading — a browsable hub for the screen, and a continuous edition built for print and the reMarkable."
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
+when = "Jul 6"
+title = "Onto the domain"
+status = "done"
+summary = "fuckinphilosophers.com goes live — a Nix-built site published to GitHub Pages, with the landing page as its first face."
+
+[[milestone]]
+when = "Jul 7"
+title = "The site takes shape"
+status = "done"
+summary = "The site is rebuilt on Zola: the landing, the Handbook workspace, and the Council of Un corner are each framed in and ready to grow."
+
+[[milestone]]
+when = "Now"
+title = "Revising the Handbook"
+status = "active"
+summary = "Working the five Books toward their finished, settled form — the text that will become the public Handbook."
+  [[milestone.link]]
+  label = "The Handbook"
+  url = "rules/"
+
+[[milestone]]
+when = "Next"
+title = "Publish the finished rules"
+status = "planned"
+summary = "The revised Handbook lands in its own section, a chapter at a time, as each is settled and ready to read."
+  [[milestone.link]]
+  label = "The Handbook"
+  url = "rules/"
+
+[[milestone]]
+when = "Later"
+title = "Council of Un — table tools"
+status = "planned"
+summary = "Interactive tools for the campaign corner, on their own track and kept separate from the system itself."
+  [[milestone.link]]
+  label = "Council of Un"
+  url = "un/"

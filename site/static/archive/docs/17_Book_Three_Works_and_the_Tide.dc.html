@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <div style="background:#1b3140;color:#eee3c9;padding:40px 56px 34px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">COUNCIL · A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:12px 0 6px;color:#f3ead1;position:relative">WORKS &amp; THE TIDE</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE THIRD</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:14px;position:relative">how the world keeps moving while the table sleeps</div>
+  </div>
+
+  <div style="padding:44px 56px 52px;display:flex;flex-direction:column;gap:36px">
+
+    <div style="font-size:16.5px;line-height:1.8;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:18px">A scene is what the crew does with their hands. A Work is what they set in motion and must then wait upon. Everything in this book is bought with the one coin the game keeps honest for everyone at once — <b>time</b>.</div>
+
+    <!-- 3.1 -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.1 &nbsp;DECLARING A WORK</div>
+      <div style="font-size:16.5px;line-height:1.8">A Work is any labour too large for a single scene — a bomb built, a treaty struck, a ruin excavated, a wound healed. It is written on a card the whole table can see, and it carries three lines and no more:</div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-left:6px;font-size:15.5px;line-height:1.6">
+        <div><b>◦ THE AIM</b> — the plain thing wanted, stated so plainly that its finishing cannot be argued.</div>
+        <div><b>◦ THE HANDS</b> — who does it: a person, a department, a people.</div>
+        <div><b>◦ THE STAKES</b> — what is pledged from the Ledger to make it possible (§3.3).</div>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.2 -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.2 &nbsp;THE TIDE — WATCHES</div>
+      <div style="font-size:16.5px;line-height:1.8">Time in Council comes in like a tide, on its own, needing no one's permission. <b>Every session, every open Work advances one watch</b> — whether the crew touched it or not, whether they were even in the same corner of the world. Spend a whole scene labouring at a Work, and it takes <b>one watch more</b>. The counts are public; a crew always knows how close a thing stands to done.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:13.5px">
+        <div style="padding:12px 14px;border-right:1px solid #c2b590"><b>SMALL WORK</b><br><span style="color:#5a5648">1 watch — a message sent, a door mended</span></div>
+        <div style="padding:12px 14px;border-right:1px solid #c2b590"><b>A WORK</b><br><span style="color:#5a5648">3 watches — a treaty, a machine, a search</span></div>
+        <div style="padding:12px 14px"><b>GREAT WORK</b><br><span style="color:#5a5648">5 watches — a thing that changes the world</span></div>
+      </div>
+      <div style="font-size:15px;line-height:1.7;font-style:italic;color:#3a3428">The tide is the game's honesty. It moves the villain's schemes at the same rate it moves yours, and it never forgets a thing left half-done.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.3 -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.3 &nbsp;THE LEDGER — STAKES</div>
+      <div style="font-size:16.5px;line-height:1.8">A Work spends more than time; it spends the crew's finite holdings, pledged in the Ledger under three headings. What each is <i>made of</i> is the world's to decide — but the three shapes hold in every Council game:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:13.5px">
+        <div style="padding:12px 14px;border-right:1px solid #c2b590"><b>HANDS</b><br><span style="color:#5a5648">people &amp; their labour</span></div>
+        <div style="padding:12px 14px;border-right:1px solid #c2b590"><b>POWER</b><br><span style="color:#5a5648">resources, engines, the means</span></div>
+        <div style="padding:12px 14px"><b>STANDING</b><br><span style="color:#5a5648">goodwill with named peoples</span></div>
+      </div>
+      <div style="font-size:16.5px;line-height:1.8">Two laws bind the Ledger, and they are the whole of its strategy. <b>A stake cannot be pledged twice</b> — ambition must wait its turn, and so a crew is forced to choose what matters most this season. And <b>to wound a pledged stake is to stall everything pledged to it</b>: hurt one trusted hand, and every Work that leaned on them stops breathing at once. This is how a single blow lands everywhere.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.4 -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.4 &nbsp;SQUALLS</div>
+      <div style="font-size:16.5px;line-height:1.8">Every Great Work is declared with <b>one sealed complication</b> — its squall — written by the keeper and set face-down beside the card. It breaks at the <b>halfway watch</b>, or sooner if the weave calls for it. The crew always knew a storm was priced into so large an ambition; they simply did not know its shape until the sky changed.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.5 -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.5 &nbsp;FORCING A WORK</div>
+      <div style="font-size:16.5px;line-height:1.8">Once per session, a crew may drive a single Work <b>one extra watch</b> by paying, then and there, one of two coins:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:14.5px;line-height:1.6"><b>A TRUTH</b> — confessed aloud, and canon the instant it is spoken.</div>
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:14.5px;line-height:1.6"><b>A FAVOR OWED</b> — sealed, and called due whenever the keeper pleases.</div>
+      </div>
+      <div style="font-size:16.5px;line-height:1.8">Note the mark of haste: <b>a forced Work always delivers its squall.</b> To hurry a great thing is to tear open the sealed envelope early, and read the storm before you were ready for it.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.6 -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.6 &nbsp;COMPLETION &amp; WORK ORDERS</div>
+      <div style="font-size:16.5px;line-height:1.8">A finished Work stops being a card and becomes a <b>plain fact of the world</b> — no longer counted, simply true from now on. And between sessions the crew need not fall silent: they may send <b>Work Orders</b> — written instructions to the hands who do the labour — and the keeper answers them in those hands' own voices when next the table sits. The world works on while you sleep, and writes you back.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 3.7 DIVINE WORK -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 3.7 &nbsp;THE DIVINE WORK — THE GREAT TIER</div>
+      <div style="font-size:16.5px;line-height:1.8">Above the Great Work stands one tier more, reserved for the labours that span a whole telling — a war, a reckoning, the slow turning of an age. A <b>Divine Work</b> is not a card the crew declares; it is a weather the keeper sets moving beneath everything, and it breaks the ordinary rules on purpose:</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#14212b;color:#eee3c9;padding:14px 18px;font-size:14.5px;line-height:1.65"><b style="color:#9ab7c9">No fixed count.</b> A Divine Work has no watch-total set at its declaring, and shows the crew no countdown. They feel its weight before they can name its length — and that dread is the point.</div>
+        <div style="background:#14212b;color:#eee3c9;padding:14px 18px;font-size:14.5px;line-height:1.65"><b style="color:#9ab7c9">Many squalls, not one.</b> It carries several sealed complications — call them <b>beats</b> — opened one at a time as the arc turns, each its own small storm, never all at once.</div>
+        <div style="background:#14212b;color:#eee3c9;padding:14px 18px;font-size:14.5px;line-height:1.65"><b style="color:#9ab7c9">A beat may rewrite the card.</b> Where a common squall merely complicates a fixed aim, a Divine beat can <b>change the Work itself</b> — recast its aim, add a stake, release another — for a thing this large does not sit still to be solved.</div>
+        <div style="background:#14212b;color:#eee3c9;padding:14px 18px;font-size:14.5px;line-height:1.65"><b style="color:#9ab7c9">Stakes bind and loose over time.</b> As the arc pulls on department after department, Hands and Standing <b>attach and detach</b> across its length — a Work released from one beat may be pinned anew by the next. The Ledger breathes with the storm.</div>
+      </div>
+      <div style="font-size:16.5px;line-height:1.8">A Divine Work ends not on a watch but on a <b>turning</b> — the beat where its last sealed storm is spent and the world settles into whatever the crew made of it. Even here the one law holds: <b>mercy</b>. However dark the arc, it must remain a thing a hopeful crew could yet come through.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- house style -->
+    <div style="background:#e5dabe;border:1px solid #c2b590;padding:18px 22px;display:flex;flex-direction:column;gap:8px">
+      <div class="mono" style="font-size:11px;letter-spacing:2px;color:#8a7c56;font-weight:700">HOW A STORM SPEAKS — A STANDING HOUSE STYLE</div>
+      <div style="font-size:15px;line-height:1.7">Every squall, every beat, every hard turn is delivered as an <b>in-fiction report on the letterhead of whoever bore it</b> — a courier's field note, a healer's clinical page, a quartermaster's tally. Never an omniscient voice from the clouds. In Council, the bad news always arrives <i>signed</i>.</div>
+    </div>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE THIRD</span><span>NEXT — BOOK THE FOURTH: GOVERNANCE</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

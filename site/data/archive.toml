@@ -1,0 +1,135 @@
+# The Archive — the development record of the Council *system*, in the order it
+# was made. Rendered by site/templates/archive.html via Zola's load_data().
+#
+# The Atlantis "Council of Un" campaign layer is deliberately NOT catalogued here
+# (it is kept separate from the system per the 2026-07-07 ruling).
+#
+# To add a document: drop its files in site/static/archive/docs/ (the .dc.html,
+# which loads ./support.js) and site/static/archive/pdf/ (the .pdf), then add a
+# [[era.doc]] entry below. `pdf` and `tag` are optional.
+
+[[era]]
+key = "I"
+name = "The Silver Surfer Era"
+blurb = "The original insight engine — where the two ways of knowing (a price paid, or a grace given) were first drawn out."
+
+  [[era.doc]]
+  title = "Ruleset Options — the Design Canvas"
+  desc = "The opening exploration (options 1a–3b): the first pass at what a diceless game of insight could be."
+  html = "01_Ruleset_Options_Design_Canvas.dc.html"
+  pdf = "01_Ruleset_Options_Design_Canvas.pdf"
+
+  [[era.doc]]
+  title = "The Silver Surfer Papers"
+  desc = "The player-facing leaves — the Bill of Fare and the Grace Book — the seed of price and grace."
+  html = "02_Silver_Surfer_Papers.dc.html"
+  pdf = "02_Silver_Surfer_Papers.pdf"
+
+  [[era.doc]]
+  title = "The Keeper's Seals"
+  desc = "The keeper-only companion leaf: the Seals as a tool held behind the screen."
+  html = "03_Keepers_Seals.dc.html"
+  pdf = "03_Keepers_Seals.pdf"
+  tag = "KEEPER-ONLY"
+
+[[era]]
+key = "II"
+name = "The System Books"
+blurb = "Council becomes a portable system: the design plan, the drafts that were tried and set aside, and the five Books that stand as the current source of truth."
+
+  [[era.doc]]
+  title = "Council — Game Design Plan"
+  desc = "The plan that turned a table's habit into a system any crew could pick up."
+  html = "11_Council_Game_Design_Plan.dc.html"
+  pdf = "11_Council_Game_Design_Plan.pdf"
+
+  [[era.doc]]
+  title = "Foundations — v1 (earned grace)"
+  desc = "The first Foundations draft, on the abandoned 'earned-grace' economy."
+  html = "12_Foundations_v1_earned_grace.dc.html"
+  pdf = "12_Foundations_v1_earned_grace.pdf"
+  tag = "SUPERSEDED"
+
+  [[era.doc]]
+  title = "Book Two, Resolution — v1 (earned grace)"
+  desc = "The first Resolution draft, likewise on the earned-grace economy that was later dropped."
+  html = "13_Book_Two_Resolution_v1_earned_grace.dc.html"
+  pdf = "13_Book_Two_Resolution_v1_earned_grace.pdf"
+  tag = "SUPERSEDED"
+
+  [[era.doc]]
+  title = "Ruling — The Reward of Cleverness"
+  desc = "The four-option exploration that produced the 'Slack' ruling (now written into Book Two §2.6)."
+  html = "14_Ruling_The_Reward_of_Cleverness.dc.html"
+  pdf = "14_Ruling_The_Reward_of_Cleverness.pdf"
+  tag = "HISTORICAL"
+
+  [[era.doc]]
+  title = "Book the First — Foundations"
+  desc = "The whole of the game set down plain, that any hand aboard may read it."
+  html = "15_Foundations_FINAL.dc.html"
+  pdf = "15_Foundations_FINAL.pdf"
+
+  [[era.doc]]
+  title = "Book Two — Resolution"
+  desc = "Price, grace, and the Seals — how an answer comes, and what it costs. Carries the 'Slack' ruling."
+  html = "16_Book_Two_Resolution_FINAL.dc.html"
+  pdf = "16_Book_Two_Resolution_FINAL.pdf"
+
+  [[era.doc]]
+  title = "Book Three — Works & the Tide"
+  desc = "Works, Standing, and the Divine Work — the great tier that turns across whole campaigns."
+  html = "17_Book_Three_Works_and_the_Tide.dc.html"
+  pdf = "17_Book_Three_Works_and_the_Tide.pdf"
+
+  [[era.doc]]
+  title = "Book Four — Governance"
+  desc = "The seat of final say, and the narrow and wide table (narrow is the default)."
+  html = "18_Book_Four_Governance.dc.html"
+  pdf = "18_Book_Four_Governance.pdf"
+
+  [[era.doc]]
+  title = "Book Five — Teach & Ship"
+  desc = "Bringing a new hand aboard, and running the game at the table."
+  html = "19_Book_Five_Teach_and_Ship.dc.html"
+  pdf = "19_Book_Five_Teach_and_Ship.pdf"
+
+  [[era.doc]]
+  title = "How to Play — the Quick Guide"
+  desc = "The whole game in one sitting, for the hand who wants to start before reading it all."
+  html = "20_How_to_Play_Quick_Guide.dc.html"
+  pdf = "20_How_to_Play_Quick_Guide.pdf"
+
+[[era]]
+key = "III"
+name = "The Handbook"
+blurb = "The five Books, bound for reading — a browsable hub for the screen, and a continuous edition built for print and the reMarkable."
+
+  [[era.doc]]
+  title = "The Handbook — Web Hub"
+  desc = "The reader's entry point: cover, the whole game at a glance, every Book with its own table of contents, and the Eight Timbers glossary."
+  html = "21_The_Handbook_Web_Hub.dc.html"
+  pdf = "21_The_Handbook_Web_Hub.pdf"
+
+  [[era.doc]]
+  title = "The Handbook — Print Edition"
+  desc = "One continuous bound document (Letter, 0.75in margins) with a linked contents page — built for PDF export and reMarkable reading."
+  html = "22_The_Handbook_Print_Edition.dc.html"
+  pdf = "22_The_Handbook_Print_Edition.pdf"
+
+[[era]]
+key = "IV"
+name = "Site & Landing"
+blurb = "Getting Council onto fuckinphilosophers.com — the landing page and the letter that set up the domain."
+
+  [[era.doc]]
+  title = "Council — Landing Page"
+  desc = "The fuckinphilosophers.com landing (a still snapshot of the animated page; the stars hold their place on paper)."
+  html = "24_Council_Landing_Page.dc.html"
+  pdf = "23_Council_Landing_Page_Snapshot.pdf"
+
+  [[era.doc]]
+  title = "DNS Setup — A Letter from Landis"
+  desc = "The domain wiring, written in character as a letter from the water-bound keeper."
+  html = "25_DNS_Setup_Letter_from_Landis.dc.html"
+  pdf = "24_DNS_Setup_Letter_from_Landis.pdf"
