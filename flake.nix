@@ -35,6 +35,7 @@
             test -f $out/CNAME
             test -f $out/index.html
             test -f $out/un/index.html
+            test -f $out/rules/index.html
             test -f $out/css/main.css
             test -f $out/css/un.css
             test -f $out/js/council-config.js

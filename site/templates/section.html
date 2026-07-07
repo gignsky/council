@@ -3,17 +3,32 @@
 {% block title %}{{ section.title }} — Council{% endblock title %}
 
 {% block head_extra %}
+{% if section.description %}<meta name="description" content="{{ section.description }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
 {% endblock head_extra %}
 
 {% block body %}
-  <main style="max-width:720px;margin:0 auto;padding:72px 24px">
-    <h1>{{ section.title }}</h1>
-    {{ section.content | safe }}
-    <ul>
-    {% for page in section.pages %}
-      <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
-    {% endfor %}
+  <div class="book-wrap">
+    <div class="book-kicker"><a href="{{ get_url(path='@/_index.md') }}">COUNCIL</a> · THE HANDBOOK</div>
+    <h1 class="book-title">{{ section.title }}</h1>
+    <hr class="book-rule">
+    <div class="book-body">
+      {{ section.content | safe }}
+    </div>
+    {% if section.pages %}
+    <ul class="book-toc">
+      {% for page in section.pages %}
+      <li><a href="{{ page.permalink | safe }}">
+        <span>{{ page.title }}</span>
+        {% if page.extra.label %}<span class="book-toc-num">{{ page.extra.label }}</span>{% endif %}
+      </a></li>
+      {% endfor %}
     </ul>
-  </main>
+    {% endif %}
+    <div class="book-note">THE HANDBOOK IS BEING BOUND — CHAPTERS APPEAR HERE AS THEY ARE FINISHED</div>
+    <div class="book-foot"><a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a></div>
+  </div>
 {% endblock body %}
