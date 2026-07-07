@@ -38,6 +38,7 @@
             test -f $out/index.html
             test -f $out/un/index.html
             test -f $out/rules/index.html
+            test -f $out/404.html
             test -f $out/archive/index.html
             test -f $out/archive/docs/support.js
             test -f $out/archive/docs/15_Foundations_FINAL.dc.html

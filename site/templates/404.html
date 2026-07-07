@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Not Found — Council{% endblock title %}
+
+{% block head_extra %}
+<meta name="description" content="This page isn't part of Council. Behind every locked door wait three clues — try one of the paths below.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
+{% endblock head_extra %}
+
+{% block body %}
+  <div class="book-wrap">
+    <div class="book-kicker">
+      <a href="{{ get_url(path='@/_index.md') }}">COUNCIL</a> · 404
+    </div>
+    <h1 class="book-title">This door is locked</h1>
+    <hr class="book-rule">
+    <div class="book-body">
+      <p>You've wandered past the edge of the map. Whatever you came looking for isn't behind this door — but Council promises three clues are always waiting somewhere, so try one of these:</p>
+      <ul>
+        <li><a href="{{ get_url(path='@/_index.md') }}">Council</a> — back to the beginning</li>
+        <li><a href="{{ get_url(path='@/rules/_index.md') }}">The Handbook</a> — the rules, being bound</li>
+        <li><a href="{{ get_url(path='@/un/_index.md') }}">Council of Un</a></li>
+      </ul>
+    </div>
+    <div class="book-foot">
+      <a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a>
+    </div>
+  </div>
+{% endblock body %}

@@ -1,0 +1,161 @@
+name: Screenshot pages
+
+# Builds the site, screenshots every page it produces, and publishes the
+# images into the PR conversation so reviewers can see the rendered result
+# without checking the branch out locally.
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: screenshot-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  screenshot:
+    if: >-
+      github.event_name != 'pull_request' ||
+      (github.event.action != 'closed' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Build the site with Nix
+        run: nix build .#site --print-build-logs
+
+      - name: Materialise the site
+        run: |
+          rm -rf public
+          cp -rL result public
+          chmod -R u+w public
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install screenshot tooling
+        working-directory: scripts/screenshot
+        run: npm install
+
+      - name: Install Playwright's Chromium
+        working-directory: scripts/screenshot
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve the built site
+        run: |
+          python3 -m http.server 8080 --directory public &
+          echo $! > server.pid
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:8080/ > /dev/null && break
+            sleep 0.5
+          done
+
+      - name: Capture screenshots
+        working-directory: scripts/screenshot
+        run: node screenshot.mjs
+        env:
+          SITE_DIR: ${{ github.workspace }}/public
+          OUT_DIR: ${{ github.workspace }}/screenshots
+          BASE_URL: http://localhost:8080
+
+      - name: Stop the local server
+        if: always()
+        run: kill "$(cat server.pid)" 2>/dev/null || true
+
+      - name: Upload screenshots as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-screenshots
+          path: screenshots
+
+      - name: Publish screenshots to a branch
+        id: publish
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          BRANCH="screenshots/pr-${PR_NUMBER}"
+
+          rm -rf /tmp/screenshot-branch
+          mkdir -p /tmp/screenshot-branch
+          cd /tmp/screenshot-branch
+          git init -q
+          git checkout -q -b "$BRANCH"
+          cp "$GITHUB_WORKSPACE"/screenshots/*.png .
+          cp "$GITHUB_WORKSPACE"/screenshots/manifest.json .
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Screenshots for PR #${PR_NUMBER} (${GITHUB_SHA})"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push -q --force origin "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Comment on the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const path = require("path");
+            const commitSha = "${{ steps.publish.outputs.sha }}";
+            const manifest = JSON.parse(
+              fs.readFileSync(path.join("screenshots", "manifest.json"), "utf8"),
+            );
+            const { owner, repo } = context.repo;
+
+            const marker = "<!-- page-screenshot-bot -->";
+            const lines = [marker, "## 📸 Page screenshots", ""];
+            for (const { urlPath, file } of manifest) {
+              const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${file}`;
+              lines.push(`### \`${urlPath}\``, `![${urlPath}](${rawUrl})`, "");
+            }
+            lines.push(`_Updated for ${context.sha}._`);
+            const body = lines.join("\n");
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number: context.issue.number, body });
+            }
+
+  cleanup:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Delete the screenshot branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="screenshots/pr-${{ github.event.pull_request.number }}"
+          git push origin --delete "$BRANCH" || echo "Nothing to clean up"
