@@ -107,6 +107,7 @@ jobs:
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push -q --force origin "$BRANCH"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Comment on the PR
         if: github.event_name == 'pull_request'
@@ -115,7 +116,7 @@ jobs:
           script: |
             const fs = require("fs");
             const path = require("path");
-            const branch = "${{ steps.publish.outputs.branch }}";
+            const commitSha = "${{ steps.publish.outputs.sha }}";
             const manifest = JSON.parse(
               fs.readFileSync(path.join("screenshots", "manifest.json"), "utf8"),
             );
@@ -124,7 +125,7 @@ jobs:
             const marker = "<!-- page-screenshot-bot -->";
             const lines = [marker, "## 📸 Page screenshots", ""];
             for (const { urlPath, file } of manifest) {
-              const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${file}`;
+              const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${file}`;
               lines.push(`### \`${urlPath}\``, `![${urlPath}](${rawUrl})`, "");
             }
             lines.push(`_Updated for ${context.sha}._`);
