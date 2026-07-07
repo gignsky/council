@@ -1,0 +1,31 @@
+name: Debug Cloudflare build
+
+# Reproduces exactly what Cloudflare's dashboard-connected Git integration
+# does today: clone the repo, then run its deploy command with no build
+# step first (per Cloudflare's own build log for council: "Detected the
+# following tools from environment: " — empty — followed by
+# "Executing user deploy command: npx wrangler versions upload").
+#
+# This exists to debug that pipeline from GitHub Actions logs instead of
+# needing Cloudflare dashboard access. It intentionally does NOT run
+# `nix build .#site` first, so if a fix (build command, wrangler.jsonc,
+# etc.) makes the build succeed here without that Nix step, the fix needs
+# to happen on Cloudflare's side (dashboard build command), not just here.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reproduce-cloudflare-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Reproduce Cloudflare's deploy command (no build step)
+        run: npx wrangler versions upload
