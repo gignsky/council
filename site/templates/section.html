@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} — Council{% endblock title %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
+{% endblock head_extra %}
+
+{% block body %}
+  <main style="max-width:720px;margin:0 auto;padding:72px 24px">
+    <h1>{{ section.title }}</h1>
+    {{ section.content | safe }}
+    <ul>
+    {% for page in section.pages %}
+      <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </main>
+{% endblock body %}

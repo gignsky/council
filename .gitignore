@@ -4,3 +4,6 @@ result-*
 
 # Local Pages artifact staging (produced by the deploy workflow)
 /public
+
+# Local zola build/serve output
+site/public/

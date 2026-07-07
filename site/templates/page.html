@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — Council{% endblock title %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
+{% endblock head_extra %}
+
+{% block body %}
+  <main style="max-width:720px;margin:0 auto;padding:72px 24px">
+    <h1>{{ page.title }}</h1>
+    {{ page.content | safe }}
+  </main>
+{% endblock body %}
