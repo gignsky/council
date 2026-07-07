@@ -4,10 +4,11 @@ The public site for **Council** — a diceless, narrative-first tabletop
 roleplaying game, "played with words, not dice." Live at
 **[fuckinphilosophers.com](https://fuckinphilosophers.com)**.
 
-The site has two sections:
+The site has three sections:
 
-- **`/`** — the main site about Council the game (landing page now; rules,
-  handbook books, and lore to come).
+- **`/`** — the main landing page.
+- **`/rules/`** — **The Handbook**: the rules of the game, one markdown file
+  per chapter.
 - **`/un/`** — **Council of Un**, the personal campaign corner, with its own
   visual identity and (eventually) interactive table tools.
 
@@ -35,6 +36,28 @@ zola serve --root site   # live-reloading preview at http://127.0.0.1:1111
 nix build .#site         # produce the deployable tree at ./result
 nix run                  # preview the built site at http://localhost:8080
 ```
+
+## Adding rules chapters
+
+Each chapter of the handbook is one markdown file in `site/content/rules/`:
+
+```markdown
++++
+title = "The Chapter's Name"
+description = "One line for search engines."
+weight = 20            # order in the table of contents (low = first)
+
+[extra]
+label = "BOOK ONE"     # optional small tag shown in the TOC and page header
++++
+
+The chapter text, in ordinary markdown. **Bold**, *italics*, headings
+(`##`), lists, and blockquotes are all styled to match the site.
+```
+
+Commit, push, merge — the section index at `/rules/` picks the chapter up
+automatically, ordered by `weight`. The section intro text lives in
+`site/content/rules/_index.md`.
 
 ## Interactive elements (Council of Un)
 
