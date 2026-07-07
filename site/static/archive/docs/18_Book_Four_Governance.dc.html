@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <div style="background:#1b3140;color:#eee3c9;padding:40px 56px 34px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">COUNCIL · A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:12px 0 6px;color:#f3ead1;position:relative">GOVERNANCE</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE FOURTH</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:14px;position:relative">who may command a thing to happen — and what it costs to choose</div>
+  </div>
+
+  <div style="padding:44px 56px 52px;display:flex;flex-direction:column;gap:36px">
+
+    <div style="font-size:16.5px;line-height:1.8;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:18px">The game is named for this book. A Council is not a throne — it is a table, where authority is shared, choices are witnessed, and the cost of command is that everyone remembers what you decided.</div>
+
+    <!-- 4.1 -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.1 &nbsp;THE COUNCIL</div>
+      <div style="font-size:16.5px;line-height:1.8">A Council is a body of shared command with a single seat that holds the <b>final say</b>. Its virtue is not efficiency — it is <b>the record</b>. Every vote and every dissent is entered and remembered; a voice overruled is not silenced but <b>minuted</b>. So when a hard or a dark path is taken, the objection to it is already canon — a thing the fiction owns, not a thing the keeper must invent after the fact. A Council governs by leaving witnesses.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:16px;font-style:italic;color:#3a3428;line-height:1.6">A king may be wrong in private. A chair may only be wrong in front of the table.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 4.2 the dial -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.2 &nbsp;WHO SITS — A DIAL SET AT SETUP</div>
+      <div style="font-size:16.5px;line-height:1.8">Council does not decree who holds a seat; the table sets that dial when it seats its own Council, and lives with the answer. Two settings are offered, and a table may sit anywhere between them:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#14212b;color:#eee3c9;padding:18px 20px;border-top:4px solid #a8823f"><div class="mono" style="font-size:11px;letter-spacing:2px;color:#9ab7c9;margin-bottom:7px">THE WIDE TABLE</div><div style="font-size:14.5px;line-height:1.65">Every standing head holds a seat and a vote. The Council is loud, slow, and truly divided — dissent bites, because the dissenters can outvote you. Choose this for intrigue.</div></div>
+        <div style="background:#1b3140;color:#eee3c9;padding:18px 20px;border-top:4px solid #2f6d8a"><div class="mono" style="font-size:11px;letter-spacing:2px;color:#e0b45c;margin-bottom:7px">THE NARROW TABLE &nbsp;·&nbsp; THE DEFAULT</div><div style="font-size:14.5px;line-height:1.65">Only the few at the heart of the story sit and vote; the heads report and advise. The record notes their counsel, but the choice is the seated Council's alone. Choose this for pace — and, absent a reason otherwise, <b>this is where a Council begins</b>.</div></div>
+      </div>
+      <div style="font-size:15px;line-height:1.7;font-style:italic;color:#3a3428">Council seats a <b>narrow table</b> by default — counsel heard, the choice held close — and widens only when a table decides the intrigue of a true vote is worth the pace it costs. Decide it the first time a head wishes to vote against the seat of final say. You will learn then which table you actually built.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 4.3 deputies -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.3 &nbsp;THE SECOND CHAIR — DEPUTIES</div>
+      <div style="font-size:16.5px;line-height:1.8">A deputy may <b>hold</b> a Work at its present watch — keep it from stalling while its head is elsewhere — but may not <b>advance</b> it. To move a Work forward wants a Work Order or a Directive from the seat of command. A second chair keeps the seat warm; it does not sign.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 4.4 interrupts -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.4 &nbsp;INTERRUPTS</div>
+      <div style="font-size:16.5px;line-height:1.8">An emergency that names a head <b>pulls them off their Work automatically</b>. The card <b>freezes</b> — no watches, forced or otherwise — until it is released, or a deputy steps in to hold it (§4.3). The world's sudden needs do not queue politely behind a crew's ambitions.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 4.5 override -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.5 &nbsp;THE OVERRIDE</div>
+      <div style="font-size:16.5px;line-height:1.8">Only the seat of final say may keep a pulled head at their task regardless, by issuing a <b>Directive</b>. And a Directive is never free: it is a <b>truth committed aloud, on the record</b> — an open judgment about whose need matters more this hour, which the minutes will remember for good or ill. Command that overrides an emergency must be willing to be quoted on it.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 4.6 absence -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 4.6 &nbsp;ABSENCE BEYOND REACH</div>
+      <div style="font-size:16.5px;line-height:1.8">The rules above assume a head who can be <b>reached</b>. When they are truly beyond word — across the world, past any messenger — there is no one to pull, and the need is met anyway, by whoever stands present, <b>without that head's insight</b>. This never resolves as a clean sealed squall; it shows as something <b>concrete and specific</b> — late, wrong, or half-finished — a gap you can point at, shaped exactly like the missing hand. If word can be raised in time, treat it as a long-distance Override: the cost of §4.5, plus the travel of the message.</div>
+    </section>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE FOURTH</span><span>NEXT — BOOK THE FIFTH: TEACH &amp; SHIP</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

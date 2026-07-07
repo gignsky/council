@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+body{margin:0;font-family:'IM Fell English',Georgia,serif;color:#23201a}
+a{color:#2f6d8a;text-decoration:none}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:8px;height:8px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px;break-inside:avoid}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+.bx{break-inside:avoid}
+.bookhead{break-before:page;background:#1b3140;color:#eee3c9;padding:34px 40px 28px;text-align:center;margin:0 -0.75in 32px;break-after:avoid}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" margin="0.75in" hint-size="100%,1100px">
+
+  <div slot="header" class="mono" style="font-size:9px;letter-spacing:2px;color:#8a7c56;text-align:center;padding-bottom:4px">COUNCIL &middot; THE HANDBOOK</div>
+  <div slot="footer" class="mono" style="font-size:9px;letter-spacing:2px;color:#8a7c56;text-align:center;padding-top:4px">FUCKINPHILOSOPHERS.COM</div>
+
+  <!-- ================= TITLE PAGE ================= -->
+  <div class="bx" style="break-after:page;background:#1b3140;color:#eee3c9;margin:-0.75in -0.75in 0;padding:2.2in 0.75in 2.6in;text-align:center;min-height:9.5in;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px">
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9">A ROLEPLAYING GAME &middot; PLAYED WITH WORDS, NOT DICE</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:76px;line-height:.95;color:#f3ead1">COUNCIL</div>
+    <div style="font-size:19px;font-style:italic;color:#c9bda0">A Player's Handbook</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:13px">&#10022;</span>
+      <span class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">PRINTED EDITION &middot; ONE VOYAGE, ONE VOLUME</span>
+      <span style="color:#a8823f;font-size:13px">&#10022;</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:14.5px;font-style:italic;color:#7e97a4;margin-top:26px;max-width:5in">strive and pay, or be given &mdash; but keep hope, whatever the weather</div>
+  </div>
+
+  <!-- ================= CONTENTS ================= -->
+  <div style="break-after:page">
+    <div class="mono" style="font-size:11px;letter-spacing:3px;color:#a8823f;font-weight:700;margin-bottom:6px">&#10022; CONTENTS &#10022;</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:26px;color:#1b3140;margin-bottom:24px">Where to find things</div>
+
+    <div style="display:flex;flex-direction:column;gap:22px">
+
+      <div class="bx"><a href="#how-to-play" style="font-size:19px;color:#1b3140">How to Play</a><span class="mono" style="font-size:11px;color:#8a7c56;margin-left:10px">FIVE MINUTES &middot; READ THIS FIRST</span></div>
+
+      <div class="bx">
+        <div><a href="#book-i" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">I</span>&nbsp;&nbsp;Foundations</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b1-thesis" style="font-size:12px">&sect;0.1 The Thesis</a>
+          <a href="#b1-who" style="font-size:12px">&sect;0.2 Who Sails Under It</a>
+          <a href="#b1-loop" style="font-size:12px">&sect;0.3 The Core Loop</a>
+          <a href="#b1-timbers" style="font-size:12px">&sect;0.4 The Eight Timbers</a>
+          <a href="#b1-keel" style="font-size:12px">&sect;0.5 Keel &amp; Rigging</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-ii" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">II</span>&nbsp;&nbsp;The Resolution Core</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b2-two" style="font-size:12px">&sect;2.1 The Two Answers</a>
+          <a href="#b2-grace" style="font-size:12px">&sect;2.2 Grace</a>
+          <a href="#b2-price" style="font-size:12px">&sect;2.3 Price</a>
+          <a href="#b2-seals" style="font-size:12px">&sect;2.4 The Seals</a>
+          <a href="#b2-roads" style="font-size:12px">&sect;2.5 The Roads</a>
+          <a href="#b2-clever" style="font-size:12px">&sect;2.6 The Reward of Cleverness</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-iii" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">III</span>&nbsp;&nbsp;Works &amp; the Tide</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b3-declaring" style="font-size:12px">&sect;3.1 Declaring a Work</a>
+          <a href="#b3-tide" style="font-size:12px">&sect;3.2 The Tide</a>
+          <a href="#b3-ledger" style="font-size:12px">&sect;3.3 The Ledger</a>
+          <a href="#b3-squalls" style="font-size:12px">&sect;3.4 Squalls</a>
+          <a href="#b3-forcing" style="font-size:12px">&sect;3.5 Forcing a Work</a>
+          <a href="#b3-completion" style="font-size:12px">&sect;3.6 Completion &amp; Work Orders</a>
+          <a href="#b3-divine" style="font-size:12px">&sect;3.7 The Divine Work</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-iv" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">IV</span>&nbsp;&nbsp;Governance</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b4-council" style="font-size:12px">&sect;4.1 The Council</a>
+          <a href="#b4-dial" style="font-size:12px">&sect;4.2 Who Sits</a>
+          <a href="#b4-deputies" style="font-size:12px">&sect;4.3 Deputies</a>
+          <a href="#b4-interrupts" style="font-size:12px">&sect;4.4 Interrupts</a>
+          <a href="#b4-override" style="font-size:12px">&sect;4.5 The Override</a>
+          <a href="#b4-absence" style="font-size:12px">&sect;4.6 Absence Beyond Reach</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-v" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">V</span>&nbsp;&nbsp;Teach &amp; Ship</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b5-zero" style="font-size:12px">&sect;5.1 Session Zero</a>
+          <a href="#b5-seals" style="font-size:12px">&sect;5.2 Writing Seals</a>
+          <a href="#b5-grace" style="font-size:12px">&sect;5.3 Giving Grace</a>
+          <a href="#b5-squall" style="font-size:12px">&sect;5.4 The Signed Squall</a>
+          <a href="#b5-hope" style="font-size:12px">&sect;5.5 Hope &amp; Harm</a>
+          <a href="#b5-print" style="font-size:12px">&sect;5.6 What to Print</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= HOW TO PLAY ================= -->
+  <div id="how-to-play" class="bookhead" style="break-before:avoid">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">HOW TO PLAY &middot; A GUIDE FOR THE CREW &middot; FIVE MINUTES</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:38px;line-height:1;margin-top:8px;color:#f3ead1">Before You Sit Down</div>
+  </div>
+
+  <div style="font-size:17px;line-height:1.7;text-align:center;font-style:italic;color:#1b3140;margin-bottom:26px">There are no dice here, and no character sheets. There is only the story we tell together &mdash; and a handful of promises about how it answers back.</div>
+
+  <div class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">1</div><div style="flex:1;font-size:15px;line-height:1.65"><b>You live a scene.</b> You speak and act as your character, and the keeper plays the world around you. Most of the time, that is all there is &mdash; and it is enough.</div></div>
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">2</div><div style="flex:1;font-size:15px;line-height:1.65"><b>A need arises the table can't just wish away.</b> A locked door. A hidden truth. A thing that must be built or found. Under dice you'd roll. Here, you don't guess the magic question &mdash; you simply <i>reach</i> for the answer, and the world provides it by one of two ways below.</div></div>
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">3</div><div style="flex:1;font-size:15px;line-height:1.65"><b>What comes back changes the next scene.</b> And the tale sails on. That wheel &mdash; scene, answer, scene &mdash; is the whole of the game.</div></div>
+  </div>
+
+  <div class="bx" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+    <div style="background:#14212b;color:#eee3c9;padding:16px 18px;border-top:4px solid #a8823f"><div style="font-size:20px;color:#f3ead1;margin-bottom:6px">By Price</div><div style="font-size:13px;line-height:1.6">What you <b>pay for</b>. You may seize an answer by spending something of your own &mdash; a truth confessed, a new trouble taken on, a little time lost. Price is yours to demand. It always costs the self, and it is always true.</div></div>
+    <div style="background:#1b3140;color:#eee3c9;padding:16px 18px;border-top:4px solid #2f6d8a"><div style="font-size:20px;color:#f3ead1;margin-bottom:6px">By Grace</div><div style="font-size:13px;line-height:1.6">What you are <b>given</b>. The keeper may hand you an answer freely &mdash; unearned, unasked, because you are stuck and the story loves you. Grace cannot be bought or demanded. It falls where it falls, and it falls most on those who keep trying and keep hoping.</div></div>
+  </div>
+  <div style="font-size:14px;line-height:1.6;font-style:italic;color:#3a3428;text-align:center;margin-bottom:26px">Strive and pay, or be given. Most tales are told in the weather between the two.</div>
+
+  <div class="bx" style="background:#e5dabe;border:1px solid #c2b590;padding:18px 20px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">YOU CANNOT BE TRULY STUCK</div>
+    <div style="font-size:15px;line-height:1.65">Behind every real obstacle the keeper has already written three clues &mdash; a gentle <b>nudge</b>, a plain <b>bearing</b>, and, at the last, the <b>answer</b> itself. They are never improvised and never withheld forever. However you reach for help &mdash; by cleverness, by price, by grace &mdash; one of these comes. No riddle in Council is a locked room with no key. That is a promise.</div>
+  </div>
+
+  <div class="bx" style="margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">THE ONE THING WORTH KEEPING</div>
+    <div style="font-size:15.5px;line-height:1.7">Council is built to reward <b>hope</b>. The world bends kinder to a crew that believes it can be made better, and grace runs toward them like water downhill. The game can wound you &mdash; it can cost you dearly, and grieve you truly &mdash; but it only truly breaks the one who has stopped hoping. Keep hope, and you are never past saving.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5;margin-top:8px">Despair is the only door that locks from the inside.</div>
+  </div>
+
+  <div class="bx">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">ONE STRANGER YOU SHOULD KNOW</div>
+    <div style="font-size:15px;line-height:1.65">There is a madman named <b>Landis</b>, who is real only in water. Find still water in any world &mdash; a sea, a cistern, a cup &mdash; look in, and ask him with grace, and he will sell you a true answer at a steep and personal price. He is not the main road, and you will not need him often. But he is always there, in every water, and every answer he gives is true. More of him waits in the pages that follow.</div>
+  </div>
+
+  <!-- ================= BOOK I — FOUNDATIONS ================= -->
+  <div id="book-i" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:10px 0 4px;color:#f3ead1">FOUNDATIONS</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIRST</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">being the whole of the game, set down plain, that any hand aboard may read it</div>
+  </div>
+
+  <section id="b1-thesis" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.1 &nbsp;THE THESIS</div>
+    <div style="font-size:22px;line-height:1.32;font-style:italic;color:#1b3140">Council is for tables who left the dice behind &mdash; and found they had left something else behind with them.</div>
+    <div style="font-size:15px;line-height:1.68">When a crew stops rolling and starts telling, the story runs warmer and the arithmetic goes quiet &mdash; and then, one night, a locked door appears that no one at the table happens to be clever enough to open. Under dice, a character <i>rolled to know things their player did not.</i> Take the dice away and that quiet gift goes with them: now a player can learn only what they personally thought to ask, and the keeper is left dangling hints, praying someone guesses the shape of the answer.</div>
+    <div style="font-size:15px;line-height:1.68"><b>Council exists to hand that gift back without handing the dice back.</b> It is a game of insight, consequence, and shared command that runs entirely on words. One question steers every rule in this handbook: <i>how does a soul come to know a thing without guessing the exact right way to ask?</i> All that follows is an answer.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.55">You will not roll to see if you succeed. You will decide what you are willing to pay to find out. &mdash; the first principle</div>
+  </section>
+
+  <section id="b1-who" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.2 &nbsp;WHO SAILS UNDER IT</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:13.5px;line-height:1.6"><b>Crews who have already drifted.</b> Long campaigns that quietly abandoned sheets and initiative and now live on narration and trust. Council names what they are already doing and gives it teeth.</div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:13.5px;line-height:1.6"><b>Keepers weary of dangling hints.</b> Game masters who love the shared story but keep striking the reef where a puzzle stalls because no one has yet said the magic thing.</div>
+    </div>
+  </section>
+
+  <section id="b1-loop" class="bx" style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.3 &nbsp;THE TURN OF THE TIDE &mdash; THE CORE LOOP</div>
+    <div style="font-size:15px;line-height:1.68">Play turns through three stations. A <b>Scene</b> raises a need the table cannot simply declare true. The world answers by one of two roads &mdash; <b>the Water</b> (buy insight now, at a price) or <b>the Tide</b> (commit the work, let time carry it) &mdash; and whatever comes back walks into the next Scene, changed. That is the entire machine. All else is rigging hung upon it.</div>
+    <div class="bx" style="background:#14212b;padding:20px 18px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">STATION ONE</div><div style="font-size:17px">The Scene</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">A need arises the table cannot just wish true.</div></div>
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #a8823f"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">ROAD A</div><div style="font-size:17px">The Water</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">A truth, a trouble, a scene, for a real answer.</div></div>
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">ROAD B</div><div style="font-size:17px">The Tide</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">Commit a Work; the world moves it a watch at a time.</div></div>
+      </div>
+      <div class="mono" style="text-align:center;color:#7e97a4;font-size:10.5px;letter-spacing:1.5px">&#8634; &nbsp; and whatever the world returns walks back into the next Scene, changed &nbsp; &#8634;</div>
+    </div>
+  </section>
+
+  <section id="b1-timbers" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.4 &nbsp;THE EIGHT TIMBERS</div>
+    <div style="font-size:14.5px;line-height:1.6">The fixed vocabulary of the game &mdash; the timbers of the hull. These words mean the same at every Council table; a keeper may re-rig the world above, but not rename the timbers below.</div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">I</div><div style="flex:none;width:120px;font-size:15.5px">The Water</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Landis, real only in water, who sells true answers at a price.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">II</div><div style="flex:none;width:120px;font-size:15.5px">The Council</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Shared command with a final say; every vote and dissent minuted.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">III</div><div style="flex:none;width:120px;font-size:15.5px">Works</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">What a crew sets in motion between scenes: an aim, the hands, the stakes.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">IV</div><div style="flex:none;width:120px;font-size:15.5px">The Tide</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Time itself. Every session advances every open Work one watch.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">V</div><div style="flex:none;width:120px;font-size:15.5px">The Ledger</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">What a Work spends: Hands, Power, Standing. Nothing pinned twice.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VI</div><div style="flex:none;width:120px;font-size:15.5px">Squalls</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Sealed complications carried by the larger Works, breaking when the weave turns against you.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VII</div><div style="flex:none;width:120px;font-size:15.5px">The Seals</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Pre-written clues &mdash; Nudge, Bearing, Answer &mdash; sealed and shown, in order.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VIII</div><div style="flex:none;width:120px;font-size:15.5px">Price &amp; Grace</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">The two ways an answer comes: seized with a piece of self, or given freely.</div></div>
+    </div>
+  </section>
+
+  <section id="b1-keel" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.5 &nbsp;THE KEEL &amp; THE RIGGING</div>
+    <div style="font-size:15px;line-height:1.68">Council is a keel, not a world. A table brings its own fiction &mdash; a drowned empire, a generation ship, a haunted county &mdash; and rigs it to the timbers below. But one timber is not the table's to swap. <b>Landis is fixed.</b> The madman on the sea, real only in water, who sells true answers at a price, stands in every Council game that has been or will be run.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:15px 17px;display:flex;flex-direction:column;gap:6px;border-top:3px solid #a8823f"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#9ab7c9">THE KEEL &mdash; FIXED</div><div style="font-size:12.5px;line-height:1.55">Landis &amp; the Water. The eight timbers and their names. The turn of the tide. Price and grace. The Seals. Mercy.</div></div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:15px 17px;display:flex;flex-direction:column;gap:6px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#8a7c56">THE RIGGING &mdash; YOURS</div><div style="font-size:12.5px;line-height:1.55">The world, its peoples, what Power and Standing are made of, what the riddles guard.</div></div>
+    </div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5">Change everything you like. Leave me the water. &mdash; L.F.</div>
+  </section>
+
+  <!-- ================= BOOK II — RESOLUTION ================= -->
+  <div id="book-ii" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">THE RESOLUTION CORE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE SECOND</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">how the game answers, when there is no die to throw</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">A die answered a question the table could not: <i>what is true, and what do you learn?</i> Council keeps the question and throws away the die. In its place stand two hands &mdash; one that takes, and one that gives. Learn these two and you have learned the game.</div>
+
+  <section id="b2-two" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.1 &nbsp;THE TWO ANSWERS</div>
+    <div style="font-size:15px;line-height:1.68">When a scene raises a need the table cannot simply declare true, the world answers in one of two ways, and only two. An answer is either <b>seized</b> &mdash; bought with something of your own &mdash; or it is <b>given</b>, freely, by the hand that made this world. The first is <b>price</b>. The second is <b>grace</b>.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:15px 17px;border-top:4px solid #a8823f"><div style="font-size:19px;color:#f3ead1;margin-bottom:5px">Price</div><div style="font-size:12.5px;line-height:1.55">You pay, and you may demand. It costs the self and is always true.</div></div>
+      <div style="background:#1b3140;color:#eee3c9;padding:15px 17px;border-top:4px solid #2f6d8a"><div style="font-size:19px;color:#f3ead1;margin-bottom:5px">Grace</div><div style="font-size:12.5px;line-height:1.55">You are given, and may not demand. It costs you nothing and cannot be earned.</div></div>
+    </div>
+  </section>
+
+  <section id="b2-grace" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.2 &nbsp;GRACE &mdash; THE GIVEN ANSWER</div>
+    <div style="font-size:15px;line-height:1.68">The keeper is the god of this small creation &mdash; not a tyrant, but a maker, who set its laws and largely lets them run. <b>Grace is the maker's one free hand:</b> the single thing in the game not bound by the world's own rules. An answer given as grace is unearned and unpriced.</div>
+    <div style="font-size:15px;line-height:1.68">Grace <b>cannot be bought, banked, or demanded.</b> A good-faith struggle <i>invites</i> it, and hope draws it near &mdash; but nothing compels it. It may fall on the crew who tried hardest; it may fall, just as well, on the one who tried least and needed it most. It falls where it will.</div>
+    <div style="font-size:15px;line-height:1.68">Grace is <b>not counted.</b> There is no pool, no token, no tally at the table's edge. It has exactly one law that binds it: <b>mercy</b>. If a crew is truly aground, grace comes, because the maker will not let the story drown.</div>
+    <div style="font-size:15px;line-height:1.68">And grace comes <b>quietly</b>. It is a nudge slid across the table, unremarked. The keeper need not announce it, and mostly should not. The crew will feel they were lucky. Let them.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5">Grace is not the keeper being kind against the rules. It is the one rule that kindness was allowed to keep.</div>
+  </section>
+
+  <section id="b2-price" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.3 &nbsp;PRICE &mdash; THE SEIZED ANSWER</div>
+    <div style="font-size:15px;line-height:1.68">Where grace is given, price is <b>taken</b> &mdash; by you, from you. When you must know a thing now and are willing to bleed for it, you may seize the answer and pay in the only coin the game accepts: something of your own self.</div>
+    <div style="font-size:15px;line-height:1.68">The dearest altar of price is <b>the Water</b> &mdash; Landis, real only in water, who trades true answers for pieces of the one who asks. But mark this well: <b>the Water is a rare road, not a daily one.</b> When you do go down to the water, the price climbs with each answer of a single visit:</div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">FIRST</div><div style="flex:1;font-size:13px;line-height:1.5"><b>A truth.</b> Confess a secret, or commit a new fact about yourself, aloud. Canon the moment it is spoken.</div></div>
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">SECOND</div><div style="flex:1;font-size:13px;line-height:1.5"><b>A trouble.</b> The answer is true, and arrives lashed to a fresh complication.</div></div>
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">THIRD</div><div style="flex:1;font-size:13px;line-height:1.5"><b>The madness bleeds.</b> You glimpse a thing the keeper knows and you should not, and cannot say why.</div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#8a7c56">ALWAYS</div><div style="flex:1;font-size:13px;line-height:1.5"><b>A scene.</b> To sit with Landis costs time; the weave moves on while you do.</div></div>
+    </div>
+  </section>
+
+  <section id="b2-seals" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.4 &nbsp;THE SEALS &mdash; WHAT BOTH HANDS REACH FOR</div>
+    <div style="font-size:15px;line-height:1.68">Price and grace do not invent their answers on the spot. <b>Behind any obstacle worth being stuck on lie three clues,</b> set face-down on the table, in order.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE FIRST</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Nudge</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">A single honest word or image.</div></div></div>
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE SECOND</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Bearing</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">What to do next &mdash; never why.</div></div></div>
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE THIRD</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Answer</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">Plain as porridge.</div></div></div>
+    </div>
+    <div style="font-size:14px;line-height:1.65">They open <b>in order</b>, one at a time. Price opens the next by paying for it. Grace opens the next by giving it &mdash; most often the Nudge, for nothing.</div>
+  </section>
+
+  <section id="b2-roads" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.5 &nbsp;THE ROADS TO A CLUE</div>
+    <div style="font-size:15px;line-height:1.68">A crew that means to pay has more than one road to the next seal &mdash; the Water, being dearest, is the one they should walk least:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">Honest search</div><div style="flex:1;font-size:12.5px;line-height:1.5">Dig, read, question, pry. Paid in effort and a scene's time.</div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">A Work</div><div style="flex:1;font-size:12.5px;line-height:1.5">Let the Tide carry it (Book III). Slow, priced only in watches.</div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">A letter</div><div style="flex:1;font-size:12.5px;line-height:1.5">Ask one who is absent but would know. Slow as the post.</div></div>
+      <div style="display:flex;gap:12px;background:#efe0c8;border:1px solid #c2a878;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#7a3a1a">The Water</div><div style="flex:1;font-size:12.5px;line-height:1.5">Landis, and his climbing price. Walk it least.</div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.6;background:#14212b;color:#eee3c9;padding:12px 16px" class="bx"><b style="color:#9ab7c9">The rule that binds every road:</b> it opens <b>the next Seal in order</b> &mdash; never a later one, never two at once.</div>
+  </section>
+
+  <section id="b2-clever" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+    <div style="font-size:15px;line-height:1.68">Sometimes a crew closes out a whole labour &mdash; a Work, a mission, an obstacle worth being stuck on &mdash; with its Seals never broken: no price paid, no grace needed. Each Seal left closed is banked as <b>Slack</b>: a due at the Water. The next time the crew comes to Landis, that much of his usual price is simply <b>waived</b> &mdash; one price forgiven for every Seal they earned &mdash; and he throws in something past the ordinary menu besides, a thing he judges cool enough for the doing, never named in advance. Slack is spent only there, only with him, and does not linger forever unspent.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">Solve it yourself, and the madman remembers you the next time you're wet.</div>
+  </section>
+
+  <!-- ================= BOOK III — WORKS & THE TIDE ================= -->
+  <div id="book-iii" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">WORKS &amp; THE TIDE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE THIRD</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">how the world keeps moving while the table sleeps</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">A scene is what the crew does with their hands. A Work is what they set in motion and must then wait upon. Everything in this book is bought with the one coin the game keeps honest for everyone at once &mdash; <b>time</b>.</div>
+
+  <section id="b3-declaring" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.1 &nbsp;DECLARING A WORK</div>
+    <div style="font-size:15px;line-height:1.68">A Work is any labour too large for a single scene &mdash; a bomb built, a treaty struck, a ruin excavated, a wound healed. It is written on a card the whole table can see, and it carries three lines and no more:</div>
+    <div style="display:flex;flex-direction:column;gap:5px;font-size:14px;line-height:1.55">
+      <div>&#9702; <b>THE AIM</b> &mdash; the plain thing wanted, stated so plainly that its finishing cannot be argued.</div>
+      <div>&#9702; <b>THE HANDS</b> &mdash; who does it: a person, a department, a people.</div>
+      <div>&#9702; <b>THE STAKES</b> &mdash; what is pledged from the Ledger to make it possible.</div>
+    </div>
+  </section>
+
+  <section id="b3-tide" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.2 &nbsp;THE TIDE &mdash; WATCHES</div>
+    <div style="font-size:15px;line-height:1.68">Time in Council comes in like a tide, on its own, needing no one's permission. <b>Every session, every open Work advances one watch</b> &mdash; whether the crew touched it or not. Spend a whole scene labouring at a Work, and it takes <b>one watch more</b>. The counts are public.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:12.5px">
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>SMALL WORK</b><br><span style="color:#5a5648">1 watch</span></div>
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>A WORK</b><br><span style="color:#5a5648">3 watches</span></div>
+      <div style="padding:10px 12px"><b>GREAT WORK</b><br><span style="color:#5a5648">5 watches</span></div>
+    </div>
+  </section>
+
+  <section id="b3-ledger" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.3 &nbsp;THE LEDGER &mdash; STAKES</div>
+    <div style="font-size:15px;line-height:1.68">A Work spends more than time; it spends the crew's finite holdings, pledged under three headings:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:12.5px">
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>HANDS</b><br><span style="color:#5a5648">people &amp; their labour</span></div>
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>POWER</b><br><span style="color:#5a5648">resources, the means</span></div>
+      <div style="padding:10px 12px"><b>STANDING</b><br><span style="color:#5a5648">goodwill with peoples</span></div>
+    </div>
+    <div style="font-size:15px;line-height:1.68"><b>A stake cannot be pledged twice</b> &mdash; and <b>to wound a pledged stake is to stall everything pledged to it.</b> This is how a single blow lands everywhere.</div>
+  </section>
+
+  <section id="b3-squalls" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.4 &nbsp;SQUALLS</div>
+    <div style="font-size:15px;line-height:1.68">Every Great Work is declared with <b>one sealed complication</b> &mdash; its squall &mdash; set face-down beside the card. It breaks at the <b>halfway watch</b>, or sooner if the weave calls for it.</div>
+  </section>
+
+  <section id="b3-forcing" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.5 &nbsp;FORCING A WORK</div>
+    <div style="font-size:15px;line-height:1.68">Once per session, a crew may drive a single Work <b>one extra watch</b> by paying one of two coins:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:12px 14px;font-size:12.5px;line-height:1.55" class="bx"><b>A TRUTH</b> &mdash; confessed aloud, canon the instant it is spoken.</div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:12px 14px;font-size:12.5px;line-height:1.55" class="bx"><b>A FAVOR OWED</b> &mdash; sealed, called due whenever the keeper pleases.</div>
+    </div>
+    <div style="font-size:15px;line-height:1.68">Note the mark of haste: <b>a forced Work always delivers its squall.</b></div>
+  </section>
+
+  <section id="b3-completion" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.6 &nbsp;COMPLETION &amp; WORK ORDERS</div>
+    <div style="font-size:15px;line-height:1.68">A finished Work stops being a card and becomes a <b>plain fact of the world</b>. Between sessions the crew may send <b>Work Orders</b> &mdash; written instructions to the hands who do the labour &mdash; and the keeper answers in those hands' own voices next the table sits.</div>
+  </section>
+
+  <section id="b3-divine" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.7 &nbsp;THE DIVINE WORK &mdash; THE GREAT TIER</div>
+    <div style="font-size:15px;line-height:1.68">Above the Great Work stands one tier more, reserved for labours that span a whole telling. A <b>Divine Work</b> is not a card the crew declares; it is a weather the keeper sets moving beneath everything:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">No fixed count.</b> No watch-total set at declaring, no countdown shown.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">Many squalls, not one.</b> Several sealed <b>beats</b>, opened one at a time.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">A beat may rewrite the card.</b> A beat can recast the aim, add a stake, release another.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">Stakes bind and loose over time.</b> Hands and Standing attach and detach across its length.</div>
+    </div>
+    <div style="font-size:15px;line-height:1.68">A Divine Work ends not on a watch but on a <b>turning</b>. Even here the one law holds: <b>mercy</b>.</div>
+  </section>
+
+  <div class="bx" style="background:#e5dabe;border:1px solid #c2b590;padding:15px 18px;display:flex;flex-direction:column;gap:6px">
+    <div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#8a7c56;font-weight:700">HOW A STORM SPEAKS &mdash; A STANDING HOUSE STYLE</div>
+    <div style="font-size:13.5px;line-height:1.6">Every squall, every beat, every hard turn is delivered as an <b>in-fiction report on the letterhead of whoever bore it.</b> Never an omniscient voice from the clouds. In Council, the bad news always arrives <i>signed</i>.</div>
+  </div>
+
+  <!-- ================= BOOK IV — GOVERNANCE ================= -->
+  <div id="book-iv" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">GOVERNANCE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FOURTH</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">who may command a thing to happen &mdash; and what it costs to choose</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">The game is named for this book. A Council is not a throne &mdash; it is a table, where authority is shared, choices are witnessed, and the cost of command is that everyone remembers what you decided.</div>
+
+  <section id="b4-council" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.1 &nbsp;THE COUNCIL</div>
+    <div style="font-size:15px;line-height:1.68">A Council is a body of shared command with a single seat that holds the <b>final say</b>. Its virtue is not efficiency &mdash; it is <b>the record</b>. Every vote and every dissent is entered and remembered; a voice overruled is not silenced but <b>minuted</b>.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">A king may be wrong in private. A chair may only be wrong in front of the table.</div>
+  </section>
+
+  <section id="b4-dial" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.2 &nbsp;WHO SITS &mdash; A DIAL SET AT SETUP</div>
+    <div style="font-size:15px;line-height:1.68">Council does not decree who holds a seat; the table sets that dial when it seats its own Council:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:14px 16px;border-top:4px solid #a8823f" class="bx"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#9ab7c9;margin-bottom:5px">THE WIDE TABLE</div><div style="font-size:12.5px;line-height:1.55">Every standing head holds a seat and a vote. Loud, slow, truly divided. Choose this for intrigue.</div></div>
+      <div style="background:#1b3140;color:#eee3c9;padding:14px 16px;border-top:4px solid #2f6d8a" class="bx"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#e0b45c;margin-bottom:5px">THE NARROW TABLE &middot; DEFAULT</div><div style="font-size:12.5px;line-height:1.55">Only the few at the heart of the story sit and vote; the heads report and advise. Choose this for pace &mdash; and by default, <b>this is where a Council begins.</b></div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.6;font-style:italic;color:#3a3428">Council seats a <b>narrow table</b> by default, and widens only when a table decides the intrigue of a true vote is worth the pace it costs.</div>
+  </section>
+
+  <section id="b4-deputies" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.3 &nbsp;THE SECOND CHAIR &mdash; DEPUTIES</div>
+    <div style="font-size:15px;line-height:1.68">A deputy may <b>hold</b> a Work at its present watch, but may not <b>advance</b> it. To move a Work forward wants a Work Order or a Directive from the seat of command.</div>
+  </section>
+
+  <section id="b4-interrupts" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.4 &nbsp;INTERRUPTS</div>
+    <div style="font-size:15px;line-height:1.68">An emergency that names a head <b>pulls them off their Work automatically</b>. The card <b>freezes</b> until released, or a deputy steps in to hold it.</div>
+  </section>
+
+  <section id="b4-override" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.5 &nbsp;THE OVERRIDE</div>
+    <div style="font-size:15px;line-height:1.68">Only the seat of final say may keep a pulled head at their task regardless, by issuing a <b>Directive</b> &mdash; a <b>truth committed aloud, on the record.</b></div>
+  </section>
+
+  <section id="b4-absence" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.6 &nbsp;ABSENCE BEYOND REACH</div>
+    <div style="font-size:15px;line-height:1.68">When a head is truly beyond word, the need is met anyway, by whoever stands present, <b>without that head's insight</b> &mdash; it shows as something <b>concrete and specific</b>, never a clean sealed squall.</div>
+  </section>
+
+  <!-- ================= BOOK V — TEACH & SHIP ================= -->
+  <div id="book-v" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">TEACH &amp; SHIP</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIFTH</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">for the keeper &mdash; how to raise a Council game from nothing, and run it well</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">The first four books are the game. This one is the craft of it &mdash; how to stand a table up in an evening, and the three small arts that make a keeper of you: writing Seals, giving grace, and wounding without cruelty.</div>
+
+  <section id="b5-zero" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.1 &nbsp;SESSION ZERO &mdash; RAISING A GAME IN ONE SITTING</div>
+    <div style="font-size:15px;line-height:1.68">Council boots in a single evening. Five moves, in order:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">1</div><div style="flex:1;font-size:13.5px;line-height:1.6"><b>Rig the world.</b> Agree the fiction &mdash; the setting, its peoples, what Power and Standing are made of here.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">2</div><div style="flex:1;font-size:13.5px;line-height:1.6"><b>Seat the Council.</b> Decide who holds the final say, and set the dial of &sect;4.2 &mdash; <b>narrow by default</b>, or wide for intrigue.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">3</div><div style="flex:1;font-size:13.5px;line-height:1.6"><b>Lay the first Ledger.</b> Write two or three opening Works.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">4</div><div style="flex:1;font-size:13.5px;line-height:1.6"><b>Teach the Water.</b> Tell the crew, plainly, of Landis.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">5</div><div style="flex:1;font-size:13.5px;line-height:1.6"><b>Promise hope.</b> Say aloud the one creed. Then begin.</div></div>
+    </div>
+  </section>
+
+  <section id="b5-seals" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.2 &nbsp;THE FIRST ART &mdash; WRITING SEALS</div>
+    <div style="font-size:15px;line-height:1.68">For any obstacle worth being stuck on, <b>write three clues before play and seal them</b>: the Nudge, the Bearing, the Answer. Write them <i>before</i> &mdash; never under the pressure of a stuck table, when your judgment is worst.</div>
+  </section>
+
+  <section id="b5-grace" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.3 &nbsp;THE SECOND ART &mdash; GIVING GRACE</div>
+    <div style="font-size:15px;line-height:1.68">Give it <b>quietly.</b> Give it toward the <b>stuck and the hopeful.</b> Do not tally it, do not let it be demanded. Its one hard law is that a truly aground crew always receives it.</div>
+  </section>
+
+  <section id="b5-squall" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.4 &nbsp;THE THIRD ART &mdash; THE SIGNED SQUALL</div>
+    <div style="font-size:15px;line-height:1.68">Deliver bad news as a <b>report on the letterhead of whoever bore it.</b> In Council, bad news always arrives signed.</div>
+  </section>
+
+  <section id="b5-hope" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.5 &nbsp;ON HOPE &amp; HARM &mdash; THE TONE OF THE GAME</div>
+    <div style="font-size:15px;line-height:1.68">Council is built to reward hope. The game <b>may wound</b> &mdash; it may cost dearly, and grieve truly. But it breaks only the one who has <b>stopped hoping.</b></div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">Despair is the only door that locks from the inside.</div>
+  </section>
+
+  <section id="b5-print" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.6 &nbsp;WHAT TO PRINT, WHAT TO KEEP</div>
+    <div style="font-size:15px;line-height:1.68">Two bundles make a Council game ready for a table:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:13px 15px" class="bx"><div style="font-size:15px;color:#1b3140;margin-bottom:5px">The Crew's Packet</div><div style="font-size:12px;line-height:1.55">This handbook, and Landis's two handouts. All a player needs.</div></div>
+      <div style="background:#14212b;color:#eee3c9;padding:13px 15px" class="bx"><div style="font-size:15px;color:#f3ead1;margin-bottom:5px">The Keeper's Papers</div><div style="font-size:12px;line-height:1.55">Sealed Seals, hidden stakes, Divine Work beats. Shown to no one until its watch turns.</div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.6;font-style:italic;color:#3a3428">Print the first. Keep the second.</div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

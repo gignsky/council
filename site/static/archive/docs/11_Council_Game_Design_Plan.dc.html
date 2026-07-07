@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=IM+Fell+English:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#cfc9bb;font-family:'Courier Prime',monospace}
+a{color:#2f5d7c}a:hover{color:#1f425c}
+.ink{font-family:'IM Fell English',serif;font-style:italic}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:44px 20px 72px">
+<div style="width:720px;max-width:100%;background:#f4f1e8;color:#22201a;box-shadow:0 3px 20px rgba(0,0,0,.22)">
+
+  <div style="background:#22201a;color:#f4f1e8;display:flex;justify-content:space-between;align-items:center;padding:9px 24px;font-size:11px;letter-spacing:2px">
+    <span>COUNCIL</span><span>SYSTEM DESIGN — A NEW GAME</span>
+  </div>
+
+  <div style="padding:40px 48px 48px;display:flex;flex-direction:column;gap:24px">
+
+    <!-- title -->
+    <div style="border-bottom:2px solid #22201a;padding-bottom:18px">
+      <div style="font-size:12px;letter-spacing:3px;color:#6b6656">DESIGNING A NEW KIND OF TABLETOP ROLEPLAYING GAME</div>
+      <div style="font-size:34px;font-weight:700;letter-spacing:.5px;line-height:1.08;margin-top:5px">COUNCIL — GAME DESIGN PLAN</div>
+      <div style="font-size:13px;margin-top:11px;color:#5a5648;line-height:1.65"><b>Council</b> is a diceless, narrative-first roleplaying system for tables who have outgrown rolls and sheets — built around one problem: <i>how do players gain insight without having to guess the exact right question?</i> This plan builds the game itself, setting-agnostic. Only one thing is fixed in every Council game: <b>Landis, on the sea, real only in water.</b> Everything else is dressing a table brings. Tick a box and it stays ticked.</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:14px">
+        <span style="font-size:11px;letter-spacing:1.5px;color:#6b6656">OVERALL</span>
+        <span style="font-size:15px;font-weight:700">{{ overall }}</span>
+        <span style="font-size:11px;color:#6b6656">tasks done</span>
+      </div>
+    </div>
+
+    <!-- phases -->
+    <sc-for list="{{ phases }}" as="phase" hint-placeholder-count="5">
+      <div style="display:flex;flex-direction:column;gap:12px">
+
+        <!-- phase header -->
+        <div style="display:flex;flex-direction:column;gap:7px;border-left:4px solid #22201a;padding-left:14px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+            <div style="font-size:16px;font-weight:700;letter-spacing:.5px">{{ phase.title }}</div>
+            <div style="font-size:12px;font-weight:700;color:#2f5d7c;white-space:nowrap">{{ phase.progress }}</div>
+          </div>
+          <div style="font-size:12px;color:#5a5648;line-height:1.55">{{ phase.subtitle }}</div>
+          <div style="height:6px;background:#ddd6c2;border:1px solid #c3baa0;overflow:hidden">
+            <div style="{{ phase.barStyle }}"></div>
+          </div>
+        </div>
+
+        <!-- items -->
+        <div style="display:flex;flex-direction:column;gap:8px;padding-left:18px">
+          <sc-for list="{{ phase.items }}" as="item" hint-placeholder-count="4">
+            <div onClick="{{ item.onToggle }}" style="display:flex;gap:12px;align-items:flex-start;background:#ece7d6;border:1px solid #cbc3a9;padding:11px 14px;cursor:pointer;user-select:none">
+              <div style="{{ item.boxStyle }}">{{ item.mark }}</div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+                <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+                  <span style="{{ item.badgeStyle }}">{{ item.badge }}</span>
+                  <span style="{{ item.textStyle }}">{{ item.text }}</span>
+                </div>
+                <div class="ink" style="font-size:13px;color:#5a5648;line-height:1.5">{{ item.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+      </div>
+    </sc-for>
+
+    <div class="ink" style="font-size:15px;color:#4a4636;line-height:1.6;border-top:1px solid #cfc7ad;padding-top:16px">
+      This is the game, not the campaign. When Phase 4 is ticked through, Council is a thing another table could pick up and run in any world. Phase 5 is where <i>our</i> world gets built on top of it — the Council of Un. <span style="font-size:11px;font-family:'Courier Prime';font-style:normal;color:#8a8470">— the substrate holds its own ink</span>
+    </div>
+
+    <div style="border-top:1px dashed #22201a;padding-top:12px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>SYSTEM DESIGN DOCUMENT · SETTING-AGNOSTIC</span><span>PROGRESS SAVED TO THIS DEVICE</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { checked: {} };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem('council-system-design-plan-v1');
+      if (raw) this.setState({ checked: JSON.parse(raw) });
+    } catch (e) {}
+  }
+
+  toggle(id) {
+    this.setState(s => {
+      const checked = { ...s.checked, [id]: !s.checked[id] };
+      try { localStorage.setItem('council-system-design-plan-v1', JSON.stringify(checked)); } catch (e) {}
+      return { checked };
+    });
+  }
+
+  renderVals() {
+    const checked = this.state.checked;
+
+    const PRI = {
+      blocker: { badge: 'BLOCKER', color: '#9a3a2a' },
+      core:    { badge: 'CORE',    color: '#2f5d7c' },
+      decide:  { badge: 'DECIDE',  color: '#8a6d3f' },
+      later:   { badge: 'LATER',   color: '#7a7460' },
+    };
+
+    const data = [
+      {
+        title: 'PHASE 0 · DEFINE THE GAME',
+        subtitle: 'What Council is, before a single rule is written. These are blockers \u2014 they decide the shape of everything after.',
+        items: [
+          { id: 'p0-thesis', pri: 'blocker', text: 'Write the design thesis (one page)',
+            note: 'What Council is and who it is for: tables past dice and sheets, narrative-first, whose one nagging problem is insight without interrogation. The whole game is the answer to that sentence.' },
+          { id: 'p0-loop', pri: 'blocker', text: 'Name the core loop',
+            note: 'The engine every Council game turns on: scene play \u2194 the Tide (between-session Works) \u2194 asking the Water. One diagram, three arrows. If it needs more, it is too big.' },
+          { id: 'p0-pillars', pri: 'blocker', text: 'Lock the pillars and their names',
+            note: 'The Water (Landis), the Council, Works, the Tide, the Ledger, Squalls, the Seals, Grace. Fix the vocabulary now; renaming later rots every handout.' },
+          { id: 'p0-fixed', pri: 'decide', text: 'Decide what is fixed vs. setting-swappable',
+            note: 'Landis on the sea, real only in water, is canon in EVERY Council game \u2014 he is part of the machine, not the setting. Draw the exact line between the fixed spine and the dressing a table brings.' },
+        ],
+      },
+      {
+        title: 'PHASE 1 · THE RESOLUTION CORE',
+        subtitle: 'How Council decides things with no dice. This is the heart \u2014 the reason the game exists.',
+        items: [
+          { id: 'p1-grace', pri: 'core', text: 'Formalize "grace buys clarity"',
+            note: 'The universal resolution stance that replaces the roll: how effort, preparation, and fair asking convert into information. State it so any keeper can apply it cold.' },
+          { id: 'p1-seals', pri: 'core', text: 'The Keeper\u2019s Seals \u2014 the general rule',
+            note: 'The core invention: pre-writing tiered clues (Nudge / Bearing / Answer) for ANY obstacle, sealed and shown, so insight never depends on a player being clever in the moment. Write this as a setting-free procedure.' },
+          { id: 'p1-water', pri: 'core', text: 'The Landis economy, portable',
+            note: 'The price ladder \u2014 truth \u2192 complication \u2192 madness \u2192 time \u2192 escalation \u2014 abstracted from any campaign. The Grace Book and Bill of Fare are its player-facing face; confirm they read setting-free.' },
+          { id: 'p1-safety', pri: 'core', text: 'Banked grace + the mercy clause',
+            note: 'The two safety rails: cleverness banks free askings; nothing may ever hard-stall the table. These make the system safe to hand to strangers.' },
+          { id: 'p1-absent', pri: 'later', text: 'The absent-expert / letter mechanic',
+            note: 'Consulting someone off-screen: free, plain, but slow and read by the courier. Generic \u2014 works for any "the person who\u2019d know isn\u2019t here" case.' },
+        ],
+      },
+      {
+        title: 'PHASE 2 · THE BETWEEN-SESSION ENGINE',
+        subtitle: 'Works, the Tide, the Ledger \u2014 how a world keeps moving while the table sleeps. All priced in time.',
+        items: [
+          { id: 'p2-works', pri: 'core', text: 'Works: Aim / Hands / Stakes + sizes',
+            note: 'The project card and its three lines; Small Work / Work / Great Work measured in watches. Setting-free.' },
+          { id: 'p2-tide', pri: 'core', text: 'The Tide: watches advance on their own',
+            note: 'Every session moves every open work one watch; spending a scene adds one. Public countdowns. The clock the whole game keeps.' },
+          { id: 'p2-ledger', pri: 'core', text: 'The Ledger: Hands / Power / Standing',
+            note: 'The three stake columns as portable archetypes any setting maps onto (people / resources / goodwill). No double-pinning; wounding a stake stalls all pinned to it.' },
+          { id: 'p2-squall', pri: 'core', text: 'Squalls + Forcing',
+            note: 'Sealed complications on Great Works; forcing a watch by paying a truth or a favor owed. Define generically.' },
+          { id: 'p2-divine', pri: 'core', text: 'Formalize the Divine Work tier',
+            note: 'STILL UNWRITTEN. Campaign-length arcs: no fixed watch-count; several separately-sealed squalls opened one at a time; squalls that rewrite the card itself; how stakes attach and detach over months. The system\u2019s biggest open gap.' },
+          { id: 'p2-orders', pri: 'later', text: 'Work Orders + completion \u2192 canon',
+            note: 'Between-session messages to those doing the work; finished works becoming plain facts. Generic.' },
+        ],
+      },
+      {
+        title: 'PHASE 3 · GOVERNANCE',
+        subtitle: 'The Council frame itself \u2014 a portable way to share authority and put dissent on the record.',
+        items: [
+          { id: 'p3-council', pri: 'core', text: 'The Council as a portable authority structure',
+            note: 'Shared seats, a final say, every vote and dissent minuted so a dark choice is already canon. Written so any group can seat their own council in any fiction.' },
+          { id: 'p3-chain', pri: 'core', text: 'Deputies / interrupts / the override',
+            note: 'The generic chain-of-command tools: who can hold a work, what pulls a person off it, and the priced override that keeps them on anyway.' },
+          { id: 'p3-seats', pri: 'decide', text: 'Make "who sits" a setup CHOICE',
+            note: 'Wide table (department heads vote) vs. narrow table (they advise) should be a dial the group sets at session zero, not a fixed answer baked into the rules.' },
+          { id: 'p3-absence', pri: 'later', text: 'Absence & reachability rules',
+            note: 'The reachable-vs-unreachable distinction (a need met without the expert\u2019s insight shows as something concrete and wrong). Generic.' },
+        ],
+      },
+      {
+        title: 'PHASE 4 · TEACH & SHIP',
+        subtitle: 'Make Council runnable by a table that has never met us. Prove it is a game, not just our game.',
+        items: [
+          { id: 'p4-zero', pri: 'core', text: 'Session-zero: boot Council in one sitting',
+            note: 'The keeper\u2019s quickstart \u2014 how any group stands up the loop, the Water, and a first Ledger in a single evening.' },
+          { id: 'p4-handouts', pri: 'core', text: 'Generalize the two player handouts',
+            note: 'The Grace Book and the Bill of Fare, scrubbed of any one setting, are the whole player-facing ruleset. Confirm a stranger could read them and play.' },
+          { id: 'p4-blanks', pri: 'core', text: 'Blank play aids (reusable)',
+            note: 'A blank Keeper\u2019s Seal card, a blank Work card, a blank Ledger sheet. The physical kit any table prints once and reuses forever.' },
+          { id: 'p4-example', pri: 'later', text: 'One worked example in a throwaway setting',
+            note: 'Run a tiny obstacle in a setting that is deliberately NOT ours, to prove the system carries. If it only works in our world, it isn\u2019t a system yet.' },
+          { id: 'p4-onboard', pri: 'later', text: 'Onboarding: what prints, what the keeper holds',
+            note: 'The generic packaging \u2014 player packet vs. keeper packet \u2014 as a template any Council game fills in.' },
+        ],
+      },
+      {
+        title: 'PHASE 5 · THEN \u2014 LAYER A CAMPAIGN',
+        subtitle: 'The bridge. Council is done; now build a world on it. This spawns a second, separate plan.',
+        items: [
+          { id: 'p5-bridge', pri: 'core', text: 'Open the "Council of Un" Game Design Plan',
+            note: 'A new document that builds OUR Stargate-Atlantis campaign on top of the finished Council substrate \u2014 the Council of Un, its departments, the Storm, the live cards, the Brotherhood, Sanctuary. Everything setting-specific lives there, not here.' },
+        ],
+      },
+    ];
+
+    const phases = data.map(p => {
+      const items = p.items.map(it => {
+        const pri = PRI[it.pri];
+        const isChecked = !!checked[it.id];
+        return {
+          id: it.id,
+          text: it.text,
+          note: it.note,
+          badge: pri.badge,
+          mark: isChecked ? '\u2713' : '',
+          onToggle: () => this.toggle(it.id),
+          boxStyle: `flex:none;width:20px;height:20px;border:2px solid ${isChecked ? '#2f5d7c' : '#8a8470'};background:${isChecked ? '#2f5d7c' : '#f4f1e8'};color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px`,
+          badgeStyle: `flex:none;font-size:9.5px;font-weight:700;letter-spacing:1px;color:#fff;background:${pri.color};padding:2px 6px;border-radius:2px`,
+          textStyle: `font-size:13.5px;font-weight:700;line-height:1.4;${isChecked ? 'text-decoration:line-through;color:#8a8470' : ''}`,
+        };
+      });
+      const done = items.filter(i => i.mark).length;
+      const total = items.length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      return {
+        title: p.title,
+        subtitle: p.subtitle,
+        items,
+        progress: `${done} / ${total}`,
+        barStyle: `height:100%;width:${pct}%;background:#2f5d7c;transition:width .2s ease`,
+      };
+    });
+
+    const done = phases.reduce((a, p) => a + p.items.filter(i => i.mark).length, 0);
+    const total = phases.reduce((a, p) => a + p.items.length, 0);
+
+    return { phases, overall: `${done} / ${total}` };
+  }
+}
+</script>
+</body>
+</html>

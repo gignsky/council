@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <!-- masthead -->
+  <div style="background:#1b3140;color:#eee3c9;padding:46px 56px 40px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">A NARRATIVE ROLEPLAYING GAME · RUN ON WORDS, NOT DICE</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:80px;line-height:.9;letter-spacing:-1px;margin:16px 0 6px;color:#f3ead1;position:relative">COUNCIL</div>
+    <div style="font-size:20px;font-style:italic;color:#c9bda0;position:relative">A Player's Handbook</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px;position:relative">
+      <span style="height:1px;width:70px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIRST — FOUNDATIONS</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:70px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:16px;position:relative">being the whole of the game, set down plain, that any hand aboard may read it</div>
+  </div>
+
+  <div style="padding:46px 56px 52px;display:flex;flex-direction:column;gap:40px">
+
+    <!-- THESIS -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 0.1 &nbsp;THE THESIS</div>
+      <div style="font-size:26px;line-height:1.28;font-style:italic;color:#1b3140">Council is for tables who left the dice behind — and found they had left something else behind with them.</div>
+      <div style="font-size:16.5px;line-height:1.8">When a crew stops rolling and starts telling, the story runs warmer and the arithmetic goes quiet — and then, one night, a locked door appears that no one at the table happens to be clever enough to open. Under dice, a character <i>rolled to know things their player did not.</i> Take the dice away and that quiet gift goes with them: now a player can learn only what they personally thought to ask, and the keeper is left dangling hints, praying someone guesses the shape of the answer.</div>
+      <div style="font-size:16.5px;line-height:1.8"><b>Council exists to hand that gift back without handing the dice back.</b> It is a game of insight, consequence, and shared command that runs entirely on words. One question steers every rule in this handbook: <i>how does a soul come to know a thing without guessing the exact right way to ask?</i> All that follows is an answer.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:17px;font-style:italic;color:#3a3428;line-height:1.6">You will not roll to see if you succeed. You will decide what you are willing to pay to find out. — the first principle</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- WHO -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 0.2 &nbsp;WHO SAILS UNDER IT</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:16px 18px;font-size:15px;line-height:1.65"><b>Crews who have already drifted.</b> Long campaigns that quietly abandoned sheets and initiative and now live on narration and trust. Council names what they are already doing and gives it teeth.</div>
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:16px 18px;font-size:15px;line-height:1.65"><b>Keepers weary of dangling hints.</b> Game masters who love the shared story but keep striking the reef where a puzzle stalls because no one has yet said the magic thing.</div>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- THE LOOP -->
+    <section style="display:flex;flex-direction:column;gap:16px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 0.3 &nbsp;THE TURN OF THE TIDE — THE CORE LOOP</div>
+      <div style="font-size:16.5px;line-height:1.8">Play turns through three stations. A <b>Scene</b> raises a need the table cannot simply declare true. The world answers by one of two roads — <b>the Water</b> (buy insight now, at a price) or <b>the Tide</b> (commit the work, let time carry it) — and whatever comes back walks into the next Scene, changed. That is the entire machine. All else is rigging hung upon it.</div>
+
+      <div style="background:#14212b;padding:30px 26px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:stretch">
+          <div style="background:#efe6cf;padding:18px 16px;display:flex;flex-direction:column;gap:7px;border-top:3px solid #2f6d8a">
+            <div class="mono" style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">STATION ONE</div>
+            <div style="font-size:21px">The Scene</div>
+            <div style="font-size:13px;line-height:1.55;color:#3a3428">Play, talk, act. A need arises the table cannot just wish true — a locked door, a hidden truth, a thing that must be built.</div>
+          </div>
+          <div style="background:#efe6cf;padding:18px 16px;display:flex;flex-direction:column;gap:7px;border-top:3px solid #a8823f">
+            <div class="mono" style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">ROAD A — NOW</div>
+            <div style="font-size:21px">The Water</div>
+            <div style="font-size:13px;line-height:1.55;color:#3a3428">Seek Landis. Trade a truth, a trouble, a scene, for a real answer drawn from a sealed clue — never from guessing the question.</div>
+          </div>
+          <div style="background:#efe6cf;padding:18px 16px;display:flex;flex-direction:column;gap:7px;border-top:3px solid #2f6d8a">
+            <div class="mono" style="font-size:10px;letter-spacing:2px;color:#a8823f;font-weight:700">ROAD B — IN TIME</div>
+            <div style="font-size:21px">The Tide</div>
+            <div style="font-size:13px;line-height:1.55;color:#3a3428">Commit a Work. Between sessions the world moves it a watch at a time; the consequence arrives later, signed by whoever bore it.</div>
+          </div>
+        </div>
+        <div class="mono" style="text-align:center;color:#7e97a4;font-size:11.5px;letter-spacing:2px">↺ &nbsp; and whatever the world returns walks back into the next Scene, changed &nbsp; ↺</div>
+      </div>
+      <div style="font-size:15px;font-style:italic;color:#3a3428;line-height:1.6;text-align:center">Three stations. Two roads. One turning tide. If a rule does not serve the turn, it does not belong aboard.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- PILLARS -->
+    <section style="display:flex;flex-direction:column;gap:16px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 0.4 &nbsp;THE EIGHT TIMBERS</div>
+      <div style="font-size:16px;line-height:1.75">The fixed vocabulary of the game — the timbers of the hull. These words mean the same at every Council table; a keeper may re-rig the world above, but not rename the timbers below.</div>
+      <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="8">
+          <div style="display:flex;gap:16px;align-items:baseline;background:#efe6cf;padding:13px 18px">
+            <div class="mono" style="flex:none;width:26px;font-size:13px;font-weight:700;color:#2f6d8a">{{ p.num }}</div>
+            <div style="flex:none;width:132px;font-size:18px">{{ p.name }}</div>
+            <div style="flex:1;font-size:14.5px;line-height:1.55;color:#3a3428">{{ p.line }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- THE SPINE -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 0.5 &nbsp;THE KEEL &amp; THE RIGGING</div>
+      <div style="font-size:16.5px;line-height:1.8">Council is a keel, not a world. A table brings its own fiction — a drowned empire, a generation ship, a haunted county — and rigs it to the timbers below. But one timber is not the table's to swap. <b>Landis is fixed.</b> The madman on the sea, real only in water, who sells true answers at a price, stands in every Council game that has been or will be run. He is not a figure in your setting; he is the keel itself, and the crew reach him from inside whatever world they inhabit by finding water and asking with grace.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#14212b;color:#eee3c9;padding:18px 20px;display:flex;flex-direction:column;gap:8px;border-top:3px solid #a8823f">
+          <div class="mono" style="font-size:11px;letter-spacing:2px;color:#9ab7c9">THE KEEL — FIXED</div>
+          <div style="font-size:14.5px;line-height:1.6">Landis &amp; the Water. The eight timbers and their names. The turn of the tide. "Grace buys clarity." The Seals. The safety rails. These sail unchanged between every Council game.</div>
+        </div>
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:18px 20px;display:flex;flex-direction:column;gap:8px;border-top:3px solid #2f6d8a">
+          <div class="mono" style="font-size:11px;letter-spacing:2px;color:#8a7c56">THE RIGGING — YOURS</div>
+          <div style="font-size:14.5px;line-height:1.6">The world, its peoples, what "Power" and "Standing" are made of, what a Council governs, what the riddles guard. All of it a table's to invent, replace, and burn to the waterline.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:17px;font-style:italic;color:#3a3428;line-height:1.6">Change everything you like. Leave me the water. — L.F.</div>
+    </section>
+
+    <!-- campaign note -->
+    <div style="background:#e5dabe;border:1px dashed #a8823f;padding:16px 20px;font-size:14.5px;line-height:1.65">
+      <span class="mono" style="font-size:10.5px;letter-spacing:2px;color:#8a7c56;display:block;margin-bottom:6px">A NOTE ON OUR OWN VOYAGE</span>
+      This handbook is the game any crew may read. A single game then hangs its own command upon it: our voyage seats the <b>Council of Un</b>, and its leader keeps a bound supplement — the <b>Standing Orders</b> — that this handbook makes room for but does not contain. The rules are shared; the orders are ours.
+    </div>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE FIRST</span><span>NEXT — BOOK THE SECOND: THE RESOLUTION CORE</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const pillars = [
+      { num: 'I',    name: 'The Water',   line: 'Landis, real only in water, who sells true answers at a price. The game\u2019s one fixed presence and its oracle.' },
+      { num: 'II',   name: 'The Council', line: 'Shared command with a final say. Every vote and dissent goes on the record, so a hard choice is already canon.' },
+      { num: 'III',  name: 'Works',       line: 'The things a crew sets out to accomplish between scenes, declared as cards: an aim, the hands, the stakes.' },
+      { num: 'IV',   name: 'The Tide',    line: 'Time itself. Every session advances every open Work one watch, whether or not the table touched it.' },
+      { num: 'V',    name: 'The Ledger',  line: 'What a Work spends: Hands, Power, Standing. Nothing is pinned twice; wound a stake and all pinned to it stalls.' },
+      { num: 'VI',   name: 'Squalls',     line: 'Sealed complications carried by the larger Works, breaking when the wake turns against you.' },
+      { num: 'VII',  name: 'The Seals',   line: 'Pre-written clues \u2014 Nudge, Bearing, Answer \u2014 sealed and shown, so insight never waits on a clever question.' },
+      { num: 'VIII', name: 'Grace',       line: 'The etiquette and economy of asking for help. Grace buys clarity; it is what you spend where others spent dice.' },
+    ];
+    return { pillars };
+  }
+}
+</script>
+</body>
+</html>

@@ -38,3 +38,57 @@ h1.book-title{font-family:'Alfa Slab One',serif;font-size:clamp(34px,6.5vw,56px)
 .book-note{margin-top:40px;padding:16px 20px;border:1px dashed #2b4254;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:2px;color:#5c7686}
 .book-foot{margin-top:64px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#5c7686}
 .book-foot a{color:#5c7686}
+
+/* ---- Landing: scroll cue into the timeline ---- */
+.tl-cue{position:relative;margin-top:44px;font-size:11px;letter-spacing:4px;color:#9ab7c9;text-decoration:none}
+.tl-cue:hover{color:#e9d9a8}
+.tl-cue-chev{display:inline-block;margin-left:6px;animation:tlbob 2.4s ease-in-out infinite}
+@keyframes tlbob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(4px);opacity:1}}
+
+/* ---- Landing: the work timeline ---- */
+.tl-section{background:radial-gradient(120% 80% at 50% 0%,#12232f 0%,#0b1620 60%,#0e1a24 100%);padding:88px 24px 104px}
+.tl-head{max-width:720px;margin:0 auto 56px;text-align:center}
+.tl-kicker{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:6px;color:#9ab7c9}
+.tl-title{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(30px,6vw,48px);line-height:1.05;margin:14px 0 18px;color:#f3ead1}
+.tl-lede{font-size:17px;line-height:1.8;color:#cddbe2;margin:0}
+.tl-lede a{color:#e9d9a8}
+.tl-track{position:relative;list-style:none;max-width:720px;margin:0 auto;padding:0}
+.tl-track::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(#a8823f,#2b4254)}
+.tl-item{position:relative;padding-left:40px;margin:0 0 34px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:0;top:26px;width:16px;height:16px;border-radius:50%;background:#0e1a24;border:2px solid #5c7686;box-sizing:border-box}
+.tl-item--done .tl-dot{border-color:#a8823f;background:#a8823f}
+.tl-item--active .tl-dot{border-color:#e9d9a8;background:#e9d9a8;box-shadow:0 0 0 4px rgba(233,217,168,.18),0 0 16px rgba(233,217,168,.55)}
+.tl-when{font-size:11px;letter-spacing:3px;color:#9ab7c9;text-transform:uppercase;margin:0 0 8px}
+.tl-card{background:#efe6cf;color:#23201a;border:1px solid #b9ab86;border-top:4px solid #a8823f;padding:20px 22px}
+.tl-item--active .tl-card{border-top-color:#e9d9a8;box-shadow:0 6px 30px rgba(0,0,0,.35)}
+.tl-item--planned .tl-card{background:#e6ddc6;border-top-color:#8a9aa6;opacity:.94}
+.tl-card-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.tl-card-title{font-family:'Alfa Slab One',serif;font-weight:400;font-size:20px;line-height:1.2;margin:0;color:#1b3140}
+.tl-badge{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;padding:3px 8px;border-radius:2px;white-space:nowrap}
+.tl-badge--done{background:#e5dabe;color:#7a5a1f;border:1px solid #c2a86a}
+.tl-badge--active{background:#1b3140;color:#f3ead1;border:1px solid #a8823f}
+.tl-badge--planned{background:#dfe4e6;color:#4a606c;border:1px solid #9ab0bc}
+.tl-summary{font-size:15.5px;line-height:1.72;margin:12px 0 0;color:#33302a}
+.tl-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:18px}
+.tl-link{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:#2f6d8a;text-decoration:none}
+.tl-link:hover{color:#20505f}
+.tl-foot{margin:64px auto 0;max-width:720px;text-align:center;font-size:11px;letter-spacing:3px;color:#5c7686}
+.tl-foot a{color:#5c7686}
+
+/* ---- Archive catalogue ---- */
+.arc-era{margin:48px 0 0}
+.arc-era-head{font-family:'Alfa Slab One',serif;font-weight:400;font-size:24px;color:#e9d9a8;margin:0 0 6px;display:flex;align-items:baseline;gap:12px}
+.arc-era-num{font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:2px;color:#a8823f;border:1px solid #a8823f;border-radius:2px;padding:1px 7px}
+.arc-era-blurb{font-size:16px;line-height:1.7;color:#9ab7c9;margin:0 0 12px}
+.arc-list{list-style:none;margin:0;padding:0}
+.arc-item{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:16px 4px;border-bottom:1px solid #2b4254}
+.arc-item-main{flex:1 1 320px;min-width:0}
+.arc-item-title{font-size:18px;color:#f3ead1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.arc-item-desc{font-size:15px;line-height:1.6;color:#9ab7c9;margin-top:4px}
+.arc-tag{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;color:#c2a86a;border:1px solid #7a5a1f;border-radius:2px;padding:1px 6px;white-space:nowrap}
+.arc-links{display:flex;gap:10px;flex:none}
+.arc-link{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:#0e1a24;background:#e9d9a8;text-decoration:none;padding:6px 12px;border-radius:2px}
+.arc-link:hover{background:#f3ead1}
+.arc-link-alt{background:transparent;color:#9ab7c9;border:1px solid #3a5568}
+.arc-link-alt:hover{background:rgba(154,183,201,.1);color:#e9d9a8}

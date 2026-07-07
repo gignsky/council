@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Alfa+Slab+One&amp;family=IM+Fell+English:ital@0,400;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#16242e;font-family:'IM Fell English',serif}
+a{color:#2f6d8a}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:9px;height:9px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+.step{flex:none;width:30px;height:30px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-size:14px}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:48px 20px 72px">
+<div style="width:720px;max-width:100%;background:#efe6cf;color:#23201a;box-shadow:0 6px 30px rgba(0,0,0,.4);border:1px solid #b9ab86">
+
+  <div style="background:#1b3140;color:#eee3c9;padding:40px 56px 34px;position:relative;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 15px,rgba(255,255,255,.03) 15px 16px);pointer-events:none"></div>
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9;position:relative">COUNCIL · A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:12px 0 6px;color:#f3ead1;position:relative">TEACH &amp; SHIP</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span class="mono" style="font-size:11px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIFTH</span>
+      <span style="color:#a8823f;font-size:14px">✦</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:15px;font-style:italic;color:#8ea6b3;margin-top:14px;position:relative">for the keeper — how to raise a Council game from nothing, and run it well</div>
+  </div>
+
+  <div style="padding:44px 56px 52px;display:flex;flex-direction:column;gap:36px">
+
+    <div style="font-size:16.5px;line-height:1.8;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:18px">The first four books are the game. This one is the craft of it — how to stand a table up in an evening, and the three small arts that make a keeper of you: writing Seals, giving grace, and wounding without cruelty.</div>
+
+    <!-- 5.1 session zero -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.1 &nbsp;SESSION ZERO — RAISING A GAME IN ONE SITTING</div>
+      <div style="font-size:16.5px;line-height:1.8">Council boots in a single evening. Five moves, in order:</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:16px;align-items:flex-start"><div class="step">1</div><div style="flex:1;font-size:15.5px;line-height:1.7"><b>Rig the world.</b> Agree the fiction — the setting, its peoples, and what <i>Power</i> and <i>Standing</i> are made of here. This is the rigging; invent it freely.</div></div>
+        <div style="display:flex;gap:16px;align-items:flex-start"><div class="step">2</div><div style="flex:1;font-size:15.5px;line-height:1.7"><b>Seat the Council.</b> Decide who holds the final say, and set the dial of §4.2 — <b>narrow by default</b> (heads advise), or wide if you want the intrigue of a true vote. Name the standing heads.</div></div>
+        <div style="display:flex;gap:16px;align-items:flex-start"><div class="step">3</div><div style="flex:1;font-size:15.5px;line-height:1.7"><b>Lay the first Ledger.</b> Write two or three opening Works — an aim, its hands, its stakes each — so the tide has something to move on the very first session.</div></div>
+        <div style="display:flex;gap:16px;align-items:flex-start"><div class="step">4</div><div style="flex:1;font-size:15.5px;line-height:1.7"><b>Teach the Water.</b> Tell the crew, plainly, of Landis: real only in water, true always, dear always. They need not use him yet — only know he is there.</div></div>
+        <div style="display:flex;gap:16px;align-items:flex-start"><div class="step">5</div><div style="flex:1;font-size:15.5px;line-height:1.7"><b>Promise hope.</b> Say aloud the one creed (§5.5): the game will reward hope and never lock a door that a hopeful crew cannot come through. Then begin.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 5.2 seals -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.2 &nbsp;THE FIRST ART — WRITING SEALS</div>
+      <div style="font-size:16.5px;line-height:1.8">This is the craft the whole game rests on. For any obstacle worth being stuck on, <b>write three clues before play and seal them</b>: the <b>Nudge</b> (a word or image, a turned head), the <b>Bearing</b> (what to do, never why), the <b>Answer</b> (plain as porridge). Set them face-down and visible, in order. Write them <i>before</i> — never under the pressure of a stuck table, when your judgment is worst. A keeper who has written the Answer in advance can afford to be generous with the Nudge, because they know the crew can never be truly lost.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 5.3 grace -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.3 &nbsp;THE SECOND ART — GIVING GRACE</div>
+      <div style="font-size:16.5px;line-height:1.8">You are the god of this small creation, and grace is your one free hand (Book the Second). Give it <b>quietly</b> — a detail noticed, a stranger who speaks first, a door found ajar — and do not announce it; let the crew feel merely lucky. Give it toward the <b>stuck and the hopeful</b>: a good-faith struggle invites your grace, though nothing may compel it. Do not tally it, do not let it be demanded, and never withhold it out of a sense of fairness — grace was never fair, and that is the mercy of it. Its one hard law is that a truly aground crew always receives it. Everything else, you give as the story moves you.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 5.4 signed squall -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.4 &nbsp;THE THIRD ART — THE SIGNED SQUALL</div>
+      <div style="font-size:16.5px;line-height:1.8">When a Work's storm breaks, or a stake is wounded, do not narrate it from the clouds. Deliver it as a <b>report on the letterhead of whoever bore it</b> — a courier's field note, a healer's page, a quartermaster's tally. This is the standing house style of Council, and it does quiet work: it keeps consequence <i>concrete</i>, it hands the crew a voice to answer, and it makes even the worst news feel like the world speaking rather than the keeper punishing. In Council, bad news always arrives signed.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 5.5 hope & harm -->
+    <section style="display:flex;flex-direction:column;gap:12px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.5 &nbsp;ON HOPE &amp; HARM — THE TONE OF THE GAME</div>
+      <div style="font-size:16.5px;line-height:1.8">Council is built to reward hope. Bend the world kinder to a crew that believes it can be bettered, and let grace run toward them like water downhill. The game <b>may wound</b> — it may cost dearly, and grieve truly; a table that risks nothing feels nothing. But it breaks only the one who has <b>stopped hoping</b>. So wound the hopeful with things they can yet answer, and reserve true, unanswerable loss for the moment a soul has abandoned hope entirely — for that is the only wound Council means to be final.</div>
+      <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 18px;font-size:17px;font-style:italic;color:#3a3428;line-height:1.6">Despair is the only door that locks from the inside. Never turn the key for them — but do not hold it shut if they turn it themselves.</div>
+    </section>
+
+    <div class="rule"><span class="diamond"></span></div>
+
+    <!-- 5.6 what to print -->
+    <section style="display:flex;flex-direction:column;gap:14px">
+      <div class="mono" style="font-size:12px;letter-spacing:3px;color:#a8823f;font-weight:700">§ 5.6 &nbsp;WHAT TO PRINT, WHAT TO KEEP</div>
+      <div style="font-size:16.5px;line-height:1.8">Two bundles make a Council game ready for a table:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#e5dabe;border:1px solid #c2b590;padding:16px 18px"><div style="font-size:17px;color:#1b3140;margin-bottom:6px">The Crew's Packet</div><div style="font-size:14px;line-height:1.6">This handbook, and Landis's two handouts — the Grace Book and the Bill of Fare. All a player needs to sit down and play.</div></div>
+        <div style="background:#14212b;color:#eee3c9;padding:16px 18px"><div style="font-size:17px;color:#f3ead1;margin-bottom:6px">The Keeper's Papers</div><div style="font-size:14px;line-height:1.6">The sealed Seals, the Ledger's hidden stakes, the Divine Work's beats — everything written before play and shown to no one until its watch turns.</div></div>
+      </div>
+      <div style="font-size:15px;line-height:1.7;font-style:italic;color:#3a3428">Print the first. Keep the second. The whole art of the keeper lives in the gap between the two.</div>
+    </section>
+
+    <div class="mono" style="border-top:1px dashed #23201a;padding-top:14px;font-size:10.5px;letter-spacing:1.5px;color:#6b6656;display:flex;justify-content:space-between">
+      <span>COUNCIL · A PLAYER'S HANDBOOK · BOOK THE FIFTH</span><span>HERE ENDS THE HANDBOOK · THE HANDOUTS FOLLOW</span>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>
