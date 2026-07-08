@@ -21,7 +21,8 @@ The site has these sections:
   file per chapter, added as each is settled.
 - **`/archive/`** — **The Archive**: the development record of the *system* —
   every draft, ruling, and book in the order it was made. Deliberately **does
-  not** include the Council of Un campaign material.
+  not** include the Council of Un campaign material, with one ruled exception:
+  the first MVP table kit (Era VI), archived as a moment behind the oath gate.
 - **`/un/`** — **Council of Un**, the personal campaign corner, with its own
   visual identity and (eventually) interactive table tools.
 
@@ -95,7 +96,10 @@ PDF.
 
 The Atlantis **Council of Un** campaign layer is deliberately kept out of the
 Archive (the campaign stays separate from the system). Don't add campaign
-documents here.
+documents here — the one ruled exception (2026-07-08, by the owner) is the
+first MVP table kit in Era VI, archived as a moment. Its keeper's booklet is
+sealed material that would spoil **all** players, guarded only by the
+honour-system oath gate.
 
 **To add an archived document:**
 

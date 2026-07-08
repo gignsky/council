@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./archive-notice.js" defer></script>
+<title>The Works — Play Cards (Table Copy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{--desk:#cfc9bb;--card:#f4f1e8;--ink:#22201a;--muted:#5a5648;--italic:#4a4636}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--desk);color:var(--ink);
+    font-family:'Courier Prime','Courier New',monospace;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .ink{font-family:'IM Fell English',Georgia,serif;font-style:italic}
+  .page{padding:34px 24px 60px;max-width:900px;margin:0 auto}
+  .head-note{background:var(--ink);color:var(--card);padding:12px 18px;font-size:11px;
+    letter-spacing:1.5px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center}
+  .deck{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{border:1.5px dashed #7a766a;background:var(--card);position:relative;
+    display:flex;flex-direction:column;min-height:250px}
+  .card .inner{border:1.5px solid var(--ink);margin:6px;flex:1;display:flex;flex-direction:column}
+  .card .bar{display:flex;justify-content:space-between;align-items:center;background:var(--ink);
+    color:var(--card);padding:7px 13px;font-size:10.5px;letter-spacing:1.4px}
+  .card .body{padding:12px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .title{font-size:17px;font-weight:700;letter-spacing:.3px}
+  .line{font-size:12px;line-height:1.5}
+  .watchrow{font-size:12px;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+  .pip{display:inline-block;width:16px;height:16px;border-radius:50%;border:1.6px solid var(--ink);
+    margin-right:2px;vertical-align:middle}
+  .pip.on{background:var(--ink)}
+  .foot{margin-top:auto;font-size:11px;color:var(--italic);border-top:1px solid #cfc7b3;padding-top:8px}
+  .tide{font-size:10px;color:var(--muted);letter-spacing:1px;text-align:right;padding:4px 8px 6px}
+  .scissor{position:absolute;top:-9px;left:8px;font-size:12px;color:#9a968a;background:var(--desk);padding:0 4px}
+  @media print{
+    body{background:#fff}
+    .page{padding:0}
+    .head-note{margin:0 0 14px}
+    .scissor{background:#fff}
+    .card{break-inside:avoid}
+    .deck{gap:10px}
+    @page{size:letter;margin:0.45in}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head-note">
+    <span>COUNCIL OF UN · THE WORKS — TABLE CARDS</span>
+    <span>PRINT · CUT ON THE DASH · INK THE PIPS AS THE TIDE TURNS</span>
+  </div>
+
+  <div class="deck">
+
+    <!-- CARD 01 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 01 · GREAT WORK</span><span>STALLED</span></div>
+      <div class="body">
+        <div class="title">Project Hammer</div>
+        <div class="line"><b>Aim —</b> a Genii fission device, built and proven.</div>
+        <div class="line"><b>Hands —</b> Dr. Radek (pinned) · Genii engineering.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;2 / 5</div>
+        <div class="foot ink">Stalled, awaiting the Catch.</div>
+      </div>
+      <div class="tide">GREAT WORK = 5 watches · squall sealed</div>
+    </div></div>
+
+    <!-- CARD 02 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 02 · GREAT WORK</span><span>STALLED</span></div>
+      <div class="body">
+        <div class="title">The Hoffan Compound</div>
+        <div class="line"><b>Aim —</b> the drug proven, mass-produced, field-ready before the wraith come.</div>
+        <div class="line"><b>Hands —</b> Dr. Carson Beckett (light duty) · Keely, Hoffan chemist.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;2 / 5</div>
+        <div class="foot ink">No deputy — freezes on a medical emergency unless Un overrides (SO-1.4–1.5). Awaiting a test subject.</div>
+      </div>
+      <div class="tide">GREAT WORK = 5 watches · squall sealed</div>
+    </div></div>
+
+    <!-- CARD 03 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 03 · WORK</span><span>OPEN</span></div>
+      <div class="body">
+        <div class="title">The Catch</div>
+        <div class="line"><b>Aim —</b> one wraith — alive, contained.</div>
+        <div class="line"><b>Hands —</b> the Cincos.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip on"></span><span class="pip"></span><span class="pip"></span> &nbsp;1 / 3</div>
+        <div class="line" style="font-size:11px"><b>18-hour clock</b> — fictional, not the tide.</div>
+        <div class="foot ink">Both Great Works wait on this. Everything hinges on the catch.</div>
+      </div>
+      <div class="tide">WORK = 3 watches</div>
+    </div></div>
+
+    <!-- CARD 04 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 04 · WORK</span><span>SQUALL OPEN</span></div>
+      <div class="body">
+        <div class="title">The Shield's Heart</div>
+        <div class="line"><b>Aim —</b> the power source found, taken, delivered to Atlantis.</div>
+        <div class="line"><b>Hands —</b> the Cincos.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip on"></span><span class="pip on"></span><span class="pip"></span> &nbsp;2 / 3</div>
+        <div class="foot ink">Children's Standing already spent, not risked. Squall open (Science memo). The ZPM is not what was hoped.</div>
+      </div>
+      <div class="tide">WORK = 3 watches · squall broken</div>
+    </div></div>
+
+    <!-- CARD 05 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 05 · SMALL WORK</span><span>OPEN</span></div>
+      <div class="body">
+        <div class="title">Jumper Three</div>
+        <div class="line"><b>Aim —</b> flying again, or honest salvage.</div>
+        <div class="line"><b>Hands —</b> the Cincos + local goodwill.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip"></span> &nbsp;0 / 1</div>
+        <div class="foot ink">A small thing. One good watch closes it.</div>
+      </div>
+      <div class="tide">SMALL WORK = 1 watch · no squall</div>
+    </div></div>
+
+    <!-- CARD 06 -->
+    <div class="card"><span class="scissor">✂</span><div class="inner">
+      <div class="bar"><span>CARD 06 · RESEARCH ROAD</span><span>QUEUED — NO HANDS</span></div>
+      <div class="body">
+        <div class="title">The Brotherhood Riddle</div>
+        <div class="line"><b>Aim —</b> the riddle solved.</div>
+        <div class="line"><b>Hands —</b> VACANT — Radek, the obvious hand, is pinned to Card 01.</div>
+        <div class="watchrow"><b>Watches</b>&nbsp; <span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;0 / 3</div>
+        <div class="foot ink">Cannot advance until a hand is free (3.5). The dig site waits.</div>
+      </div>
+      <div class="tide">RESEARCH ROAD · opens a Keeper's Seal on completion</div>
+    </div></div>
+
+  </div>
+
+  <div style="margin-top:22px;font-size:11px;color:var(--muted);line-height:1.6">
+    <b>Table reminders —</b> The tide advances every open work one watch a session (SO-3.2). Spend a scene on a work → one more.
+    Force a work once a session for one extra watch by paying a <b>Truth</b> or a <b>Favor Owed</b> — a forced work always breaks its squall (SO-3.6).
+    A pinned resource can't be pinned twice; wound it and everything on it stalls together (SO-3.3).
+    <span class="ink">Standing never shows a number — it is felt, not read.</span>
+  </div>
+</div>
+</body>
+</html>

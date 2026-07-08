@@ -69,6 +69,15 @@ summary = "The Handbook is printed and marked up by hand; the notes become a Rev
   url = "rules/"
 
 [[milestone]]
+when = "Jul 8"
+title = "The first table kit (MVP)"
+status = "done"
+summary = "Not the final copy to be played with, but a moment worth keeping: the Standing Orders player binder, the Works play cards, and the keeper's sealed booklet — the system first in hand at the table."
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
 when = "Now"
 title = "v3 with the designer"
 status = "active"
