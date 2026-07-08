@@ -128,10 +128,26 @@ jobs:
             const { owner, repo } = context.repo;
 
             const marker = "<!-- page-screenshot-bot -->";
-            const lines = [marker, "## 📸 Page screenshots", ""];
+            const lines = [
+              marker,
+              `## 📸 Page screenshots (${manifest.length})`,
+              "",
+              "_Click any page to expand its screenshot._",
+              "",
+            ];
             for (const { urlPath, file } of manifest) {
               const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${file}`;
-              lines.push(`### \`${urlPath}\``, `![${urlPath}](${rawUrl})`, "");
+              // Each page is a collapsed <details> so the comment stays a short,
+              // scannable index; expanding one reveals just that screenshot.
+              lines.push(
+                "<details>",
+                `<summary><code>${urlPath}</code></summary>`,
+                "",
+                `![${urlPath}](${rawUrl})`,
+                "",
+                "</details>",
+                "",
+              );
             }
             lines.push(`_Updated for ${context.sha}._`);
             const body = lines.join("\n");
