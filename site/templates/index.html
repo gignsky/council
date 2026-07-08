@@ -11,6 +11,20 @@
 {% endblock head_extra %}
 
 {% block body %}
+  {% set timeline = load_data(path="data/timeline.toml") %}
+  <nav class="tlh" aria-label="Council progress timeline">
+    <ol class="tlh-track">
+      {% for m in timeline.milestone %}
+      <li class="tlh-item tlh-item--{{ m.status }}">
+        <a class="tlh-node" href="#ms-{{ loop.index }}" title="{{ m.title }} · {{ m.status }}">
+          <span class="tlh-dot"></span>
+          <span class="tlh-when mono">{{ m.when }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </nav>
+
   <main style="position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 24px;overflow:hidden;background:radial-gradient(120% 90% at 50% 12%,#1c3648 0%,#12232f 45%,#0b1620 100%)">
 
     <div class="star" style="top:12%;left:18%"></div>
@@ -50,7 +64,6 @@
     <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK IS BEING BOUND</a> · <a href="{{ get_url(path='archive/') }}" style="color:#5c7686">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
   </main>
 
-  {% set timeline = load_data(path="data/timeline.toml") %}
   <section id="timeline" class="tl-section">
     <div class="tl-head">
       <div class="tl-kicker">THE LOG · WHAT HAS BEEN BUILT</div>
@@ -59,7 +72,7 @@
     </div>
     <ol class="tl-track">
       {% for m in timeline.milestone %}
-      <li class="tl-item tl-item--{{ m.status }}">
+      <li id="ms-{{ loop.index }}" class="tl-item tl-item--{{ m.status }}">
         <span class="tl-dot"></span>
         <div class="tl-when mono">{{ m.when }}</div>
         <div class="tl-card">
