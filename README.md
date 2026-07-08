@@ -127,7 +127,9 @@ warning is honour-system only, in three layers:
 
 ## Work timeline (landing page)
 
-The landing page shows a timeline of what has been built. It renders from
+The landing page shows a timeline of what has been built — a compact horizontal
+strip of status-coloured nodes pinned above the hero (click a node to jump to its
+full entry), and the full vertical timeline further down. Both render from the same
 **`site/data/timeline.toml`** — that file is the single source the site reads at
 build time:
 
