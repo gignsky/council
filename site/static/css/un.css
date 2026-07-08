@@ -1,7 +1,8 @@
 /* Council of Un — distinct identity: ink, bone, ember. */
 *{box-sizing:border-box}
-html,body{height:100%}
+html{min-height:100%;background:#131118}
 body{
+  min-height:100%;
   margin:0;
   background:#131118;
   color:#ddd6c8;
