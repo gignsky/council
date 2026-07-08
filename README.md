@@ -5,12 +5,13 @@ roleplaying game, "played with words, not dice." Live at
 **[fuckinphilosophers.com](https://fuckinphilosophers.com)**.
 
 **Hosting is Cloudflare Workers (static assets),** migrated from GitHub
-Pages. `.github/workflows/cloudflare-deploy.yml` builds the site with Nix
-and pushes it via `wrangler deploy` — Cloudflare's own dashboard Git
-integration can't build this site (no Nix in its build image) so it isn't
-used. See [`CLOUDFLARE_MIGRATION.md`](CLOUDFLARE_MIGRATION.md) for the full
-runbook and current status. `wrangler.jsonc` holds the Cloudflare config
-(`assets.directory: "public"`, the build output of `nix build .#site`).
+Pages, deployed via Cloudflare's own dashboard Git integration — no GitHub
+Actions secrets involved. Cloudflare's build command runs
+`scripts/cloudflare-build.sh`, which downloads Zola's static binary
+directly (its build image has no Nix) and builds the site. See
+[`CLOUDFLARE_MIGRATION.md`](CLOUDFLARE_MIGRATION.md) for the full runbook
+and current status. `wrangler.jsonc` holds the Cloudflare config
+(`assets.directory: "public"`, the directory that build script produces).
 
 The site has these sections:
 
@@ -37,8 +38,8 @@ The site has these sections:
 | `site/static/js/council-config.js` | The backend seam — API base URL + feature flags.    |
 | `flake.nix`                   | Builds the deployable site (`nix build .#site`) + dev shell. |
 | `.github/workflows/check.yml` | PR gate: builds the flake (`nix flake check`).           |
-| `.github/workflows/cloudflare-deploy.yml` | Builds the flake and deploys to Cloudflare Workers via `wrangler deploy`. |
-| `.github/workflows/cloudflare-build-debug.yml` | Manual (`workflow_dispatch`) reproduction of Cloudflare's own (non-working) Git-integration build, for debugging. |
+| `.github/workflows/cloudflare-build-debug.yml` | PR gate + manual (`workflow_dispatch`): runs `scripts/cloudflare-build.sh` and verifies its output, mirroring Cloudflare's own build. |
+| `scripts/cloudflare-build.sh` | Cloudflare dashboard's Build command — downloads Zola's static binary and builds the site into `public/`. |
 | `wrangler.jsonc`              | Cloudflare Workers static-assets config (`public/`).     |
 | `CLOUDFLARE_MIGRATION.md`     | Runbook for the GitHub Pages → Cloudflare hosting migration. |
 | `archive/`                    | Old, unrelated files kept for history only.              |
@@ -145,20 +146,22 @@ local-only, localStorage for persistence). When a backend exists, point
 
 ## Deployment
 
-Hosting is **Cloudflare Workers (static assets)**. Every push to `main`
-triggers `.github/workflows/cloudflare-deploy.yml`, which runs
-`nix build .#site`, materialises `public/` (per `wrangler.jsonc`'s
-`assets.directory`), and deploys with `wrangler deploy` (authenticated via
-the `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` repo secrets).
-Cloudflare's own dashboard Git integration was tried first and abandoned —
-its build image has no Nix, so it can't build this site;
-`.github/workflows/cloudflare-build-debug.yml` reproduces that failure on
-demand (`workflow_dispatch`) for future debugging.
-`.github/workflows/check.yml` remains as the PR build gate
-(`nix flake check`), unrelated to hosting.
+Hosting is **Cloudflare Workers (static assets)**, via Cloudflare's own
+dashboard-connected Git integration — every push to `main` triggers a
+Cloudflare build directly, no GitHub Actions involved in the deploy itself.
+Its **Build command** is `bash scripts/cloudflare-build.sh`, which
+downloads Zola's static binary (Cloudflare's build image has no Nix) and
+runs `zola build`, producing `public/` for `wrangler.jsonc`'s
+`assets.directory`. `.github/workflows/cloudflare-build-debug.yml` runs
+that same script on every PR to catch regressions (e.g. a Zola version
+bump) before they reach Cloudflare, and can be run manually to debug a
+Cloudflare build failure. `.github/workflows/check.yml` remains as the
+separate PR build gate for the Nix flake (`nix flake check`), unrelated to
+hosting.
 
 This replaces the previous GitHub Pages setup (`deploy.yml` +
 `site/static/CNAME`, both removed). See
 [`CLOUDFLARE_MIGRATION.md`](CLOUDFLARE_MIGRATION.md) for the full cutover
 runbook and current status — the repo-side changes are in; the Cloudflare
-secrets, custom domain, and DNS cutover are manual follow-up.
+dashboard build-command settings, custom domain, and DNS cutover are manual
+follow-up.

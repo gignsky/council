@@ -1,31 +1,36 @@
-name: Debug Cloudflare build
+name: Cloudflare build script check
 
-# Reproduces exactly what Cloudflare's dashboard-connected Git integration
-# does today: clone the repo, then run its deploy command with no build
-# step first (per Cloudflare's own build log for council: "Detected the
-# following tools from environment: " — empty — followed by
-# "Executing user deploy command: npx wrangler versions upload").
+# Validates scripts/cloudflare-build.sh — the script Cloudflare's dashboard
+# project runs as its Build command — without needing Cloudflare
+# credentials. Confirms the same two things Cloudflare's own build needs to
+# find: wrangler.jsonc at the repo root, and a populated public/ directory
+# matching its assets.directory after the build command runs.
 #
-# This exists to debug that pipeline from GitHub Actions logs instead of
-# needing Cloudflare dashboard access. It intentionally does NOT run
-# `nix build .#site` first, so if a fix (build command, wrangler.jsonc,
-# etc.) makes the build succeed here without that Nix step, the fix needs
-# to happen on Cloudflare's side (dashboard build command), not just here.
+# Runs on every PR (catches e.g. a Zola version bump breaking the pinned
+# download) and can also be run manually to debug a Cloudflare build
+# failure: run this first to rule out the build script itself before
+# checking dashboard project settings (Root directory, Build command,
+# Build output directory).
 
 on:
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
-  reproduce-cloudflare-deploy:
+  reproduce-cloudflare-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Run the Cloudflare build command
+        run: bash scripts/cloudflare-build.sh
 
-      - name: Reproduce Cloudflare's deploy command (no build step)
-        run: npx wrangler versions upload
+      - name: Verify wrangler.jsonc + public/ are in place
+        run: |
+          test -f wrangler.jsonc
+          test -d public
+          test -f public/index.html
+          test -f public/un/index.html
+          echo "OK: wrangler.jsonc and public/ are present, matching what Cloudflare's build needs."

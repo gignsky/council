@@ -16,18 +16,21 @@ council's `site/` is **Zola source** — the deployable tree only exists after
 **built** output directory (`public`, matching what `deploy.yml` used to
 produce), not at `site/` itself.
 
-**The build happens in GitHub Actions, not Cloudflare's own Git
-integration.** Cloudflare's dashboard-connected build was tried first and
-failed: its build container has no Nix, and with no build command
-configured it runs straight to `npx wrangler versions upload` against a raw
+**The build stays inside Cloudflare's own Git integration — no GitHub
+Actions secrets, no separate deploy pipeline.** The first attempt (no build
+command configured at all) failed: Cloudflare's build container has no Nix,
+so it ran straight to `npx wrangler versions upload` against a raw
 checkout, which fails because `public/` doesn't exist yet (see
-`.github/workflows/cloudflare-build-debug.yml`, which reproduces that exact
-failure on demand for future debugging). Rather than fight Cloudflare's
-build image for Nix support, `.github/workflows/cloudflare-deploy.yml` reuses
-the same Nix setup `check.yml` already proves works, builds `public/`, and
-pushes it straight to Cloudflare via `wrangler deploy` (the
-`cloudflare/wrangler-action`), authenticated with a `CLOUDFLARE_API_TOKEN` +
-`CLOUDFLARE_ACCOUNT_ID` repo secret pair.
+`.github/workflows/cloudflare-build-debug.yml`, which reproduces the
+underlying build step on every PR and on demand for future debugging).
+
+Rather than fight Cloudflare's build image for Nix support, or move the
+build/deploy into GitHub Actions (which would need `CLOUDFLARE_API_TOKEN` /
+`CLOUDFLARE_ACCOUNT_ID` repo secrets), **`scripts/cloudflare-build.sh`**
+downloads Zola's own static binary directly — Zola ships as a single
+self-contained executable, so no toolchain/Nix is needed — and runs the
+same `zola build` step by hand. Cloudflare's dashboard project just needs
+its **Build command** set to `bash scripts/cloudflare-build.sh`.
 
 The steps below are almost entirely manual dashboard/DNS actions on the
 Cloudflare account that holds the `fuckinphilosophers.com` zone — they can't
@@ -50,33 +53,33 @@ almost immediately instead of waiting on external resolver TTLs.
 
 No production DNS changes in this phase — zero risk.
 
-- [X] ~~Cloudflare dashboard → Workers & Pages → Create application →
-  Import a repository~~ — tried first, abandoned. Cloudflare's build
-  container has no Nix and, with no build command configured, ran straight
-  to `npx wrangler versions upload` against an unbuilt checkout, which
-  fails because `public/` doesn't exist
+- [X] Cloudflare dashboard → **Workers & Pages → Create application →
+  Import a repository** → connect the GitHub account/App to
+  `gignsky/council` (already done — this is the `council` Worker project
+  the earlier failing builds are attached to)
+- [ ] First attempt (no build command configured) failed: with no build
+  step, Cloudflare ran straight to `npx wrangler versions upload` against
+  an unbuilt checkout, which fails because `public/` doesn't exist
   ([build log](https://dash.cloudflare.com/57c1756e8503ae036a9c939d1f174c88/workers/services/view/council/production/builds/464c6a92-cee1-4773-9d63-ac30ea483085)).
-  Reproducible on demand via `.github/workflows/cloudflare-build-debug.yml`
-  (`workflow_dispatch`).
-- [ ] Instead: `.github/workflows/cloudflare-deploy.yml` builds via Nix
-  (same setup as `check.yml`) and deploys with `wrangler deploy` on every
-  push to `main`. Before it can run, add two repo secrets (GitHub repo →
-  **Settings → Secrets and variables → Actions**):
-  - `CLOUDFLARE_API_TOKEN` — a Cloudflare API token scoped to
-    **Workers Scripts:Edit** (and **Account Settings:Read** if account-level
-    reads are needed) for the account holding `fuckinphilosophers.com`.
-    Create one under **My Profile → API Tokens → Create Token** in the
-    Cloudflare dashboard.
-  - `CLOUDFLARE_ACCOUNT_ID` — the account ID shown on the Cloudflare
-    dashboard's right sidebar for that account.
-  `wrangler deploy` creates the `council` Worker on first run if it doesn't
-  already exist — no separate "Create application" dashboard step needed.
-- [ ] If a Cloudflare dashboard project named `council` already exists from
-  the abandoned attempt above, disable its Git integration (Worker →
-  **Settings → Build**) so it stops polling/failing on every push and
-  doesn't race this workflow's deploys.
-- [ ] Trigger the workflow (push to `main`, or **Actions → Deploy site to
-  Cloudflare Workers → Run workflow**) and confirm it deploys successfully.
+  A later attempt also failed to find `wrangler.jsonc` at all ("Missing
+  entry-point to Worker script or to assets directory") — check the
+  **Root directory** project setting is blank/repo root, not `site`.
+- [ ] Fix: in the Cloudflare dashboard, Worker → **Settings → Build →
+  Configuration**, set:
+  - **Root directory:** (blank — repo root)
+  - **Build command:** `bash scripts/cloudflare-build.sh`
+  - **Build output directory:** `public`
+  - **Deploy command:** leave as default (`npx wrangler deploy`, or
+    `npx wrangler versions upload` if using gradual deployments)
+
+  `scripts/cloudflare-build.sh` downloads Zola's static binary (pinned
+  version, no Nix/toolchain needed) and runs `zola build`, producing
+  `public/` for wrangler.jsonc's `assets.directory` to pick up.
+  `.github/workflows/cloudflare-build-debug.yml` runs this same script on
+  every PR (and on demand) to catch regressions before they reach
+  Cloudflare.
+- [ ] Trigger a new deployment (push, or **Deployments → Retry/Create
+  deployment**) and confirm it now succeeds.
 
 ## Phase 2 — Prove the custom domain + HTTPS work before touching production DNS
 
@@ -120,9 +123,8 @@ No production DNS changes in this phase — zero risk.
 The repo-side half of this phase is **already done in this PR**:
 
 - [X] Remove `.github/workflows/deploy.yml` (deploy now happens via
-  `cloudflare-deploy.yml`, Nix-built and pushed with `wrangler deploy`).
-  `check.yml` is kept — it's the Nix flake build gate for PRs and is
-  unrelated to hosting.
+  Cloudflare's own Git integration, per Phase 1). `check.yml` is kept —
+  it's the Nix flake build gate for PRs and is unrelated to hosting.
 - [X] Delete `site/static/CNAME` (GitHub-Pages-specific, now vestigial)
 
 The dashboard half is still manual follow-up, and should happen only after
@@ -130,8 +132,8 @@ Phase 3's DNS cutover is confirmed stable:
 
 - [ ] GitHub repo → **Settings → Pages** → remove the custom domain /
   disable Pages
-- [ ] Push a trivial change and confirm `cloudflare-deploy.yml` still
-  deploys successfully
+- [ ] Push a trivial change and confirm Cloudflare's Git integration still
+  auto-deploys
 
 ## Rollback
 
@@ -156,7 +158,8 @@ above.
   before DNS cutover
 - [ ] Post-cutover: apex and `www` both return 200 with valid certs
 - [ ] No mixed-content warnings; Un widgets' inlined JS still runs correctly
-- [ ] Push-to-deploy works end-to-end via `cloudflare-deploy.yml`
+- [ ] Push-to-deploy works end-to-end via Cloudflare's Git integration
+  (`scripts/cloudflare-build.sh` as the build command)
 - [X] Old GitHub Pages workflow removed, `site/static/CNAME` deleted
 
 ## Cloudflare vs. GitHub Pages, in short
@@ -166,7 +169,7 @@ above.
 | Private repos | Requires a paid GitHub plan | Free, via GitHub App integration |
 | Compute model | Static files only | Static files, with room to add edge logic (redirects, headers, auth) later |
 | Custom domain + HTTPS | Free, automatic, but needs DNS-only (unproxied) records for GitHub's own cert issuance | Free, automatic; Cloudflare issues/manages the cert and expects the record proxied |
-| Build system | GitHub Actions artifact upload (what this repo did before this PR) | GitHub Actions builds via Nix, pushes via `wrangler deploy` (Cloudflare's own Nix-less Git integration build doesn't work here) |
+| Build system | GitHub Actions artifact upload (what this repo did before this PR) | Cloudflare-native Git integration; build command downloads Zola's static binary directly (no Nix in Cloudflare's build image) |
 | PR previews | None built in | Every branch/PR gets its own preview URL automatically |
 | Rollback | Only "latest deploy"; recover by re-running an old workflow run | Prior deployments are kept; instant rollback from the dashboard |
 | Cost | Free | Free at this scale |
