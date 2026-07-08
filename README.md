@@ -93,7 +93,9 @@ documents here.
 
 1. Drop the `.dc.html` in `site/static/archive/docs/` (it loads `./support.js`,
    which is already there — one shared copy; the print editions also use
-   `./doc-page.js`) and the matching `.pdf` in `site/static/archive/pdf/`.
+   `./doc-page.js`) and the matching `.pdf` in `site/static/archive/pdf/`. Also add
+   `<script src="./archive-notice.js" defer></script>` just after the `support.js`
+   line so the new document carries the honour banner (see below).
 2. Add one entry to the right era in `site/data/archive.toml`:
 
    ```toml
@@ -106,6 +108,22 @@ documents here.
    ```
 
 The `/archive/` index renders straight from that file, grouped by era.
+
+### The honour warning (Taxe & Ali)
+
+The Archive is public, but it holds workshop papers that would spoil the *Council
+of Un* campaign for two players who aren't yet privy to it. Nothing is locked — the
+warning is honour-system only, in three layers:
+
+- **On the `/archive/` index** — a notice addressed to **Taxe & Ali**, plus a
+  whimsical click-through oath gate over the catalogue (raised only when JS runs and
+  the oath hasn't been sworn on this device; with JS off, the catalogue is fully
+  visible and indexable).
+- **On every document** — a sticky banner injected by
+  `site/static/archive/docs/archive-notice.js`. That file is the **single source of
+  truth**: every `.dc.html` just includes it. Edit the copy/styling there once and
+  all documents update. **To remove the per-document banners later** (they are a "for
+  now" measure), blank `archive-notice.js` to a no-op — no need to touch each doc.
 
 ## Work timeline (landing page)
 

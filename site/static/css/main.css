@@ -109,3 +109,20 @@ h1.book-title{font-family:'Alfa Slab One',serif;font-size:clamp(34px,6.5vw,56px)
 .arc-link:hover{background:#f3ead1}
 .arc-link-alt{background:transparent;color:#9ab7c9;border:1px solid #3a5568}
 .arc-link-alt:hover{background:rgba(154,183,201,.1);color:#e9d9a8}
+
+/* ---- Archive: honour warning + oath gate (Taxe & Ali) ---- */
+.arc-honor{margin:36px 0 0;background:#14262f;border:1px solid #2b4254;border-left:4px solid #a8823f;padding:20px 24px;color:#cddbe2}
+.arc-honor-head{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:4px;color:#e9d9a8;margin-bottom:10px}
+.arc-honor p{margin:0;font-size:16px;line-height:1.75}
+.arc-honor b{color:#f3ead1}
+.arc-honor i{color:#e9d9a8;font-style:italic}
+.arc-gate{margin:32px 0 0}
+.arc-gate-inner{max-width:600px;margin:0 auto;text-align:center;background:radial-gradient(120% 100% at 50% 0%,#1c3648,#12232f 70%);border:1px solid #2b4254;border-top:4px solid #a8823f;padding:44px 34px 40px}
+.arc-gate-kicker{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:#9ab7c9}
+.arc-gate-title{font-family:'Alfa Slab One',serif;font-weight:400;font-size:clamp(26px,5vw,38px);color:#f3ead1;margin:12px 0 16px;line-height:1.1}
+.arc-gate-body{font-size:16px;line-height:1.8;color:#cddbe2;margin:0 auto 24px;max-width:60ch}
+.arc-gate-body b{color:#f3ead1}
+.arc-gate-body i{color:#e9d9a8;font-style:italic}
+.arc-gate-btn{font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:1px;color:#0e1a24;background:#e9d9a8;border:none;border-radius:2px;padding:14px 22px;cursor:pointer;line-height:1.4;max-width:100%}
+.arc-gate-btn:hover{background:#f3ead1}
+.arc-gate-fine{font-size:13px;font-style:italic;color:#8ea6b3;margin:20px auto 0;max-width:52ch;line-height:1.6}
