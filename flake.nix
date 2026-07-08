@@ -2,7 +2,11 @@
   description = "Council — the fuckinphilosophers.com static site (Zola)";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    gigpkgs = {
+      url = "github:gignsky/gigpkgs";
+      inputs.nixpkgs.follows = "gigpkgs/nixpkgs-master";
+    };
+    nixpkgs.follows = "gigpkgs";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
