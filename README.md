@@ -1,8 +1,8 @@
 # Council
 
 The public site for **Council** — a diceless, narrative-first tabletop
-roleplaying game, "played with words, not dice." Live at
-**[fuckinphilosophers.com](https://fuckinphilosophers.com)**.
+roleplaying game by **Sir Landis Fishman**. *"The pen is mightier than the
+die."* Live at **[fuckinphilosophers.com](https://fuckinphilosophers.com)**.
 
 **Hosting is Cloudflare Workers (static assets),** migrated from GitHub
 Pages, deployed via Cloudflare's own dashboard Git integration — no GitHub
@@ -21,7 +21,8 @@ The site has these sections:
   file per chapter, added as each is settled.
 - **`/archive/`** — **The Archive**: the development record of the *system* —
   every draft, ruling, and book in the order it was made. Deliberately **does
-  not** include the Council of Un campaign material.
+  not** include the Council of Un campaign material, with one ruled exception:
+  the first MVP table kit (Era VI), archived as a moment behind the oath gate.
 - **`/un/`** — **Council of Un**, the personal campaign corner, with its own
   visual identity and (eventually) interactive table tools.
 
@@ -43,6 +44,14 @@ The site has these sections:
 | `wrangler.jsonc`              | Cloudflare Workers static-assets config (`public/`).     |
 | `CLOUDFLARE_MIGRATION.md`     | Runbook for the GitHub Pages → Cloudflare hosting migration. |
 | `archive/`                    | Old, unrelated files kept for history only.              |
+| `site/static/handbook/`       | The current Handbook print edition (v3, interim pre-designer), served at `/handbook/…`. |
+| `handbook/`                   | Pointer README mapping the Handbook editions to where they live/serve. |
+| `keeper/`                     | The Keeper's Papers — keeper-only engine notes (Divine Works: Trigger Points, Weatherglass, Footholds). |
+| `campaign/`                   | Council of Un campaign notes + the running Council Minutes log (kept out of the site's Archive). |
+| `reviews/`                    | The editorial trail: exported handbook review passes (Markdown + JSON), one file per pass. |
+| `review-tools/`               | The interactive review apps (the PR-style Diff Review is current). |
+| `CHANGELOG_v3.md`             | Every change applied to the Handbook in the v3 cut.      |
+| `INSTRUCTIONS.md`             | The chapter-close hand-off that drove the v3 site update. |
 
 ## Local development
 
@@ -87,7 +96,10 @@ PDF.
 
 The Atlantis **Council of Un** campaign layer is deliberately kept out of the
 Archive (the campaign stays separate from the system). Don't add campaign
-documents here.
+documents here — the one ruled exception (2026-07-08, by the owner) is the
+first MVP table kit in Era VI, archived as a moment. Its keeper's booklet is
+sealed material that would spoil **all** players, guarded only by the
+honour-system oath gate.
 
 **To add an archived document:**
 
@@ -108,6 +120,8 @@ documents here.
    ```
 
 The `/archive/` index renders straight from that file, grouped by era.
+(`html` may be omitted for a PDF-only entry; `url = "handbook/….pdf"` links a
+PDF served from anywhere under `site/static/` instead of `archive/pdf/`.)
 
 ### The honour warning (Taxe & Ali)
 

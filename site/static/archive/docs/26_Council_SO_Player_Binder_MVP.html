@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./archive-notice.js" defer></script>
+<title>Standing Orders — Player Binder (MVP)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --desk:#cfc9bb; --sheet:#f4f1e8; --card:#efe9d7; --ink:#22201a;
+    --muted:#5a5648; --ink-italic:#4a4636; --rule:#22201a; --link:#2f5d7c;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--desk);color:var(--ink);
+    font-family:'Courier Prime','Courier New',monospace;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:var(--link);text-decoration:none}
+  .ink{font-family:'IM Fell English',Georgia,serif;font-style:italic}
+  .wrap{display:flex;flex-direction:column;align-items:center;padding:40px 18px 70px;gap:34px}
+  .sheet{width:760px;max-width:100%;background:var(--sheet);
+    box-shadow:0 3px 20px rgba(0,0,0,.22)}
+  .bar{background:var(--ink);color:var(--sheet);display:flex;justify-content:space-between;
+    align-items:center;padding:9px 24px;font-size:11px;letter-spacing:2px}
+  .pad{padding:34px 44px 44px}
+  h1{font-size:27px;letter-spacing:.5px;margin:0}
+  .sub{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:8px}
+  h2{font-size:19px;letter-spacing:.5px;margin:26px 0 4px;border-bottom:2px solid var(--rule);padding-bottom:8px}
+  h3{font-size:13.5px;letter-spacing:1px;margin:20px 0 6px}
+  p,li{font-size:12.8px;line-height:1.62}
+  .note{font-size:12.5px;color:var(--ink-italic)}
+  .marg{font-family:'IM Fell English',Georgia,serif;font-style:italic;color:#7a3b2e;font-size:13px}
+  table{border-collapse:collapse;width:100%;font-size:11.6px;margin:8px 0}
+  th,td{border:1px solid var(--ink);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:var(--ink);color:var(--sheet);letter-spacing:1px;font-size:10.5px}
+  .tag{display:inline-block;border:1px solid var(--ink);padding:1px 7px;font-size:10px;letter-spacing:1px}
+  .grid{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+  .work{border:1.5px solid var(--ink);background:var(--card)}
+  .work .head{display:flex;justify-content:space-between;align-items:center;background:var(--ink);
+    color:var(--sheet);padding:6px 14px;font-size:10.5px;letter-spacing:1.5px}
+  .work .body{padding:12px 15px;display:flex;flex-direction:column;gap:5px}
+  .work .title{font-size:15px;font-weight:700}
+  .pip{display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);
+    margin-right:3px;vertical-align:middle}
+  .pip.on{background:var(--ink)}
+  .redact{background:var(--ink);color:var(--ink);letter-spacing:2px;user-select:none}
+  hr.soft{border:0;border-top:1px dashed #a99;margin:18px 0}
+  @media print{
+    body{background:#fff}
+    .wrap{padding:0;gap:0}
+    .sheet{box-shadow:none;width:auto}
+    .sheet + .sheet{page-break-before:always}
+    .work,tr,table,.workblock{break-inside:avoid}
+    @page{size:letter;margin:0.6in}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ===================== COVER / INDEX ===================== -->
+<div class="sheet">
+  <div class="bar"><span>ATLANTIS EXPEDITION · STANDING ORDERS</span><span>PLAYER BINDER · MVP</span></div>
+  <div class="pad">
+    <h1>THE BINDER OF STANDING ORDERS</h1>
+    <div class="sub">The permanent governance of the Expedition. Some sections are open to all hands; some are sealed by order; one has been removed entirely. This is by design. <i>Absence in this index is itself an instruction.</i></div>
+
+    <h3>TRANSFER OF COMMAND — ON THE RECORD</h3>
+    <p>Authority over this binder relinquished by L. Fishman, master of the <i>Silver Surfer</i> — assumed by Zard "Cinco," seated as Un, Chair of the Council.</p>
+    <p class="marg">"I am not leaving you in charge. I am leaving you in company. Read on. — L.F." [margin, in wet ink]</p>
+
+    <h2>CONTENTS</h2>
+    <table>
+      <tr><th style="width:60px">ORDER</th><th>TITLE</th><th style="width:90px">STATUS</th></tr>
+      <tr><td>SO-1</td><td><b>Chain of Command</b> — the Council of Un · departments · deputies · interrupts · the override · absence off-world</td><td><span class="tag">OPEN</span></td></tr>
+      <tr><td>SO-2</td><td><b>Conduct of Gate Teams</b> — standing procedure for travel beyond the ring</td><td><span class="tag">OPEN</span></td></tr>
+      <tr><td>SO-3</td><td><b>Works &amp; Projects</b> — the Tide · the Ledger · squalls · forcing · work orders — with Annex of live cards</td><td><span class="tag">OPEN</span></td></tr>
+      <tr><td>SO-4</td><td><b>The Ledger of Peoples</b> — standing with the named nations of the Pegasus reach</td><td><span class="tag">OPEN</span></td></tr>
+      <tr><td>SO-5</td><td><b>The Wraith</b> — what is known · what is drilled · what is not to be said aloud aboard the city</td><td><span class="tag">OPEN</span></td></tr>
+      <tr><td>SO-6</td><td><span class="redact">██████████████████████████████████</span></td><td><span class="tag">BY ORDER</span></td></tr>
+      <tr><td>SO-7</td><td>pages removed. <i>If you have met him, request this section from the water.</i></td><td>—</td></tr>
+    </table>
+    <p class="marg">They will count the sections and find one missing and one blacked out and they will worry at the gap like a loose tooth. Good. A binder with no secrets governs nothing. — L.F., margin of the master copy</p>
+    <p class="note" style="text-align:center;margin-top:14px;border-top:1px solid var(--ink);padding-top:10px">PLAYER COPY — SO-6 SEALED, SO-7 REMOVED · KEEPER HOLDS THE COMPLETE BINDER<br>
+    <span class="ink" style="color:var(--muted)">Papered this chapter: SO-1 and SO-3 (with live Annex). The rest stand as ordered.</span></p>
+  </div>
+</div>
+
+<!-- ===================== SO-1 ===================== -->
+<div class="sheet">
+  <div class="bar"><span>SO-1 · CHAIN OF COMMAND</span><span>HELD BY: UN &amp; THE COUNCIL</span></div>
+  <div class="pad">
+    <h1>STANDING ORDER ONE — CHAIN OF COMMAND</h1>
+    <div class="sub">Who may command a thing to happen, who may hold it, and what it costs to make a person choose.</div>
+
+    <h3>1.1 &nbsp;THE COUNCIL OF UN</h3>
+    <p>Landis's parting act was not to leave one hand on the wheel. He left the shape of a company — and, for now, one man sitting in it. The Council is presently a council of one: <b>Cinco, seated as Un.</b> Its purpose is what happens when it stops being one. Every vote and every dissent is entered on the record; a voice overruled is not silenced but minuted, so that when a darker path is taken the objection is already canon, not a thing the keeper must invent after.</p>
+    <p><b>THE KEPT SEAT</b> — One chair at the Council table is set and left empty against Omar's return. It does not vote and cannot be filled by another. It is there to be noticed. Un rules with an empty seat in the room until its man comes back to it.</p>
+    <p class="marg">A king can be wrong in private. A chair can only be wrong in front of witnesses. I have left you an empty witness to start. — L.F.</p>
+
+    <h3>1.1a &nbsp;WHO ELSE SITS (UNDECIDED)</h3>
+    <p>Whether the standing department Heads sit on the Council as voting members, or merely answer to it and keep their own chairs, is not yet settled — it is Un's to decide, and worth deciding <i>in play</i> rather than on paper. Two readings are left open:</p>
+    <p><b>THE WIDE TABLE.</b> Heads sit and vote. The Council is loud, slow, and genuinely divided — dissent has teeth because the dissenters have seats.<br>
+    <b>THE NARROW TABLE.</b> Only Un (and, in time, Omar) sit. Heads report and advise; the record notes their counsel, but the vote is the seated council's alone.</p>
+    <p class="marg">Decide this the first time a Head wants to vote against you. You will know then which table you actually built. — L.F.</p>
+
+    <h3>1.2 &nbsp;DEPARTMENTS OF THE EXPEDITION</h3>
+    <p>Roughly four hundred souls, ordered into six chairs. Read the deputy column plainly: three of the six chairs stand without a second. That is not an oversight to be tidied. That is the true shape of us — <i>one bad watch from headless in half our work.</i></p>
+    <table>
+      <tr><th>DEPT</th><th>HEAD</th><th>DEPUTY</th><th>NOTE</th></tr>
+      <tr><td>Command</td><td>Un (Cinco)</td><td>—</td><td>Chairs the Council; no second itself.</td></tr>
+      <tr><td>Military</td><td>Lorne</td><td>Rainbow</td><td>Rainbow leads the Gate Teams; stands second to any Council member who leads a team in person.</td></tr>
+      <tr><td>Science</td><td>Dr. Radek</td><td><b>VACANT</b></td><td>Pinned to the Genii (Annex, Card 01). Chair effectively headless.</td></tr>
+      <tr><td>Medical</td><td>Dr. Carson Beckett</td><td><b>VACANT</b></td><td>Light duty. Works alongside Keely, Hoffan chemist resident aboard — Keely is not a deputy and holds none of his authority.</td></tr>
+      <tr><td>Botany</td><td>Dr. John Daniels</td><td><b>VACANT</b></td><td>Title usually forgotten. Extraordinary botanist, hopeless at all else. Grows a notable recreational pipeweed.</td></tr>
+      <tr><td>Genii Liaison</td><td><b>VACANT</b></td><td><b>VACANT</b></td><td>Office empty. To be filled when the storm has passed.</td></tr>
+    </table>
+
+    <h3>1.3 &nbsp;THE SECOND CHAIR — DEPUTIES</h3>
+    <p>A Deputy may <b>hold</b> a work at its current watch — keep it from stalling while the Head is elsewhere — but may not <b>advance</b> it. Advancement needs a Work Order or a Directive from Un. A second chair keeps the seat warm; it does not sign.</p>
+
+    <h3>1.4 &nbsp;INTERRUPTS</h3>
+    <p>An emergency that names a Head pulls them off their card automatically. The card freezes — no watches, forced or otherwise — until it is released, or a Deputy steps in to hold it. The city's needs do not queue politely behind ambition.</p>
+
+    <h3>1.5 &nbsp;THE OVERRIDE</h3>
+    <p>Only Un may keep a pulled Head on task regardless, by issuing a <b>Directive</b>. A Directive is always a truth committed aloud, on the record — a real judgment about whose need matters more this hour, and a thing the minutes will remember.</p>
+
+    <h3>1.6 &nbsp;ABSENCE OFF-WORLD</h3>
+    <p>1.4 assumes the Head can be reached. If they are through the ring with no radio, there is no one to pull — and the need is met anyway, by whoever stands present, without the Head's insight. This never manifests as a clean sealed squall; it manifests as something <i>concrete and specific</i> — late, wrong, or half-finished. If contact can be raised in time, treat it as a long-distance Override: the 1.5 cost, plus the travel time of the message.</p>
+    <p class="note"><b>WORKED EXAMPLE</b> — Radek is off-world when a power cascade threatens the east pier. No one pulls him; the shields go up without him. They hold. But something about them is worse for his absence — a harmonic left untuned, a corridor left unshielded — and it is worse in a way you can point at, not merely feel.</p>
+  </div>
+</div>
+
+<!-- ===================== SO-3 ===================== -->
+<div class="sheet">
+  <div class="bar"><span>SO-3 · WORKS &amp; PROJECTS</span><span>HELD BY: UN &amp; THE COUNCIL</span></div>
+  <div class="pad">
+    <h1>STANDING ORDER THREE — WORKS &amp; PROJECTS</h1>
+    <div class="sub">The engine of the seasons between missions. Everything here is priced in time — the same coin Landis charges at the rail. A thing gets done because watches were spent on it, on-screen or off, and everyone can see the count.</div>
+
+    <h3>3.1 &nbsp;DECLARING A WORK</h3>
+    <p>A Work is a card with three lines, visible to all:</p>
+    <p>◦ <b>AIM</b> — the plain thing wanted, stated so completion is unarguable.<br>
+       ◦ <b>HANDS</b> — the department or people doing it.<br>
+       ◦ <b>STAKES</b> — what is pinned from the Ledger (3.3) to make it possible.</p>
+
+    <h3>3.2 &nbsp;THE TIDE — WATCHES</h3>
+    <p>Every session, the tide comes in: every open work advances one watch, whether or not it was touched on-screen. Spend a scene on a work and it takes one more. Countdowns are public. <span class="ink" style="color:var(--muted)">A watch is a unit of the tide, not of table time — a sitting may pass one watch or several.</span></p>
+    <p><span class="tag">SMALL WORK · 1 watch</span> &nbsp; <span class="tag">WORK · 3 watches</span> &nbsp; <span class="tag">GREAT WORK · 5 watches</span></p>
+
+    <h3>3.3 &nbsp;THE LEDGER — STAKES</h3>
+    <p>What a work spends is pinned in the Ledger, in three columns:</p>
+    <table>
+      <tr><th>HANDS</th><th>POWER</th><th>STANDING</th></tr>
+      <tr><td>people &amp; departments</td><td>ZPMs, naquadah, city systems</td><td>goodwill with named peoples <span class="ink">(a hidden dial — felt, not numbered)</span></td></tr>
+    </table>
+    <p>A resource cannot be pinned twice. Ambition queues; it does not argue. Wound a pinned resource and everything pinned to it stalls at once — one hurt courier, and three works stop breathing together.</p>
+
+    <h3>3.4 &nbsp;SQUALLS</h3>
+    <p>Every Great Work is declared with one <b>sealed complication — its squall.</b> It opens at the halfway watch, or sooner if the weave calls for it. You knew the storm was in the price; you simply did not know its shape.</p>
+
+    <h3>3.5 &nbsp;RESEARCH — THE FOURTH ROAD</h3>
+    <p>A work aimed at a riddle opens the next Keeper's Seal on completion. It is the slow road, and the free one — no truth owed, no trouble attached, only watches spent. What the water sells in an evening, honest labour earns in a season.</p>
+
+    <h3>3.6 &nbsp;FORCING A WORK</h3>
+    <p>Once per session, a work may be driven one extra watch by paying either:</p>
+    <p><b>A TRUTH</b> — committed aloud, canon the instant it is said.<br>
+       <b>A FAVOR OWED</b> — sealed, handed to the crew to hold unread, and called due whenever the keeper likes.</p>
+    <p>A forced work <b>always delivers its squall.</b> Haste opens the sealed envelope early.</p>
+
+    <h3>3.7 &nbsp;COMPLETION &amp; WORK ORDERS</h3>
+    <p>A finished work becomes a plain canon fact — no longer a card, just a thing that is now true of the city. Between sessions, players may send <b>Work Orders</b>: written messages to department Heads, answered in character next session. They turn no extra watch; they come due as of the next watch the tide brings. The city keeps working while the table sleeps.</p>
+
+    <p class="note" style="border-top:1px solid var(--ink);padding-top:10px;margin-top:16px"><b>HOUSE STYLE — HOW A SQUALL SPEAKS.</b> Every squall and every reveal is delivered as an in-fiction report on the stakeholder's own letterhead — a courier's field note, a clinical page from Medical, a science memo — from whoever holds the pinned stake. Never an omniscient voice from above. <i>The bad news always arrives signed.</i></p>
+  </div>
+</div>
+
+<!-- ===================== ANNEX A — LIVE CARDS (TABLE COPY) ===================== -->
+<div class="sheet">
+  <div class="bar"><span>SO-3 · ANNEX A — THE LEDGER, TABLE COPY</span><span>FACE-UP AT THE TABLE</span></div>
+  <div class="pad">
+    <h1>THE LIVE CARDS</h1>
+    <div class="sub">Every open work, its aim, its hands, and its watches. Filled pips are watches spent. This copy sits face-up on the table. <i>What each card hides is the keeper's business.</i></div>
+    <div class="grid">
+
+      <div class="work"><div class="head"><span>CARD 01 · GREAT WORK</span><span>STALLED</span></div>
+        <div class="body">
+          <div class="title">Project Hammer</div>
+          <div><b>Aim:</b> a Genii fission device, built and proven. &nbsp;<b>Hands:</b> Dr. Radek (pinned) · Genii engineering.</div>
+          <div><b>Watches:</b> <span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;2 / 5</div>
+          <div class="ink" style="color:var(--ink-italic)">Stalled, awaiting the Catch. Something moves under this one that the table copy will not say.</div>
+        </div></div>
+
+      <div class="work"><div class="head"><span>CARD 02 · GREAT WORK</span><span>STALLED</span></div>
+        <div class="body">
+          <div class="title">The Hoffan Compound</div>
+          <div><b>Aim:</b> the drug proven, mass-produced, field-ready before the wraith come. &nbsp;<b>Hands:</b> Dr. Carson Beckett (light duty) · Keely, Hoffan chemist.</div>
+          <div><b>Watches:</b> <span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;2 / 5</div>
+          <div class="ink" style="color:var(--ink-italic)">No deputy — a medical emergency freezes this card unless Un overrides (SO-1.4–1.5). Awaiting a test subject.</div>
+        </div></div>
+
+      <div class="work"><div class="head"><span>CARD 03 · WORK</span><span>OPEN</span></div>
+        <div class="body">
+          <div class="title">The Catch</div>
+          <div><b>Aim:</b> one wraith — alive, contained. &nbsp;<b>Hands:</b> the Cincos.</div>
+          <div><b>Watches:</b> <span class="pip on"></span><span class="pip"></span><span class="pip"></span> &nbsp;1 / 3 &nbsp;·&nbsp; <b>18-hour clock</b> (fictional, not the tide)</div>
+          <div class="ink" style="color:var(--ink-italic)">Both Great Works above wait on this one. Everything hinges on the catch.</div>
+        </div></div>
+
+      <div class="work"><div class="head"><span>CARD 04 · WORK</span><span>SQUALL OPEN</span></div>
+        <div class="body">
+          <div class="title">The Shield's Heart</div>
+          <div><b>Aim:</b> the power source found, taken, delivered to Atlantis. &nbsp;<b>Hands:</b> the Cincos.</div>
+          <div><b>Watches:</b> <span class="pip on"></span><span class="pip on"></span><span class="pip"></span> &nbsp;2 / 3 — ZPM recovered, radioed home, report in same watch</div>
+          <div class="ink" style="color:var(--ink-italic)">Children's Standing already spent, not risked. The squall is open — see the Science Division's note. The ZPM is not what was hoped.</div>
+        </div></div>
+
+      <div class="work"><div class="head"><span>CARD 05 · SMALL WORK</span><span>OPEN</span></div>
+        <div class="body">
+          <div class="title">Jumper Three</div>
+          <div><b>Aim:</b> flying again, or honest salvage. &nbsp;<b>Hands:</b> the Cincos + local goodwill.</div>
+          <div><b>Watches:</b> <span class="pip"></span> &nbsp;0 / 1</div>
+        </div></div>
+
+      <div class="work"><div class="head"><span>CARD 06 · RESEARCH ROAD</span><span>QUEUED — NO HANDS</span></div>
+        <div class="body">
+          <div class="title">The Brotherhood Riddle</div>
+          <div><b>Aim:</b> the riddle solved. &nbsp;<b>Hands:</b> VACANT — the obvious hand, Radek, is pinned to Card 01.</div>
+          <div><b>Watches:</b> <span class="pip"></span><span class="pip"></span><span class="pip"></span> &nbsp;0 / 3 — cannot advance until a hand is free (3.5)</div>
+          <div class="ink" style="color:var(--ink-italic)">The dig site waits.</div>
+        </div></div>
+
+    </div>
+    <p class="note" style="text-align:center;margin-top:20px;border-top:1px solid var(--ink);padding-top:10px">END OF PLAYER BINDER · <span class="ink">The pen is mightier than the die.</span> · by Sir Landis Fishman</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

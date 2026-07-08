@@ -58,8 +58,9 @@
             <div class="arc-item-desc">{{ doc.desc }}</div>
           </div>
           <div class="arc-links">
-            <a class="arc-link" href="{{ get_url(path='archive/docs/' ~ doc.html) }}">READ</a>
+            {% if doc.html %}<a class="arc-link" href="{{ get_url(path='archive/docs/' ~ doc.html) }}">READ</a>{% endif %}
             {% if doc.pdf %}<a class="arc-link arc-link-alt" href="{{ get_url(path='archive/pdf/' ~ doc.pdf) }}">PDF</a>{% endif %}
+            {% if doc.url %}<a class="arc-link arc-link-alt" href="{{ get_url(path=doc.url) }}">PDF</a>{% endif %}
           </div>
         </li>
         {% endfor %}
@@ -67,7 +68,7 @@
     </section>
     {% endfor %}
 
-    <div class="book-note">THE COUNCIL OF UN CAMPAIGN IS KEPT SEPARATE — IT IS NOT HELD IN THIS ARCHIVE</div>
+    <div class="book-note">THE COUNCIL OF UN CAMPAIGN IS KEPT SEPARATE — SAVE THE TABLE KIT ABOVE, IT IS NOT HELD IN THIS ARCHIVE</div>
     </div>
 
     <div class="book-foot"><a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a></div>

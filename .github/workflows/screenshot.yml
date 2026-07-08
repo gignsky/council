@@ -2,7 +2,10 @@ name: Screenshot pages
 
 # Builds the site, screenshots every page it produces, and publishes the
 # images into the PR conversation so reviewers can see the rendered result
-# without checking the branch out locally.
+# without checking the branch out locally. Pages that don't exist on the
+# base branch (built the same way, from a worktree) are listed first in
+# their own "New pages" section, pre-expanded, so additions are easy to
+# confirm at a glance.
 on:
   pull_request:
     branches: [main]
@@ -42,6 +45,24 @@ jobs:
           rm -rf public
           cp -rL result public
           chmod -R u+w public
+
+      - name: List base-branch pages
+        # Build the PR's base branch the same way and list the pages it
+        # produces; the comment step uses this to mark pages that are new in
+        # this PR. Best-effort: if the base fails to build, the comment
+        # simply skips the "new pages" section.
+        id: base_pages
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          BASE_REF="${{ github.event.pull_request.base.ref }}"
+          git fetch -q origin "$BASE_REF"
+          git worktree add /tmp/base-site "origin/$BASE_REF"
+          (cd /tmp/base-site && nix build .#site --print-build-logs -o /tmp/base-result)
+          find -L /tmp/base-result -type f -name '*.html' \
+            | sed 's|^/tmp/base-result/||' > "$GITHUB_WORKSPACE/base-pages.txt"
+          git worktree remove --force /tmp/base-site
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -127,27 +148,56 @@ jobs:
             );
             const { owner, repo } = context.repo;
 
-            const marker = "<!-- page-screenshot-bot -->";
-            const lines = [
-              marker,
-              `## 📸 Page screenshots (${manifest.length})`,
-              "",
-              "_Click any page to expand its screenshot._",
-              "",
-            ];
-            for (const { urlPath, file } of manifest) {
+            // Pages the base branch also produces (from the List base-branch
+            // pages step). Same file→URL mapping as screenshot.mjs. If the
+            // base list is missing (base failed to build), every page counts
+            // as pre-existing and the "new" section is skipped.
+            const toUrlPath = (rel) => {
+              if (rel === "index.html") return "/";
+              if (rel.endsWith("/index.html")) return "/" + rel.slice(0, -"index.html".length);
+              return "/" + rel;
+            };
+            let basePages = null;
+            if (fs.existsSync("base-pages.txt")) {
+              basePages = new Set(
+                fs.readFileSync("base-pages.txt", "utf8").split("\n").filter(Boolean).map(toUrlPath),
+              );
+            }
+            const newPages = basePages
+              ? manifest.filter((p) => !basePages.has(p.urlPath))
+              : [];
+
+            const detailsFor = ({ urlPath, file }, open) => {
               const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${file}`;
-              // Each page is a collapsed <details> so the comment stays a short,
-              // scannable index; expanding one reveals just that screenshot.
-              lines.push(
-                "<details>",
+              return [
+                open ? "<details open>" : "<details>",
                 `<summary><code>${urlPath}</code></summary>`,
                 "",
                 `![${urlPath}](${rawUrl})`,
                 "",
                 "</details>",
                 "",
-              );
+              ];
+            };
+
+            const marker = "<!-- page-screenshot-bot -->";
+            const lines = [
+              marker,
+              `## 📸 Page screenshots (${manifest.length})`,
+              "",
+            ];
+            if (newPages.length > 0) {
+              // New pages come first, pre-expanded, so additions are easy to
+              // confirm without hunting through the full index.
+              lines.push(`### 🆕 New pages in this PR (${newPages.length})`, "");
+              for (const page of newPages) lines.push(...detailsFor(page, true));
+              lines.push("### All pages", "");
+            }
+            lines.push("_Click any page to expand its screenshot._", "");
+            for (const page of manifest) {
+              // Each page is a collapsed <details> so the comment stays a short,
+              // scannable index; expanding one reveals just that screenshot.
+              lines.push(...detailsFor(page, false));
             }
             lines.push(`_Updated for ${context.sha}._`);
             const body = lines.join("\n");

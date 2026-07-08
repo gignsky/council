@@ -2,7 +2,10 @@
 # was made. Rendered by site/templates/archive.html via Zola's load_data().
 #
 # The Atlantis "Council of Un" campaign layer is deliberately NOT catalogued here
-# (it is kept separate from the system per the 2026-07-07 ruling).
+# (it is kept separate from the system per the 2026-07-07 ruling) — with ONE
+# ruled exception (2026-07-08): the first MVP table kit (Era VI), archived as a
+# moment behind the oath gate. The keeper's booklet in it is sealed material;
+# it spoils ALL players, not just Taxe & Ali.
 #
 # To add a document: drop its files in site/static/archive/docs/ (the .dc.html,
 # which loads ./support.js) and site/static/archive/pdf/ (the .pdf), then add a
@@ -127,3 +130,47 @@ blurb = "Getting Council onto fuckinphilosophers.com — the landing page that g
   desc = "The fuckinphilosophers.com landing (a still snapshot of the animated page; the stars hold their place on paper)."
   html = "24_Council_Landing_Page.dc.html"
   pdf = "23_Council_Landing_Page_Snapshot.pdf"
+
+[[era]]
+key = "V"
+name = "The Margin Review"
+blurb = "The Handbook goes under the pen: handwritten margin notes become a Review Edition, a 41-comment editorial pass, and the clean cut of v3 — which settled the tagline: the pen is mightier than the die."
+
+  [[era.doc]]
+  title = "The Review Edition — Rich Diff & Proposals"
+  desc = "Every dictated change applied in place, plus the design proposals for the open questions — marked up for review on the reMarkable. The 41-comment review it drew lives in the repo's reviews/ trail."
+  html = "25_Council_Handbook_RichDiff.html"
+  pdf = "25_Council_Handbook_Review.pdf"
+  tag = "HISTORICAL"
+
+  [[era.doc]]
+  title = "The Handbook — v3, Print Edition"
+  desc = "The clean cut from the review — black-and-white, print-ready. Interim while the designer's pass is made; this is the current book."
+  url = "handbook/Council_Handbook_v3_PRINT_bw.pdf"
+  tag = "CURRENT"
+
+[[era]]
+key = "VI"
+name = "The First Table Kit (MVP)"
+blurb = "The system first in hand at the table: the moment Council became a playable kit for the Council of Un. Not the final copy to be played with — archived as a moment. The one ruled exception to the campaign's separation from this Archive; the honour warning above applies doubly here."
+
+  [[era.doc]]
+  title = "Standing Orders — Player Binder (MVP)"
+  desc = "The crew's binder for the Council of Un: the campaign's own handbook, raised from the generic system."
+  html = "26_Council_SO_Player_Binder_MVP.html"
+  pdf = "26_Council_SO_Player_Binder_MVP.pdf"
+  tag = "MVP"
+
+  [[era.doc]]
+  title = "The Works — Play Cards (Table Copy)"
+  desc = "The Works in card form, for the table's hands — declared, held, and turned with the tide."
+  html = "27_Council_Work_Cards_TableCopy.html"
+  pdf = "27_Council_Work_Cards_TableCopy.pdf"
+  tag = "MVP"
+
+  [[era.doc]]
+  title = "Keeper's Booklet — Sealed & Divine Works (MVP)"
+  desc = "The keeper's side of the kit — sealed. Players of the Council of Un: this one spoils everyone, not just Taxe & Ali. On your honor, read none of it."
+  html = "28_Council_Keeper_Booklet_MVP.html"
+  pdf = "28_Council_Keeper_Booklet_MVP.pdf"
+  tag = "KEEPER-ONLY"

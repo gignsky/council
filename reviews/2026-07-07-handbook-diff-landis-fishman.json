@@ -1,0 +1,337 @@
+{
+  "schema": "council-review/1",
+  "reviewer": "Landis Fishman",
+  "date": "2026-07-07",
+  "base": "Handbook Review Edition · rev 2026-07-07",
+  "repo": "github:gignsky/council",
+  "comments": [
+    {
+      "cid": "c1",
+      "loc": "",
+      "quote": "A ROLEPLAYING GAME · PLAYED WITH WORDS, NOT DICE",
+      "decision": "Revise",
+      "tags": "",
+      "body": "Don't love the heading, would like it more poetic:\n'Is the pen mightier than the sword of die' or something idk"
+    },
+    {
+      "cid": "c2",
+      "loc": "",
+      "quote": "✦ PRINTED EDITION · ONE VOYAGE, ONE VOLUME ✦",
+      "decision": "Note",
+      "tags": "FINAL",
+      "body": "The author of this and all items on the website is and always has be Sir Landis Fishman himself."
+    },
+    {
+      "cid": "c9",
+      "loc": "§5.1 Session Zero §5.2 Writing Seals §5.3 Giving Grace §5.4 The Signed Squall §5.5 Hope & Harm §5.6 What to Print",
+      "quote": "§5.1 Session Zero §5.2 Writing Seals §5.3 Giving Grace §5.4 The Signed Squall §5.5 Hope & Harm §5.6 What to Print",
+      "decision": "Discuss",
+      "tags": "",
+      "body": "Should include a section about how unlike some games, this handbook is for those who wish to know how the game works, but each game of council itself should have a handbook that reflects this one in a manner similar to what we are putting together in SO for CoU."
+    },
+    {
+      "cid": "c45",
+      "loc": "§ 0.4 THE EIGHT TIMBERS",
+      "quote": "Time itself. Every session advances every open Work one watch.The keeper turns the watch; a session may pass one, or several.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c82",
+      "loc": "§ 2.5 THE ROADS TO A CLUE",
+      "quote": "Dig, read, question, pry. Paid in effort and a scene's time. — call it wit by another name.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c79",
+      "loc": "§ 2.4 THE SEALS — WHAT BOTH HANDS REACH FOR",
+      "quote": "They open in order, one at a time. Price opens the next by paying for it. Grace opens the next by giving it — most often the Nudge, for nothing.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c84",
+      "loc": "§ 2.5 THE ROADS TO A CLUE",
+      "quote": "Ask one who is absent but would know. Slow as the post.Slow as the post — and those who carry it may read what it says, unless it is sealed.",
+      "decision": "Revise",
+      "tags": "",
+      "body": "'Slow as the post, and as trustworthy as those who carry it; sealed or not.'"
+    },
+    {
+      "cid": "c85",
+      "loc": "§ 2.5 THE ROADS TO A CLUE",
+      "quote": "Landis, and his climbing price. Walk it least.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c90",
+      "loc": "§ 2.6 THE REWARD OF CLEVERNESS",
+      "quote": "⚑ PROPOSAL 3 — What Landis throws in — gifts past the menufor your sign-off",
+      "decision": "Accept",
+      "tags": "WHERE?",
+      "body": "If this is prop. 3 where are the first two, for I see them not.\n\nFrom what I see here I like the advice and think it should be included."
+    },
+    {
+      "cid": "c104",
+      "loc": "§ 3.2 THE TIDE — WATCHES",
+      "quote": "Time in Council comes in like a tide, on its own, needing no one's permission. Every session, every open Work advances one watch — whether the crew to",
+      "decision": "Revise",
+      "tags": "",
+      "body": "'a unit of the tide, not a unit of a table time' as a revision. \n\nOtherwise I approve."
+    },
+    {
+      "cid": "c106",
+      "loc": "§ 3.2 THE TIDE — WATCHES",
+      "quote": "⚑ PROPOSAL 1 — Turning the watch — keeper guidancefor your sign-off",
+      "decision": "Accept",
+      "tags": "I FOUND IT",
+      "body": "I found prop. 1, Huzzah! -LF\n\nOtherwise I approve of prop one's three pillars."
+    },
+    {
+      "cid": "c116",
+      "loc": "§ 3.3 THE LEDGER — STAKES",
+      "quote": "⚑ PROPOSAL 2 — Giving the Ledger meat — hard Hands & Power, hidden Standingfor your sign-off",
+      "decision": "Revise",
+      "tags": "",
+      "body": "Revise to be non-campaign specific i.e. no Jumpers ZPMs C4, etc. But when working that out for CoU, don't let me forget Malps!\n\nOtherwise I like what I see, but same campaign specific stuff for the standing section as well as the rest of the document. \n\nQuestion, Answered:\nI concur, hidden dial, with fair guidance on setting and adjusting, but prose, if not poetry to the players.\n\nDivine intervention can only go so far as a faction's nature."
+    },
+    {
+      "cid": "c119",
+      "loc": "§ 3.4 SQUALLS",
+      "quote": "Every Great WorkEvery Great Work — and, at the keeper’s discretion, some lesser Works — is declared with one sealed complication — its squall — set fa",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c122",
+      "loc": "§ 3.5 FORCING A WORK",
+      "quote": "A FAVOR OWED — sealed, called due whenever the keeper pleases.",
+      "decision": "Revise",
+      "tags": "",
+      "body": "For a Truth, remove the word 'Or' in the sentence, and add the same dash that is after Council in place of the period before 'a truth made' so that it is all one sentence."
+    },
+    {
+      "cid": "c123",
+      "loc": "§ 3.5 FORCING A WORK",
+      "quote": "Note the mark of haste: a forced Work alwaysstill delivers its squall.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c125",
+      "loc": "§ 3.5 FORCING A WORK",
+      "quote": "(a) Sealed = undefined-until-called. The favor has no named price now; the keeper writes it face-down and reveals it whenever they call it due. What’s",
+      "decision": "Reject",
+      "tags": "",
+      "body": "This is illogical, one can not write face-down, or for that matter, without defining before calling in this situation."
+    },
+    {
+      "cid": "c126",
+      "loc": "§ 3.5 FORCING A WORK",
+      "quote": "(b) Drop the seal. A favor owed is just an IOU the keeper can call anytime — no envelope, no mystery. Simpler at the table.",
+      "decision": "Revise",
+      "tags": "",
+      "body": "I still like the idea of what I think you meant, which is to have a cost the players' know not of until it is time for the keeper to cash in his sealed favor that has been in the players' posession the whole time? That would be a good system!\n\nOh and have I forgotten to mention that the Keeper and Landis are, in cannon: \n1. In the beginning was the Keeper,\nand the Keeper was with Landis,\nand the Keeper was Landis.\n2. The same was in the beginning with Landis,\nin the homely heart of he who was with the same."
+    },
+    {
+      "cid": "c129",
+      "loc": "§ 3.6 COMPLETION & WORK ORDERS",
+      "quote": "⚑ PROPOSAL 5 — Between-session play — orders that resolve off-tablefor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "I approve of this solution."
+    },
+    {
+      "cid": "c134",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "Above the Great Work stands one tier more, reserved for labours that span a whole telling, or a season. A Divine Work is not a card the crew declares;",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c135",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "No fixed count. No watch-total set at declaring, no countdown shown — even if one is quietly kept.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c141",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "Every squall, every beat, every hard turn is delivered as an in-fiction report on the letterhead of whoever bore it. Never an omniscient voice from th",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c142",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "⚑ PROPOSAL 6 — Trigger Points & non-step-able countdowns — the Divine Work enginefor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "I accept in theory.\n\nI would add my answer to your decision. I would say the clock is by default the keeper's own, but we should add an element like the squall, that allows the players to have advanced notice; sensors for a storm, or a spy from within another faction, a defector perhaps."
+    },
+    {
+      "cid": "c144",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "A beat has three lines: Trigger (the fictional condition that arms it), Clock (how many watches once armed), Break (what the beat does — usually a sig",
+      "decision": "Note",
+      "tags": "",
+      "body": "This could be instantly, i.e. traveling to a location has a first contact beat, which could have multiple open-ended next beats based on many other factors in the Keeper's knowledge."
+    },
+    {
+      "cid": "c143",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "The idea. A Divine Work is a chain of beats. A beat does nothing until its Trigger is met. When it fires, that beat’s watch-clock starts counting — an",
+      "decision": "Note",
+      "tags": "",
+      "body": "I like this in concept."
+    },
+    {
+      "cid": "c148",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "⚑ PROPOSAL 7 — Three tiers of Divine Work — keeper guidance (not hard tiers)for your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c152",
+      "loc": "§ 3.7 THE DIVINE WORK — THE GREAT TIER",
+      "quote": "⚑ PROPOSAL 8 — “Dependent visible Works” — what I meant, and my recommendationfor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "I very much approve of the concept, but yes the name need some work."
+    },
+    {
+      "cid": "c157",
+      "loc": "§ 4.1 THE COUNCIL",
+      "quote": "A Council is a body of shared command with a single seat that holds the final say. Its virtue is not efficiency — it is the record. Every vote and eve",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c161",
+      "loc": "§ 4.1 THE COUNCIL",
+      "quote": "Any other rotation-holder may spend a veto to block a single ruling (once per session), forcing a Council vote instead.",
+      "decision": "Reject",
+      "tags": "",
+      "body": "The Veto is unilateral, and can grind things to a halt as powerfully as a filabuster. And it is unlimited to members of the council, save maybe this rule could apply to honorary council member's occupied by the keeper or guests."
+    },
+    {
+      "cid": "c160",
+      "loc": "§ 4.1 THE COUNCIL",
+      "quote": "The final-say seat rotates each session among those eligible.",
+      "decision": "Revise",
+      "tags": "",
+      "body": "Doesn't have to be this way, ultimately up to the table including the keeper as of day 00."
+    },
+    {
+      "cid": "c159",
+      "loc": "§ 4.1 THE COUNCIL",
+      "quote": "⚑ PROPOSAL 9 — The Fasces — an optional name & rule for the final seatfor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "In general this should be included."
+    },
+    {
+      "cid": "c162",
+      "loc": "§ 4.1 THE COUNCIL",
+      "quote": "⚑ PROPOSAL 10 — The Minute — record-keeping (and your voice-memo question)for your sign-off",
+      "decision": "Revise",
+      "tags": "",
+      "body": "Yes add some notes about record keeping. And I'll take a record tonight."
+    },
+    {
+      "cid": "c172",
+      "loc": "§ 4.3 THE SECOND CHAIR — DEPUTIES",
+      "quote": "⚑ PROPOSAL 11 — Reversion — what happens to an unheld Workfor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c175",
+      "loc": "§ 4.3 THE SECOND CHAIR — DEPUTIES",
+      "quote": "A Directive (§4.5) keeps the head on task, so it neither slips nor pauses.",
+      "decision": "Note",
+      "tags": "",
+      "body": "Keely is a Hoffen researcher not a deputy to Carson."
+    },
+    {
+      "cid": "c176",
+      "loc": "§ 4.4 INTERRUPTS",
+      "quote": "An emergency that names a head pulls them off their Work automatically. The card freezes until released, or a deputy steps in to hold it — keeping it ",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c171",
+      "loc": "§ 4.3 THE SECOND CHAIR — DEPUTIES",
+      "quote": "A deputy may hold a Work at its present watch, but may not advance it. To move a Work forward wants a Work Order or a Directive from the seat of comma",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c180",
+      "loc": "§ 4.6 ABSENCE BEYOND REACH",
+      "quote": "⚑ PROPOSAL 12 — §4.6 Absence Beyond Reach — proposed rewritefor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c192",
+      "loc": "§ 5.1 SESSION ZERO — RAISING A GAME IN ONE SITTING",
+      "quote": "⚑ PROPOSAL 13 — The one creed — a poetic draft, & the Session-Zero ledger stepfor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "Check my revised note on the poem. Also, no man should be compelled to take a creed they do not truly believe in; thus it is always optional and at one's own good grace.\n\nOn the second. You are correct about P2 fixing a bit of this problem, We should discuss research tiers in the context of P2. As for P13 I approve of the concept with my own Creed."
+    },
+    {
+      "cid": "c193",
+      "loc": "§ 5.1 SESSION ZERO — RAISING A GAME IN ONE SITTING",
+      "quote": "We keep no dice, and we keep no fear.What we cannot answer, we will pay for true;what we cannot pay, we will be given.No door is locked that hope can’",
+      "decision": "Note",
+      "tags": "",
+      "body": "I don't love it, let me give it a try.\n\nI believe in the power of words.\nNo thing is created without them,\nNor no thing that is not created can be described with them.\nI believe there is Grace in words,\nFor the cutting syllable is duller than the sword.\nHold Fast!\nHipp Hipp Hurrah!\nAnd don't forget to:\nTally Hoe!\n\nHurumph! Hurumph! Hurumph!"
+    },
+    {
+      "cid": "c196",
+      "loc": "§ 5.2 THE FIRST ART — WRITING SEALS",
+      "quote": "⚑ PROPOSAL 14 — Sourcing clues — and which letterhead they ride in onfor your sign-off",
+      "decision": "Accept",
+      "tags": "",
+      "body": "Define dovetails as you used it in this context. For my own edification please."
+    },
+    {
+      "cid": "c209",
+      "loc": "§ 5.6 WHAT TO PRINT, WHAT TO KEEP",
+      "quote": "Sealed Seals, hidden stakes, Divine Work beats. Shown to no one until its watch turns.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    },
+    {
+      "cid": "c211",
+      "loc": "§ 5.6 WHAT TO PRINT, WHAT TO KEEP",
+      "quote": "Print the first. Keep the second. Run the third.",
+      "decision": "Accept",
+      "tags": "",
+      "body": ""
+    }
+  ]
+}

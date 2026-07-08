@@ -1,0 +1,1199 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Council Handbook — Review Workspace</title>
+<style>
+
+doc-page:not(:defined){visibility:hidden}
+body{margin:0;font-family:'IM Fell English',Georgia,serif;color:#23201a}
+a{color:#2f6d8a;text-decoration:none}a:hover{color:#20505f}
+.mono{font-family:'Courier Prime',monospace}
+.diamond{flex:none;width:8px;height:8px;background:#a8823f;transform:rotate(45deg)}
+.rule{display:flex;align-items:center;gap:12px;break-inside:avoid}
+.rule::before,.rule::after{content:"";height:1px;background:#c2b590;flex:1}
+.bx{break-inside:avoid}
+.bookhead{break-before:page;background:#1b3140;color:#eee3c9;padding:34px 40px 28px;text-align:center;margin:0 -0.75in 32px;break-after:avoid}
+
+*{box-sizing:border-box}
+body{font-family:'IM Fell English',Georgia,serif;color:#23201a;background:#f4efe2;margin:0}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 120px}
+header.top{background:#1b3140;color:#eee3c9;padding:22px 24px;position:sticky;top:0;z-index:40;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+header.top .htitle{font-family:'Alfa Slab One',serif;font-size:26px;color:#f3ead1;line-height:1}
+header.top .hsub{font-size:12.5px;color:#9ab7c9;font-style:italic;margin-top:3px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.meta input{background:#14212b;border:1px solid #354a58;color:#eee3c9;border-radius:5px;padding:7px 10px;font-size:13px;font-family:inherit}
+.meta input.rev{flex:1;min-width:160px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.bar button{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.5px;border:none;border-radius:6px;padding:9px 13px;cursor:pointer;font-weight:700}
+.btn-gold{background:#a8823f;color:#1b1200} .btn-gold:hover{background:#c19a4d}
+.btn-ghost{background:#14212b;color:#cdbf9d;border:1px solid #354a58!important} .btn-ghost:hover{color:#fff}
+.count{font-family:'Courier Prime',monospace;font-size:11px;color:#9ab7c9;margin-left:auto}
+.count b{color:#e0b45c}
+.status{font-family:'Courier Prime',monospace;font-size:10.5px;color:#7e97a4;margin-top:6px;min-height:14px}
+.intro{background:#efe6cf;border:1px solid #c2b590;border-radius:8px;padding:14px 18px;margin:20px 0;font-size:13.5px;line-height:1.6}
+.intro b{color:#7a5a1e}
+h2.grp{font-family:'Alfa Slab One',serif;font-size:19px;color:#1b3140;margin:30px 0 4px;border-bottom:2px solid #c2b590;padding-bottom:6px}
+h2.grp span{font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:#7a6f52;font-weight:400;margin-left:8px}
+.card{background:#fff;border:1px solid #d8cba6;border-left:6px solid #b9a05a;border-radius:7px;padding:13px 16px;margin:14px 0;box-shadow:0 1px 3px rgba(60,50,20,.06)}
+.card.k-edit{border-left-color:#3fae52} .card.k-hl{border-left-color:#e0b45c}
+.card.k-prop{border-left-color:#a8823f} .card.k-style{border-left-color:#7f8aa0}
+.card.done{background:#f4faf4} .card.done.k-prop{background:#fbf6ea}
+.card-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.chip{font-family:'Courier Prime',monospace;font-weight:700;font-size:11px;background:#1b3140;color:#f3ead1;border-radius:5px;padding:2px 7px}
+.kind{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:1px;color:#8a7c56}
+.sec{font-family:'Courier Prime',monospace;font-size:10px;color:#2f6d8a}
+.title{font-size:14.5px;color:#1b3140;font-weight:400;flex:1;min-width:150px}
+.jump{font-family:'Courier Prime',monospace;font-size:10px;color:#2f6d8a;text-decoration:none;white-space:nowrap}
+.jump:hover{color:#a8823f}
+.card-body{margin:9px 0 10px}
+.ba{font-size:13px;line-height:1.55}
+.ba .b,.ba .a{padding:6px 10px;border-radius:5px;margin:4px 0}
+.ba .b{background:#fbe6e6;color:#7a2020} .ba .b span,.ba .a span{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:1px;display:inline-block;margin-right:8px;opacity:.7;text-transform:uppercase}
+.ba .a{background:#e5f6e5;color:#14601a}
+.ba .line{background:#fff3b0;padding:6px 10px;border-radius:5px}
+.ba .note{font-style:italic;color:#6a6048;font-size:12.5px;margin-top:5px}
+/* proposal bodies reuse handbook proposal styling */
+.proposal{border:none;background:transparent;padding:0;margin:0}
+.proposal .pbody{font-size:13px;line-height:1.6;color:#2a2418}
+.proposal .pbody ul{margin:6px 0;padding-left:20px} .proposal .pbody li{margin:3px 0}
+.proposal .pbody p{margin:7px 0}
+.proposal .newtext,.proposal .creed{background:#f6f1e3;border:1px solid #d8c9a0;border-radius:4px;padding:9px 12px;margin:8px 0;font-style:italic;color:#33507a;line-height:1.55}
+.proposal .creed{font-family:'IM Fell English',Georgia,serif;font-size:14px;text-align:center;color:#1b3140}
+.proposal code{font-family:'Courier Prime',monospace;font-size:12px;background:#efe6cf;padding:0 3px;border-radius:2px}
+.review-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.review-row select,.review-row input{font-family:inherit;font-size:13px;border:1px solid #c9b98f;border-radius:5px;padding:7px 9px;background:#fbf7ec}
+.review-row select{font-weight:700;color:#1b3140}
+.review-row input{flex:1;min-width:170px}
+.card textarea{width:100%;min-height:52px;font-family:inherit;font-size:13.5px;border:1px solid #c9b98f;border-radius:6px;padding:9px 11px;background:#fffdf7;resize:vertical;line-height:1.5}
+.card textarea:focus,.review-row select:focus,.review-row input:focus{outline:2px solid #a8823f;border-color:#a8823f}
+details#refdoc{margin-top:40px;background:#fff;border:1px solid #d8cba6;border-radius:8px;padding:6px 14px}
+details#refdoc summary{font-family:'Courier Prime',monospace;font-size:12px;color:#7a5a1e;cursor:pointer;padding:8px 0;font-weight:700}
+.refwrap{border-top:1px solid #e3d8b8;padding-top:14px;margin-top:6px}
+.refwrap ins{background:#e5f6e5;color:#14601a;text-decoration:none;border-bottom:2px solid #3fae52}
+.refwrap del{background:#fbe6e6;color:#8a1f1f}
+.refwrap mark{background:#fff3b0}
+.refwrap .proposal{border:1.5px solid #a8823f;border-left:6px solid #a8823f;background:#fbf6ea;border-radius:4px;padding:12px 15px;margin:14px 0}
+.refwrap .proposal .ptag{font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:1px;color:#7a5a1e;font-weight:700;text-transform:uppercase;margin-bottom:7px;display:flex;justify-content:space-between}
+footer.foot{text-align:center;font-family:'Courier Prime',monospace;font-size:10px;color:#8a7c56;margin-top:30px}
+dialog.exp{border:none;border-radius:10px;padding:0;max-width:760px;width:92%;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+dialog.exp .dlg-h{background:#1b3140;color:#eee3c9;padding:14px 18px;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center}
+dialog.exp .dlg-h button{background:#a8823f;border:none;color:#1b1200;border-radius:5px;padding:6px 11px;cursor:pointer;font-weight:700;font-family:inherit;font-size:11px}
+dialog.exp textarea{width:100%;height:340px;border:none;padding:14px;font-family:'Courier Prime',monospace;font-size:12px;line-height:1.5;resize:vertical}
+.card-h .chip{cursor:default}
+</style></head>
+<body>
+<header class="top">
+  <div class="htitle">Council Handbook — Review Workspace</div>
+  <div class="hsub">Type a decision + comment on any change or proposal, then export for the archive (github:gignsky/council) or upload back to me.</div>
+  <div class="meta">
+    <input class="rev" id="rev-name" placeholder="Reviewer (e.g. Lord Gig)">
+    <input id="rev-date" placeholder="Date" >
+    <input id="rev-base" value="Handbook Review Edition · rev 2026-07-07" readonly title="base document">
+  </div>
+  <div class="bar">
+    <button class="btn-gold" onclick="openExport('md')">⭳ Export Markdown</button>
+    <button class="btn-gold" onclick="openExport('json')">⭳ Export JSON</button>
+    <button class="btn-ghost" onclick="downloadFile('md')">Download .md</button>
+    <button class="btn-ghost" onclick="downloadFile('json')">Download .json</button>
+    <button class="btn-ghost" onclick="clearAll()">Clear</button>
+    <span class="count" id="count">0 reviewed</span>
+  </div>
+  <div class="status" id="status"></div>
+</header>
+<div class="wrap">
+  <div class="intro">
+    <b>How this works.</b> Each card below is one change I made or one proposal awaiting your call. Set a <b>decision</b>, add <b>tags</b>, and type a <b>comment</b> on anything you want to flag. Your work autosaves in this browser. When you're done, <b>Export Markdown</b> → the file drops cleanly into <code>reviews/</code> in the repo and renders on GitHub, and you can upload the same file back to me and I'll apply your calls. Only cards you touch are included in the export (nothing forced).
+  </div>
+  <h2 class="grp">Settled edits &amp; highlights <span>your dictated notes, applied</span></h2>
+
+<div class="card k-edit" id="rev-E01" data-id="E01" data-kind="edit" data-sec="§0.4" data-title="§0.4 Timber IV — The Tide">
+  <div class="card-h">
+    <span class="chip">E01</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§0.4</span>
+    <span class="title">§0.4 Timber IV — The Tide</span>
+    <a class="jump" href="#b1-timbers" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Every session advances every open Work one watch.</div><div class="a"><span>now</span>Time itself. The keeper turns the watch; a session may pass one, or several.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E01"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E01" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E01" placeholder="Typed comment for E01 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E02" data-id="E02" data-kind="edit" data-sec="—" data-title="Book III header">
+  <div class="card-h">
+    <span class="chip">E02</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">—</span>
+    <span class="title">Book III header</span>
+    <a class="jump" href="#book-iii" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>how the world keeps moving while the table sleeps</div><div class="a"><span>now</span>how the world keeps moving even while the table sleeps</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E02"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E02" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E02" placeholder="Typed comment for E02 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E03" data-id="E03" data-kind="edit" data-sec="§3.2" data-title="§3.2 The Tide — watch decoupled from session">
+  <div class="card-h">
+    <span class="chip">E03</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.2</span>
+    <span class="title">§3.2 The Tide — watch decoupled from session</span>
+    <a class="jump" href="#b3-tide" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Every session, every open Work advances one watch — whether the crew touched it or not.</div><div class="a"><span>now</span>A watch is a unit of fictional time, not a unit of table time. When the keeper turns the watch, every open Work advances one — whether the crew touched it or not. A session may pass one watch, or several; a night's sleep passes a watch, and a long journey may pass more.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E03"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E03" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E03" placeholder="Typed comment for E03 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-hl" id="rev-H04" data-id="H04" data-kind="highlight" data-sec="§2.4" data-title="§2.4 The Seals — emphasis flag">
+  <div class="card-h">
+    <span class="chip">H04</span>
+    <span class="kind">HIGHLIGHT</span>
+    <span class="sec">§2.4</span>
+    <span class="title">§2.4 The Seals — emphasis flag</span>
+    <a class="jump" href="#b2-seals" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="line">Grace opens the next by giving it — most often the Nudge, for nothing.</div><div class="note">(your green underline — flagged as important for the keeper to grasp)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="H04"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="H04" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="H04" placeholder="Typed comment for H04 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E05" data-id="E05" data-kind="edit" data-sec="§2.5" data-title="§2.5 The Roads — Honest search">
+  <div class="card-h">
+    <span class="chip">E05</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§2.5</span>
+    <span class="title">§2.5 The Roads — Honest search</span>
+    <a class="jump" href="#b2-roads" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Dig, read, question, pry. Paid in effort and a scene's time.</div><div class="a"><span>now</span>…a scene's time — call it wit by another name.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E05"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E05" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E05" placeholder="Typed comment for E05 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E06" data-id="E06" data-kind="edit" data-sec="§2.5" data-title="§2.5 The Roads — A letter">
+  <div class="card-h">
+    <span class="chip">E06</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§2.5</span>
+    <span class="title">§2.5 The Roads — A letter</span>
+    <a class="jump" href="#b2-roads" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Ask one who is absent but would know. Slow as the post.</div><div class="a"><span>now</span>…Slow as the post — and those who carry it may read what it says, unless it is sealed.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E06"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E06" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E06" placeholder="Typed comment for E06 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-hl" id="rev-H07" data-id="H07" data-kind="highlight" data-sec="§2.6" data-title="§2.6 Reward of Cleverness — emphasis flag">
+  <div class="card-h">
+    <span class="chip">H07</span>
+    <span class="kind">HIGHLIGHT</span>
+    <span class="sec">§2.6</span>
+    <span class="title">§2.6 Reward of Cleverness — emphasis flag</span>
+    <a class="jump" href="#b2-clever" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="line">Landis, and his climbing price. Walk it least.</div><div class="note">(you highlighted “climbing price”)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="H07"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="H07" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="H07" placeholder="Typed comment for H07 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E08" data-id="E08" data-kind="edit" data-sec="§3.4" data-title="§3.4 Squalls — lesser Works at discretion">
+  <div class="card-h">
+    <span class="chip">E08</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.4</span>
+    <span class="title">§3.4 Squalls — lesser Works at discretion</span>
+    <a class="jump" href="#b3-squalls" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Every Great Work is declared with one sealed complication…</div><div class="a"><span>now</span>Every Great Work — and, at the keeper's discretion, some lesser Works — is declared with one sealed complication…</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E08"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E08" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E08" placeholder="Typed comment for E08 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E09" data-id="E09" data-kind="edit" data-sec="§3.5" data-title="§3.5 Forcing — A truth">
+  <div class="card-h">
+    <span class="chip">E09</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.5</span>
+    <span class="title">§3.5 Forcing — A truth</span>
+    <a class="jump" href="#b3-forcing" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>A truth — confessed aloud, canon the instant it is spoken.</div><div class="a"><span>now</span>…canon the instant it is spoken. Or a truth made true of the Council — a new law passed.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E09"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E09" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E09" placeholder="Typed comment for E09 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E10" data-id="E10" data-kind="edit" data-sec="§3.5" data-title="§3.5 Forcing — always → still">
+  <div class="card-h">
+    <span class="chip">E10</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.5</span>
+    <span class="title">§3.5 Forcing — always → still</span>
+    <a class="jump" href="#b3-forcing" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>a forced Work always delivers its squall.</div><div class="a"><span>now</span>a forced Work still delivers its squall.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E10"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E10" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E10" placeholder="Typed comment for E10 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E11" data-id="E11" data-kind="edit" data-sec="§3.7" data-title="§3.7 Divine Work — “or a season”">
+  <div class="card-h">
+    <span class="chip">E11</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.7</span>
+    <span class="title">§3.7 Divine Work — “or a season”</span>
+    <a class="jump" href="#b3-divine" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>reserved for labours that span a whole telling.</div><div class="a"><span>now</span>reserved for labours that span a whole telling, or a season.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E11"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E11" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E11" placeholder="Typed comment for E11 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E12" data-id="E12" data-kind="edit" data-sec="§3.7" data-title="§3.7 Divine Work — hidden countdown">
+  <div class="card-h">
+    <span class="chip">E12</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§3.7</span>
+    <span class="title">§3.7 Divine Work — hidden countdown</span>
+    <a class="jump" href="#b3-divine" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>No watch-total set at declaring, no countdown shown.</div><div class="a"><span>now</span>…no countdown shown — even if one is quietly kept.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E12"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E12" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E12" placeholder="Typed comment for E12 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E13" data-id="E13" data-kind="edit" data-sec="—" data-title="Storm box — Testimony is king">
+  <div class="card-h">
+    <span class="chip">E13</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">—</span>
+    <span class="title">Storm box — Testimony is king</span>
+    <a class="jump" href="#b3-divine" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>In Council, the bad news always arrives signed.</div><div class="a"><span>now</span>…always arrives signed — witnessed, not narrated. Testimony is king.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E13"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E13" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E13" placeholder="Typed comment for E13 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E14" data-id="E14" data-kind="edit" data-sec="§4.4" data-title="§4.4 Interrupts — deputy stops the slip">
+  <div class="card-h">
+    <span class="chip">E14</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§4.4</span>
+    <span class="title">§4.4 Interrupts — deputy stops the slip</span>
+    <a class="jump" href="#b4-interrupts" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>or a deputy steps in to hold it.</div><div class="a"><span>now</span>…or a deputy steps in to hold it — keeping it from slipping back.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E14"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E14" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E14" placeholder="Typed comment for E14 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-hl" id="rev-H15" data-id="H15" data-kind="highlight" data-sec="§4.1" data-title="§4.1 The Council — emphasis flag">
+  <div class="card-h">
+    <span class="chip">H15</span>
+    <span class="kind">HIGHLIGHT</span>
+    <span class="sec">§4.1</span>
+    <span class="title">§4.1 The Council — emphasis flag</span>
+    <a class="jump" href="#b4-council" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="line">…shared command with a single seat that holds the final say.</div><div class="note">(you highlighted “with a single seat”)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="H15"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="H15" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="H15" placeholder="Typed comment for H15 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-hl" id="rev-H16" data-id="H16" data-kind="highlight" data-sec="§4.3" data-title="§4.3 Deputies — emphasis flag">
+  <div class="card-h">
+    <span class="chip">H16</span>
+    <span class="kind">HIGHLIGHT</span>
+    <span class="sec">§4.3</span>
+    <span class="title">§4.3 Deputies — emphasis flag</span>
+    <a class="jump" href="#b4-deputies" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="line">A deputy may hold a Work at its present watch, but may not advance it.</div><div class="note">(you highlighted “hold a Work at its present watch”)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="H16"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="H16" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="H16" placeholder="Typed comment for H16 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E17" data-id="E17" data-kind="edit" data-sec="§5.6" data-title="§5.6 Crew's Packet — Standing Orders framing">
+  <div class="card-h">
+    <span class="chip">E17</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§5.6</span>
+    <span class="title">§5.6 Crew's Packet — Standing Orders framing</span>
+    <a class="jump" href="#b5-print" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>This handbook, and Landis's two handouts. All a player needs.</div><div class="a"><span>now</span>…All a player needs. (For the Council of Un: the crew's Standing Orders for the expedition ride here too.)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E17"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E17" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E17" placeholder="Typed comment for E17 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-edit" id="rev-E18" data-id="E18" data-kind="edit" data-sec="§5.6" data-title="§5.6 A third bundle — the Living Ledger">
+  <div class="card-h">
+    <span class="chip">E18</span>
+    <span class="kind">EDIT</span>
+    <span class="sec">§5.6</span>
+    <span class="title">§5.6 A third bundle — the Living Ledger</span>
+    <a class="jump" href="#b5-print" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="b"><span>was</span>Print the first. Keep the second.</div><div class="a"><span>now</span>+ The Living Ledger — run Works between sessions, on paper or online at the site. “Print the first. Keep the second. Run the third.”</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="E18"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="E18" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="E18" placeholder="Typed comment for E18 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-style" id="rev-S19" data-id="S19" data-kind="style" data-sec="—" data-title="Global — soften bold to italics">
+  <div class="card-h">
+    <span class="chip">S19</span>
+    <span class="kind">STYLE</span>
+    <span class="sec">—</span>
+    <span class="title">Global — soften bold to italics</span>
+    <a class="jump" href="#how-to-play" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="ba"><div class="line">Emphatic body text was set bold.</div><div class="note">Emphatic body text softened to italics; ALL-CAPS labels kept bold. (Cartograph/artifacts fonts deferred per your note.)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="S19"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="S19" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="S19" placeholder="Typed comment for S19 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+<h2 class="grp">Open proposals <span>design questions awaiting your sign-off</span></h2>
+
+<div class="card k-prop" id="rev-p1" data-id="p1" data-kind="proposal" data-sec="§3.2" data-title="Turning the watch — keeper guidance">
+  <div class="card-h">
+    <span class="chip">p1</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.2</span>
+    <span class="title">Turning the watch — keeper guidance</span>
+    <a class="jump" href="#p1" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p1"><div class="pbody">You decided a watch is fictional time, not table time. Open question from your margin (p.12): <i>how many watches does a session pass?</i> My recommendation &mdash; don&rsquo;t hard-quantify it; give the keeper three anchors and let fiction do the rest:<ul><li><i>Sleep = 1 watch.</i> A night&rsquo;s rest always turns one.</li><li><i>Travel by distance.</i> A hop across the city = 0. A trip off-world and back = 1. A long expedition = 2&ndash;3, keeper&rsquo;s call.</li><li><i>A full scene of labour = +1</i> to the Work worked (already in the rules).</li></ul>So a quiet session might pass one watch; a session that sleeps, travels, and labours might pass three. <i>Your boxed note</i> (&ldquo;multiple Works per session, keeper&rsquo;s discretion&rdquo;) is already true under this: turning a watch advances <i>every</i> open Work at once. The thing to decide is whether players can ever <i>force the keeper to turn a watch</i> &mdash; I&rsquo;d say no; only the fiction turns it, and Forcing (&sect;3.5) is the one player lever on pace.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p1"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p1" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p1" placeholder="Typed comment for p1 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p2" data-id="p2" data-kind="proposal" data-sec="§3.3" data-title="Giving the Ledger meat — hard Hands & Power, hidden Standing">
+  <div class="card-h">
+    <span class="chip">p2</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.3</span>
+    <span class="title">Giving the Ledger meat — hard Hands & Power, hidden Standing</span>
+    <a class="jump" href="#p2" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p2"><div class="pbody">Your notes (p.2 &ldquo;needs meat,&rdquo; p.11 &ldquo;quantified &hellip; city resource management&rdquo;) and your answer both point the same way. Proposed split:<ul><li><i>Hands &amp; Power are counted, and public.</i> Give the expedition a pool &mdash; e.g. Hands as named departments/teams, Power as concrete stores (ZPM charge, C4, jumpers, drones). A Work pledges specific units; the crew can always see what&rsquo;s committed and what&rsquo;s free. This is the &lsquo;city resource management&rsquo; layer.</li><li><i>Standing is <i>not</i> a number the players see.</i> Per your answer: the keeper tracks each people&rsquo;s regard (Genii, Hoffan, Athosian&hellip;) on a hidden scale; players must <i>intuit</i> it from how factions behave. The keeper knows whether a faction will lift a hand; the crew has to read the room.</li></ul>Open sub-question I&rsquo;d flag: do you want Standing tracked per-faction as a small hidden dial (e.g. &minus;2&hellip;+2), or purely as keeper prose? A dial makes &ldquo;will they help?&rdquo; rulings consistent; prose keeps it loose. I lean <i>hidden dial, prose to the players</i>.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p2"><option value="">— set decision —</option><option>Accept: hidden dial</option><option>Accept: prose only</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p2" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p2" placeholder="Typed comment for p2 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p3" data-id="p3" data-kind="proposal" data-sec="§2.6" data-title="What Landis throws in — gifts past the menu">
+  <div class="card-h">
+    <span class="chip">p3</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§2.6</span>
+    <span class="title">What Landis throws in — gifts past the menu</span>
+    <a class="jump" href="#p3" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p3"><div class="pbody">Your margin: <i>what kind of thing could Landis give when Slack is due?</i> Slack already waives price; the &lsquo;something extra&rsquo; should be a thing money/price can&rsquo;t buy &mdash; strange, true, and never named in advance. A keeper&rsquo;s stock to draw from:<ul><li><i>A name not yet earned</i> &mdash; the true name of a person, ship, or thing the crew hasn&rsquo;t met.</li><li><i>A glimpse down the tide</i> &mdash; one honest image of a Work&rsquo;s next squall before it breaks.</li><li><i>A ward</i> &mdash; a one-time &lsquo;this once, the water lies for you&rsquo;: a single future price refunded.</li><li><i>A door</i> &mdash; the location of still water somewhere it shouldn&rsquo;t be (behind enemy lines, aboard a ship).</li><li><i>A dead man&rsquo;s sentence</i> &mdash; the last true thing someone said before the crew could ask.</li></ul>Rule of thumb: the gift is <i>knowledge or leverage</i>, never raw Power &mdash; Landis deals in truth, not drones.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p3"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p3" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p3" placeholder="Typed comment for p3 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p4" data-id="p4" data-kind="proposal" data-sec="§3.5" data-title="“A favor owed — sealed.” What is sealed?">
+  <div class="card-h">
+    <span class="chip">p4</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.5</span>
+    <span class="title">“A favor owed — sealed.” What is sealed?</span>
+    <a class="jump" href="#p4" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p4"><div class="pbody">You struck &lsquo;sealed&rsquo; and asked <i>what is there to seal?</i> Two clean readings &mdash; pick one:<ul><li><i>(a) Sealed = undefined-until-called.</i> The favor has no named price now; the keeper writes it face-down and reveals it whenever they call it due. What&rsquo;s &lsquo;sealed&rsquo; is the <i>cost</i>. (Keeps the dread; matches Squalls.)</li><li><i>(b) Drop the seal.</i> A favor owed is just an IOU the keeper can call anytime &mdash; no envelope, no mystery. Simpler at the table.</li></ul>I lean <i>(a)</i>: it makes &lsquo;a favor owed&rsquo; scarier than &lsquo;a truth&rsquo; and gives you a sealed prop to hand over, which fits Council&rsquo;s whole reveal aesthetic.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p4"><option value="">— set decision —</option><option>Accept (a): sealed cost</option><option>Accept (b): plain IOU</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p4" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p4" placeholder="Typed comment for p4 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p5" data-id="p5" data-kind="proposal" data-sec="§3.6" data-title="Between-session play — orders that resolve off-table">
+  <div class="card-h">
+    <span class="chip">p5</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.6</span>
+    <span class="title">Between-session play — orders that resolve off-table</span>
+    <a class="jump" href="#p5" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p5"><div class="pbody">Your green note (p.13): <i>a way for things to progress between sessions without wrecking the timeline, and encouraging between-session play.</i> Work Orders already point here; proposed expansion:<ul><li>Between sessions, any player may file <i>Standing Orders</i> to the hands they command &mdash; written instructions (build, scout, treat, dig).</li><li>These <i>don&rsquo;t turn extra watches</i> (the timeline is safe): they resolve as of the <i>next</i> watch the fiction turns, and the keeper answers in the hands&rsquo; own voice (letterhead) at session start.</li><li>A player who files orders may open the session already mid-scene on their result &mdash; the reward for playing between sessions.</li></ul>This is a natural fit for the Council website: orders in, letterhead replies out.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p5"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p5" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p5" placeholder="Typed comment for p5 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p6" data-id="p6" data-kind="proposal" data-sec="§3.7" data-title="Trigger Points & non-step-able countdowns">
+  <div class="card-h">
+    <span class="chip">p6</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.7</span>
+    <span class="title">Trigger Points & non-step-able countdowns</span>
+    <a class="jump" href="#p6" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p6"><div class="pbody">You don&rsquo;t have the shape yet and asked for options. Here&rsquo;s a model that fits &lsquo;The Storm shouldn&rsquo;t tick until the Genii are ready to be enemies.&rsquo;<p><i>The idea.</i> A Divine Work is a chain of <i>beats</i>. A beat does nothing until its <i>Trigger</i> is met. When it fires, that beat&rsquo;s <i>watch-clock</i> starts counting &mdash; and only then does time bite.</p><p><i>A beat has three lines:</i> <i>Trigger</i> (the fictional condition that arms it), <i>Clock</i> (how many watches once armed), <i>Break</i> (what the beat does &mdash; usually a signed squall, sometimes a rewrite of the card).</p><p><i>&lsquo;Non-step-able&rsquo; means two guarantees:</i> (1) an <i>un-armed</i> beat can&rsquo;t be advanced, forced, or grace&rsquo;d forward &mdash; no lever moves a clock that hasn&rsquo;t started; (2) once armed, the clock is the keeper&rsquo;s, not the tide&rsquo;s default &mdash; it ticks on its own terms.</p><p><i>What arms a trigger?</i> Options (mix freely): a <i>story condition</i> the keeper watches for (Genii reach striking distance); a <i>completed/failed Work</i> (the well is poisoned); a <i>date on the hidden countdown</i> (&sect;3.7, &lsquo;even if one is quietly kept&rsquo;); or a <i>player action</i> that pokes the sleeping thing.</p><p><i>Storm, worked example:</i> Beat I <i>Outer Bands</i> &mdash; Trigger: Genii gain a foothold &middot; Clock: none (mood only). Beat III <i>Eye</i> &mdash; Trigger: storm makes landfall on Atlantis &middot; Clock: 3 watches &middot; Break: shield fails, signed by Radek. Beat IV &mdash; Trigger: Beat III resolves &middot; Break: Earth&rsquo;s ship arrives with McKay + partial ZPM. The early beats set weather; the clock only bites once the fiction says it&rsquo;s time.</p><i>Decision I need:</i> is a beat&rsquo;s clock <i>visible</i> to players once armed (a ticking dread they can race) or <i>hidden</i> (they feel the squeeze but don&rsquo;t see the number)? I&rsquo;d make it the keeper&rsquo;s choice per beat &mdash; visible clocks create urgency, hidden ones create unease.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p6"><option value="">— set decision —</option><option>Accept: visible clocks</option><option>Accept: hidden clocks</option><option>Accept: keeper's choice</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p6" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p6" placeholder="Typed comment for p6 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p7" data-id="p7" data-kind="proposal" data-sec="§3.7" data-title="Three tiers of Divine Work — guidance">
+  <div class="card-h">
+    <span class="chip">p7</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.7</span>
+    <span class="title">Three tiers of Divine Work — guidance</span>
+    <a class="jump" href="#p7" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p7"><div class="pbody">You want these as guidance, not a rigid parallel to Small/Work/Great. Proposed as a keeper sidebar:<ul><li><i>An Episode</i> &mdash; one session&rsquo;s worth; a single strong beat. <i>Ex: the dying ZPM on the children&rsquo;s planet.</i></li><li><i>An Arc</i> &mdash; spans several sessions; a handful of chained beats. <i>Ex: The Storm; poisoning the well; the first Wraith siege.</i></li><li><i>A Saga</i> &mdash; one or more seasons; beats that sleep for a long time between arming. <i>Ex: the Wraith threat; Taxe&rsquo;s Federation; powering the city and getting home.</i></li></ul>Same engine (beats + triggers) at every tier &mdash; only the span and the patience differ.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p7"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p7" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p7" placeholder="Typed comment for p7 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p8" data-id="p8" data-kind="proposal" data-sec="§3.7" data-title="“Dependent visible Works” — explained">
+  <div class="card-h">
+    <span class="chip">p8</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§3.7</span>
+    <span class="title">“Dependent visible Works” — explained</span>
+    <a class="jump" href="#p8" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p8"><div class="pbody">This was my jargon; here&rsquo;s the plain version. A Divine Work is <i>weather</i> the players can&rsquo;t grab directly. A <i>dependent visible Work</i> is an ordinary Work card the storm throws off that they <i>can</i> grab &mdash; the handhold. The Storm (Divine) can&rsquo;t be &lsquo;solved&rsquo;; but <i>Shield&rsquo;s Heart</i>, <i>Project Hammer</i>, and <i>The Catch</i> are visible Works the crew can pour Hands into to change how the storm lands. <i>My recommendation, not a hard rule:</i> every armed beat should expose <i>at least one</i> visible Work the players can act on &mdash; otherwise the beat is something that happens <i>to</i> them, which is railroading by another name. Make it a keeper habit, not a law.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p8"><option value="">— set decision —</option><option>Accept as keeper habit</option><option>Accept as hard rule</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p8" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p8" placeholder="Typed comment for p8 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p9" data-id="p9" data-kind="proposal" data-sec="§4.1" data-title="The Fasces — optional seat rule + wide/narrow">
+  <div class="card-h">
+    <span class="chip">p9</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§4.1</span>
+    <span class="title">The Fasces — optional seat rule + wide/narrow</span>
+    <a class="jump" href="#p9" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p9"><div class="pbody">Your p.15 note: call the single-seat holder the one who <i>holds the Fasces</i>, rotating each session, and &mdash; like the Roman consuls &mdash; the others in rotation may <i>veto</i>. Proposed optional rule:<ul><li>The final-say seat rotates each session among those eligible.</li><li>Any other rotation-holder may spend a <i>veto</i> to block a single ruling (once per session), forcing a Council vote instead.</li></ul><i>Your wide/narrow question:</i> yes &mdash; at a <i>wide table</i> the keeper can absolutely take the Fasces on some sessions (an in-fiction chair, not the GM hat), which is a lovely way to put the keeper&rsquo;s avatar on the record. At a <i>narrow table</i>, rotation is usually just among the player-principals and the keeper stays the world. Tie it to the &sect;4.2 dial.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p9"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p9" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p9" placeholder="Typed comment for p9 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p10" data-id="p10" data-kind="proposal" data-sec="§4.5" data-title="The Minute — record-keeping (+ voice-memo answer)">
+  <div class="card-h">
+    <span class="chip">p10</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§4.5</span>
+    <span class="title">The Minute — record-keeping (+ voice-memo answer)</span>
+    <a class="jump" href="#p10" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p10"><div class="pbody">You circled &lsquo;on the record&rsquo; (&sect;4.5) and asked if minuting is practical &mdash; <i>can we use voice memos?</i> Proposed light system, <i>The Minute</i>: after any vote, override, or Directive, one line goes in the log &mdash; <i>who decided, what, who dissented.</i> That&rsquo;s all &lsquo;minuted&rsquo; needs to mean. A phone voice-memo is a perfectly good Minute.<p><i>On tooling &mdash; straight answer:</i> I can&rsquo;t transcribe an audio file directly in this workspace (no speech-to-text here). But the loop you want works fine: run tonight&rsquo;s recording through any transcription app, upload the <i>transcript</i> (txt/doc), and I&rsquo;ll keep a running game log <i>and</i> a formal Council Minutes ledger from it &mdash; votes, Directives, Works advanced, squalls broken. If you&rsquo;d rather, dictate a recap (like you just did) and I&rsquo;ll minute that. I&rsquo;d suggest we start a <code>Council_Minutes.md</code> in the project and append after each session.</p></div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p10"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p10" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p10" placeholder="Typed comment for p10 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p11" data-id="p11" data-kind="proposal" data-sec="§4.3" data-title="Reversion — unheld Works slip back">
+  <div class="card-h">
+    <span class="chip">p11</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§4.3</span>
+    <span class="title">Reversion — unheld Works slip back</span>
+    <a class="jump" href="#p11" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p11"><div class="pbody">Your p.15 question: <i>without a deputy, does a pulled Work revert one step each watch?</i> I think your instinct is the right rule, and it&rsquo;s better than a flat &lsquo;freeze&rsquo; &mdash; it gives interrupts real teeth. Proposed:<ul><li>A Work whose head is <i>pulled</i> (&sect;4.4) and left <i>unheld</i> <i>slips back one watch</i> each watch that passes &mdash; the labour decays without its hand.</li><li>A <i>deputy</i> holding it stops the slip (freeze at present watch) but can&rsquo;t advance it.</li><li>A <i>Directive</i> (&sect;4.5) keeps the head on task, so it neither slips nor pauses.</li></ul>This answers your &lsquo;what about Carson pinned on the Hoffan cure?&rsquo; &mdash; pull Carson to an emergency and, unless Keely (deputy) holds it, the cure work rots a watch at a time until he&rsquo;s back or you Directive him to stay. That&rsquo;s a real cost, which is the point. (Edit E14 in &sect;4.4 already wires this in.)</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p11"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p11" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p11" placeholder="Typed comment for p11 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p12" data-id="p12" data-kind="proposal" data-sec="§4.6" data-title="Absence Beyond Reach — proposed rewrite">
+  <div class="card-h">
+    <span class="chip">p12</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§4.6</span>
+    <span class="title">Absence Beyond Reach — proposed rewrite</span>
+    <a class="jump" href="#p12" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p12"><div class="pbody">You flagged this as thin. It&rsquo;s the twin of Interrupts: Interrupts pull a head who&rsquo;s <i>here</i>; Absence covers a head who is simply <i>unreachable</i> (off-world, ascended, missing). Proposed replacement text:<div class='newtext'>When a head is beyond all word &mdash; off-world, ascended, or lost &mdash; the table cannot wait on their insight, and the need is met by whoever stands present. The answer still comes, but it comes <i>rough</i>: concrete and specific, shaped by the wrong hands, never the clean sealed squall the absent expert would have drawn. A botany question answered by a soldier gets a soldier&rsquo;s answer. Mark such Works: when the head returns, they may find the labour done crooked, and worth re-doing.</div>The distinction to keep: Interrupt = freeze/slip (they&rsquo;re here, just busy); Absence = it happens anyway, badly (they&rsquo;re gone).</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p12"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p12" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p12" placeholder="Typed comment for p12 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p13" data-id="p13" data-kind="proposal" data-sec="§5.1" data-title="The one creed — poetic draft (+ ledger step)">
+  <div class="card-h">
+    <span class="chip">p13</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§5.1</span>
+    <span class="title">The one creed — poetic draft (+ ledger step)</span>
+    <a class="jump" href="#p13" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p13"><div class="pbody">Two things land here. First, your &lsquo;write a poetic creed&rsquo; &mdash; a first swing, to be said aloud at Session Zero (&sect;5.1, move 5):<div class='creed'>We keep no dice, and we keep no fear.<br>What we cannot answer, we will pay for true;<br>what we cannot pay, we will be given.<br>No door is locked that hope can&rsquo;t open &mdash;<br>and the only door that locks from the inside is despair.<br>So we strive, and we pay, or we are given &mdash;<br>and we keep hope, whatever the weather.</div>Second, move 3 (&lsquo;Lay the first Ledger&rsquo;) needs expanding once P2 lands &mdash; it should walk the keeper through setting starting Hands/Power pools and, if you want them, <i>research tiers</i> (what the expedition can build now vs. what needs a Work first). Flagging; I&rsquo;ll draft it after you rule on P2.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p13"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p13" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p13" placeholder="Typed comment for p13 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+
+<div class="card k-prop" id="rev-p14" data-id="p14" data-kind="proposal" data-sec="§5.2" data-title="Sourcing clues — and their letterhead">
+  <div class="card-h">
+    <span class="chip">p14</span>
+    <span class="kind">PROPOSAL</span>
+    <span class="sec">§5.2</span>
+    <span class="title">Sourcing clues — and their letterhead</span>
+    <a class="jump" href="#p14" title="See in document">context ↧</a>
+  </div>
+  <div class="card-body"><div class="proposal" id="p14"><div class="pbody">Your p.17 note: clues can come from many sources &mdash; prep them too, at least which source and which letterhead. Proposed addition to &sect;5.2:<ul><li>When you seal a clue, also note its <i>source</i> &mdash; who knows it, and how it would reach the crew.</li><li>Give it a <i>letterhead</i>: a clue from Beckett arrives as a medical note; from the Genii, as an intercept; from Landis, as a line in still water. Same clue, different voice, different trust.</li></ul>This dovetails with the Signed Squall (&sect;5.4): in Council, <i>everything</i> that arrives &mdash; good news or bad &mdash; arrives signed.</div></div></div>
+  <div class="review-row">
+    <select data-k="decision" data-id="p14"><option value="">— set decision —</option><option>Accept</option><option>Revise</option><option>Reject</option><option>Discuss</option><option>— untouched</option></select>
+    <input type="text" data-k="tags" data-id="p14" placeholder="tags (comma-separated)  e.g. tonight, pacing">
+  </div>
+  <textarea data-k="comment" data-id="p14" placeholder="Typed comment for p14 — tag anything, ask for changes, or note a decision…"></textarea>
+</div>
+  <details id="refdoc"><summary>Full rich-diff document (read-only reference)</summary><div class="refwrap">
+
+  <!-- ================= TITLE PAGE ================= -->
+  <div class="bx" style="break-after:page;background:#1b3140;color:#eee3c9;margin:0 0 0;padding:2.2in 0.75in 2.6in;text-align:center;min-height:9.5in;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px">
+    <div class="mono" style="font-size:11px;letter-spacing:5px;color:#9ab7c9">A ROLEPLAYING GAME &middot; PLAYED WITH WORDS, NOT DICE</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:76px;line-height:.95;color:#f3ead1">COUNCIL</div>
+    <div style="font-size:19px;font-style:italic;color:#c9bda0">A Player's Handbook</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+      <span style="color:#a8823f;font-size:13px">&#10022;</span>
+      <span class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">PRINTED EDITION &middot; ONE VOYAGE, ONE VOLUME</span>
+      <span style="color:#a8823f;font-size:13px">&#10022;</span>
+      <span style="height:1px;width:60px;background:#5c7686"></span>
+    </div>
+    <div style="font-size:14.5px;font-style:italic;color:#7e97a4;margin-top:26px;max-width:5in">strive and pay, or be given &mdash; but keep hope, whatever the weather</div>
+  </div>
+
+  <!-- ================= CONTENTS ================= -->
+  <div style="break-after:page">
+    <div class="mono" style="font-size:11px;letter-spacing:3px;color:#a8823f;font-weight:700;margin-bottom:6px">&#10022; CONTENTS &#10022;</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:26px;color:#1b3140;margin-bottom:24px">Where to find things</div>
+
+    <div style="display:flex;flex-direction:column;gap:22px">
+
+      <div class="bx"><a href="#how-to-play" style="font-size:19px;color:#1b3140">How to Play</a><span class="mono" style="font-size:11px;color:#8a7c56;margin-left:10px">FIVE MINUTES &middot; READ THIS FIRST</span></div>
+
+      <div class="bx">
+        <div><a href="#book-i" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">I</span>&nbsp;&nbsp;Foundations</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b1-thesis" style="font-size:12px">&sect;0.1 The Thesis</a>
+          <a href="#b1-who" style="font-size:12px">&sect;0.2 Who Sails Under It</a>
+          <a href="#b1-loop" style="font-size:12px">&sect;0.3 The Core Loop</a>
+          <a href="#b1-timbers" style="font-size:12px">&sect;0.4 The Eight Timbers</a>
+          <a href="#b1-keel" style="font-size:12px">&sect;0.5 Keel &amp; Rigging</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-ii" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">II</span>&nbsp;&nbsp;The Resolution Core</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b2-two" style="font-size:12px">&sect;2.1 The Two Answers</a>
+          <a href="#b2-grace" style="font-size:12px">&sect;2.2 Grace</a>
+          <a href="#b2-price" style="font-size:12px">&sect;2.3 Price</a>
+          <a href="#b2-seals" style="font-size:12px">&sect;2.4 The Seals</a>
+          <a href="#b2-roads" style="font-size:12px">&sect;2.5 The Roads</a>
+          <a href="#b2-clever" style="font-size:12px">&sect;2.6 The Reward of Cleverness</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-iii" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">III</span>&nbsp;&nbsp;Works &amp; the Tide</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b3-declaring" style="font-size:12px">&sect;3.1 Declaring a Work</a>
+          <a href="#b3-tide" style="font-size:12px">&sect;3.2 The Tide</a>
+          <a href="#b3-ledger" style="font-size:12px">&sect;3.3 The Ledger</a>
+          <a href="#b3-squalls" style="font-size:12px">&sect;3.4 Squalls</a>
+          <a href="#b3-forcing" style="font-size:12px">&sect;3.5 Forcing a Work</a>
+          <a href="#b3-completion" style="font-size:12px">&sect;3.6 Completion &amp; Work Orders</a>
+          <a href="#b3-divine" style="font-size:12px">&sect;3.7 The Divine Work</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-iv" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">IV</span>&nbsp;&nbsp;Governance</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b4-council" style="font-size:12px">&sect;4.1 The Council</a>
+          <a href="#b4-dial" style="font-size:12px">&sect;4.2 Who Sits</a>
+          <a href="#b4-deputies" style="font-size:12px">&sect;4.3 Deputies</a>
+          <a href="#b4-interrupts" style="font-size:12px">&sect;4.4 Interrupts</a>
+          <a href="#b4-override" style="font-size:12px">&sect;4.5 The Override</a>
+          <a href="#b4-absence" style="font-size:12px">&sect;4.6 Absence Beyond Reach</a>
+        </div>
+      </div>
+
+      <div class="bx">
+        <div><a href="#book-v" style="font-size:19px;color:#1b3140"><span class="mono" style="color:#2f6d8a">V</span>&nbsp;&nbsp;Teach &amp; Ship</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px;padding-left:30px" class="mono">
+          <a href="#b5-zero" style="font-size:12px">&sect;5.1 Session Zero</a>
+          <a href="#b5-seals" style="font-size:12px">&sect;5.2 Writing Seals</a>
+          <a href="#b5-grace" style="font-size:12px">&sect;5.3 Giving Grace</a>
+          <a href="#b5-squall" style="font-size:12px">&sect;5.4 The Signed Squall</a>
+          <a href="#b5-hope" style="font-size:12px">&sect;5.5 Hope &amp; Harm</a>
+          <a href="#b5-print" style="font-size:12px">&sect;5.6 What to Print</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= HOW TO PLAY ================= -->
+  <div id="how-to-play" class="bookhead" style="break-before:avoid">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">HOW TO PLAY &middot; A GUIDE FOR THE CREW &middot; FIVE MINUTES</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:38px;line-height:1;margin-top:8px;color:#f3ead1">Before You Sit Down</div>
+  </div>
+
+  <div style="font-size:17px;line-height:1.7;text-align:center;font-style:italic;color:#1b3140;margin-bottom:26px">There are no dice here, and no character sheets. There is only the story we tell together &mdash; and a handful of promises about how it answers back.</div>
+
+  <div class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">1</div><div style="flex:1;font-size:15px;line-height:1.65"><i>You live a scene.</i> You speak and act as your character, and the keeper plays the world around you. Most of the time, that is all there is &mdash; and it is enough.</div></div>
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">2</div><div style="flex:1;font-size:15px;line-height:1.65"><i>A need arises the table can't just wish away.</i> A locked door. A hidden truth. A thing that must be built or found. Under dice you'd roll. Here, you don't guess the magic question &mdash; you simply <i>reach</i> for the answer, and the world provides it by one of two ways below.</div></div>
+    <div style="display:flex;gap:14px;align-items:flex-start"><div class="mono" style="flex:none;width:26px;height:26px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:13px">3</div><div style="flex:1;font-size:15px;line-height:1.65"><i>What comes back changes the next scene.</i> And the tale sails on. That wheel &mdash; scene, answer, scene &mdash; is the whole of the game.</div></div>
+  </div>
+
+  <div class="bx" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+    <div style="background:#14212b;color:#eee3c9;padding:16px 18px;border-top:4px solid #a8823f"><div style="font-size:20px;color:#f3ead1;margin-bottom:6px">By Price</div><div style="font-size:13px;line-height:1.6">What you <i>pay for</i>. You may seize an answer by spending something of your own &mdash; a truth confessed, a new trouble taken on, a little time lost. Price is yours to demand. It always costs the self, and it is always true.</div></div>
+    <div style="background:#1b3140;color:#eee3c9;padding:16px 18px;border-top:4px solid #2f6d8a"><div style="font-size:20px;color:#f3ead1;margin-bottom:6px">By Grace</div><div style="font-size:13px;line-height:1.6">What you are <i>given</i>. The keeper may hand you an answer freely &mdash; unearned, unasked, because you are stuck and the story loves you. Grace cannot be bought or demanded. It falls where it falls, and it falls most on those who keep trying and keep hoping.</div></div>
+  </div>
+  <div style="font-size:14px;line-height:1.6;font-style:italic;color:#3a3428;text-align:center;margin-bottom:26px">Strive and pay, or be given. Most tales are told in the weather between the two.</div>
+
+  <div class="bx" style="background:#e5dabe;border:1px solid #c2b590;padding:18px 20px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">YOU CANNOT BE TRULY STUCK</div>
+    <div style="font-size:15px;line-height:1.65">Behind every real obstacle the keeper has already written three clues &mdash; a gentle <i>nudge</i>, a plain <i>bearing</i>, and, at the last, the <i>answer</i> itself. They are never improvised and never withheld forever. However you reach for help &mdash; by cleverness, by price, by grace &mdash; one of these comes. No riddle in Council is a locked room with no key. That is a promise.</div>
+  </div>
+
+  <div class="bx" style="margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">THE ONE THING WORTH KEEPING</div>
+    <div style="font-size:15.5px;line-height:1.7">Council is built to reward <i>hope</i>. The world bends kinder to a crew that believes it can be made better, and grace runs toward them like water downhill. The game can wound you &mdash; it can cost you dearly, and grieve you truly &mdash; but it only truly breaks the one who has stopped hoping. Keep hope, and you are never past saving.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:6px 0 6px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5;margin-top:8px">Despair is the only door that locks from the inside.</div>
+  </div>
+
+  <div class="bx">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700;margin-bottom:8px">ONE STRANGER YOU SHOULD KNOW</div>
+    <div style="font-size:15px;line-height:1.65">There is a madman named <i>Landis</i>, who is real only in water. Find still water in any world &mdash; a sea, a cistern, a cup &mdash; look in, and ask him with grace, and he will sell you a true answer at a steep and personal price. He is not the main road, and you will not need him often. But he is always there, in every water, and every answer he gives is true. More of him waits in the pages that follow.</div>
+  </div>
+
+  <!-- ================= BOOK I — FOUNDATIONS ================= -->
+  <div id="book-i" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:44px;line-height:1;margin:10px 0 4px;color:#f3ead1">FOUNDATIONS</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIRST</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">being the whole of the game, set down plain, that any hand aboard may read it</div>
+  </div>
+
+  <section id="b1-thesis" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.1 &nbsp;THE THESIS</div>
+    <div style="font-size:22px;line-height:1.32;font-style:italic;color:#1b3140">Council is for tables who left the dice behind &mdash; and found they had left something else behind with them.</div>
+    <div style="font-size:15px;line-height:1.68">When a crew stops rolling and starts telling, the story runs warmer and the arithmetic goes quiet &mdash; and then, one night, a locked door appears that no one at the table happens to be clever enough to open. Under dice, a character <i>rolled to know things their player did not.</i> Take the dice away and that quiet gift goes with them: now a player can learn only what they personally thought to ask, and the keeper is left dangling hints, praying someone guesses the shape of the answer.</div>
+    <div style="font-size:15px;line-height:1.68"><b>Council exists to hand that gift back without handing the dice back.</b> It is a game of insight, consequence, and shared command that runs entirely on words. One question steers every rule in this handbook: <i>how does a soul come to know a thing without guessing the exact right way to ask?</i> All that follows is an answer.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.55">You will not roll to see if you succeed. You will decide what you are willing to pay to find out. &mdash; the first principle</div>
+  </section>
+
+  <section id="b1-who" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.2 &nbsp;WHO SAILS UNDER IT</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:13.5px;line-height:1.6"><i>Crews who have already drifted.</i> Long campaigns that quietly abandoned sheets and initiative and now live on narration and trust. Council names what they are already doing and gives it teeth.</div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:14px 16px;font-size:13.5px;line-height:1.6"><i>Keepers weary of dangling hints.</i> Game masters who love the shared story but keep striking the reef where a puzzle stalls because no one has yet said the magic thing.</div>
+    </div>
+  </section>
+
+  <section id="b1-loop" class="bx" style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.3 &nbsp;THE TURN OF THE TIDE &mdash; THE CORE LOOP</div>
+    <div style="font-size:15px;line-height:1.68">Play turns through three stations. A <i>Scene</i> raises a need the table cannot simply declare true. The world answers by one of two roads &mdash; <i>the Water</i> (buy insight now, at a price) or <i>the Tide</i> (commit the work, let time carry it) &mdash; and whatever comes back walks into the next Scene, changed. That is the entire machine. All else is rigging hung upon it.</div>
+    <div class="bx" style="background:#14212b;padding:20px 18px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">STATION ONE</div><div style="font-size:17px">The Scene</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">A need arises the table cannot just wish true.</div></div>
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #a8823f"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">ROAD A</div><div style="font-size:17px">The Water</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">A truth, a trouble, a scene, for a real answer.</div></div>
+        <div style="background:#efe6cf;padding:13px 12px;display:flex;flex-direction:column;gap:5px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:9px;letter-spacing:1.5px;color:#a8823f;font-weight:700">ROAD B</div><div style="font-size:17px">The Tide</div><div style="font-size:11.5px;line-height:1.5;color:#3a3428">Commit a Work; the world moves it a watch at a time.</div></div>
+      </div>
+      <div class="mono" style="text-align:center;color:#7e97a4;font-size:10.5px;letter-spacing:1.5px">&#8634; &nbsp; and whatever the world returns walks back into the next Scene, changed &nbsp; &#8634;</div>
+    </div>
+  </section>
+
+  <section id="b1-timbers" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.4 &nbsp;THE EIGHT TIMBERS</div>
+    <div style="font-size:14.5px;line-height:1.6">The fixed vocabulary of the game &mdash; the timbers of the hull. These words mean the same at every Council table; a keeper may re-rig the world above, but not rename the timbers below.</div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">I</div><div style="flex:none;width:120px;font-size:15.5px">The Water</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Landis, real only in water, who sells true answers at a price.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">II</div><div style="flex:none;width:120px;font-size:15.5px">The Council</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Shared command with a final say; every vote and dissent minuted.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">III</div><div style="flex:none;width:120px;font-size:15.5px">Works</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">What a crew sets in motion between scenes: an aim, the hands, the stakes.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">IV</div><div style="flex:none;width:120px;font-size:15.5px">The Tide</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Time itself. <del>Every session advances every open Work one watch.</del><ins>The keeper turns the watch; a session may pass one, or several.</ins></div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">V</div><div style="flex:none;width:120px;font-size:15.5px">The Ledger</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">What a Work spends: Hands, Power, Standing. Nothing pinned twice.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VI</div><div style="flex:none;width:120px;font-size:15.5px">Squalls</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Sealed complications carried by the larger Works, breaking when the weave turns against you.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VII</div><div style="flex:none;width:120px;font-size:15.5px">The Seals</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">Pre-written clues &mdash; Nudge, Bearing, Answer &mdash; sealed and shown, in order.</div></div>
+      <div style="display:flex;gap:14px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:22px;font-size:12px;font-weight:700;color:#2f6d8a">VIII</div><div style="flex:none;width:120px;font-size:15.5px">Price &amp; Grace</div><div style="flex:1;font-size:12.5px;line-height:1.5;color:#3a3428">The two ways an answer comes: seized with a piece of self, or given freely.</div></div>
+    </div>
+  </section>
+
+  <section id="b1-keel" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 0.5 &nbsp;THE KEEL &amp; THE RIGGING</div>
+    <div style="font-size:15px;line-height:1.68">Council is a keel, not a world. A table brings its own fiction &mdash; a drowned empire, a generation ship, a haunted county &mdash; and rigs it to the timbers below. But one timber is not the table's to swap. <i>Landis is fixed.</i> The madman on the sea, real only in water, who sells true answers at a price, stands in every Council game that has been or will be run.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:15px 17px;display:flex;flex-direction:column;gap:6px;border-top:3px solid #a8823f"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#9ab7c9">THE KEEL &mdash; FIXED</div><div style="font-size:12.5px;line-height:1.55">Landis &amp; the Water. The eight timbers and their names. The turn of the tide. Price and grace. The Seals. Mercy.</div></div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:15px 17px;display:flex;flex-direction:column;gap:6px;border-top:3px solid #2f6d8a"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#8a7c56">THE RIGGING &mdash; YOURS</div><div style="font-size:12.5px;line-height:1.55">The world, its peoples, what Power and Standing are made of, what the riddles guard.</div></div>
+    </div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5">Change everything you like. Leave me the water. &mdash; L.F.</div>
+  </section>
+
+  <!-- ================= BOOK II — RESOLUTION ================= -->
+  <div id="book-ii" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">THE RESOLUTION CORE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE SECOND</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">how the game answers, when there is no die to throw</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">A die answered a question the table could not: <i>what is true, and what do you learn?</i> Council keeps the question and throws away the die. In its place stand two hands &mdash; one that takes, and one that gives. Learn these two and you have learned the game.</div>
+
+  <section id="b2-two" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.1 &nbsp;THE TWO ANSWERS</div>
+    <div style="font-size:15px;line-height:1.68">When a scene raises a need the table cannot simply declare true, the world answers in one of two ways, and only two. An answer is either <i>seized</i> &mdash; bought with something of your own &mdash; or it is <i>given</i>, freely, by the hand that made this world. The first is <i>price</i>. The second is <i>grace</i>.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:15px 17px;border-top:4px solid #a8823f"><div style="font-size:19px;color:#f3ead1;margin-bottom:5px">Price</div><div style="font-size:12.5px;line-height:1.55">You pay, and you may demand. It costs the self and is always true.</div></div>
+      <div style="background:#1b3140;color:#eee3c9;padding:15px 17px;border-top:4px solid #2f6d8a"><div style="font-size:19px;color:#f3ead1;margin-bottom:5px">Grace</div><div style="font-size:12.5px;line-height:1.55">You are given, and may not demand. It costs you nothing and cannot be earned.</div></div>
+    </div>
+  </section>
+
+  <section id="b2-grace" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.2 &nbsp;GRACE &mdash; THE GIVEN ANSWER</div>
+    <div style="font-size:15px;line-height:1.68">The keeper is the god of this small creation &mdash; not a tyrant, but a maker, who set its laws and largely lets them run. <i>Grace is the maker's one free hand:</i> the single thing in the game not bound by the world's own rules. An answer given as grace is unearned and unpriced.</div>
+    <div style="font-size:15px;line-height:1.68">Grace <i>cannot be bought, banked, or demanded.</i> A good-faith struggle <i>invites</i> it, and hope draws it near &mdash; but nothing compels it. It may fall on the crew who tried hardest; it may fall, just as well, on the one who tried least and needed it most. It falls where it will.</div>
+    <div style="font-size:15px;line-height:1.68">Grace is <i>not counted.</i> There is no pool, no token, no tally at the table's edge. It has exactly one law that binds it: <i>mercy</i>. If a crew is truly aground, grace comes, because the maker will not let the story drown.</div>
+    <div style="font-size:15px;line-height:1.68">And grace comes <i>quietly</i>. It is a nudge slid across the table, unremarked. The keeper need not announce it, and mostly should not. The crew will feel they were lucky. Let them.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15.5px;font-style:italic;color:#3a3428;line-height:1.5">Grace is not the keeper being kind against the rules. It is the one rule that kindness was allowed to keep.</div>
+  </section>
+
+  <section id="b2-price" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.3 &nbsp;PRICE &mdash; THE SEIZED ANSWER</div>
+    <div style="font-size:15px;line-height:1.68">Where grace is given, price is <i>taken</i> &mdash; by you, from you. When you must know a thing now and are willing to bleed for it, you may seize the answer and pay in the only coin the game accepts: something of your own self.</div>
+    <div style="font-size:15px;line-height:1.68">The dearest altar of price is <i>the Water</i> &mdash; Landis, real only in water, who trades true answers for pieces of the one who asks. But mark this well: <i>the Water is a rare road, not a daily one.</i> When you do go down to the water, the price climbs with each answer of a single visit:</div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#c2b590;border:1px solid #b9ab86">
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">FIRST</div><div style="flex:1;font-size:13px;line-height:1.5"><i>A truth.</i> Confess a secret, or commit a new fact about yourself, aloud. Canon the moment it is spoken.</div></div>
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">SECOND</div><div style="flex:1;font-size:13px;line-height:1.5"><i>A trouble.</i> The answer is true, and arrives lashed to a fresh complication.</div></div>
+      <div style="display:flex;gap:12px;background:#efe6cf;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#a8823f">THIRD</div><div style="flex:1;font-size:13px;line-height:1.5"><i>The madness bleeds.</i> You glimpse a thing the keeper knows and you should not, and cannot say why.</div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;padding:11px 14px" class="bx"><div class="mono" style="flex:none;width:76px;font-size:10px;font-weight:700;color:#8a7c56">ALWAYS</div><div style="flex:1;font-size:13px;line-height:1.5"><i>A scene.</i> To sit with Landis costs time; the weave moves on while you do.</div></div>
+    </div>
+  </section>
+
+  <section id="b2-seals" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.4 &nbsp;THE SEALS &mdash; WHAT BOTH HANDS REACH FOR</div>
+    <div style="font-size:15px;line-height:1.68">Price and grace do not invent their answers on the spot. <i>Behind any obstacle worth being stuck on lie three clues,</i> set face-down on the table, in order.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE FIRST</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Nudge</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">A single honest word or image.</div></div></div>
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE SECOND</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Bearing</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">What to do next &mdash; never why.</div></div></div>
+      <div style="background:#efe6cf;border:1.5px solid #1b3140;overflow:hidden" class="bx"><div class="mono" style="background:#1b3140;color:#eee3c9;font-size:9px;letter-spacing:1.5px;padding:5px 10px">THE THIRD</div><div style="padding:12px 13px"><div style="font-size:17px;color:#1b3140">The Answer</div><div style="font-size:12px;line-height:1.5;color:#3a3428;margin-top:4px">Plain as porridge.</div></div></div>
+    </div>
+    <div style="font-size:14px;line-height:1.65">They open <i>in order</i>, one at a time. Price opens the next by paying for it. Grace opens the next by giving it &mdash; <mark>most often the Nudge, for nothing.</mark></div>
+  </section>
+
+  <section id="b2-roads" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.5 &nbsp;THE ROADS TO A CLUE</div>
+    <div style="font-size:15px;line-height:1.68">A crew that means to pay has more than one road to the next seal &mdash; the Water, being dearest, is the one they should walk least:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">Honest search</div><div style="flex:1;font-size:12.5px;line-height:1.5">Dig, read, question, pry. Paid in effort and a scene's time. <ins>&mdash; call it wit by another name.</ins></div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">A Work</div><div style="flex:1;font-size:12.5px;line-height:1.5">Let the Tide carry it (Book III). Slow, priced only in watches.</div></div>
+      <div style="display:flex;gap:12px;background:#e5dabe;border:1px solid #c2b590;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#1b3140">A letter</div><div style="flex:1;font-size:12.5px;line-height:1.5">Ask one who is absent but would know. <del>Slow as the post.</del><ins>Slow as the post &mdash; and those who carry it may read what it says, unless it is sealed.</ins></div></div>
+      <div style="display:flex;gap:12px;background:#efe0c8;border:1px solid #c2a878;padding:10px 14px" class="bx"><div style="flex:none;width:105px;font-size:14.5px;color:#7a3a1a">The Water</div><div style="flex:1;font-size:12.5px;line-height:1.5">Landis, and his <mark>climbing price</mark>. Walk it least.</div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.6;background:#14212b;color:#eee3c9;padding:12px 16px" class="bx"><b style="color:#9ab7c9">The rule that binds every road:</b> it opens <i>the next Seal in order</i> &mdash; never a later one, never two at once.</div>
+  </section>
+
+  <section id="b2-clever" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 2.6 &nbsp;THE REWARD OF CLEVERNESS</div>
+    <div style="font-size:15px;line-height:1.68">Sometimes a crew closes out a whole labour &mdash; a Work, a mission, an obstacle worth being stuck on &mdash; with its Seals never broken: no price paid, no grace needed. Each Seal left closed is banked as <i>Slack</i>: a due at the Water. The next time the crew comes to Landis, that much of his usual price is simply <i>waived</i> &mdash; one price forgiven for every Seal they earned &mdash; and he throws in something past the ordinary menu besides, a thing he judges cool enough for the doing, never named in advance. Slack is spent only there, only with him, and does not linger forever unspent.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">Solve it yourself, and the madman remembers you the next time you're wet.</div>
+  </section>
+
+  <!-- ================= BOOK III — WORKS & THE TIDE ================= -->
+  <div class="proposal" id="p3"><div class="ptag">&#9873; PROPOSAL 3 &mdash; What Landis throws in &mdash; gifts past the menu<span class="pfor">for your sign-off</span></div><div class="pbody">Your margin: <i>what kind of thing could Landis give when Slack is due?</i> Slack already waives price; the &lsquo;something extra&rsquo; should be a thing money/price can&rsquo;t buy &mdash; strange, true, and never named in advance. A keeper&rsquo;s stock to draw from:<ul><li><i>A name not yet earned</i> &mdash; the true name of a person, ship, or thing the crew hasn&rsquo;t met.</li><li><i>A glimpse down the tide</i> &mdash; one honest image of a Work&rsquo;s next squall before it breaks.</li><li><i>A ward</i> &mdash; a one-time &lsquo;this once, the water lies for you&rsquo;: a single future price refunded.</li><li><i>A door</i> &mdash; the location of still water somewhere it shouldn&rsquo;t be (behind enemy lines, aboard a ship).</li><li><i>A dead man&rsquo;s sentence</i> &mdash; the last true thing someone said before the crew could ask.</li></ul>Rule of thumb: the gift is <i>knowledge or leverage</i>, never raw Power &mdash; Landis deals in truth, not drones.</div></div>
+<div id="book-iii" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">WORKS &amp; THE TIDE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE THIRD</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">how the world keeps moving <ins>even </ins>while the table sleeps</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">A scene is what the crew does with their hands. A Work is what they set in motion and must then wait upon. Everything in this book is bought with the one coin the game keeps honest for everyone at once &mdash; <i>time</i>.</div>
+
+  <section id="b3-declaring" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.1 &nbsp;DECLARING A WORK</div>
+    <div style="font-size:15px;line-height:1.68">A Work is any labour too large for a single scene &mdash; a bomb built, a treaty struck, a ruin excavated, a wound healed. It is written on a card the whole table can see, and it carries three lines and no more:</div>
+    <div style="display:flex;flex-direction:column;gap:5px;font-size:14px;line-height:1.55">
+      <div>&#9702; <b>THE AIM</b> &mdash; the plain thing wanted, stated so plainly that its finishing cannot be argued.</div>
+      <div>&#9702; <b>THE HANDS</b> &mdash; who does it: a person, a department, a people.</div>
+      <div>&#9702; <b>THE STAKES</b> &mdash; what is pledged from the Ledger to make it possible.</div>
+    </div>
+  </section>
+
+  <section id="b3-tide" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.2 &nbsp;THE TIDE &mdash; WATCHES</div>
+    <div style="font-size:15px;line-height:1.68">Time in Council comes in like a tide, on its own, needing no one's permission. <del><i>Every session, every open Work advances one watch</i> &mdash; whether the crew touched it or not.</del><ins>A <i>watch</i> is a unit of fictional time, not a unit of table time. When the keeper turns the watch, <i>every open Work advances one</i> &mdash; whether the crew touched it or not. A session may pass one watch, or several; a night&rsquo;s sleep passes a watch, and a long journey may pass more.</ins> Spend a whole scene labouring at a Work, and it takes <i>one watch more</i>. The counts are public.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:12.5px">
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>SMALL WORK</b><br><span style="color:#5a5648">1 watch</span></div>
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>A WORK</b><br><span style="color:#5a5648">3 watches</span></div>
+      <div style="padding:10px 12px"><b>GREAT WORK</b><br><span style="color:#5a5648">5 watches</span></div>
+    </div>
+  </section>
+
+  <div class="proposal" id="p1"><div class="ptag">&#9873; PROPOSAL 1 &mdash; Turning the watch &mdash; keeper guidance<span class="pfor">for your sign-off</span></div><div class="pbody">You decided a watch is fictional time, not table time. Open question from your margin (p.12): <i>how many watches does a session pass?</i> My recommendation &mdash; don&rsquo;t hard-quantify it; give the keeper three anchors and let fiction do the rest:<ul><li><i>Sleep = 1 watch.</i> A night&rsquo;s rest always turns one.</li><li><i>Travel by distance.</i> A hop across the city = 0. A trip off-world and back = 1. A long expedition = 2&ndash;3, keeper&rsquo;s call.</li><li><i>A full scene of labour = +1</i> to the Work worked (already in the rules).</li></ul>So a quiet session might pass one watch; a session that sleeps, travels, and labours might pass three. <i>Your boxed note</i> (&ldquo;multiple Works per session, keeper&rsquo;s discretion&rdquo;) is already true under this: turning a watch advances <i>every</i> open Work at once. The thing to decide is whether players can ever <i>force the keeper to turn a watch</i> &mdash; I&rsquo;d say no; only the fiction turns it, and Forcing (&sect;3.5) is the one player lever on pace.</div></div>
+<section id="b3-ledger" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.3 &nbsp;THE LEDGER &mdash; STAKES</div>
+    <div style="font-size:15px;line-height:1.68">A Work spends more than time; it spends the crew's finite holdings, pledged under three headings:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #1b3140;font-size:12.5px">
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>HANDS</b><br><span style="color:#5a5648">people &amp; their labour</span></div>
+      <div style="padding:10px 12px;border-right:1px solid #c2b590"><b>POWER</b><br><span style="color:#5a5648">resources, the means</span></div>
+      <div style="padding:10px 12px"><b>STANDING</b><br><span style="color:#5a5648">goodwill with peoples</span></div>
+    </div>
+    <div style="font-size:15px;line-height:1.68"><i>A stake cannot be pledged twice</i> &mdash; and <b>to wound a pledged stake is to stall everything pledged to it.</b> This is how a single blow lands everywhere.</div>
+  </section>
+
+  <div class="proposal" id="p2"><div class="ptag">&#9873; PROPOSAL 2 &mdash; Giving the Ledger meat &mdash; hard Hands &amp; Power, hidden Standing<span class="pfor">for your sign-off</span></div><div class="pbody">Your notes (p.2 &ldquo;needs meat,&rdquo; p.11 &ldquo;quantified &hellip; city resource management&rdquo;) and your answer both point the same way. Proposed split:<ul><li><i>Hands &amp; Power are counted, and public.</i> Give the expedition a pool &mdash; e.g. Hands as named departments/teams, Power as concrete stores (ZPM charge, C4, jumpers, drones). A Work pledges specific units; the crew can always see what&rsquo;s committed and what&rsquo;s free. This is the &lsquo;city resource management&rsquo; layer.</li><li><i>Standing is <i>not</i> a number the players see.</i> Per your answer: the keeper tracks each people&rsquo;s regard (Genii, Hoffan, Athosian&hellip;) on a hidden scale; players must <i>intuit</i> it from how factions behave. The keeper knows whether a faction will lift a hand; the crew has to read the room.</li></ul>Open sub-question I&rsquo;d flag: do you want Standing tracked per-faction as a small hidden dial (e.g. &minus;2&hellip;+2), or purely as keeper prose? A dial makes &ldquo;will they help?&rdquo; rulings consistent; prose keeps it loose. I lean <i>hidden dial, prose to the players</i>.</div></div>
+<section id="b3-squalls" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.4 &nbsp;SQUALLS</div>
+    <div style="font-size:15px;line-height:1.68"><del>Every Great Work</del><ins>Every Great Work &mdash; and, at the keeper&rsquo;s discretion, some lesser Works &mdash;</ins> is declared with <i>one sealed complication</i> &mdash; its squall &mdash; set face-down beside the card. It breaks at the <i>halfway watch</i>, or sooner if the weave calls for it.</div>
+  </section>
+
+  <section id="b3-forcing" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.5 &nbsp;FORCING A WORK</div>
+    <div style="font-size:15px;line-height:1.68">Once per session, a crew may drive a single Work <i>one extra watch</i> by paying one of two coins:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:12px 14px;font-size:12.5px;line-height:1.55" class="bx"><b>A TRUTH</b> &mdash; confessed aloud, canon the instant it is spoken.<ins> Or a truth made true <i>of the Council</i> &mdash; a new law passed.</ins></div>
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:12px 14px;font-size:12.5px;line-height:1.55" class="bx"><b>A FAVOR OWED</b> &mdash; sealed, called due whenever the keeper pleases.</div>
+    </div>
+    <div style="font-size:15px;line-height:1.68">Note the mark of haste: <i>a forced Work <del>always</del><ins>still</ins> delivers its squall.</i></div>
+  </section>
+
+  <div class="proposal" id="p4"><div class="ptag">&#9873; PROPOSAL 4 &mdash; &ldquo;A favor owed &mdash; sealed.&rdquo; What is sealed?<span class="pfor">for your sign-off</span></div><div class="pbody">You struck &lsquo;sealed&rsquo; and asked <i>what is there to seal?</i> Two clean readings &mdash; pick one:<ul><li><i>(a) Sealed = undefined-until-called.</i> The favor has no named price now; the keeper writes it face-down and reveals it whenever they call it due. What&rsquo;s &lsquo;sealed&rsquo; is the <i>cost</i>. (Keeps the dread; matches Squalls.)</li><li><i>(b) Drop the seal.</i> A favor owed is just an IOU the keeper can call anytime &mdash; no envelope, no mystery. Simpler at the table.</li></ul>I lean <i>(a)</i>: it makes &lsquo;a favor owed&rsquo; scarier than &lsquo;a truth&rsquo; and gives you a sealed prop to hand over, which fits Council&rsquo;s whole reveal aesthetic.</div></div>
+<section id="b3-completion" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.6 &nbsp;COMPLETION &amp; WORK ORDERS</div>
+    <div style="font-size:15px;line-height:1.68">A finished Work stops being a card and becomes a <i>plain fact of the world</i>. Between sessions the crew may send <i>Work Orders</i> &mdash; written instructions to the hands who do the labour &mdash; and the keeper answers in those hands' own voices next the table sits.</div>
+  </section>
+
+  <div class="proposal" id="p5"><div class="ptag">&#9873; PROPOSAL 5 &mdash; Between-session play &mdash; orders that resolve off-table<span class="pfor">for your sign-off</span></div><div class="pbody">Your green note (p.13): <i>a way for things to progress between sessions without wrecking the timeline, and encouraging between-session play.</i> Work Orders already point here; proposed expansion:<ul><li>Between sessions, any player may file <i>Standing Orders</i> to the hands they command &mdash; written instructions (build, scout, treat, dig).</li><li>These <i>don&rsquo;t turn extra watches</i> (the timeline is safe): they resolve as of the <i>next</i> watch the fiction turns, and the keeper answers in the hands&rsquo; own voice (letterhead) at session start.</li><li>A player who files orders may open the session already mid-scene on their result &mdash; the reward for playing between sessions.</li></ul>This is a natural fit for the Council website: orders in, letterhead replies out.</div></div>
+<section id="b3-divine" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 3.7 &nbsp;THE DIVINE WORK &mdash; THE GREAT TIER</div>
+    <div style="font-size:15px;line-height:1.68">Above the Great Work stands one tier more, reserved for labours that span a whole telling<ins>, or a season</ins>. A <i>Divine Work</i> is not a card the crew declares; it is a weather the keeper sets moving beneath everything:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">No fixed count.</b> No watch-total set at declaring, no countdown shown<ins> &mdash; even if one is quietly kept</ins>.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">Many squalls, not one.</b> Several sealed <i>beats</i>, opened one at a time.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">A beat may rewrite the card.</b> A beat can recast the aim, add a stake, release another.</div>
+      <div style="background:#14212b;color:#eee3c9;padding:12px 15px;font-size:12.5px;line-height:1.55" class="bx"><b style="color:#9ab7c9">Stakes bind and loose over time.</b> Hands and Standing attach and detach across its length.</div>
+    </div>
+    <div style="font-size:15px;line-height:1.68">A Divine Work ends not on a watch but on a <i>turning</i>. Even here the one law holds: <i>mercy</i>.</div>
+  </section>
+
+  <div class="bx" style="background:#e5dabe;border:1px solid #c2b590;padding:15px 18px;display:flex;flex-direction:column;gap:6px">
+    <div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#8a7c56;font-weight:700">HOW A STORM SPEAKS &mdash; A STANDING HOUSE STYLE</div>
+    <div style="font-size:13.5px;line-height:1.6">Every squall, every beat, every hard turn is delivered as an <i>in-fiction report on the letterhead of whoever bore it.</i> Never an omniscient voice from the clouds. In Council, the bad news always arrives <i>signed</i><ins> &mdash; witnessed, not narrated. Testimony is king.</ins></div>
+  </div>
+
+  <!-- ================= BOOK IV — GOVERNANCE ================= -->
+  <div class="proposal" id="p6"><div class="ptag">&#9873; PROPOSAL 6 &mdash; Trigger Points &amp; non-step-able countdowns &mdash; the Divine Work engine<span class="pfor">for your sign-off</span></div><div class="pbody">You don&rsquo;t have the shape yet and asked for options. Here&rsquo;s a model that fits &lsquo;The Storm shouldn&rsquo;t tick until the Genii are ready to be enemies.&rsquo;<p><i>The idea.</i> A Divine Work is a chain of <i>beats</i>. A beat does nothing until its <i>Trigger</i> is met. When it fires, that beat&rsquo;s <i>watch-clock</i> starts counting &mdash; and only then does time bite.</p><p><i>A beat has three lines:</i> <i>Trigger</i> (the fictional condition that arms it), <i>Clock</i> (how many watches once armed), <i>Break</i> (what the beat does &mdash; usually a signed squall, sometimes a rewrite of the card).</p><p><i>&lsquo;Non-step-able&rsquo; means two guarantees:</i> (1) an <i>un-armed</i> beat can&rsquo;t be advanced, forced, or grace&rsquo;d forward &mdash; no lever moves a clock that hasn&rsquo;t started; (2) once armed, the clock is the keeper&rsquo;s, not the tide&rsquo;s default &mdash; it ticks on its own terms.</p><p><i>What arms a trigger?</i> Options (mix freely): a <i>story condition</i> the keeper watches for (Genii reach striking distance); a <i>completed/failed Work</i> (the well is poisoned); a <i>date on the hidden countdown</i> (&sect;3.7, &lsquo;even if one is quietly kept&rsquo;); or a <i>player action</i> that pokes the sleeping thing.</p><p><i>Storm, worked example:</i> Beat I <i>Outer Bands</i> &mdash; Trigger: Genii gain a foothold &middot; Clock: none (mood only). Beat III <i>Eye</i> &mdash; Trigger: storm makes landfall on Atlantis &middot; Clock: 3 watches &middot; Break: shield fails, signed by Radek. Beat IV &mdash; Trigger: Beat III resolves &middot; Break: Earth&rsquo;s ship arrives with McKay + partial ZPM. The early beats set weather; the clock only bites once the fiction says it&rsquo;s time.</p><i>Decision I need:</i> is a beat&rsquo;s clock <i>visible</i> to players once armed (a ticking dread they can race) or <i>hidden</i> (they feel the squeeze but don&rsquo;t see the number)? I&rsquo;d make it the keeper&rsquo;s choice per beat &mdash; visible clocks create urgency, hidden ones create unease.</div></div>
+<div class="proposal" id="p7"><div class="ptag">&#9873; PROPOSAL 7 &mdash; Three tiers of Divine Work &mdash; keeper guidance (not hard tiers)<span class="pfor">for your sign-off</span></div><div class="pbody">You want these as guidance, not a rigid parallel to Small/Work/Great. Proposed as a keeper sidebar:<ul><li><i>An Episode</i> &mdash; one session&rsquo;s worth; a single strong beat. <i>Ex: the dying ZPM on the children&rsquo;s planet.</i></li><li><i>An Arc</i> &mdash; spans several sessions; a handful of chained beats. <i>Ex: The Storm; poisoning the well; the first Wraith siege.</i></li><li><i>A Saga</i> &mdash; one or more seasons; beats that sleep for a long time between arming. <i>Ex: the Wraith threat; Taxe&rsquo;s Federation; powering the city and getting home.</i></li></ul>Same engine (beats + triggers) at every tier &mdash; only the span and the patience differ.</div></div>
+<div class="proposal" id="p8"><div class="ptag">&#9873; PROPOSAL 8 &mdash; &ldquo;Dependent visible Works&rdquo; &mdash; what I meant, and my recommendation<span class="pfor">for your sign-off</span></div><div class="pbody">This was my jargon; here&rsquo;s the plain version. A Divine Work is <i>weather</i> the players can&rsquo;t grab directly. A <i>dependent visible Work</i> is an ordinary Work card the storm throws off that they <i>can</i> grab &mdash; the handhold. The Storm (Divine) can&rsquo;t be &lsquo;solved&rsquo;; but <i>Shield&rsquo;s Heart</i>, <i>Project Hammer</i>, and <i>The Catch</i> are visible Works the crew can pour Hands into to change how the storm lands. <i>My recommendation, not a hard rule:</i> every armed beat should expose <i>at least one</i> visible Work the players can act on &mdash; otherwise the beat is something that happens <i>to</i> them, which is railroading by another name. Make it a keeper habit, not a law.</div></div>
+<div id="book-iv" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">GOVERNANCE</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FOURTH</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">who may command a thing to happen &mdash; and what it costs to choose</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">The game is named for this book. A Council is not a throne &mdash; it is a table, where authority is shared, choices are witnessed, and the cost of command is that everyone remembers what you decided.</div>
+
+  <section id="b4-council" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.1 &nbsp;THE COUNCIL</div>
+    <div style="font-size:15px;line-height:1.68">A Council is a body of shared command <mark>with a single seat</mark> that holds the <i>final say</i>. Its virtue is not efficiency &mdash; it is <i>the record</i>. Every vote and every dissent is entered and remembered; a voice overruled is not silenced but <i>minuted</i>.</div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">A king may be wrong in private. A chair may only be wrong in front of the table.</div>
+  </section>
+
+  <div class="proposal" id="p9"><div class="ptag">&#9873; PROPOSAL 9 &mdash; The Fasces &mdash; an optional name &amp; rule for the final seat<span class="pfor">for your sign-off</span></div><div class="pbody">Your p.15 note: call the single-seat holder the one who <i>holds the Fasces</i>, rotating each session, and &mdash; like the Roman consuls &mdash; the others in rotation may <i>veto</i>. Proposed optional rule:<ul><li>The final-say seat rotates each session among those eligible.</li><li>Any other rotation-holder may spend a <i>veto</i> to block a single ruling (once per session), forcing a Council vote instead.</li></ul><i>Your wide/narrow question:</i> yes &mdash; at a <i>wide table</i> the keeper can absolutely take the Fasces on some sessions (an in-fiction chair, not the GM hat), which is a lovely way to put the keeper&rsquo;s avatar on the record. At a <i>narrow table</i>, rotation is usually just among the player-principals and the keeper stays the world. Tie it to the &sect;4.2 dial.</div></div>
+<div class="proposal" id="p10"><div class="ptag">&#9873; PROPOSAL 10 &mdash; The Minute &mdash; record-keeping (and your voice-memo question)<span class="pfor">for your sign-off</span></div><div class="pbody">You circled &lsquo;on the record&rsquo; (&sect;4.5) and asked if minuting is practical &mdash; <i>can we use voice memos?</i> Proposed light system, <i>The Minute</i>: after any vote, override, or Directive, one line goes in the log &mdash; <i>who decided, what, who dissented.</i> That&rsquo;s all &lsquo;minuted&rsquo; needs to mean. A phone voice-memo is a perfectly good Minute.<p><i>On tooling &mdash; straight answer:</i> I can&rsquo;t transcribe an audio file directly in this workspace (no speech-to-text here). But the loop you want works fine: run tonight&rsquo;s recording through any transcription app, upload the <i>transcript</i> (txt/doc), and I&rsquo;ll keep a running game log <i>and</i> a formal Council Minutes ledger from it &mdash; votes, Directives, Works advanced, squalls broken. If you&rsquo;d rather, dictate a recap (like you just did) and I&rsquo;ll minute that. I&rsquo;d suggest we start a <code>Council_Minutes.md</code> in the project and append after each session.</p></div></div>
+<section id="b4-dial" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.2 &nbsp;WHO SITS &mdash; A DIAL SET AT SETUP</div>
+    <div style="font-size:15px;line-height:1.68">Council does not decree who holds a seat; the table sets that dial when it seats its own Council:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#14212b;color:#eee3c9;padding:14px 16px;border-top:4px solid #a8823f" class="bx"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#9ab7c9;margin-bottom:5px">THE WIDE TABLE</div><div style="font-size:12.5px;line-height:1.55">Every standing head holds a seat and a vote. Loud, slow, truly divided. Choose this for intrigue.</div></div>
+      <div style="background:#1b3140;color:#eee3c9;padding:14px 16px;border-top:4px solid #2f6d8a" class="bx"><div class="mono" style="font-size:10px;letter-spacing:1.5px;color:#e0b45c;margin-bottom:5px">THE NARROW TABLE &middot; DEFAULT</div><div style="font-size:12.5px;line-height:1.55">Only the few at the heart of the story sit and vote; the heads report and advise. Choose this for pace &mdash; and by default, <i>this is where a Council begins.</i></div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:1.6;font-style:italic;color:#3a3428">Council seats a <i>narrow table</i> by default, and widens only when a table decides the intrigue of a true vote is worth the pace it costs.</div>
+  </section>
+
+  <section id="b4-deputies" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.3 &nbsp;THE SECOND CHAIR &mdash; DEPUTIES</div>
+    <div style="font-size:15px;line-height:1.68">A deputy may <mark><i>hold</i> a Work at its present watch</mark>, but may not <i>advance</i> it. To move a Work forward wants a Work Order or a Directive from the seat of command.</div>
+  </section>
+
+  <div class="proposal" id="p11"><div class="ptag">&#9873; PROPOSAL 11 &mdash; Reversion &mdash; what happens to an unheld Work<span class="pfor">for your sign-off</span></div><div class="pbody">Your p.15 question: <i>without a deputy, does a pulled Work revert one step each watch?</i> I think your instinct is the right rule, and it&rsquo;s better than a flat &lsquo;freeze&rsquo; &mdash; it gives interrupts real teeth. Proposed:<ul><li>A Work whose head is <i>pulled</i> (&sect;4.4) and left <i>unheld</i> <i>slips back one watch</i> each watch that passes &mdash; the labour decays without its hand.</li><li>A <i>deputy</i> holding it stops the slip (freeze at present watch) but can&rsquo;t advance it.</li><li>A <i>Directive</i> (&sect;4.5) keeps the head on task, so it neither slips nor pauses.</li></ul>This answers your &lsquo;what about Carson pinned on the Hoffan cure?&rsquo; &mdash; pull Carson to an emergency and, unless Keely (deputy) holds it, the cure work rots a watch at a time until he&rsquo;s back or you Directive him to stay. That&rsquo;s a real cost, which is the point. (Edit E14 in &sect;4.4 already wires this in.)</div></div>
+<section id="b4-interrupts" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.4 &nbsp;INTERRUPTS</div>
+    <div style="font-size:15px;line-height:1.68">An emergency that names a head <i>pulls them off their Work automatically</i>. The card <i>freezes</i> until released, or a deputy steps in to <mark>hold it</mark><ins> &mdash; keeping it from slipping back</ins>.</div>
+  </section>
+
+  <section id="b4-override" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.5 &nbsp;THE OVERRIDE</div>
+    <div style="font-size:15px;line-height:1.68">Only the seat of final say may keep a pulled head at their task regardless, by issuing a <i>Directive</i> &mdash; a <i>truth committed aloud, on the record.</i></div>
+  </section>
+
+  <section id="b4-absence" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 4.6 &nbsp;ABSENCE BEYOND REACH</div>
+    <div style="font-size:15px;line-height:1.68">When a head is truly beyond word, the need is met anyway, by whoever stands present, <i>without that head's insight</i> &mdash; it shows as something <i>concrete and specific</i>, never a clean sealed squall.</div>
+  </section>
+
+  <!-- ================= BOOK V — TEACH & SHIP ================= -->
+  <div class="proposal" id="p12"><div class="ptag">&#9873; PROPOSAL 12 &mdash; &sect;4.6 Absence Beyond Reach &mdash; proposed rewrite<span class="pfor">for your sign-off</span></div><div class="pbody">You flagged this as thin. It&rsquo;s the twin of Interrupts: Interrupts pull a head who&rsquo;s <i>here</i>; Absence covers a head who is simply <i>unreachable</i> (off-world, ascended, missing). Proposed replacement text:<div class='newtext'>When a head is beyond all word &mdash; off-world, ascended, or lost &mdash; the table cannot wait on their insight, and the need is met by whoever stands present. The answer still comes, but it comes <i>rough</i>: concrete and specific, shaped by the wrong hands, never the clean sealed squall the absent expert would have drawn. A botany question answered by a soldier gets a soldier&rsquo;s answer. Mark such Works: when the head returns, they may find the labour done crooked, and worth re-doing.</div>The distinction to keep: Interrupt = freeze/slip (they&rsquo;re here, just busy); Absence = it happens anyway, badly (they&rsquo;re gone).</div></div>
+<div id="book-v" class="bookhead">
+    <div class="mono" style="font-size:10px;letter-spacing:4px;color:#9ab7c9">COUNCIL &middot; A PLAYER'S HANDBOOK</div>
+    <div style="font-family:'Alfa Slab One',serif;font-size:40px;line-height:1;margin:10px 0 4px;color:#f3ead1">TEACH &amp; SHIP</div>
+    <div class="mono" style="font-size:10.5px;letter-spacing:3px;color:#9ab7c9">BOOK THE FIFTH</div>
+    <div style="font-size:13.5px;font-style:italic;color:#8ea6b3;margin-top:10px">for the keeper &mdash; how to raise a Council game from nothing, and run it well</div>
+  </div>
+
+  <div class="bx" style="font-size:15.5px;line-height:1.7;font-style:italic;color:#1b3140;border-left:3px solid #2f6d8a;padding-left:16px;margin-bottom:26px">The first four books are the game. This one is the craft of it &mdash; how to stand a table up in an evening, and the three small arts that make a keeper of you: writing Seals, giving grace, and wounding without cruelty.</div>
+
+  <section id="b5-zero" class="bx" style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.1 &nbsp;SESSION ZERO &mdash; RAISING A GAME IN ONE SITTING</div>
+    <div style="font-size:15px;line-height:1.68">Council boots in a single evening. Five moves, in order:</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">1</div><div style="flex:1;font-size:13.5px;line-height:1.6"><i>Rig the world.</i> Agree the fiction &mdash; the setting, its peoples, what Power and Standing are made of here.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">2</div><div style="flex:1;font-size:13.5px;line-height:1.6"><i>Seat the Council.</i> Decide who holds the final say, and set the dial of &sect;4.2 &mdash; <i>narrow by default</i>, or wide for intrigue.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">3</div><div style="flex:1;font-size:13.5px;line-height:1.6"><i>Lay the first Ledger.</i> Write two or three opening Works.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">4</div><div style="flex:1;font-size:13.5px;line-height:1.6"><i>Teach the Water.</i> Tell the crew, plainly, of Landis.</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div class="mono" style="flex:none;width:22px;height:22px;border-radius:50%;background:#1b3140;color:#f3ead1;display:flex;align-items:center;justify-content:center;font-size:11px">5</div><div style="flex:1;font-size:13.5px;line-height:1.6"><i>Promise hope.</i> Say aloud the one creed. Then begin.</div></div>
+    </div>
+  </section>
+
+  <div class="proposal" id="p13"><div class="ptag">&#9873; PROPOSAL 13 &mdash; The one creed &mdash; a poetic draft, &amp; the Session-Zero ledger step<span class="pfor">for your sign-off</span></div><div class="pbody">Two things land here. First, your &lsquo;write a poetic creed&rsquo; &mdash; a first swing, to be said aloud at Session Zero (&sect;5.1, move 5):<div class='creed'>We keep no dice, and we keep no fear.<br>What we cannot answer, we will pay for true;<br>what we cannot pay, we will be given.<br>No door is locked that hope can&rsquo;t open &mdash;<br>and the only door that locks from the inside is despair.<br>So we strive, and we pay, or we are given &mdash;<br>and we keep hope, whatever the weather.</div>Second, move 3 (&lsquo;Lay the first Ledger&rsquo;) needs expanding once P2 lands &mdash; it should walk the keeper through setting starting Hands/Power pools and, if you want them, <i>research tiers</i> (what the expedition can build now vs. what needs a Work first). Flagging; I&rsquo;ll draft it after you rule on P2.</div></div>
+<section id="b5-seals" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.2 &nbsp;THE FIRST ART &mdash; WRITING SEALS</div>
+    <div style="font-size:15px;line-height:1.68">For any obstacle worth being stuck on, <i>write three clues before play and seal them</i>: the Nudge, the Bearing, the Answer. Write them <i>before</i> &mdash; never under the pressure of a stuck table, when your judgment is worst.</div>
+  </section>
+
+  <div class="proposal" id="p14"><div class="ptag">&#9873; PROPOSAL 14 &mdash; Sourcing clues &mdash; and which letterhead they ride in on<span class="pfor">for your sign-off</span></div><div class="pbody">Your p.17 note: clues can come from many sources &mdash; prep them too, at least which source and which letterhead. Proposed addition to &sect;5.2:<ul><li>When you seal a clue, also note its <i>source</i> &mdash; who knows it, and how it would reach the crew.</li><li>Give it a <i>letterhead</i>: a clue from Beckett arrives as a medical note; from the Genii, as an intercept; from Landis, as a line in still water. Same clue, different voice, different trust.</li></ul>This dovetails with the Signed Squall (&sect;5.4): in Council, <i>everything</i> that arrives &mdash; good news or bad &mdash; arrives signed.</div></div>
+<section id="b5-grace" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.3 &nbsp;THE SECOND ART &mdash; GIVING GRACE</div>
+    <div style="font-size:15px;line-height:1.68">Give it <i>quietly.</i> Give it toward the <i>stuck and the hopeful.</i> Do not tally it, do not let it be demanded. Its one hard law is that a truly aground crew always receives it.</div>
+  </section>
+
+  <section id="b5-squall" class="bx" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.4 &nbsp;THE THIRD ART &mdash; THE SIGNED SQUALL</div>
+    <div style="font-size:15px;line-height:1.68">Deliver bad news as a <i>report on the letterhead of whoever bore it.</i> In Council, bad news always arrives signed.</div>
+  </section>
+
+  <section id="b5-hope" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.5 &nbsp;ON HOPE &amp; HARM &mdash; THE TONE OF THE GAME</div>
+    <div style="font-size:15px;line-height:1.68">Council is built to reward hope. The game <i>may wound</i> &mdash; it may cost dearly, and grieve truly. But it breaks only the one who has <i>stopped hoping.</i></div>
+    <div style="border-left:3px solid #2f6d8a;padding:5px 0 5px 16px;font-size:15px;font-style:italic;color:#3a3428;line-height:1.5">Despair is the only door that locks from the inside.</div>
+  </section>
+
+  <section id="b5-print" class="bx" style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:2px;color:#a8823f;font-weight:700">&sect; 5.6 &nbsp;WHAT TO PRINT, WHAT TO KEEP</div>
+    <div style="font-size:15px;line-height:1.68">Two bundles make a Council game ready for a table:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#e5dabe;border:1px solid #c2b590;padding:13px 15px" class="bx"><div style="font-size:15px;color:#1b3140;margin-bottom:5px">The Crew's Packet</div><div style="font-size:12px;line-height:1.55">This handbook, and Landis's two handouts. All a player needs.<ins> <i>(For the Council of Un: the crew&rsquo;s Standing Orders for the expedition ride here too.)</i></ins></div></div>
+      <div style="background:#14212b;color:#eee3c9;padding:13px 15px" class="bx"><div style="font-size:15px;color:#f3ead1;margin-bottom:5px">The Keeper's Papers</div><div style="font-size:12px;line-height:1.55">Sealed Seals, hidden stakes, Divine Work beats. Shown to no one until its watch turns.</div></div>
+    </div>
+    <ins><div class="add-card" style="background:#123;color:#eee3c9;border-left:4px solid #a8823f;padding:11px 14px;font-size:12.5px;line-height:1.55;margin-top:2px"><b style="color:#e0b45c">The Living Ledger</b> &mdash; a place to run Works between sessions: on paper, or (better) online at the Council website, fuckinphilosophers.com.</div></ins><div style="font-size:13.5px;line-height:1.6;font-style:italic;color:#3a3428">Print the first. Keep the second.<ins> Run the third.</ins></div>
+  </section>
+
+</div></details>
+  <footer class="foot">COUNCIL · FUCKINPHILOSOPHERS.COM · review workspace · self-contained, offline-capable</footer>
+</div>
+
+<dialog class="exp" id="expDlg">
+  <div class="dlg-h"><span id="expTitle">Export</span><span><button onclick="copyExport()">Copy</button> <button onclick="document.getElementById('expDlg').close()" style="background:#354a58;color:#eee">Close</button></span></div>
+  <textarea id="expText" readonly></textarea>
+</dialog>
+
+<script>
+const KEY="council_handbook_review_v1";
+const MANIFEST=[{"id": "E01", "kind": "edit", "title": "\u00a70.4 Timber IV \u2014 The Tide"}, {"id": "E02", "kind": "edit", "title": "Book III header"}, {"id": "E03", "kind": "edit", "title": "\u00a73.2 The Tide \u2014 watch decoupled from session"}, {"id": "H04", "kind": "highlight", "title": "\u00a72.4 The Seals \u2014 emphasis flag"}, {"id": "E05", "kind": "edit", "title": "\u00a72.5 The Roads \u2014 Honest search"}, {"id": "E06", "kind": "edit", "title": "\u00a72.5 The Roads \u2014 A letter"}, {"id": "H07", "kind": "highlight", "title": "\u00a72.6 Reward of Cleverness \u2014 emphasis flag"}, {"id": "E08", "kind": "edit", "title": "\u00a73.4 Squalls \u2014 lesser Works at discretion"}, {"id": "E09", "kind": "edit", "title": "\u00a73.5 Forcing \u2014 A truth"}, {"id": "E10", "kind": "edit", "title": "\u00a73.5 Forcing \u2014 always \u2192 still"}, {"id": "E11", "kind": "edit", "title": "\u00a73.7 Divine Work \u2014 \u201cor a season\u201d"}, {"id": "E12", "kind": "edit", "title": "\u00a73.7 Divine Work \u2014 hidden countdown"}, {"id": "E13", "kind": "edit", "title": "Storm box \u2014 Testimony is king"}, {"id": "E14", "kind": "edit", "title": "\u00a74.4 Interrupts \u2014 deputy stops the slip"}, {"id": "H15", "kind": "highlight", "title": "\u00a74.1 The Council \u2014 emphasis flag"}, {"id": "H16", "kind": "highlight", "title": "\u00a74.3 Deputies \u2014 emphasis flag"}, {"id": "E17", "kind": "edit", "title": "\u00a75.6 Crew's Packet \u2014 Standing Orders framing"}, {"id": "E18", "kind": "edit", "title": "\u00a75.6 A third bundle \u2014 the Living Ledger"}, {"id": "S19", "kind": "style", "title": "Global \u2014 soften bold to italics"}, {"id": "p1", "kind": "proposal", "title": "\u00a73.2 Turning the watch \u2014 keeper guidance"}, {"id": "p2", "kind": "proposal", "title": "\u00a73.3 Giving the Ledger meat \u2014 hard Hands & Power, hidden Standing"}, {"id": "p3", "kind": "proposal", "title": "\u00a72.6 What Landis throws in \u2014 gifts past the menu"}, {"id": "p4", "kind": "proposal", "title": "\u00a73.5 \u201cA favor owed \u2014 sealed.\u201d What is sealed?"}, {"id": "p5", "kind": "proposal", "title": "\u00a73.6 Between-session play \u2014 orders that resolve off-table"}, {"id": "p6", "kind": "proposal", "title": "\u00a73.7 Trigger Points & non-step-able countdowns"}, {"id": "p7", "kind": "proposal", "title": "\u00a73.7 Three tiers of Divine Work \u2014 guidance"}, {"id": "p8", "kind": "proposal", "title": "\u00a73.7 \u201cDependent visible Works\u201d \u2014 explained"}, {"id": "p9", "kind": "proposal", "title": "\u00a74.1 The Fasces \u2014 optional seat rule + wide/narrow"}, {"id": "p10", "kind": "proposal", "title": "\u00a74.5 The Minute \u2014 record-keeping (+ voice-memo answer)"}, {"id": "p11", "kind": "proposal", "title": "\u00a74.3 Reversion \u2014 unheld Works slip back"}, {"id": "p12", "kind": "proposal", "title": "\u00a74.6 Absence Beyond Reach \u2014 proposed rewrite"}, {"id": "p13", "kind": "proposal", "title": "\u00a75.1 The one creed \u2014 poetic draft (+ ledger step)"}, {"id": "p14", "kind": "proposal", "title": "\u00a75.2 Sourcing clues \u2014 and their letterhead"}];
+const $=s=>document.querySelector(s);
+const cards=[...document.querySelectorAll('.card')];
+
+function todayISO(){const d=new Date();return d.toISOString().slice(0,10);}
+if(!$('#rev-date').value) $('#rev-date').value=todayISO();
+
+function collect(){
+  const items={};
+  cards.forEach(c=>{
+    const id=c.dataset.id;
+    const dec=c.querySelector('[data-k="decision"]').value;
+    const tags=c.querySelector('[data-k="tags"]').value.trim();
+    const com=c.querySelector('[data-k="comment"]').value.trim();
+    items[id]={decision:dec,tags:tags,comment:com,kind:c.dataset.kind,title:c.dataset.title,sec:c.dataset.sec};
+  });
+  return {reviewer:$('#rev-name').value.trim(),date:$('#rev-date').value.trim(),base:$('#rev-base').value,items:items};
+}
+function touched(it){return (it.decision&&it.decision!=='')||it.tags||it.comment;}
+
+function refresh(){
+  const st=collect();let n=0,acc=0,rev=0,rej=0,dis=0;
+  cards.forEach(c=>{const it=st.items[c.dataset.id];const t=touched(it);c.classList.toggle('done',!!t);
+    if(t)n++;const d=(it.decision||'').toLowerCase();
+    if(d.startsWith('accept'))acc++;else if(d.startsWith('revise'))rev++;else if(d.startsWith('reject'))rej++;else if(d.startsWith('discuss'))dis++;});
+  $('#count').innerHTML=`<b>${n}</b>/${cards.length} reviewed · ${acc} accept · ${rev} revise · ${rej} reject · ${dis} discuss`;
+  save(st);
+}
+let saveTimer=null;
+function save(st){clearTimeout(saveTimer);saveTimer=setTimeout(()=>{
+  try{localStorage.setItem(KEY,JSON.stringify(st));$('#status').textContent='autosaved '+new Date().toLocaleTimeString();}
+  catch(e){$('#status').textContent='autosave unavailable (open the file locally, or just use Export)';}
+},250);}
+function restore(){
+  let raw=null;try{raw=localStorage.getItem(KEY);}catch(e){}
+  if(!raw)return;try{const st=JSON.parse(raw);
+    if(st.reviewer)$('#rev-name').value=st.reviewer; if(st.date)$('#rev-date').value=st.date;
+    cards.forEach(c=>{const it=(st.items||{})[c.dataset.id];if(!it)return;
+      c.querySelector('[data-k="decision"]').value=it.decision||'';
+      c.querySelector('[data-k="tags"]').value=it.tags||'';
+      c.querySelector('[data-k="comment"]').value=it.comment||'';});
+  }catch(e){}
+}
+
+function esc(s){return (s||'').replace(/\r/g,'');}
+function buildMD(){
+  const st=collect();const L=[];
+  L.push('# Council Handbook — Review Response');
+  L.push('');
+  L.push(`- **Reviewer:** ${st.reviewer||'—'}`);
+  L.push(`- **Date:** ${st.date||'—'}`);
+  L.push(`- **Base:** ${st.base}`);
+  L.push(`- **Repo:** github:gignsky/council`);
+  L.push('');
+  // summary
+  let acc=0,rev=0,rej=0,dis=0,unt=0,tot=0;
+  Object.values(st.items).forEach(it=>{if(!touched(it)){unt++;return;}tot++;const d=(it.decision||'').toLowerCase();
+    if(d.startsWith('accept'))acc++;else if(d.startsWith('revise'))rev++;else if(d.startsWith('reject'))rej++;else if(d.startsWith('discuss'))dis++;});
+  L.push('## Summary');
+  L.push(`Touched ${tot}/${Object.keys(st.items).length} · Accept ${acc} · Revise ${rev} · Reject ${rej} · Discuss ${dis}`);
+  L.push('');
+  const groups=[['edit','## Settled edits'],['highlight','## Highlights'],['style','## Style'],['proposal','## Proposals']];
+  groups.forEach(([k,h])=>{
+    const ids=MANIFEST.filter(m=>m.kind===k).map(m=>m.id);
+    const rows=ids.filter(id=>touched(st.items[id]));
+    if(!rows.length)return;
+    L.push(h);L.push('');
+    rows.forEach(id=>{const it=st.items[id];
+      L.push(`### [${id}] ${it.sec?it.sec+' · ':''}${it.title}`);
+      L.push(`- **Decision:** ${it.decision||'—'}`);
+      if(it.tags)L.push(`- **Tags:** ${it.tags}`);
+      if(it.comment){L.push('');esc(it.comment).split('\n').forEach(ln=>L.push('> '+ln));}
+      L.push('');
+    });
+  });
+  L.push('---');
+  L.push('_Generated by the Council Handbook Review Workspace._');
+  return L.join('\n');
+}
+function buildJSON(){return JSON.stringify({schema:'council-review/1',...collect()},null,2);}
+
+let curKind='md';
+function openExport(kind){curKind=kind;const t=kind==='md'?buildMD():buildJSON();
+  $('#expText').value=t;$('#expTitle').textContent=kind==='md'?'Markdown  →  reviews/'+fname('md'):'JSON  →  reviews/'+fname('json');
+  $('#expDlg').showModal();}
+function copyExport(){const ta=$('#expText');ta.select();
+  try{navigator.clipboard.writeText(ta.value);}catch(e){document.execCommand('copy');}
+  $('#expTitle').textContent='Copied ✓';}
+function fname(ext){const st=collect();const d=(st.date||todayISO());const who=(st.reviewer||'review').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'review';
+  return `${d}-handbook-${who}.${ext}`;}
+function downloadFile(kind){const t=kind==='md'?buildMD():buildJSON();
+  const blob=new Blob([t],{type:kind==='md'?'text/markdown':'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname(kind);a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1500);}
+function clearAll(){if(!confirm('Clear all decisions, tags, and comments?'))return;
+  cards.forEach(c=>{c.querySelector('[data-k="decision"]').value='';c.querySelector('[data-k="tags"]').value='';c.querySelector('[data-k="comment"]').value='';});
+  try{localStorage.removeItem(KEY);}catch(e){}refresh();}
+
+// open ref doc + scroll when a context link is used
+document.addEventListener('click',e=>{const a=e.target.closest('a.jump');if(!a)return;
+  const rd=$('#refdoc');if(rd)rd.open=true;});
+
+document.addEventListener('input',refresh);
+restore();refresh();
+</script>
+</body></html>

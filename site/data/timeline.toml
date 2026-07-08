@@ -57,10 +57,31 @@ status = "done"
 summary = "The site is rebuilt on Zola: the landing, the Handbook workspace, and the Council of Un corner are each framed in and ready to grow."
 
 [[milestone]]
+when = "Jul 7"
+title = "The margin review → Handbook v3"
+status = "done"
+summary = "The Handbook is printed and marked up by hand; the notes become a Review Edition, a 41-comment editorial pass, and the clean cut of v3 — with the tagline settled ('The pen is mightier than the die') and the byline made canon: by Sir Landis Fishman."
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+  [[milestone.link]]
+  label = "The Handbook"
+  url = "rules/"
+
+[[milestone]]
+when = "Jul 8"
+title = "The first table kit (MVP)"
+status = "done"
+summary = "Not the final copy to be played with, but a moment worth keeping: the Standing Orders player binder, the Works play cards, and the keeper's sealed booklet — the system first in hand at the table."
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
 when = "Now"
-title = "Revising the Handbook"
+title = "v3 with the designer"
 status = "active"
-summary = "Working the five Books toward their finished, settled form — the text that will become the public Handbook."
+summary = "The print edition is with the designer for the typographic pass. Until it returns, the interim black-and-white v3 is up and readable in full."
   [[milestone.link]]
   label = "The Handbook"
   url = "rules/"
