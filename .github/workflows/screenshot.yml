@@ -83,7 +83,7 @@ jobs:
           name: page-screenshots
           path: screenshots
 
-      - name: Publish screenshots to a branch
+      - name: Publish screenshots to a custom ref
         id: publish
         if: github.event_name == 'pull_request'
         env:
@@ -91,13 +91,18 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           set -euo pipefail
-          BRANCH="screenshots/pr-${PR_NUMBER}"
+          # Push to a custom ref (not refs/heads/*, not refs/tags/*) so no
+          # GitHub push webhook fires — Cloudflare's Git integration never
+          # sees it and won't kick off a (failing) preview build. The commit
+          # stays reachable via this ref, so the raw.githubusercontent.com
+          # URLs in the PR comment (keyed by SHA below) keep serving.
+          REF="refs/screenshots/pr-${PR_NUMBER}"
 
           rm -rf /tmp/screenshot-branch
           mkdir -p /tmp/screenshot-branch
           cd /tmp/screenshot-branch
           git init -q
-          git checkout -q -b "$BRANCH"
+          git checkout -q -b screenshots
           cp "$GITHUB_WORKSPACE"/screenshots/*.png .
           cp "$GITHUB_WORKSPACE"/screenshots/manifest.json .
           git add -A
@@ -105,8 +110,8 @@ jobs:
               -c user.email="github-actions[bot]@users.noreply.github.com" \
               commit -q -m "Screenshots for PR #${PR_NUMBER} (${GITHUB_SHA})"
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push -q --force origin "$BRANCH"
-          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          git push -q --force origin "HEAD:${REF}"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Comment on the PR
@@ -123,10 +128,26 @@ jobs:
             const { owner, repo } = context.repo;
 
             const marker = "<!-- page-screenshot-bot -->";
-            const lines = [marker, "## 📸 Page screenshots", ""];
+            const lines = [
+              marker,
+              `## 📸 Page screenshots (${manifest.length})`,
+              "",
+              "_Click any page to expand its screenshot._",
+              "",
+            ];
             for (const { urlPath, file } of manifest) {
               const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${file}`;
-              lines.push(`### \`${urlPath}\``, `![${urlPath}](${rawUrl})`, "");
+              // Each page is a collapsed <details> so the comment stays a short,
+              // scannable index; expanding one reveals just that screenshot.
+              lines.push(
+                "<details>",
+                `<summary><code>${urlPath}</code></summary>`,
+                "",
+                `![${urlPath}](${rawUrl})`,
+                "",
+                "</details>",
+                "",
+              );
             }
             lines.push(`_Updated for ${context.sha}._`);
             const body = lines.join("\n");
@@ -153,9 +174,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Delete the screenshot branch
+      - name: Delete the screenshot ref
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BRANCH="screenshots/pr-${{ github.event.pull_request.number }}"
-          git push origin --delete "$BRANCH" || echo "Nothing to clean up"
+          # Custom refs aren't resolved by `git push --delete`; delete via an
+          # explicit empty-source refspec instead.
+          REF="refs/screenshots/pr-${{ github.event.pull_request.number }}"
+          git push origin ":${REF}" || echo "Nothing to clean up"
