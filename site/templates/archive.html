@@ -20,6 +20,29 @@
       {{ section.content | safe }}
     </div>
 
+    <aside class="arc-honor" role="note">
+      <div class="arc-honor-head">A WORD BEFORE YOU READ</div>
+      <p><b>Taxe</b> and <b>Ali</b> — this Archive is the workshop behind the game, and some
+      of its papers let slip things about the <i>Council of Un</i> campaign you are not yet
+      meant to know. On your honor, and for the sake of your own first discovery at the
+      table, read no further. Everyone else: welcome — the door is open.</p>
+    </aside>
+
+    <div class="arc-gate" id="arcGate" hidden>
+      <div class="arc-gate-inner">
+        <div class="arc-gate-kicker">THE LEDGER ASKS A THING OF YOU</div>
+        <h2 class="arc-gate-title">Swear the oath to enter</h2>
+        <p class="arc-gate-body">Beyond this point lie the Archive's papers. Put your hand
+        on the ledger and swear plainly: you are neither <b>Taxe</b> nor <b>Ali</b>. Note
+        well — <b>Omar</b> and <b>Cinco</b> rest easy and <i>unhaunted</i>, and so they
+        shall remain, so long as no forbidden eye reads on.</p>
+        <button type="button" class="arc-gate-btn" id="arcGateBtn">I am not Taxe or Ali — I enter, and leave Omar &amp; Cinco unhaunted</button>
+        <p class="arc-gate-fine">Should Taxe or Ali break the oath and read on, let it be on
+        their own heads that Omar and Cinco are haunted for it.</p>
+      </div>
+    </div>
+
+    <div class="arc-catalog" id="arcCatalog">
     {% for era in archive.era %}
     <section class="arc-era">
       <div class="arc-era-head"><span class="arc-era-num">{{ era.key }}</span> {{ era.name }}</div>
@@ -45,6 +68,29 @@
     {% endfor %}
 
     <div class="book-note">THE COUNCIL OF UN CAMPAIGN IS KEPT SEPARATE — IT IS NOT HELD IN THIS ARCHIVE</div>
+    </div>
+
     <div class="book-foot"><a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a></div>
   </div>
+
+  <script>
+  // The oath gate. Progressive enhancement: with no JS the catalogue is fully
+  // visible (the honour system alone) and indexable. When JS runs and the oath
+  // has not yet been sworn this session/device, raise the gate over the catalogue.
+  (function () {
+    var KEY = "council-archive-oath-v1";
+    var gate = document.getElementById("arcGate");
+    var cat = document.getElementById("arcCatalog");
+    var btn = document.getElementById("arcGateBtn");
+    if (!gate || !cat || !btn) return;
+    try { if (localStorage.getItem(KEY) === "1") return; } catch (e) {}
+    cat.hidden = true;
+    gate.hidden = false;
+    btn.addEventListener("click", function () {
+      try { localStorage.setItem(KEY, "1"); } catch (e) {}
+      gate.hidden = true;
+      cat.hidden = false;
+    });
+  })();
+  </script>
 {% endblock body %}
