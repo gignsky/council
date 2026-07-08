@@ -1,0 +1,36 @@
+name: Cloudflare build script check
+
+# Validates scripts/cloudflare-build.sh — the script Cloudflare's dashboard
+# project runs as its Build command — without needing Cloudflare
+# credentials. Confirms the same two things Cloudflare's own build needs to
+# find: wrangler.jsonc at the repo root, and a populated public/ directory
+# matching its assets.directory after the build command runs.
+#
+# Runs on every PR (catches e.g. a Zola version bump breaking the pinned
+# download) and can also be run manually to debug a Cloudflare build
+# failure: run this first to rule out the build script itself before
+# checking dashboard project settings (Root directory, Build command,
+# Build output directory).
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  reproduce-cloudflare-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run the Cloudflare build command
+        run: bash scripts/cloudflare-build.sh
+
+      - name: Verify wrangler.jsonc + public/ are in place
+        run: |
+          test -f wrangler.jsonc
+          test -d public
+          test -f public/index.html
+          test -f public/un/index.html
+          echo "OK: wrangler.jsonc and public/ are present, matching what Cloudflare's build needs."
