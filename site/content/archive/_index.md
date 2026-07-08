@@ -11,4 +11,4 @@ you can watch the game get built.
 
 Read any document in your browser, or take the printable copy. The finished,
 revised rules live at **The Handbook** as they are settled; what follows is the
-workshop behind it.
+workshop behind it. Every paper here is by one hand — **Sir Landis Fishman**.

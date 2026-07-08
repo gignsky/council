@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Council — a game played with words, not dice{% endblock title %}
+{% block title %}Council — the pen is mightier than the die{% endblock title %}
 
 {% block head_extra %}
-<meta name="description" content="Council: a roleplaying game of knowing, choosing, and consequence — played with words, not dice.">
+<meta name="description" content="Council: a roleplaying game of knowing, choosing, and consequence, by Sir Landis Fishman. The pen is mightier than the die.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
@@ -25,9 +25,10 @@
     <div style="position:absolute;top:calc(7% + 132px);width:108px;height:200px;background:linear-gradient(#e9d9a8,transparent);opacity:.4;filter:blur(6px);animation:shimmer 5s ease-in-out infinite"></div>
 
     <div style="position:relative;margin-top:64px">
-      <div class="mono" style="font-size:12px;letter-spacing:7px;color:#9ab7c9;margin-bottom:16px">A ROLEPLAYING GAME · PLAYED WITH WORDS, NOT DICE</div>
+      <div class="mono" style="font-size:12px;letter-spacing:7px;color:#9ab7c9;margin-bottom:16px">A ROLEPLAYING GAME · THE PEN IS MIGHTIER THAN THE DIE</div>
       <h1 style="font-family:'Alfa Slab One',serif;font-size:clamp(60px,13vw,128px);line-height:.9;margin:0;color:#f3ead1;text-shadow:0 4px 40px rgba(0,0,0,.5)">COUNCIL</h1>
       <div style="font-size:clamp(18px,2.8vw,24px);font-style:italic;color:#c9bda0;margin-top:14px">strive and pay, or be given — but keep hope, whatever the weather</div>
+      <div style="text-align:center;font-style:italic;font-size:13px;letter-spacing:1px;color:#9ab7c9;margin-top:10px">by Sir Landis Fishman</div>
     </div>
 
     <p style="position:relative;max-width:640px;margin:40px 0 0;font-size:clamp(17px,2.2vw,20px);line-height:1.85;color:#cddbe2">
@@ -47,7 +48,7 @@
 
     <a href="#timeline" class="tl-cue mono" aria-label="See the work so far">THE WORK SO FAR <span class="tl-cue-chev">▾</span></a>
 
-    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK IS BEING BOUND</a> · <a href="{{ get_url(path='archive/') }}" style="color:#5c7686">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
+    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}" style="color:#5c7686">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
   </main>
 
   {% set timeline = load_data(path="data/timeline.toml") %}

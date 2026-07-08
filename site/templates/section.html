@@ -14,6 +14,7 @@
   <div class="book-wrap">
     <div class="book-kicker"><a href="{{ get_url(path='@/_index.md') }}">COUNCIL</a> · THE HANDBOOK</div>
     <h1 class="book-title">{{ section.title }}</h1>
+    {% if section.extra.byline %}<div class="book-byline">{{ section.extra.byline }}</div>{% endif %}
     <hr class="book-rule">
     <div class="book-body">
       {{ section.content | safe }}
@@ -28,7 +29,7 @@
       {% endfor %}
     </ul>
     {% endif %}
-    <div class="book-note">THE HANDBOOK IS BEING BOUND — CHAPTERS APPEAR HERE AS THEY ARE FINISHED</div>
+    <div class="book-note">V3 IS CUT AND WITH THE DESIGNER — CHAPTERS APPEAR HERE AS EACH IS SETTLED</div>
     <div class="book-foot"><a href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a></div>
   </div>
 {% endblock body %}

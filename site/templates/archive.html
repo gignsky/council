@@ -58,8 +58,9 @@
             <div class="arc-item-desc">{{ doc.desc }}</div>
           </div>
           <div class="arc-links">
-            <a class="arc-link" href="{{ get_url(path='archive/docs/' ~ doc.html) }}">READ</a>
+            {% if doc.html %}<a class="arc-link" href="{{ get_url(path='archive/docs/' ~ doc.html) }}">READ</a>{% endif %}
             {% if doc.pdf %}<a class="arc-link arc-link-alt" href="{{ get_url(path='archive/pdf/' ~ doc.pdf) }}">PDF</a>{% endif %}
+            {% if doc.url %}<a class="arc-link arc-link-alt" href="{{ get_url(path=doc.url) }}">PDF</a>{% endif %}
           </div>
         </li>
         {% endfor %}

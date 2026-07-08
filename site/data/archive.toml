@@ -127,3 +127,21 @@ blurb = "Getting Council onto fuckinphilosophers.com — the landing page that g
   desc = "The fuckinphilosophers.com landing (a still snapshot of the animated page; the stars hold their place on paper)."
   html = "24_Council_Landing_Page.dc.html"
   pdf = "23_Council_Landing_Page_Snapshot.pdf"
+
+[[era]]
+key = "V"
+name = "The Margin Review"
+blurb = "The Handbook goes under the pen: handwritten margin notes become a Review Edition, a 41-comment editorial pass, and the clean cut of v3 — which settled the tagline: the pen is mightier than the die."
+
+  [[era.doc]]
+  title = "The Review Edition — Rich Diff & Proposals"
+  desc = "Every dictated change applied in place, plus the design proposals for the open questions — marked up for review on the reMarkable. The 41-comment review it drew lives in the repo's reviews/ trail."
+  html = "25_Council_Handbook_RichDiff.html"
+  pdf = "25_Council_Handbook_Review.pdf"
+  tag = "HISTORICAL"
+
+  [[era.doc]]
+  title = "The Handbook — v3, Print Edition"
+  desc = "The clean cut from the review — black-and-white, print-ready. Interim while the designer's pass is made; this is the current book."
+  url = "handbook/Council_Handbook_v3_PRINT_bw.pdf"
+  tag = "CURRENT"
