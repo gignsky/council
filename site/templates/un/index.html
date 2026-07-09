@@ -4,7 +4,7 @@
 
 {% block head_extra %}
 <meta name="description" content="Council of Un — a campaign of Council, played at one particular table.">
-<link rel="stylesheet" href="{{ get_url(path='css/un.css') }}">
+<link rel="stylesheet" href="/css/un.css">
 {% endblock head_extra %}
 
 {% block body %}
@@ -22,5 +22,5 @@
     <div class="un-widget" data-widget="hello">table status: …</div>
     <a class="un-back" href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a>
   </div>
-  <script type="module" src="{{ get_url(path='js/un/hello-widget.js') }}"></script>
+  <script type="module" src="/js/un/hello-widget.js"></script>
 {% endblock body %}

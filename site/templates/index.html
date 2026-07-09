@@ -4,14 +4,10 @@
 
 {% block head_extra %}
 <meta name="description" content="Council: a roleplaying game of knowing, choosing, and consequence, by Sir Landis Fishman. The pen is mightier than the die.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Alfa+Slab+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
 {% endblock head_extra %}
 
 {% block body %}
-  <main style="position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 24px;overflow:hidden;background:radial-gradient(120% 90% at 50% 12%,#1c3648 0%,#12232f 45%,#0b1620 100%)">
+  <main class="hero">
 
     <div class="star" style="top:12%;left:18%"></div>
     <div class="star" style="top:20%;left:70%;animation-delay:1.2s"></div>
@@ -21,49 +17,86 @@
     <div class="star" style="top:31%;left:60%;animation-delay:.3s"></div>
     <div class="star" style="top:7%;left:8%;animation-delay:2.6s"></div>
 
-    <div style="position:absolute;top:7%;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#f6ecc9,#e4cf98 60%,#c9ad6d);box-shadow:0 0 70px rgba(233,217,168,.35),inset -12px -12px 26px rgba(120,96,52,.35)"></div>
-    <div style="position:absolute;top:calc(7% + 132px);width:108px;height:200px;background:linear-gradient(#e9d9a8,transparent);opacity:.4;filter:blur(6px);animation:shimmer 5s ease-in-out infinite"></div>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch theme" aria-pressed="false">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g class="toggle-rays" stroke-width="4" stroke-linecap="round" fill="none">
+          <line x1="50" y1="4" x2="50" y2="17"/>
+          <line x1="50" y1="83" x2="50" y2="96"/>
+          <line x1="4" y1="50" x2="17" y2="50"/>
+          <line x1="83" y1="50" x2="96" y2="50"/>
+          <line x1="17.8" y1="17.8" x2="26.9" y2="26.9"/>
+          <line x1="73.1" y1="73.1" x2="82.2" y2="82.2"/>
+          <line x1="17.8" y1="82.2" x2="26.9" y2="73.1"/>
+          <line x1="82.2" y1="17.8" x2="73.1" y2="26.9"/>
+        </g>
+        <mask id="toggleMask">
+          <rect x="0" y="0" width="100" height="100" fill="#fff"/>
+          <circle class="toggle-bite" cx="102" cy="2" r="27" fill="#000"/>
+        </mask>
+        <circle class="toggle-disc" cx="50" cy="50" r="27" mask="url(#toggleMask)"/>
+      </svg>
+    </button>
 
-    <div style="position:relative;margin-top:64px">
-      <div class="mono" style="font-size:12px;letter-spacing:7px;color:#9ab7c9;margin-bottom:16px">A ROLEPLAYING GAME · THE PEN IS MIGHTIER THAN THE DIE</div>
-      <h1 style="font-family:'Alfa Slab One',serif;font-size:clamp(60px,13vw,128px);line-height:.9;margin:0;color:#f3ead1;text-shadow:0 4px 40px rgba(0,0,0,.5)">COUNCIL</h1>
-      <div style="font-size:clamp(18px,2.8vw,24px);font-style:italic;color:#c9bda0;margin-top:14px">strive and pay, or be given — but keep hope, whatever the weather</div>
-      <div style="text-align:center;font-style:italic;font-size:13px;letter-spacing:1px;color:#9ab7c9;margin-top:10px">by Sir Landis Fishman</div>
+    <div class="hero-block">
+      <div class="hero-kicker mono">A ROLEPLAYING GAME · THE PEN IS MIGHTIER THAN THE DIE</div>
+      <h1 class="hero-title">COUNCIL</h1>
+      <div class="hero-tagline">strive and pay, or be given — but keep hope, whatever the weather</div>
+      <div class="hero-byline">by Sir Landis Fishman</div>
     </div>
 
-    <p style="position:relative;max-width:640px;margin:40px 0 0;font-size:clamp(17px,2.2vw,20px);line-height:1.85;color:#cddbe2">
-      Council is a game of knowing, choosing, and consequence. When a table sets down the dice, it loses the old gift they gave — a way to learn what no one thought to ask. Council hands that gift back. Every answer comes one of two ways: <span style="color:#e9d9a8">seized at a price</span>, or <span style="color:#e9d9a8">given as grace</span>. Behind every locked door wait three clues, so no soul is ever truly stuck. It is built to reward <span style="color:#e9d9a8">hope</span> — it can wound you, and grieve you, but it breaks only the one who stops hoping.
+    <p class="hero-lede">
+      Council is a game of knowing, choosing, and consequence. When a table sets down the dice, it loses the old gift they gave — a way to learn what no one thought to ask. Council hands that gift back. Every answer comes one of two ways: <span class="mark">seized at a price</span>, or <span class="mark">given as grace</span>. Behind every locked door wait three clues, so no soul is ever truly stuck. It is built to reward <span class="mark">hope</span> — it can wound you, and grieve you, but it breaks only the one who stops hoping.
     </p>
-
-    <details style="position:relative;max-width:660px;margin:40px auto 0;text-align:left">
-      <summary style="text-align:center;font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:3px;color:#e9d9a8;padding:12px 0">A WORD FOR CINCO <span class="chev">▾</span></summary>
-      <div style="margin-top:18px;background:#efe6cf;color:#23201a;border:1px solid #b9ab86;border-top:4px solid #a8823f;padding:28px 30px;font-family:'IM Fell English',Georgia,serif;font-size:16px;line-height:1.85">
-        <p style="margin:0 0 14px">Cinco — you want the Genii. Not their friendship; their hand on the wheel. I have watched you regard Dina's people the way a sailor regards a current he means to ride rather than fight. It can be done. I will not tell you it cannot. But hear how the water charges for such a thing.</p>
-        <p style="margin:0 0 14px">A people is not taken in a scene. A people is <b>Standing</b> — a stake in the Ledger — and Standing is won or wounded a watch at a time, through <b>Works</b> declared in the open, with hands you can spare and power you can pledge. To bend the Genii toward a confederation is not to declare a Work; it is to set a <b>Divine Work</b> turning — the kind with no counted end and several storms sealed inside it, each breaking in its season. Some will rewrite the very aim you began with, for that is the nature of trying to hold a whole people in your fist: they push back, and the card changes under your hand.</p>
-        <p style="margin:0 0 14px">The Hoffans, too, perhaps — braver and more brittle than the Genii, and keepers of a cure that is also a grave. Fold them in and you gain a shield against the dark; you also gain the ache of what that shield costs. I do not say no. I say only: read the letterhead when the report comes, and mark whose name signs it.</p>
-        <p style="margin:0 0 14px">And a confederation — a table of worlds seated as one Council — is the grandest Work a crew of yours has ever set turning. It will demand you choose the wide table or the narrow. It will want its dissent <b>minuted</b>, so that when one world is spent for the others, the objection is already written down. And it will not come by <b>price</b> alone; some of it you will simply have to be <b>given</b>.</p>
-        <div style="font-style:italic;color:#3a3428">Keep hope, Cinco — the confederation bends kinder to the one who believes it can be built than to the one who only means to rule it. Nothing is ruled out. Everything is priced. Come find water when you are ready to pay — or to be surprised by what you are given.<br>— Landis</div>
-      </div>
-    </details>
 
     <a href="#timeline" class="tl-cue mono" aria-label="See the work so far">THE WORK SO FAR <span class="tl-cue-chev">▾</span></a>
 
-    <div class="mono" style="position:absolute;bottom:24px;font-size:11px;letter-spacing:3px;color:#5c7686">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}" style="color:#5c7686">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}" style="color:#5c7686">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}" style="color:#5c7686">COUNCIL OF UN</a></div>
+    <div class="hero-foot mono">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}">COUNCIL OF UN</a></div>
   </main>
 
   {% set timeline = load_data(path="data/timeline.toml") %}
+  {% set_global council_start = 9999 %}
+  {% set_global web_start = 9999 %}
+  {% set_global un_start = 9999 %}
+  {% for m in timeline.milestone %}
+    {% set track = m.track | default(value="council") %}
+    {% set joins = m.joins | default(value=[]) %}
+    {% if (track == "council" or "council" in joins) and loop.index0 < council_start %}{% set_global council_start = loop.index0 %}{% endif %}
+    {% if (track == "web" or "web" in joins) and loop.index0 < web_start %}{% set_global web_start = loop.index0 %}{% endif %}
+    {% if (track == "un" or "un" in joins) and loop.index0 < un_start %}{% set_global un_start = loop.index0 %}{% endif %}
+  {% endfor %}
   <section id="timeline" class="tl-section">
     <div class="tl-head">
       <div class="tl-kicker">THE LOG · WHAT HAS BEEN BUILT</div>
       <h2 class="tl-title">The work so far</h2>
       <p class="tl-lede">Council was made a piece at a time. Here is the log — where the game has been, where it stands now, and what comes next. The finished rules gather in <a href="{{ get_url(path='@/rules/_index.md') }}">The Handbook</a>; the whole workshop behind them lives in <a href="{{ get_url(path='archive/') }}">The Archive</a>.</p>
+      <div class="tl-legend mono">
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--council"></span>Council</span>
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--web"></span>Website</span>
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--un"></span>Council of Un</span>
+      </div>
     </div>
-    <ol class="tl-track">
+    <div class="tl-graph">
       {% for m in timeline.milestone %}
-      <li class="tl-item tl-item--{{ m.status }}">
-        <span class="tl-dot"></span>
+      {% set row = loop.index %}
+      {% set track = m.track | default(value="council") %}
+      {% set joins = m.joins | default(value=[]) %}
+
+      {% if council_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--council{% if council_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:1"></div>{% endif %}
+      {% if web_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--web{% if web_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:2"></div>{% endif %}
+      {% if un_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--un{% if un_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:3"></div>{% endif %}
+
+      {% for j in joins %}
+        {% if (track == "council" and j == "web") or (track == "web" and j == "council") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:1/3"></div>
+        {% elif (track == "council" and j == "un") or (track == "un" and j == "council") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:1/4"></div>
+        {% elif (track == "web" and j == "un") or (track == "un" and j == "web") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:2/4"></div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="tl-dot tl-dot--{{ track }} tl-dot--{{ m.status }}" style="grid-row:{{ row }};grid-column:{% if track == "council" %}1{% elif track == "web" %}2{% else %}3{% endif %}"></div>
+
+      <div class="tl-row-card tl-row-card--{{ track }}" style="grid-row:{{ row }};grid-column:4">
         <div class="tl-when mono">{{ m.when }}</div>
-        <div class="tl-card">
+        <div class="tl-card tl-item--{{ m.status }}">
           <div class="tl-card-top">
             <h3 class="tl-card-title">{{ m.title }}</h3>
             <span class="tl-badge tl-badge--{{ m.status }}">{{ m.status | upper }}</span>
@@ -75,9 +108,9 @@
           </div>
           {% endif %}
         </div>
-      </li>
+      </div>
       {% endfor %}
-    </ol>
+    </div>
     <div class="tl-foot mono">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}">COUNCIL OF UN</a></div>
   </section>
 {% endblock body %}

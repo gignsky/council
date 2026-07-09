@@ -131,6 +131,12 @@ blurb = "Getting Council onto fuckinphilosophers.com — the landing page that g
   html = "24_Council_Landing_Page.dc.html"
   pdf = "23_Council_Landing_Page_Snapshot.pdf"
 
+  [[era.doc]]
+  title = "A Word for Cinco"
+  desc = "Landis's in-world letter to Cinco on the price of a confederation, once posted beneath the landing page's fold. Retired from the live site with the book-edition redesign; kept here as the workshop's record."
+  html = "29_A_Word_For_Cinco.dc.html"
+  tag = "HISTORICAL"
+
 [[era]]
 key = "V"
 name = "The Margin Review"
