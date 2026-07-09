@@ -19,21 +19,21 @@
   --focus:var(--accent);
 }
 [data-theme="dark"]{
-  --paper:#0d0d0e;
-  --paper-2:#161617;
+  --paper:#000000;
+  --paper-2:#0a0a0a;
   --ink:#e9e3d4;
   --ink-strong:#ffffff;
   --muted:#9a938a;
   --faint:#6f6a62;
-  --rule:#2f2e2a;
+  --rule:#262625;
   --rule-strong:#e9e3d4;
   --accent:#d17a68;
-  --accent-ink:#0d0d0e;
+  --accent-ink:#000000;
   --gold:#d3a655;
-  --card:#161617;
+  --card:#050505;
   --card-ink:#e9e3d4;
-  --card-rule:#2c2b28;
-  --hero-bg:radial-gradient(120% 90% at 50% 12%,#151b21 0%,#0b0f13 55%,#0d0d0e 100%);
+  --card-rule:#242422;
+  --hero-bg:radial-gradient(120% 90% at 50% 12%,#0a0a0a 0%,#020202 55%,#000000 100%);
   --grain-opacity:.07;
 }
 
