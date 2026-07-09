@@ -144,9 +144,9 @@ blurb = "The Handbook goes under the pen: handwritten margin notes become a Revi
   tag = "HISTORICAL"
 
   [[era.doc]]
-  title = "The Handbook — v3, Print Edition"
-  desc = "The clean cut from the review — black-and-white, print-ready. Interim while the designer's pass is made; this is the current book."
-  url = "handbook/Council_Handbook_v3_PRINT_bw.pdf"
+  title = "The Handbook — Print Edition"
+  desc = "The bound Player's Handbook — one voyage, one volume: How to Play and Books I–V, set for paper and the reMarkable. This is the current book; it also reads chapter by chapter at /rules/."
+  url = "handbook/Council_Handbook.pdf"
   tag = "CURRENT"
 
 [[era]]

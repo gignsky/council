@@ -12,13 +12,12 @@ mightier than the die.** Every answer comes one of two ways: **seized at a
 price**, or **given as grace**. Behind every locked door wait three clues, so
 no soul is ever truly stuck. It is built to reward **hope**.
 
-The Handbook has been through the pen: a handwritten margin review became a
-41-comment editorial pass, and from it the third edition was cut — clean,
-black-and-white, and print-ready. **[Read the whole book now — the v3 print
-edition](/handbook/Council_Handbook_v3_PRINT_bw.pdf)** *(interim, while the
-designer's pass is made)*. The editorial trail that produced it lives in
-[The Archive](/archive/).
+The whole book is here to read, chapter by chapter. Begin with **[How to
+Play](/rules/how-to-play/)** — the game in five minutes — then read the five
+Books in order below. Prefer it bound? **[Read the print edition
+(PDF)](/handbook/Council_Handbook.pdf)** — the same handbook, one voyage and
+one volume, set for paper and the reMarkable.
 
-This book is the **generic system**. Each table raises *its own* handbook
-from it — exactly as the Standing Orders do for the Council of Un. Chapters
-will be added below as each is settled for the web.
+This book is the **generic system**. Each table raises *its own* handbook from
+it — exactly as the Standing Orders do for the Council of Un. The editorial
+trail that produced it lives in [The Archive](/archive/).
