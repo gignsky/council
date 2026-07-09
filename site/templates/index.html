@@ -54,18 +54,49 @@
   </main>
 
   {% set timeline = load_data(path="data/timeline.toml") %}
+  {% set_global council_start = 9999 %}
+  {% set_global web_start = 9999 %}
+  {% set_global un_start = 9999 %}
+  {% for m in timeline.milestone %}
+    {% set track = m.track | default(value="council") %}
+    {% set joins = m.joins | default(value=[]) %}
+    {% if (track == "council" or "council" in joins) and loop.index0 < council_start %}{% set_global council_start = loop.index0 %}{% endif %}
+    {% if (track == "web" or "web" in joins) and loop.index0 < web_start %}{% set_global web_start = loop.index0 %}{% endif %}
+    {% if (track == "un" or "un" in joins) and loop.index0 < un_start %}{% set_global un_start = loop.index0 %}{% endif %}
+  {% endfor %}
   <section id="timeline" class="tl-section">
     <div class="tl-head">
       <div class="tl-kicker">THE LOG · WHAT HAS BEEN BUILT</div>
       <h2 class="tl-title">The work so far</h2>
       <p class="tl-lede">Council was made a piece at a time. Here is the log — where the game has been, where it stands now, and what comes next. The finished rules gather in <a href="{{ get_url(path='@/rules/_index.md') }}">The Handbook</a>; the whole workshop behind them lives in <a href="{{ get_url(path='archive/') }}">The Archive</a>.</p>
+      <div class="tl-legend mono">
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--council"></span>Council</span>
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--web"></span>Website</span>
+        <span class="tl-legend-item"><span class="tl-legend-dot tl-legend-dot--un"></span>Council of Un</span>
+      </div>
     </div>
-    <ol class="tl-track">
+    <div class="tl-graph">
       {% for m in timeline.milestone %}
-      <li class="tl-item tl-item--{{ m.status }}">
-        <span class="tl-dot"></span>
+      {% set row = loop.index %}
+      {% set track = m.track | default(value="council") %}
+      {% set joins = m.joins | default(value=[]) %}
+
+      {% if council_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--council{% if council_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:1"></div>{% endif %}
+      {% if web_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--web{% if web_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:2"></div>{% endif %}
+      {% if un_start <= loop.index0 %}<div class="tl-lane-line tl-lane-line--un{% if un_start == loop.index0 %} tl-lane-line--start{% endif %}" style="grid-row:{{ row }};grid-column:3"></div>{% endif %}
+
+      {% for j in joins %}
+        {% if (track == "council" and j == "web") or (track == "web" and j == "council") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:1/3"></div>
+        {% elif (track == "council" and j == "un") or (track == "un" and j == "council") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:1/4"></div>
+        {% elif (track == "web" and j == "un") or (track == "un" and j == "web") %}<div class="tl-connector" style="grid-row:{{ row }};grid-column:2/4"></div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="tl-dot tl-dot--{{ track }} tl-dot--{{ m.status }}" style="grid-row:{{ row }};grid-column:{% if track == "council" %}1{% elif track == "web" %}2{% else %}3{% endif %}"></div>
+
+      <div class="tl-row-card tl-row-card--{{ track }}" style="grid-row:{{ row }};grid-column:4">
         <div class="tl-when mono">{{ m.when }}</div>
-        <div class="tl-card">
+        <div class="tl-card tl-item--{{ m.status }}">
           <div class="tl-card-top">
             <h3 class="tl-card-title">{{ m.title }}</h3>
             <span class="tl-badge tl-badge--{{ m.status }}">{{ m.status | upper }}</span>
@@ -77,9 +108,9 @@
           </div>
           {% endif %}
         </div>
-      </li>
+      </div>
       {% endfor %}
-    </ol>
+    </div>
     <div class="tl-foot mono">FUCKINPHILOSOPHERS.COM · <a href="{{ get_url(path='@/rules/_index.md') }}">THE HANDBOOK</a> · <a href="{{ get_url(path='archive/') }}">THE ARCHIVE</a> · <a href="{{ get_url(path='@/un/_index.md') }}">COUNCIL OF UN</a></div>
   </section>
 {% endblock body %}

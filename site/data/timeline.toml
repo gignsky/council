@@ -7,11 +7,19 @@
 # `when` is a free display label (a month, a date, "Now", "Next", "Later").
 # `link.url` is a site-relative path passed through get_url (e.g. "archive/").
 # Order top-to-bottom is oldest-to-newest; keep it chronological.
+#
+# `track` is this milestone's home lane in the landing page's branching graph:
+#   "council" (the ruleset) | "un" (the Council of Un campaign) | "web" (the site
+#   itself). Defaults to "council" if omitted.
+# `joins` is an optional list of other tracks this same milestone also touches —
+# rendered as a short connector to that lane at this row, without moving the
+# milestone off its primary track.
 
 [[milestone]]
 when = "Jun 2026"
 title = "The insight engine"
 status = "done"
+track = "council"
 summary = "The first question — what a table loses when it sets down the dice — is answered in the Silver Surfer papers: every answer comes seized at a price, or given as grace."
   [[milestone.link]]
   label = "The Archive"
@@ -21,6 +29,7 @@ summary = "The first question — what a table loses when it sets down the dice 
 when = "Jul 2026"
 title = "Council becomes a system"
 status = "done"
+track = "council"
 summary = "The design plan turns a table's habit into a portable game. Early 'earned-grace' drafts are tried and set aside; the reward of cleverness is settled as 'Slack.'"
   [[milestone.link]]
   label = "The Archive"
@@ -30,6 +39,7 @@ summary = "The design plan turns a table's habit into a portable game. Early 'ea
 when = "Jul 2026"
 title = "The five Books settled"
 status = "done"
+track = "council"
 summary = "Foundations and Books Two through Five, plus the Quick Guide, reach their current form. The default table is set narrow; the fiction is named 'the weave.'"
   [[milestone.link]]
   label = "The Archive"
@@ -39,6 +49,7 @@ summary = "Foundations and Books Two through Five, plus the Quick Guide, reach t
 when = "Jul 2026"
 title = "The Handbook, bound"
 status = "done"
+track = "council"
 summary = "The five Books are packaged for reading — a browsable hub for the screen, and a continuous edition built for print and the reMarkable."
   [[milestone.link]]
   label = "The Archive"
@@ -48,18 +59,22 @@ summary = "The five Books are packaged for reading — a browsable hub for the s
 when = "Jul 6"
 title = "Onto the domain"
 status = "done"
+track = "web"
 summary = "fuckinphilosophers.com goes live — a Nix-built site published to GitHub Pages, with the landing page as its first face."
 
 [[milestone]]
 when = "Jul 7"
 title = "The site takes shape"
 status = "done"
+track = "web"
+joins = ["council", "un"]
 summary = "The site is rebuilt on Zola: the landing, the Handbook workspace, and the Council of Un corner are each framed in and ready to grow."
 
 [[milestone]]
 when = "Jul 7"
 title = "The margin review → Handbook v3"
 status = "done"
+track = "council"
 summary = "The Handbook is printed and marked up by hand; the notes become a Review Edition, a 41-comment editorial pass, and the clean cut of v3 — with the tagline settled ('The pen is mightier than the die') and the byline made canon: by Sir Landis Fishman."
   [[milestone.link]]
   label = "The Archive"
@@ -72,6 +87,8 @@ summary = "The Handbook is printed and marked up by hand; the notes become a Rev
 when = "Jul 8"
 title = "The first table kit (MVP)"
 status = "done"
+track = "un"
+joins = ["council"]
 summary = "Not the final copy to be played with, but a moment worth keeping: the Standing Orders player binder, the Works play cards, and the keeper's sealed booklet — the system first in hand at the table."
   [[milestone.link]]
   label = "The Archive"
@@ -81,6 +98,8 @@ summary = "Not the final copy to be played with, but a moment worth keeping: the
 when = "Jul 9"
 title = "The whole book, on the web"
 status = "done"
+track = "council"
+joins = ["web"]
 summary = "The Handbook goes live to read in the browser — How to Play and Books I–V as native chapters at /rules/ — and the bound Print Edition is swapped in beside it. The provisional 'Words of the Table' glossary is retired, its terms now carried by the Eight Timbers."
   [[milestone.link]]
   label = "The Handbook"
@@ -90,12 +109,14 @@ summary = "The Handbook goes live to read in the browser — How to Play and Boo
 when = "Jul 9"
 title = "The site bound to match"
 status = "done"
+track = "web"
 summary = "The website is re-set in the printed Handbook's own black-on-white book type — serif headers, hairline rules, rubricated emphasis — invertible to a true-black night reading mode. The landing sun turns to a moon and dissolves the whole page between the two."
 
 [[milestone]]
 when = "Now"
 title = "The designer's pass"
 status = "active"
+track = "council"
 summary = "The bound edition is current and the whole book reads on the web; next it goes to a designer for a full typographic pass, after which the print PDF is replaced with the finished setting."
   [[milestone.link]]
   label = "The Handbook"
@@ -105,6 +126,7 @@ summary = "The bound edition is current and the whole book reads on the web; nex
 when = "Later"
 title = "Council of Un — table tools"
 status = "planned"
+track = "un"
 summary = "Interactive tools for the campaign corner, on their own track and kept separate from the system itself."
   [[milestone.link]]
   label = "Council of Un"
