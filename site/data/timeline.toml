@@ -87,19 +87,16 @@ summary = "The Handbook goes live to read in the browser — How to Play and Boo
   url = "rules/"
 
 [[milestone]]
+when = "Jul 9"
+title = "The site bound to match"
+status = "done"
+summary = "The website is re-set in the printed Handbook's own black-on-white book type — serif headers, hairline rules, rubricated emphasis — invertible to a true-black night reading mode. The landing sun turns to a moon and dissolves the whole page between the two."
+
+[[milestone]]
 when = "Now"
 title = "The designer's pass"
 status = "active"
 summary = "The bound edition is current and the whole book reads on the web; next it goes to a designer for a full typographic pass, after which the print PDF is replaced with the finished setting."
-  [[milestone.link]]
-  label = "The Handbook"
-  url = "rules/"
-
-[[milestone]]
-when = "Next"
-title = "The designed edition"
-status = "planned"
-summary = "When the typographic pass returns, the finished setting replaces the interim print PDF, and the web chapters are re-cut to match."
   [[milestone.link]]
   label = "The Handbook"
   url = "rules/"
