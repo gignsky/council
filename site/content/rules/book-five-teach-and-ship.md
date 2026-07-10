@@ -74,6 +74,6 @@ Two bundles make a Council game ready for a table:
   to no one until its watch turns.
 
 The **Living Ledger** — a place to run Works between sessions: on paper, or
-(better) online at the Council website, [fuckinphilosophers.com](https://fuckinphilosophers.com).
+(better) online at the Council website, [frosted-mug.com](https://frosted-mug.com).
 
 > Print the first. Keep the second. Run the third.

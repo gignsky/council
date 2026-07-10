@@ -4,6 +4,8 @@
 
 {% block head_extra %}
 <meta name="description" content="Council of Un — a campaign of Council, played at one particular table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/un.css">
 {% endblock head_extra %}
 
@@ -19,6 +21,23 @@
       minutes, and the things a Council writes down so no one can pretend it
       was never said.
     </p>
+    <nav class="un-nav">
+      <a class="un-nav-link" href="{{ get_url(path='@/un/taxe/_index.md') }}">
+        <div class="un-nav-kicker">Cinco's view</div>
+        <div class="un-nav-title">Taxe</div>
+        <div class="un-nav-desc">The Council board — the eight Works, the roster, and where every people stands.</div>
+      </a>
+      <a class="un-nav-link" href="{{ get_url(path='@/un/ali/_index.md') }}">
+        <div class="un-nav-kicker">A lighter on-ramp</div>
+        <div class="un-nav-title">Ali</div>
+        <div class="un-nav-desc">Welcome back — what Omar remembers, and what he's told.</div>
+      </a>
+      <a class="un-nav-link un-nav-link--keeper" href="{{ get_url(path='@/un/keeper/_index.md') }}">
+        <div class="un-nav-kicker">Behind the screen</div>
+        <div class="un-nav-title">The Keeper</div>
+        <div class="un-nav-desc">Reference only — on your honor, Taxe &amp; Ali.</div>
+      </a>
+    </nav>
     <div class="un-widget" data-widget="hello">table status: …</div>
     <a class="un-back" href="{{ get_url(path='@/_index.md') }}">← BACK TO COUNCIL</a>
   </div>

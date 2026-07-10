@@ -1,6 +1,6 @@
 # INSTRUCTIONS — Bring the Site & Knowledge Current
 
-*Repo: github:gignsky/council · Site: fuckinphilosophers.com*
+*Repo: github:gignsky/council · Site: frosted-mug.com (also served at fuckinphilosophers.com)*
 *Chapter: Handbook handwritten-review → v3. Prepared for the update after this session.*
 
 This document is the hand-off. It records everything decided or learned since the last data

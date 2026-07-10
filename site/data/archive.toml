@@ -180,3 +180,44 @@ blurb = "The system first in hand at the table: the moment Council became a play
   html = "28_Council_Keeper_Booklet_MVP.html"
   pdf = "28_Council_Keeper_Booklet_MVP.pdf"
   tag = "KEEPER-ONLY"
+
+[[era]]
+key = "VII"
+name = "The Ledger & the Systems"
+blurb = "The 2026-07-09 production session: a full readiness worksheet turned into a working body of systems and table-ready material. A second ruled exception to the campaign's separation from this Archive (after Era VI) — these four pieces are explicitly cleared as player-safe or player-facing; everything sealed from the same session (the research-road packages, the Keeper's session materials, the Confederation draft) stays out entirely."
+
+  [[era.doc]]
+  title = "Checklist Decisions & Notes"
+  desc = "Every ruling made against the 2026-07-09 Readiness Worksheet, tier by tier — the clean record, for posterity."
+  html = "32_Checklist_Decisions.dc.html"
+  tag = "CURRENT"
+
+  [[era.doc]]
+  title = "Chronology & Process Notes"
+  desc = "The 2026-07-09 session's arc, file by file, with the why attached — the process itself, kept as part of the archive."
+  html = "33_Chronology_and_Process.dc.html"
+  tag = "CURRENT"
+
+  [[era.doc]]
+  title = "Systems Overview"
+  desc = "The player-safe summary of this session's ledger systems: the Standing dial, the research tiers, the append-only rule, and the Ledgerman."
+  html = "34_Systems_Overview.dc.html"
+  tag = "CURRENT"
+
+  [[era.doc]]
+  title = "A Proposal for Cinco — Landis Fishman"
+  desc = "A covering letter to Taxe (redacted, in his own hand) plus two enclosures — Governance and the Atlantis Inventory. The player copy of the systems walkthrough; the unredacted keeper context stays in the Keeper's Binder."
+  html = "30_A_Proposal_for_Cinco.dc.html"
+  pdf = "30_A_Proposal_for_Cinco.pdf"
+
+[[era]]
+key = "VIII"
+name = "The Keeper's Binder (Landis Edition)"
+blurb = "The 14-document master keeper collation — governance, the ledgers, the NPC compendium, the sealed research-road packages, systems & production, the minutes pipeline, and the response list. Reference material, not a spoiler dump meant to be read cover to cover: gated the same way Era VI's Keeper's Booklet is. Taxe & Ali, on your honor — this one spoils the whole table, not just you."
+
+  [[era.doc]]
+  title = "The Keeper's Binder — Landis Edition"
+  desc = "The master collation of every keeper-side document from the 2026-07-09 session, bound in the house print style."
+  html = "31_The_Keepers_Binder.dc.html"
+  pdf = "31_The_Keepers_Binder.pdf"
+  tag = "KEEPER-ONLY"
