@@ -40,7 +40,7 @@
 
     <div class="arc-catalog" id="arcCatalog">
     {% for era in archive.era %}
-    <section class="arc-era">
+    <section class="arc-era" id="era-{{ era.key | lower }}">
       <div class="arc-era-head"><span class="arc-era-num">{{ era.key }}</span> {{ era.name }}</div>
       <p class="arc-era-blurb">{{ era.blurb }}</p>
       <ul class="arc-list">

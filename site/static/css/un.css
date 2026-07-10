@@ -1,24 +1,27 @@
-/* Council of Un — distinct identity: ink, bone, ember. Consumes the shared
+/* Council of Un — distinct identity: ink, paper, marine. Consumes the shared
    theme variables from main.css (loaded first) so this corner still inverts
-   with the global toggle, while keeping its own ember accent scoped here. */
+   with the global toggle, while keeping its own marine accent scoped here —
+   matched to COUNCIL_PRINT_STYLE_GUIDE.md, the house style for the Council of
+   Un printed papers (the Keeper's Binder, player packs, in-fiction letters),
+   so this corner of the site reads like the same binder. */
 .un-wrap{
-  --accent:#a13a22;
-  max-width:720px;
+  --accent:#2f5d7c;
+  max-width:760px;
   margin:0 auto;
   padding:72px 24px 96px;
 }
-[data-theme="dark"] .un-wrap{--accent:#e2795c}
+[data-theme="dark"] .un-wrap{--accent:#7fb0cc}
 
 html{background:var(--paper)}
 body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:Georgia,'Times New Roman',serif;
+  font-family:'Crimson Pro',Georgia,'Times New Roman',serif;
   line-height:1.7;
 }
 .un-kicker{
-  font-family:'Courier New',monospace;
+  font-family:'Courier Prime',monospace;
   font-size:12px;
   letter-spacing:6px;
   color:var(--muted);
@@ -26,10 +29,11 @@ body{
 }
 h1.un-title{
   margin:14px 0 6px;
+  font-family:'Cormorant Garamond',Georgia,serif;
   font-size:clamp(44px,9vw,84px);
   line-height:1;
   color:var(--ink-strong);
-  font-weight:700;
+  font-weight:600;
   letter-spacing:1px;
 }
 .un-rule{
@@ -37,10 +41,10 @@ h1.un-title{
   background:var(--accent);
 }
 .un-blurb{font-size:18px;color:var(--ink);max-width:60ch}
-.un-blurb em{color:var(--accent)}
+.un-blurb em{color:var(--accent);font-family:'IM Fell English',serif;font-style:italic}
 a.un-back{
   display:inline-block;margin-top:40px;
-  font-family:'Courier New',monospace;font-size:13px;letter-spacing:3px;
+  font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:3px;
   color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);
   padding-bottom:2px;
 }
@@ -48,7 +52,61 @@ a.un-back:hover{opacity:.8}
 .un-widget{
   margin-top:56px;padding:20px 22px;
   border:1px solid var(--rule);background:var(--paper-2);
-  font-family:'Courier New',monospace;font-size:13px;letter-spacing:1px;
+  font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:1px;
   color:var(--muted);
 }
 .un-widget strong{color:var(--accent)}
+
+/* ---- Un nav: links down to the audience subsections ---- */
+.un-nav{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.un-nav-link{
+  flex:1 1 200px;display:block;padding:18px 20px;
+  border:1px solid var(--rule);background:var(--paper-2);
+  text-decoration:none;color:var(--ink);
+}
+.un-nav-link:hover{border-color:var(--accent)}
+.un-nav-kicker{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
+.un-nav-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:var(--ink-strong);margin-top:4px}
+.un-nav-desc{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.5}
+.un-nav-link--keeper{border-style:dashed}
+
+/* ---- Un content pages (Taxe / Ali / Keeper) — a book page in the marine key ---- */
+.un-page-kicker{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:5px;color:var(--accent);text-transform:uppercase}
+.un-page-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,6vw,52px);font-weight:600;line-height:1.08;margin:14px 0 6px;color:var(--ink-strong)}
+.un-page-dek{font-family:'IM Fell English',serif;font-style:italic;font-size:15px;color:var(--muted);margin:0 0 30px;max-width:60ch}
+.un-page-rule{width:100%;height:0;border:0;border-top:2px solid var(--rule-strong);margin:0 0 30px}
+.un-section-head{display:flex;align-items:center;gap:10px;margin:34px 0 14px}
+.un-section-head .tag{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2.5px;color:var(--accent);white-space:nowrap;text-transform:uppercase}
+.un-section-head h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:var(--ink-strong);margin:0}
+.un-section-head .line{flex:1;height:1px;background:var(--rule)}
+
+.un-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:0 0 8px}
+.un-card{border:1px solid var(--rule);padding:16px 18px;background:var(--paper-2)}
+.un-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--rule)}
+.un-card-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:600;color:var(--ink-strong);margin:0 0 6px}
+.un-card-body{font-size:14.5px;line-height:1.6;color:var(--ink)}
+.un-card-body b{color:var(--accent)}
+.un-card--stalled{opacity:.72}
+
+.un-roster,.un-standing{width:100%;border-collapse:collapse;margin:0 0 8px;font-size:15px}
+.un-roster th,.un-standing th{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;text-align:left;border-bottom:1.5px solid var(--ink-strong);padding:0 14px 8px 0}
+.un-roster td,.un-standing td{border-bottom:1px solid var(--rule);padding:10px 14px 10px 0;vertical-align:top}
+.un-standing .dial{font-family:'Courier Prime',monospace;letter-spacing:1px;color:var(--accent)}
+
+.un-quote{border:1px solid var(--rule);border-left:3px solid var(--accent);padding:16px 20px;margin:0 0 16px;background:var(--paper-2)}
+.un-quote-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--ink-strong);margin-bottom:6px}
+.un-quote-body{font-family:'IM Fell English',serif;font-style:italic;font-size:15px;line-height:1.65;color:var(--ink)}
+.un-quote-gloss{font-size:14px;line-height:1.6;color:var(--muted);margin-top:8px}
+
+.un-featured{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px solid var(--card-rule);border-top:3px solid var(--accent);background:var(--card);color:var(--card-ink);padding:20px 22px;margin:24px 0}
+.un-featured-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600}
+.un-featured-desc{font-size:14px;color:var(--muted);margin-top:4px;max-width:50ch}
+.un-featured-link{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:2px;color:var(--accent-ink);background:var(--accent);text-decoration:none;padding:8px 14px;border-radius:2px;white-space:nowrap}
+.un-featured-link:hover{opacity:.85}
+
+.un-honor{margin:36px 0 0;background:var(--paper-2);border:1px solid var(--rule);border-left:4px solid var(--accent);padding:18px 22px;color:var(--ink);font-size:15px;line-height:1.7}
+.un-honor b{color:var(--ink-strong)}
+
+.un-compare{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14.5px}
+.un-compare th{background:var(--paper-2);border:1px solid var(--rule);padding:10px 12px;text-align:left;font-weight:700;color:var(--ink-strong)}
+.un-compare td{border:1px solid var(--rule);padding:10px 12px;vertical-align:top;line-height:1.55}

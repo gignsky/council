@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}The Keeper — Reference Corner{% endblock title %}
+
+{% block head_extra %}
+<meta name="description" content="The Keeper's reference corner — the Keeper's Binder, behind the same honour system as the Archive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/un.css">
+{% endblock head_extra %}
+
+{% block body %}
+  <div class="un-wrap">
+    <div class="un-page-kicker">Council of Un &middot; behind the screen &middot; reference only</div>
+    <h1 class="un-page-title">The Keeper</h1>
+    <div class="un-page-dek">Not a third audience section like Taxe's or Ali's — a corner for the material that keeps the table honest, not the material the table plays with.</div>
+    <hr class="un-page-rule">
+
+    <div class="un-honor">
+      <b>Taxe &amp; Ali</b> — on your honour, read no further. Everything below is the keeper's own reference: sealed research roads, keeper timetables, and the full unredacted record. It would spoil the whole table, not just the two of you. Everyone else: welcome — the door is open, same honour system as the Archive.
+    </div>
+
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:24px 0 14px">The Keeper's Binder — Landis Edition is the 14-document master collation behind this campaign: governance, the ledgers, the NPC compendium, the sealed research-road packages (Genii, Hoffan, Brotherhood), systems &amp; production, the minutes pipeline, and the running response list. It's reference material for running the table, not a story to read cover to cover — and it lives in the Archive, tagged and gated the same way Era VI's Keeper's Booklet always has been.</p>
+
+    <div class="un-featured">
+      <div>
+        <div class="un-featured-title">The Keeper's Binder — Landis Edition</div>
+        <div class="un-featured-desc">The full master collation. Filed in the Archive, Era VIII, marked KEEPER-ONLY.</div>
+      </div>
+      <a class="un-featured-link" href="{{ get_url(path='archive/') }}#era-viii">OPEN IN THE ARCHIVE →</a>
+    </div>
+
+    <a class="un-back" href="{{ get_url(path='@/un/_index.md') }}">← BACK TO COUNCIL OF UN</a>
+  </div>
+{% endblock body %}
