@@ -22,7 +22,23 @@ workdir="$(mktemp -d)"
 curl -fsSL "$ZOLA_URL" | tar xz -C "$workdir"
 chmod +x "$workdir/zola"
 
+# Cloudflare Workers Builds exports WORKERS_CI_BRANCH. A build of main is
+# production and uses the canonical base_url from site/config.toml; a build
+# of any other branch is a preview deployment, so rebuild every absolute
+# link against its deterministic Branch Preview URL (the sanitised branch
+# name prefixed to the worker's workers.dev host) — otherwise on-site
+# navigation jumps from the preview back to frosted-mug.com. Outside
+# Cloudflare (local runs, the debug workflow) the variable is unset and the
+# production base_url is used, as before.
+WORKERS_DEV_HOST="council.maxwellc-rupp2941.workers.dev"
+branch="${WORKERS_CI_BRANCH:-main}"
+build_args=()
+if [ "$branch" != "main" ]; then
+  branch_alias="$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g')"
+  build_args+=(--base-url "https://${branch_alias}-${WORKERS_DEV_HOST}")
+fi
+
 rm -rf public
-(cd site && "$workdir/zola" build --output-dir ../public)
+(cd site && "$workdir/zola" build --output-dir ../public ${build_args[@]+"${build_args[@]}"})
 
 rm -rf "$workdir"
