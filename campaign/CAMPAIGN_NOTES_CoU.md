@@ -28,3 +28,11 @@ holdings. Do **not** put these in the generic Handbook.
 ## Standing between-session play
 - Players (Taxe/Cinco, etc.) may file **Work Orders** between sessions; they turn no extra watch and
   resolve as of the next watch the tide brings, answered in the hands' own letterhead voice.
+
+## For the Annex (2026-08-06, site-update round 11 follow-ups)
+Noted here by the code session at G's request on PR #28, for Fen to carry into the Annex on the
+next pull:
+- **The Queen's picture** — G still owes the image file, from his own hand; the commons frame on
+  /un/ stands empty until it arrives.
+- **Next update pass: the interrogatories.** Publish the interrogatories on the website — read-only
+  is fine; the answer form still waits for the spacedock API phase.

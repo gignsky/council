@@ -113,6 +113,20 @@ track = "web"
 summary = "The website is re-set in the printed Handbook's own black-on-white book type — serif headers, hairline rules, rubricated emphasis — invertible to a true-black night reading mode. The landing sun turns to a moon and dissolves the whole page between the two."
 
 [[milestone]]
+when = "Aug 6"
+title = "The Un corner partitioned"
+status = "done"
+track = "un"
+joins = ["web"]
+summary = "The Council of Un corner splits into the commons and each councilor's own shelf: the Record of the Count and the Roundtable christening go up for the whole table, the Quartermaster's Book reaches Omar, the Handover minutes reach Cinco, and the keeper gains a console indexing it all. The corner's first faces are kept in the Archive."
+  [[milestone.link]]
+  label = "Council of Un"
+  url = "un/"
+  [[milestone.link]]
+  label = "The Archive"
+  url = "archive/"
+
+[[milestone]]
 when = "Now"
 title = "The designer's pass"
 status = "active"
