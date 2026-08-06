@@ -1,30 +1,36 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https:&#x2F;&#x2F;frosted-mug.com&#x2F;un&#x2F;ali&#x2F;">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosted-mug.com&#x2F;un&#x2F;ali&#x2F;">
+<meta property="og:site_name" content="Council">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>(function(){try{var t=localStorage.getItem('council-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
 
-{% block title %}Ali — Welcome to Council{% endblock title %}
+<title>Ali — Welcome to Council</title>
 
-{% block head_extra %}
 <meta name="description" content="A lighter on-ramp for Ali, returning to the table as Omar — the D&D-vs-Council primer and the small, true slice a returning man carries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/un.css">
-{% endblock head_extra %}
 
-{% block body %}
+<script src="./archive-notice.js" defer></script>
+</head>
+<body>
+
   <div class="un-wrap">
     <div class="un-page-kicker">Council of Un &middot; for Ali &middot; your second TTRPG</div>
     <h1 class="un-page-title">Welcome to Council</h1>
     <div class="un-page-dek">&ldquo;The pen is mightier than the die.&rdquo; — a lighter door in than the one Taxe got. Come to the table light. Ask questions. Let it come back slow.</div>
     <hr class="un-page-rule">
-
-    <div class="un-section-head"><span class="tag">THE SHELF</span><h2>Delivered to Omar</h2><span class="line"></span></div>
-    <div class="un-featured">
-      <div>
-        <div class="un-featured-title">The Quartermaster&rsquo;s Book</div>
-        <div class="un-featured-desc">The Atlantis inventory &mdash; delivered, not kept. Handed to Omar at the table, 07-28. Also as a <a href="{{ get_url(path='un/ali-2ff5d1ffb4/The_Quartermasters_Book.pdf') }}">PDF</a>.</div>
-      </div>
-      <a class="un-featured-link" href="{{ get_url(path='un/ali-2ff5d1ffb4/The_Quartermasters_Book.html') }}">READ IT →</a>
-    </div>
-    <p style="font-size:14.5px;line-height:1.65;color:var(--muted);margin:0 0 24px">Page 6 of the standing orders awaits your signature.</p>
 
     <div class="un-section-head"><span class="tag">I</span><h2>Why Council Is Different From D&amp;D</h2><span class="line"></span></div>
     <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 14px">Council is built on <b>words and choices</b>, not dice rolls and luck. You already know homebrewed D&amp;D — where the GM makes rulings and the players navigate the consequences. Council takes that idea further: <b>your decisions are permanent records</b>, and the game remembers what you choose.</p>
@@ -109,6 +115,9 @@
       <div class="un-quote-gloss">— the water remembers, even when you don't</div>
     </div>
 
-    <a class="un-back" href="{{ get_url(path='@/un/_index.md') }}">← BACK TO COUNCIL OF UN</a>
+    <a class="un-back" href="https://frosted-mug.com/un/">← BACK TO COUNCIL OF UN</a>
   </div>
-{% endblock body %}
+
+<script src="/js/theme.js" defer></script>
+</body>
+</html>

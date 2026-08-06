@@ -1,30 +1,36 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https:&#x2F;&#x2F;frosted-mug.com&#x2F;un&#x2F;taxe&#x2F;">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosted-mug.com&#x2F;un&#x2F;taxe&#x2F;">
+<meta property="og:site_name" content="Council">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>(function(){try{var t=localStorage.getItem('council-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
 
-{% block title %}Taxe — The Council Board{% endblock title %}
+<title>Taxe — The Council Board</title>
 
-{% block head_extra %}
 <meta name="description" content="Cinco's management view of the Council of Un — the eight Works, the roster, and where every people stands.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/un.css">
-{% endblock head_extra %}
 
-{% block body %}
+<script src="./archive-notice.js" defer></script>
+</head>
+<body>
+
   <div class="un-wrap">
     <div class="un-page-kicker">Council of Un &middot; player-facing &middot; a snapshot, not a rulebook</div>
     <h1 class="un-page-title">The Council Board</h1>
     <div class="un-page-dek">Cinco's own view of where the Council stands as of the current watch. Static for now — these are snapshots; the table is where it changes.</div>
     <hr class="un-page-rule">
-
-    <div class="un-section-head"><span class="tag">THE SHELF</span><h2>Delivered to Cinco</h2><span class="line"></span></div>
-    <div class="un-featured">
-      <div>
-        <div class="un-featured-title">Council Minutes &mdash; 07-08-2026</div>
-        <div class="un-featured-desc">The Handover Session &mdash; the standing orders transferred, the narrow table ratified, the first directives on record. Also as <a href="{{ get_url(path='un/taxe-df8f2cb979/Council_Minutes_07-08-2026.md') }}">markdown</a>.</div>
-      </div>
-      <a class="un-featured-link" href="{{ get_url(path='un/taxe-df8f2cb979/Council_Minutes_07-08-2026.pdf') }}">READ IT →</a>
-    </div>
-    <p style="font-size:14.5px;line-height:1.65;color:var(--muted);margin:0 0 24px">Awaiting filing, by the Keeper&rsquo;s hand: SO-1 &middot; SO-3 &middot; L.F.&rsquo;s departure letter with its two enclosures &middot; the approved bylaws.</p>
 
     <div class="un-section-head"><span class="tag">I</span><h2>The Eight Works on the Board</h2><span class="line"></span></div>
     <div class="un-cards">
@@ -114,7 +120,7 @@
         <div class="un-featured-title">A Proposal for Cinco</div>
         <div class="un-featured-desc">A letter, meant for you — redacted in his own hand — plus the Governance and Atlantis Inventory enclosures. Filed in the Archive.</div>
       </div>
-      <a class="un-featured-link" href="{{ get_url(path='archive/') }}#era-vii">READ IT →</a>
+      <a class="un-featured-link" href="https://frosted-mug.com/archive#era-vii">READ IT →</a>
     </div>
 
     <div class="un-quote">
@@ -123,6 +129,9 @@
       <div class="un-quote-gloss">— kept by the Ledgerman</div>
     </div>
 
-    <a class="un-back" href="{{ get_url(path='@/un/_index.md') }}">← BACK TO COUNCIL OF UN</a>
+    <a class="un-back" href="https://frosted-mug.com/un/">← BACK TO COUNCIL OF UN</a>
   </div>
-{% endblock body %}
+
+<script src="/js/theme.js" defer></script>
+</body>
+</html>

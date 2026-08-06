@@ -5,3 +5,6 @@ description = "Council: a roleplaying game of knowing, choosing, and consequence
 compile_sass = false
 build_search_index = false
 generate_feeds = false
+# The Council of Un player shelves live at unlisted (unguessable) URLs; a
+# sitemap would enumerate them, so none is generated.
+generate_sitemap = false

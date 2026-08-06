@@ -221,3 +221,32 @@ blurb = "The 14-document master keeper collation — governance, the ledgers, th
   html = "31_The_Keepers_Binder.dc.html"
   pdf = "31_The_Keepers_Binder.pdf"
   tag = "KEEPER-ONLY"
+
+[[era]]
+key = "IX"
+name = "The Un Corner — First Face"
+blurb = "Page snapshots of the Council of Un corner as it stood before the 2026-08-06 update partitioned it into the commons and the player shelves — kept, by the owner's ruling, so the corner's earlier faces stay readable after the change."
+
+  [[era.doc]]
+  title = "Council of Un — the commons, first face"
+  desc = "The corner's front page as it first stood: one door for the whole table, before the Record of the Count went up and the shelves were split off."
+  html = "35_Un_Commons_First_Face.html"
+  tag = "SUPERSEDED"
+
+  [[era.doc]]
+  title = "Ali — Welcome to Council (first face)"
+  desc = "Omar's on-ramp page as first framed, before his shelf carried delivered papers."
+  html = "36_Un_Ali_Welcome_First_Face.html"
+  tag = "SUPERSEDED"
+
+  [[era.doc]]
+  title = "Taxe — The Council Board (first face)"
+  desc = "Cinco's board as first framed — the eight Works, the roster, and the Standing dial — before his shelf carried the minutes."
+  html = "37_Un_Taxe_Board_First_Face.html"
+  tag = "SUPERSEDED"
+
+  [[era.doc]]
+  title = "The Keeper — Reference Corner (first face)"
+  desc = "The keeper's corner as first framed, before the console index of the shelves and the commons."
+  html = "38_Un_Keeper_Corner_First_Face.html"
+  tag = "SUPERSEDED"
