@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Leah — Fiona of Midlandia{% endblock title %}
+
+{% block head_extra %}
+<meta name="description" content="Leah's shelf — Fiona of Midlandia, fished from the water and bound for the city.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/un.css">
+{% endblock head_extra %}
+
+{% block body %}
+  <div class="un-wrap">
+    <div class="un-page-kicker">Council of Un &middot; for Leah &middot; welcome to the table</div>
+    <h1 class="un-page-title">Fiona of Midlandia</h1>
+    <div class="un-page-dek">&ldquo;The pen is mightier than the die.&rdquo; &mdash; your seat is set, your story is your own, and the water has already put in a good word.</div>
+    <hr class="un-page-rule">
+
+    <div class="un-section-head"><span class="tag">FROM THE KEEPER OF THE WATER</span><h2>How She Came Aboard</h2><span class="line"></span></div>
+    <div class="un-quote">
+      <div class="un-quote-label">IN THE HAND OF L.F.</div>
+      <div class="un-quote-body">
+        <p>My lady came up out of the water wearing exactly what the water gave her &mdash; which is to say, nothing at all. The sea keeps no wardrobe, and has never once apologized for it. I fished her out as I fish everything out: patiently, and mid-sentence. She stood on the deck of the <i>Silver Surfer</i> dripping like a kingdom that had just abdicated, and before I could offer her a blanket she informed me she knew why she was needed. I gave her the blanket anyway. Knowing is no substitute for wool.</p>
+        <p>The floods took Midlandia, and Midlandia, by her accounting, had it coming. A palace is a very large room a small life is kept in; the water unlocked hers, and carried the key downhill. I have ferried queens before &mdash; the water remembers them heavier. This one came up light.</p>
+        <p>She is bound for the city now. I am told she hunts. I am told she smells what is coming before it arrives. I have not told her that both of those are also my job description &mdash; she will learn it the way everyone does: slowly, and then all at once. &mdash; L.F.</p>
+      </div>
+    </div>
+
+    <div class="un-section-head"><span class="tag">THE SHELF</span><h2>Delivered to Fiona</h2><span class="line"></span></div>
+    <div class="un-featured">
+      <div>
+        <div class="un-featured-title">An Envelope for Leah</div>
+        <div class="un-featured-desc">The six leaves that asked after her &mdash; answered by her own hand, and the answers are now the record.</div>
+      </div>
+      <a class="un-featured-link" href="{{ get_url(path='un/leah-3e7a91c4d0/An_Envelope_for_Leah.pdf') }}">OPEN IT →</a>
+    </div>
+
+    <div class="un-section-head"><span class="tag">I</span><h2>Who Fiona Is</h2><span class="line"></span></div>
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 14px"><b>A princess who hated the palace.</b> Married to a high prince, waited on by servants, treated like a queen and spoiled &mdash; and she hated her life and desperately needed adventure and change. The floods that washed Midlandia away and carried her down the mountainside were not her tragedy; they were her jailbreak.</p>
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 14px"><b>Her gift:</b> visions of the future, triggered by smell &mdash; a keen nose that is also the trigger. She does not know everything that is coming; she knows what the nose brings her.</p>
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 14px"><b>Her hands:</b> a huntress &mdash; gun, bow-and-arrow, and her own words on the matter. A fine crossbow would not go amiss.</p>
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 24px"><b>Her arrival:</b> she steps into disputes and works them out, and she arrives claiming purpose &mdash; <i>&ldquo;I know why you needed me! Now what?&rdquo;</i></p>
+
+    <div class="un-section-head"><span class="tag">II</span><h2>New to the City</h2><span class="line"></span></div>
+    <p style="font-size:15px;line-height:1.75;color:var(--ink);margin:0 0 24px">Fiona has never been to the city &mdash; or perhaps any city. She comes to Atlantis with the outsider's clear eye: everything the crew takes for granted, she gets to see for the first time, and to ask about out loud. That is not a handicap at this table; it is a seat's whole privilege. The record listens hardest to the newest voice.</p>
+
+    <a class="un-back" href="{{ get_url(path='@/un/_index.md') }}">← BACK TO COUNCIL OF UN</a>
+  </div>
+{% endblock body %}
