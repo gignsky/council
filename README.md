@@ -2,8 +2,8 @@
 
 The public site for **Council** — a diceless, narrative-first tabletop
 roleplaying game by **Sir Landis Fishman**. *"The pen is mightier than the
-die."* Live at **[frosted-mug.com](https://frosted-mug.com)** (also served,
-unredirected, at **[fuckinphilosophers.com](https://fuckinphilosophers.com)**).
+die."* Live at **[landis.fish](https://landis.fish)** (also served,
+unredirected, at **[landis.fish](https://landis.fish)**).
 
 **Hosting is Cloudflare Workers (static assets),** migrated from GitHub
 Pages, deployed via Cloudflare's own dashboard Git integration — no GitHub

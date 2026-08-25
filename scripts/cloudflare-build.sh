@@ -27,7 +27,7 @@ chmod +x "$workdir/zola"
 # of any other branch is a preview deployment, so rebuild every absolute
 # link against its deterministic Branch Preview URL (the sanitised branch
 # name prefixed to the worker's workers.dev host) — otherwise on-site
-# navigation jumps from the preview back to frosted-mug.com. Outside
+# navigation jumps from the preview back to landis.fish. Outside
 # Cloudflare (local runs, the debug workflow) the variable is unset and the
 # production base_url is used, as before.
 WORKERS_DEV_HOST="council.maxwellc-rupp2941.workers.dev"

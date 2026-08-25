@@ -2,7 +2,7 @@
 // Widgets must gate every network call on these values and fall back to
 // local-only behaviour (localStorage) when apiBaseUrl is null.
 export const config = {
-  apiBaseUrl: null, // later: "https://api.frosted-mug.com"
+  apiBaseUrl: null, // later: "https://api.landis.fish"
   features: {
     unPersistence: false, // flip when the API exists
   },
