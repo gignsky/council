@@ -60,7 +60,7 @@ when = "Jul 6"
 title = "Onto the domain"
 status = "done"
 track = "web"
-summary = "fuckinphilosophers.com goes live — a Nix-built site published to GitHub Pages, with the landing page as its first face."
+summary = "landis.fish goes live — a Nix-built site published to GitHub Pages, with the landing page as its first face."
 
 [[milestone]]
 when = "Jul 7"

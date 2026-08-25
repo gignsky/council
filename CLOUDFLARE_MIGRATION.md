@@ -1,6 +1,6 @@
 # Migrating hosting to Cloudflare (Workers + static assets)
 
-This is the runbook for moving `fuckinphilosophers.com` off GitHub Pages
+This is the runbook for moving `landis.fish` off GitHub Pages
 onto **Cloudflare Workers with static assets**, following the same pattern
 already used for [cashconsults-website](https://github.com/gignsky/cashconsults-website).
 
@@ -33,7 +33,7 @@ same `zola build` step by hand. Cloudflare's dashboard project just needs
 its **Build command** set to `bash scripts/cloudflare-build.sh`.
 
 The steps below are almost entirely manual dashboard/DNS actions on the
-Cloudflare account that holds the `fuckinphilosophers.com` zone — they can't
+Cloudflare account that holds the `landis.fish` zone — they can't
 be scripted from this repo, so this file is the checklist to work through by
 hand, and to track progress against. **This repo's own changes (config,
 removing the GitHub Pages workflow and CNAME) are already done as of this
@@ -42,7 +42,7 @@ before the migration is actually live.**
 
 ## Why this can be zero-downtime
 
-DNS for `fuckinphilosophers.com` already lives on Cloudflare: apex
+DNS for `landis.fish` already lives on Cloudflare: apex
 `A`/`AAAA` records point at GitHub Pages' IPs today, `www` CNAMEs to
 `gignsky.github.io`, all DNS-only, SSL/TLS mode Full. Moving hosting to
 Cloudflare means the cutover is a same-provider DNS record edit, not a
@@ -84,10 +84,10 @@ No production DNS changes in this phase — zero risk.
 ## Phase 2 — Prove the custom domain + HTTPS work before touching production DNS
 
 - [ ] *(Optional, recommended)* Add a throwaway proxied CNAME, e.g.
-  `cfcheck.fuckinphilosophers.com` → the Worker, and confirm HTTPS + correct
+  `cfcheck.landis.fish` → the Worker, and confirm HTTPS + correct
   rendering there first.
 - [ ] Worker → **Settings → Domains & Routes → add custom domain**:
-  `fuckinphilosophers.com` (and `www.fuckinphilosophers.com` if it should
+  `landis.fish` (and `www.landis.fish` if it should
   resolve directly too). Cloudflare provisions the certificate
   automatically — it's already the DNS authority for the zone, so
   validation is immediate.
@@ -102,15 +102,15 @@ No production DNS changes in this phase — zero risk.
 - [ ] Lower the TTL on the apex/`www` records first if they aren't already
   low; pick a low-traffic window.
 - [ ] In the Cloudflare DNS zone, replace:
-  - Apex `fuckinphilosophers.com` A/AAAA (GitHub Pages IPs) → proxied
+  - Apex `landis.fish` A/AAAA (GitHub Pages IPs) → proxied
     CNAME/flattened record to the Worker's custom-domain target (Cloudflare
     flattens CNAMEs at the apex automatically).
   - `www` CNAME (`gignsky.github.io`) → proxied CNAME to the same target.
 - [ ] Verify immediately:
   ```sh
-  curl -I https://fuckinphilosophers.com
-  curl -I https://www.fuckinphilosophers.com
-  curl -v https://fuckinphilosophers.com   # eyeball the cert chain
+  curl -I https://landis.fish
+  curl -I https://www.landis.fish
+  curl -v https://landis.fish   # eyeball the cert chain
   ```
   Both should return `200` with a valid cert. Also do a manual browser check
   for mixed-content/HSTS issues.
@@ -152,9 +152,9 @@ above.
 ## Verification checklist
 
 - [ ] `*.workers.dev` preview renders identically to current production
-- [ ] Throwaway `cfcheck.fuckinphilosophers.com` serves via Cloudflare with
+- [ ] Throwaway `cfcheck.landis.fish` serves via Cloudflare with
   valid HTTPS
-- [ ] Custom domain cert for `fuckinphilosophers.com` shows **Active**
+- [ ] Custom domain cert for `landis.fish` shows **Active**
   before DNS cutover
 - [ ] Post-cutover: apex and `www` both return 200 with valid certs
 - [ ] No mixed-content warnings; Un widgets' inlined JS still runs correctly

@@ -123,11 +123,11 @@ blurb = "The five Books, bound for reading — a browsable hub for the screen, a
 [[era]]
 key = "IV"
 name = "Site & Landing"
-blurb = "Getting Council onto fuckinphilosophers.com — the landing page that greets a new hand aboard."
+blurb = "Getting Council onto landis.fish — the landing page that greets a new hand aboard."
 
   [[era.doc]]
   title = "Council — Landing Page"
-  desc = "The fuckinphilosophers.com landing (a still snapshot of the animated page; the stars hold their place on paper)."
+  desc = "The landis.fish landing (a still snapshot of the animated page; the stars hold their place on paper)."
   html = "24_Council_Landing_Page.dc.html"
   pdf = "23_Council_Landing_Page_Snapshot.pdf"
 

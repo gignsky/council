@@ -1,5 +1,5 @@
 {
-  description = "Council — the frosted-mug.com static site (Zola)";
+  description = "Council — the landis.fish static site (Zola)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -53,8 +53,8 @@
           '';
 
           meta = {
-            description = "Council site for frosted-mug.com (also served at fuckinphilosophers.com)";
-            homepage = "https://frosted-mug.com";
+            description = "Council site for landis.fish (also served at landis.fish)";
+            homepage = "https://landis.fish";
           };
         };
       in
