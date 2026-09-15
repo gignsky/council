@@ -2,7 +2,7 @@
   description = "Council — the landis.fish static site (Zola)";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:gignsky/gigpkgs/gigpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
