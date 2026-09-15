@@ -2,12 +2,18 @@
   description = "Council — the landis.fish static site (Zola)";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:gignsky/gigpkgs/gigpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
@@ -22,7 +28,10 @@
 
           src = ./site;
 
-          nativeBuildInputs = [ pkgs.zola pkgs.html-tidy ];
+          nativeBuildInputs = [
+            pkgs.zola
+            pkgs.html-tidy
+          ];
 
           buildPhase = ''
             runHook preBuild
@@ -81,6 +90,7 @@
             python3
             git
             html-tidy
+            roll-flow
           ];
           shellHook = ''
             echo "  Council dev shell"
@@ -89,5 +99,6 @@
             echo "  serve output:   nix run"
           '';
         };
-      });
+      }
+    );
 }
