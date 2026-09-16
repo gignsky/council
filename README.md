@@ -59,12 +59,20 @@ The site has these sections:
 With [Nix](https://nixos.org) (flakes enabled):
 
 ```sh
-nix develop              # dev shell: zola, python3, html-tidy
-zola serve --root site   # live-reloading preview at http://127.0.0.1:1111
+nix develop        # dev shell: zola, python3, html-tidy, roll-flow
 
-nix build .#site         # produce the deployable tree at ./result
-nix run                  # preview the built site at http://localhost:8080
+council-serve      # live-reloading preview at http://127.0.0.1:1111
+council-build      # compile the site to site/public/
+council-verify     # check a build has every page the deploy needs
+
+nix build .#site   # sandboxed build (what CI runs) — tree at ./result
+nix run            # preview that build at http://localhost:8080
 ```
+
+The `council-*` commands work from anywhere in the repo and pass extra
+arguments straight through to `zola` (`council-serve --port 8000`). Note that
+`zola` takes `--root` as a global flag, *before* the subcommand — `zola --root
+site build`, not `zola build --root site`, which it rejects.
 
 ## Adding rules chapters
 
